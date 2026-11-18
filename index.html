@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colori dei test con reagenti</title>
+<meta name="description" content="Che colore dà quale sostanza nei test con reagenti, con l'evoluzione del colore nel tempo e il confronto fra più fonti.">
+<link rel="stylesheet" href="assets/styles.css?v=94">
+<script>
+/* The first paint is dark: a flash of white is more jarring than a flash of
+   dark. The theme the reader chose — or the system's — is applied before
+   anything is drawn. */
+(function () {
+  var t = null;
+  try { t = localStorage.getItem("theme"); } catch (e) { /* file:// may block it */ }
+  if (t !== "light" && t !== "dark") {
+    t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ? "dark" : "light";
+  }
+  document.documentElement.dataset.theme = t;
+})();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#table-scroll">Salta alla tabella</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <div class="titles">
+      <h1 data-i18n="title">Colori dei test con reagenti</h1>
+    </div>
+    <div class="header-tools">
+      <a id="bundle-link" class="btn btn-quiet" href="dist/colori-dei-test-con-reagenti.html" download>
+        <span aria-hidden="true">↓</span>
+        <span class="download-label" data-i18n="download">Scarica</span>
+      </a>
+      <button type="button" id="lang-toggle" class="btn btn-quiet" aria-label="Language">EN</button>
+      <button type="button" id="theme-toggle" class="btn btn-quiet btn-icon" aria-label="Theme">
+        <span aria-hidden="true" id="theme-icon">◐</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- the warning sits at the top of the page but does not follow the scroll -->
+
+<main class="wrap">
+
+  <p class="banner" role="note"><span data-i18n="banner"></span></p>
+
+  <!-- ── le osservazioni ─────────────────────────────────────────── -->
+  <section id="observations" class="panel" aria-labelledby="obs-title">
+    <div class="panel-head">
+      <h2 id="obs-title" data-i18n="obsTitle">Osservazioni</h2>
+      <button id="obs-share" class="btn btn-quiet" type="button" data-i18n="obsShare" hidden>copia il link</button>
+    </div>
+
+    <ul id="obs-list" class="obs-list"></ul>
+
+    <div id="next-tests" class="next-tests" hidden></div>
+    <p id="blind-spots" class="blind-spots" hidden></p>
+  </section>
+
+  <!-- ── la tabella ──────────────────────────────────────────────── -->
+  <section id="table-section" aria-labelledby="table-title">
+    <div class="panel-head">
+      <h2 id="table-title" class="sr-only" data-i18n="tableTitle">La tabella</h2>
+      <p id="table-shown" class="muted"></p>
+      <p class="field field-check">
+        <label>
+          <input type="checkbox" id="f-all">
+          <span id="f-all-label"></span>
+        </label>
+      </p>
+    </div>
+
+    <div id="tables"></div>
+  </section>
+
+  <!-- ── i dati e le risorse ─────────────────────────────────────── -->
+  <section id="data-section" class="data-section" aria-labelledby="data-title">
+    <h2 id="data-title" class="sr-only" data-i18n="dataTitle">I dati e le risorse</h2>
+
+    <details class="faq">
+      <summary data-i18n="dataReagents">I reagenti</summary>
+      <div class="faq-body">
+        <ul id="reagent-list" class="reagent-list"></ul>
+      </div>
+    </details>
+
+    <details class="faq">
+      <summary data-i18n="dataSources">Le fonti</summary>
+      <div class="faq-body">
+        <ul id="source-list" class="source-list"></ul>
+        <p class="muted small" data-i18n="sourcesNote"></p>
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<!-- ── dettaglio della sostanza ──────────────────────────────────── -->
+<aside id="detail" class="detail" hidden aria-labelledby="detail-title" tabindex="-1">
+  <div class="detail-head">
+    <h2 id="detail-title"></h2>
+    <button type="button" id="detail-close" class="btn btn-quiet btn-icon" aria-label="Chiudi">✕</button>
+  </div>
+  <div id="detail-body"></div>
+</aside>
+
+<!-- ── tendina delle fonti di una cella ─────────────────────────── -->
+<div id="popover" class="popover" hidden role="dialog" aria-label="Fonti">
+  <div id="popover-body"></div>
+</div>
+
+<!-- ── piano dietro le tendine aperte ────────────────────────────── -->
+<div id="backdrop" class="backdrop" hidden></div>
+
+<script src="data/reagents.js?v=2"></script>
+<script src="assets/colors.js?v=65"></script>
+<script src="assets/i18n.js?v=87"></script>
+<script src="assets/app.js?v=110"></script>
+</body>
+</html>

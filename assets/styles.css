@@ -1,0 +1,1211 @@
+/* ────────────────────────────────────────────────────────────────
+   Design tokens
+   The chrome is deliberately neutral: the swatches are the only
+   saturated thing on the page, so that they can be judged.
+   ──────────────────────────────────────────────────────────────── */
+
+:root {
+  --bg: #f6f6f4;
+  --bg-raised: #ffffff;
+  --bg-sunken: #eeeeea;
+  --ink: #1c1c1a;
+  --ink-soft: #55554f;
+  --ink-faint: #6f6f66;
+  --line: #dededa;
+  --line-strong: #b9b9b2;
+  --accent: #1f5f4f;
+  --accent-ink: #ffffff;
+  --accent-soft: #e6f0ec;
+  /* the step in between: deeper than the resting tint, far from the full
+     colour. Chosen so that the text inside the cell keeps at least 4.5:1
+     and the green outline of the matching reading stays visible */
+  --accent-mid: #b8cfc8;
+  --warn: #8a4b12;
+  --warn-soft: #fbeee1;
+  --warn-mid: #dfc5ad;
+  --conflict: #9c2f2f;
+  --conflict-soft: #fbeaea;
+  --conflict-mid: #e6c1c1;
+  --focus: #1a5fb4;
+  --row-hover: #ececeA;
+
+  --radius: 6px;
+  --gap: 16px;
+  --gutter: 16px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --row-h: 30px;
+  /* The floating scrollbar: two numbers, and nothing else.
+     --hbar-h   how tall the strip is. It is also the space the table
+                leaves for it, so the strip fits exactly between the last
+                row and the border of the table.
+     --hbar-gap how much the strip is raised when it hangs under the
+                table (0 = flush with the last row). */
+  --hbar-h: 11px;
+  --hbar-gap: 0px;
+  --col-substance: 210px;
+  --col-reagent: 132px;
+}
+
+[data-theme="dark"] {
+  --bg: #161615;
+  --bg-raised: #1e1e1c;
+  --bg-sunken: #101010;
+  --ink: #ecece7;
+  --ink-soft: #b3b3ab;
+  --ink-faint: #6f6f66;
+  --line: #33332f;
+  --line-strong: #4d4d47;
+  --accent: #6fc7ab;
+  --accent-ink: #10201b;
+  --accent-soft: #1c2b26;
+  --accent-mid: #2d4a41;
+  --warn: #e0a465;
+  --warn-soft: #2b2117;
+  --warn-mid: #56402a;
+  --conflict: #e08080;
+  --conflict-soft: #2c1a1a;
+  --conflict-mid: #643a3a;
+  --focus: #7fb0ff;
+  --row-hover: #2f2f2b;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Base
+   ──────────────────────────────────────────────────────────────── */
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.wrap { max-width: 1400px; margin: 0 auto; padding: 0 var(--gap); }
+
+
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .4em; }
+h1 { font-size: 1.35rem; }
+h2 { font-size: 1.1rem; }
+h3 { font-size: .95rem; margin-top: 1.6em; }
+p { margin: 0 0 .8em; }
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+.muted { color: var(--ink-soft); }
+.small { font-size: .82em; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 10px 16px; border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { left: 0; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Header
+   ──────────────────────────────────────────────────────────────── */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-raised);
+  margin-bottom: 20px;
+}
+
+.header-row {
+  display: flex; align-items: center; gap: var(--gap);
+  padding-top: 12px; padding-bottom: 12px;
+}
+.titles { flex: 1 1 auto; min-width: 0; }
+.titles h1 { margin: 0; }
+.header-tools { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+/* the download is a link that looks like the other buttons */
+#bundle-link { color: var(--ink); text-decoration: none; }
+
+.banner {
+  margin: 0 0 4px;
+  background: var(--warn-soft);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  color: var(--warn);
+  font-size: .9em;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Buttons and controls
+   ──────────────────────────────────────────────────────────────── */
+
+.btn {
+  font: inherit; font-size: .88em;
+  background: var(--bg-raised); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 6px 12px; cursor: pointer;
+}
+.btn:hover { background: var(--bg-sunken); }
+.btn-quiet { border-color: transparent; background: transparent; }
+.btn-quiet:hover { border-color: var(--line-strong); }
+.btn-icon { padding: 6px 9px; min-width: 34px; }
+
+select, input[type="search"], input[type="text"] {
+  font: inherit; font-size: .9em;
+  background: var(--bg-raised); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 5px 8px; min-width: 0;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Panels
+   ──────────────────────────────────────────────────────────────── */
+
+.panel {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  margin: var(--gap) 0;
+}
+
+.panel-head {
+  display: flex; align-items: center; gap: var(--gap);
+  flex-wrap: wrap; margin-bottom: 10px;
+}
+.panel-head h2 { margin: 0; flex: 1 1 auto; }
+/* the counter and the "show all" box sit together */
+#table-shown { margin: 0; }
+#table-section .panel-head { justify-content: flex-end; }
+#table-section .field-check { margin: 0; }
+
+/* ────────────────────────────────────────────────────────────────
+   Observations
+   ──────────────────────────────────────────────────────────────── */
+
+/* The tiles of the observations: the same grammar as the cards of the
+   next test below. They wrap: there are few of them and they are what
+   the reader does, so they must all be in sight. */
+.obs-list {
+  list-style: none; margin: 0 0 12px; padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+.obs-list:empty { display: none; }
+
+.obs {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+/* The head: the reagent on the left, the time and the delete on the
+   right, like in the cards of the next test. It is a grid with three
+   columns: the column of the delete is always there, also in the tile
+   without the button (the one still in progress), so the time lands in
+   the same place in every tile. */
+.obs-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 30px;
+  /* The row takes the height of the tallest thing in it, and that is the
+     select — the only piece that is in every tile. The button is
+     stretched to the same height instead of imposing its own: its
+     natural height would otherwise be different from browser to
+     browser, and the tile without the button (the one in progress)
+     would slide down by a couple of pixels. */
+  align-items: stretch; gap: 8px;
+}
+/* the select is as wide as its longest name: it does not stretch */
+.obs-reagent { grid-column: 1; min-width: 0; }
+.obs-reagent select { max-width: 180px; }
+/* the time of the test, with the little clock */
+.obs-when {
+  grid-column: 2; justify-self: end;
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--ink-soft); font-size: .82em; white-space: nowrap;
+}
+/* the field of the proportion: the label is written small above the
+   select, which holds the short names */
+.obs-field {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+}
+.obs-field-label { font-size: .72em; color: var(--ink-soft); }
+.obs-field-head { display: flex; align-items: center; gap: 5px; }
+/* the "?" sits in the line of the label without making it taller */
+.obs-field-head > .picker { margin: -4px 0; }
+/* the "?" that explains the proportion */
+.help-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 15px; height: 15px; border-radius: 50%;
+  border: 1px solid var(--line-strong); color: var(--ink-soft);
+  font-size: .66em; font-weight: 600; line-height: 1; cursor: pointer;
+}
+.help-btn:hover { color: var(--ink); border-color: var(--ink-soft); }
+.help-pop { width: 300px; font-size: .85em; line-height: 1.45; }
+.help-pop p { margin: 0 0 8px; }
+.help-pop p:last-child { margin-bottom: 0; }
+.obs-proportion { flex: 0 0 auto; }
+/* the tile where the test in progress is written */
+.obs-draft {
+  border-style: dashed;
+  background: transparent;
+}
+.obs-draft .substance-hint { opacity: .8; }
+.obs-stages { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+/* The delete button: its width is the column of the grid, its height
+   comes from the row (the select). No height of its own: a number here
+   would only be right for one browser. */
+.obs-remove {
+  grid-column: 3; justify-self: stretch;
+  width: 30px; padding: 0; line-height: 1;
+}
+
+/* a phase of the reaction */
+.stage { display: inline-flex; align-items: center; }
+.stage-arrow { color: var(--ink-faint); font-size: .9em; }
+/* an arrow and what it leads to wrap together */
+.stage-group { display: inline-flex; align-items: center; gap: 4px; }
+.stage-none {
+  display: inline-flex; align-items: center; padding: 5px 10px;
+  border: 1px dashed var(--line-strong); border-radius: var(--radius);
+  color: var(--ink-soft); font-size: .88em; background: var(--bg);
+}
+.stage-add, .stage-swap, .stage-remove {
+  font-size: .8em; padding: 4px 8px; border: 1px dashed var(--line-strong);
+  border-radius: var(--radius); color: var(--ink-soft);
+}
+/* The plus that adds a phase is as tall as the colour chips: the row of
+   the reaction has to line up. */
+.stage-add {
+  min-height: 34px; padding: 5px 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  line-height: 1;
+}
+/* the phase with no colour yet: the same dashed plus, and it opens the
+   picker of that phase */
+.swatch-btn-plus {
+  border-style: dashed; border-color: var(--line-strong);
+  color: var(--ink-soft); font-size: .8em; padding: 5px 10px;
+  min-height: 34px; gap: 0;
+}
+.stage-remove { align-self: flex-end; margin-top: 8px; }
+
+/* the "no reaction" entry sits with the colours: a transparent square with a
+   dashed border, and the name instead of a colour */
+.swatch-none {
+  width: 100%; flex-direction: row; align-items: center; justify-content: flex-start;
+  gap: 8px; cursor: pointer; background: none; border: 0;
+  font: inherit; text-align: left; padding: 4px 0 10px;
+  border-bottom: 1px solid var(--line); margin-bottom: 10px;
+}
+/* the icon keeps the size of the other swatches: only the border and the
+   background change */
+.swatch-none .box {
+  width: 22px; height: 22px; aspect-ratio: auto; margin: 0; flex: 0 0 auto;
+  background: transparent;
+  border: 1px dashed var(--line-strong);
+  box-shadow: none;
+}
+.swatch-none .lbl { max-width: none; }
+.swatch-none[aria-pressed="true"] .box { border-color: var(--accent); border-style: solid; }
+.swatch-none[aria-pressed="true"] .lbl { color: var(--ink); font-weight: 600; }
+.swatch-btn-empty { font-style: italic; color: var(--ink-soft); }
+.badge-partial {
+  position: absolute; top: 3px; right: 3px; z-index: 3;
+  background: var(--warn-soft); color: var(--warn); border-color: var(--warn);
+  font-size: .62em; line-height: 1.4; padding: 0 5px;
+}
+
+.swatch-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: inherit; font-size: .88em;
+  background: var(--bg-raised); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 5px 10px; cursor: pointer;
+}
+.swatch-chip {
+  width: 22px; height: 22px; border-radius: 3px;
+  border: 1px solid var(--line-strong); flex: 0 0 auto;
+}
+/* the chip of a "no reaction" observation: transparent, with a dashed edge */
+.swatch-chip-none {
+  background: transparent;
+  border: 1px dashed var(--line-strong);
+}
+
+/* colour picker */
+details.picker { position: relative; }
+details.picker > summary { list-style: none; }
+details.picker > summary::-webkit-details-marker { display: none; }
+.picker-pop {
+  position: absolute; z-index: 45; top: calc(100% + 6px); left: 0;
+  /* the width it would like to have: the script narrows it when the
+     window has less room, and slides it so that it is never cut */
+  width: 340px;
+  overscroll-behavior: contain;
+  background: var(--bg-raised);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .18);
+  padding: 12px;
+}
+/* when there is no room below, the picker opens upwards */
+.picker-pop.open-up { top: auto; bottom: calc(100% + 6px); }
+.picker-pop fieldset { border: 0; margin: 0 0 10px; padding: 0; }
+.picker-pop legend { padding: 0 0 6px; font-size: .8em; color: var(--ink-soft); }
+.swatch {
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  cursor: pointer; font-size: .7em; color: var(--ink-soft); text-align: center;
+}
+/* visually hidden but still focusable and present in the accessibility tree */
+.swatch input, .color-cell input {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+.swatch .box {
+  width: 100%; aspect-ratio: 1 / 1; border-radius: 4px;
+  border: 2px solid transparent; box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+.swatch input:checked + .box { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--bg-raised); }
+.swatch input:focus-visible + .box { outline: 2px solid var(--focus); outline-offset: 2px; }
+.swatch:hover .box { border-color: var(--line-strong); }
+.swatch input:checked ~ .lbl { color: var(--ink); font-weight: 600; }
+.swatch .lbl { line-height: 1.1; }
+
+/* The grid of the colours: every hue in every shade. On a wide screen the
+   hues are the columns and the shades the rows; each swatch knows its hue
+   and its shade, and its place comes from them. */
+.color-pop { width: max-content; }
+.color-grid {
+  display: grid; gap: 4px; align-items: center;
+  grid-template-columns: max-content repeat(var(--hues), 30px);
+  grid-auto-rows: 30px;
+}
+.color-grid-shade {
+  grid-column: 1; grid-row: calc(var(--shade-index) + 1);
+  font-size: .72em; color: var(--ink-soft); padding-right: 4px;
+}
+/* the names of the hues do not fit above the columns: the name of the
+   colour chosen is written under the grid */
+.color-grid-hue { display: none; }
+.color-cell {
+  grid-column: calc(var(--hue-index) + 2); grid-row: calc(var(--shade-index) + 1);
+  width: 100%; height: 100%; cursor: pointer;
+}
+.color-cell .box {
+  display: block; width: 100%; height: 100%; border-radius: 4px;
+  border: 2px solid transparent; box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+.color-cell:hover .box { border-color: var(--line-strong); }
+.color-cell input:checked + .box { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--bg-raised); }
+.color-cell input:focus-visible + .box { outline: 2px solid var(--focus); outline-offset: 2px; }
+.color-choice { margin: 8px 0 0; min-height: 1.3em; font-size: .85em; font-weight: 600; }
+
+
+/* The suggestion of the next test: the reagents that tell the
+   candidates apart most, and how many of them are left afterwards. */
+.next-tests {
+  margin: 12px 0 0; padding: 10px 12px 12px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg);
+}
+.next-title {
+  margin: 0 0 4px; font-size: .78em; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-soft); font-weight: 600;
+}
+.next-intro { margin: 0 0 10px; font-size: .85em; color: var(--ink-soft); }
+/* the well-known substances the tests made cannot see */
+.blind-spots { margin: 10px 0 0; font-size: .85em; color: var(--warn); }
+/* The cards: a row that scrolls sideways. The first one is the best
+   test, the others follow in the order they are worth doing. */
+.next-cards {
+  display: flex; gap: 10px;
+  overflow-x: auto; overflow-y: hidden;
+  /* no snap: it grabbed the cards to fixed points and the drag jumped
+     back at the end of the gesture */
+  scrollbar-width: thin;
+  /* the scrollbar of the row: it is a sign that the row goes on, and it
+     has to be seen in the dark theme too */
+  scrollbar-color: var(--line-strong) transparent;
+  padding-bottom: 2px;
+}
+.next-card {
+  flex: 0 0 232px;
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+/* the best test stands out from the others */
+.next-card-best {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.next-card-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 8px;
+}
+.next-card-name { font-weight: 600; }
+/* the time, with the little clock */
+.next-card-when {
+  display: inline-flex; align-items: center; gap: 4px;
+  color: var(--ink-soft); font-size: .82em; white-space: nowrap;
+}
+/* a reagent with no time documented shows no clock */
+.next-card-when[hidden], .obs-when[hidden] { display: none; }
+/* the little clock, in the cards and in the tiles */
+.clock-icon {
+  width: 11px; height: 11px; flex: 0 0 auto;
+  fill: none; stroke: currentColor; stroke-width: 1.4;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+/* how many candidates are left after the test */
+.next-card-num { font-size: 1.08em; font-variant-numeric: tabular-nums; }
+/* the label says what the number is; the number itself stands out */
+.next-card-lbl {
+  color: var(--ink-soft); font-size: .8em; font-weight: 400;
+  margin-right: 5px;
+}
+/* the readings the test is expected to give: the strips, as the table
+   draws them */
+.next-card-strips { display: flex; flex-direction: column; gap: 5px; }
+.next-card-strips .strip { width: 100%; height: 13px; }
+.next-card-cap { color: var(--ink-soft); font-size: .78em; line-height: 1.25; }
+.next-add {
+  flex: 0 0 auto;
+  font-size: .8em; padding: 3px 10px; white-space: nowrap;
+}
+.next-card .next-add { align-self: stretch; text-align: center; margin-top: auto; }
+/* The reagents that rule nothing out: they are at the end and muted, but
+   they can still be added to the observations, so the button stays
+   legible: the whole card is not made transparent. */
+.next-card-useless { border-style: dashed; }
+.next-card-useless .next-card-name {
+  color: var(--ink-soft); font-weight: 400;
+}
+.next-card-useless .next-card-num { color: var(--ink-soft); }
+
+
+/* ────────────────────────────────────────────────────────────────
+   Toolbar
+   ──────────────────────────────────────────────────────────────── */
+
+.field { margin: 0; display: flex; flex-direction: column; gap: 3px; }
+.field > label { font-size: .78em; color: var(--ink-soft); }
+.field-check { justify-content: flex-end; }
+.field-check label { display: inline-flex; align-items: center; gap: 6px; font-size: .88em; cursor: pointer; }
+
+/* ────────────────────────────────────────────────────────────────
+   The table
+   ──────────────────────────────────────────────────────────────── */
+
+/* The table keeps its own horizontal scroll; the page scrolls vertically.
+   The column headers live in a separate strip that is stuck to the top of
+   the viewport and shifted sideways in sync with this scroller. */
+.table-area {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg-raised);
+  /* the space the floating scrollbar needs: the last row of the table
+     must not end up under it */
+  padding-bottom: var(--hbar-h);
+  /* "clip" and not "hidden": hidden would make this a scroll container and
+     the sticky titles inside would stop sticking to the viewport */
+  overflow: clip;
+}
+/* the table itself scrolls sideways, the page scrolls vertically */
+.table-scroll {
+  overflow-x: auto;
+  /* The table must never scroll vertically: it had six pixels of its own
+     overflow, and the browser was stopping the page's scroll there, inside
+     the table. Clipped: the vertical scroll always belongs to the page. */
+  overflow-y: hidden;
+  /* the scrollbar is the one under the tables, always visible */
+  scrollbar-width: none;
+}
+.table-scroll::-webkit-scrollbar { display: none; }
+
+/* The horizontal scrollbar of the tables: it floats at the bottom of the
+   window while the tables are on screen and disappears with them. */
+.hbar {
+  /* above the pinned "Sostanza" column, which sits at z-index 8 */
+  position: fixed; bottom: 0; z-index: 20;
+  height: calc(var(--hbar-h) + 2px);
+  background: var(--bg-sunken);
+  border: 1px solid var(--line);
+  /* square corners: it is a bar, not a pill */
+  border-radius: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, .18);
+  opacity: 0; pointer-events: none;
+  transition: opacity .15s ease;
+}
+.hbar.hbar-on { opacity: 1; pointer-events: auto; }
+/* When it has reached the end of the tables it hangs under them: the top
+   corners are square, the bottom ones can be rounded — and the shadow that
+   usually lifts it off the page goes away, or it would read as a gap
+   between the table and the bar. */
+.hbar.hbar-attached {
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: none;
+}
+/* the thumb is drawn by hand: its size is the same everywhere */
+.hbar-thumb {
+  /* it fills the track: no margin, so nothing looks like a gap */
+  position: absolute; top: 1px; bottom: 1px; left: 0;
+  min-width: 36px; border-radius: 7px;
+  background: var(--line-strong);
+  cursor: grab;
+  margin-left: 1px;
+}
+.hbar-thumb:active { cursor: grabbing; background: var(--accent); }
+
+/* while dragging the table, nothing is selected */
+body.dragging { user-select: none; cursor: grabbing; }
+body.dragging .data-table { cursor: grabbing; }
+
+.data-table {
+  border-collapse: separate; border-spacing: 0;
+  font-size: .84em; width: max-content; min-width: 100%;
+}
+.data-table.fixed-layout { table-layout: fixed; width: max-content; }
+
+.data-table th, .data-table td {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 4px 6px; text-align: left; vertical-align: top;
+}
+
+/* The real header stays in the table for the screen reader, but it is not
+   shown: the names of the columns live in the sticky strip of the group, and
+   a second copy would just be noise. */
+.data-table thead th {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.thead-cell small,
+.data-table thead th small {
+  display: block; margin-top: 1px; font-weight: 400; line-height: 1.15;
+  color: var(--ink-faint); font-size: .76em; letter-spacing: .02em;
+}
+/* the sticky header strip: the first column stays put, the rest is
+   shifted in sync with the table's horizontal scroll */
+.group-head {
+  position: sticky; top: 0; z-index: 18;
+  background: var(--bg-raised);
+  border-bottom: 2px solid var(--line-strong);
+}
+.thead-bar {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-sunken);
+}
+.thead-bar:empty { display: none; }
+.thead-pinned, .thead-shifted { position: absolute; top: 0; height: 100%; }
+.thead-pinned { left: 0; z-index: 2; }
+.thead-shifted { left: 0; z-index: 1; }
+.thead-cell {
+  position: absolute; top: 0; height: 100%;
+  padding: 5px 8px; font-weight: 600; white-space: nowrap;
+  background: var(--bg-sunken);
+  border-right: 1px solid var(--line);
+  box-sizing: border-box;
+  /* the name and the coverage are centred: a cell with only the name must
+     not sit higher than the ones with two lines */
+  display: flex; flex-direction: column; justify-content: center;
+  line-height: 1.2;
+}
+.thead-cell small { display: block; font-weight: 400; color: var(--ink-soft); font-size: .9em; }
+
+/* the title of a row group: stuck below the column headers, and it does not
+   move when the table is scrolled sideways */
+.group-title {
+  padding: 6px 10px; font-size: .8em; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+}
+/* The note beside the title of a section. It is the same ink as the
+   title: --ink-faint would not pass the contrast check on the dark
+   background (3.3:1). The case and the size tell them apart. */
+.group-count {
+  letter-spacing: 0; font-variant-numeric: tabular-nums;
+  color: var(--ink); font-weight: 600;
+}
+.group-note {
+  text-transform: none; letter-spacing: 0; font-size: .95em;
+  color: var(--ink-soft);
+}
+
+.data-table caption.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.data-table caption:not(.sr-only) {
+  caption-side: top; text-align: left;
+  padding: 7px 10px; font-size: .82em; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink-soft); background: var(--bg-sunken);
+  border-bottom: 1px solid var(--line);
+}
+.data-table + /* while dragging the table, nothing is selected */
+body.dragging { user-select: none; cursor: grabbing; }
+body.dragging .data-table { cursor: grabbing; }
+
+/* The table has no border of its own at the top: the head above it already
+   draws the separator (2px). With both, the two lines sat one behind the
+   other and read as a 4px grey band. */
+
+.data-table tbody th {
+  position: sticky; left: 0; z-index: 8;
+  background: var(--bg-raised);
+  font-weight: 500; white-space: nowrap; text-align: left;
+  border-right: 1px solid var(--line-strong);
+  width: var(--col-substance); max-width: var(--col-substance);
+  overflow: hidden;
+}
+.data-table thead th:first-child { left: 0; z-index: 14; width: var(--col-substance); }
+.data-table tbody th { width: var(--col-substance); }
+
+
+
+/* The row is not painted: what matters is the cell that matched. The name
+   column keeps a light tint so that the matched rows are found at a
+   glance. */
+tr.row-match th { background: var(--accent-soft); }
+
+/* The match is marked on the cell, on the strip that corresponds and on
+   the name of the colour. */
+td.cell-hit { background: var(--accent-soft); }
+.reading-match .strip {
+  outline: 2px solid var(--accent);
+}
+/* the name of the colour that corresponds to the observation */
+.cap-match {
+  color: var(--accent); font-weight: 600;
+}
+/* a "no reaction" that matches what the user saw */
+.cell-text.cell-match {
+  color: var(--accent); font-weight: 600;
+}
+/* A "no reaction" that matches what the user saw: the empty square is
+   outlined, dashed, in green — the frame goes on the reading, not on the
+   whole cell. */
+.reading-match .strip-empty {
+  outline: 2px dashed var(--accent);
+}
+/* the observation and a source do not agree */
+td.cell-conflict { background: var(--conflict-soft); }
+/* a warning: nobody documented this substance with this reagent, so the
+   test could not have said anything */
+td.cell-warning { background: var(--warn-soft); }
+
+/* The hover comes last, so that it shows on the highlighted rows too.
+   It does not repaint the row in a single colour: a cell that was green
+   stays green, one that was red stays red, one that was yellow stays
+   yellow — only the plain cells take the neutral hover.
+
+   A cell that means something goes one step deeper into its own colour,
+   not to the full colour: the full colour was shouting, and the green
+   outline around the matching reading disappeared into it. The text keeps
+   the ink it had, so nothing becomes illegible and nothing is lost.
+
+   The rules below are written with the whole path of the table, because a
+   shorter selector (tr.row-match:hover th) lost the specificity contest
+   against the plain rule above, and the row lost its tint on hover. */
+.data-table tbody tr:hover td, .data-table tbody tr:hover th { background: var(--row-hover); }
+
+/* the name column of a matched row goes one step deeper too */
+.data-table tbody tr.row-match:hover th { background: var(--accent-mid); }
+.data-table tbody tr.row-match:hover .substance-name button { text-decoration-color: currentColor; }
+
+/* the cell that matched goes one step deeper into the green */
+.data-table tbody tr:hover td.cell-hit { background: var(--accent-mid); }
+
+/* the cell in conflict goes one step deeper into the red */
+.data-table tbody tr:hover td.cell-conflict { background: var(--conflict-mid); }
+
+/* the cell with a warning goes one step deeper into the amber */
+.data-table tbody tr:hover td.cell-warning { background: var(--warn-mid); }
+
+.substance-name {
+  display: flex; align-items: baseline; gap: 6px;
+  max-width: var(--col-substance); overflow: hidden;
+}
+.substance-name button {
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  min-height: 24px; display: inline-flex; align-items: center;
+}
+.substance-name button {
+  font: inherit; color: inherit; background: none; border: 0; padding: 0;
+  cursor: pointer; text-align: left; text-decoration: underline;
+  text-decoration-color: var(--line-strong); text-underline-offset: 2px;
+}
+.substance-name button:hover { text-decoration-color: var(--accent); }
+.substance-alias {
+  color: var(--ink-soft); font-size: .9em; font-weight: 400;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0;
+}
+
+.substance-type {
+  display: block; font-size: .74em; color: var(--ink-soft); font-weight: 400;
+  margin-top: 1px;
+}
+
+/* a cell */
+/* The cell: the readings on the left, the link to the sources in the top
+   right corner. */
+/* the readings, and under them the link to the sources.
+   The cell fills the height of the row, so that the link is always at the
+   foot of the cell, whatever the number of readings. */
+.cell {
+  position: relative; display: flex; flex-direction: column;
+  align-items: stretch; gap: 4px;
+}
+.cell-readings {
+  display: flex; flex-direction: column; gap: 5px;
+  /* the room for the link to the sources, which sits at the foot of the
+     cell */
+  padding-bottom: 15px;
+}
+.reading-line { display: flex; flex-direction: column; gap: 1px; }
+.strip {
+  width: 84px; height: 11px; border-radius: 2px; flex: 0 0 auto;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .22);
+}
+/* the empty bar of a reading with no colour: the same shape, nothing in it */
+.strip-empty {
+  background: transparent;
+  border: 1px dashed var(--line-strong);
+  box-shadow: none;
+}
+/* the absence of data is written, not drawn */
+.cell-no-data {
+  color: var(--ink-soft); font-size: .8em; line-height: 1.2;
+}
+/* the proportion a reading refers to */
+/* The proportion a reading belongs to. It does not wrap: the label is
+   as long as it is, and it has to be the column that gives it room. */
+.cell-prop {
+  display: block; color: var(--ink-soft); font-size: .68em;
+  letter-spacing: .02em; margin-bottom: 1px;
+  white-space: nowrap;
+}
+/* a source that has no data for this cell */
+.reading-empty .cap,
+.cap-empty { color: var(--ink-faint); }
+/* The reading and the status are written in the same size: they are both
+   readings, and a cell must not look different depending on what it says. */
+.cell-text { color: var(--ink-soft); font-size: .74em; line-height: 1.25; max-width: 108px; }
+/* the phases of a reading are one per line: the arrow opens the line */
+.cell-cap, .cell-text, .reading .cap { white-space: pre-line; }
+/* the proportion the reading refers to; the one being compared stands out */
+.cell-prop-on { color: var(--ink); font-weight: 600; }
+/* the strip and the "!" of a reading with something to check */
+.strip-row { display: flex; align-items: center; gap: 5px; }
+.warn-btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 14px; height: 14px; padding: 0; border-radius: 50%;
+  border: 1px solid var(--warn); background: var(--warn-soft); color: var(--warn);
+  font: inherit; font-size: .62em; font-weight: 700; line-height: 1; cursor: pointer;
+}
+/* the sign is small, but the clickable area is the minimum size (WCAG 2.2) */
+.warn-btn::after { content: ""; position: absolute; inset: -6px; }
+.warn-btn:hover { background: var(--warn); color: var(--warn-soft); }
+/* red when the user saw something no source documents */
+.warn-btn-difference {
+  border-color: var(--conflict); background: var(--conflict-soft); color: var(--conflict);
+}
+.warn-btn-difference:hover { background: var(--conflict); color: var(--conflict-soft); }
+.cell-cap {
+  color: var(--ink-soft); font-size: .74em; line-height: 1.25;
+  max-width: 108px;
+}
+/* what the reading says besides its colours: spots, a ring, it fizzes */
+.cell-extra {
+  color: var(--ink-soft); font-size: .7em; font-style: italic; line-height: 1.2;
+  max-width: 108px;
+}
+
+/* the link to the sources of a cell: a word, not an icon — an "i" in a
+   circle says nothing about what opens */
+/* The link to the sources: plain clickable text, with no margin, no
+   border and no padding. */
+.info-btn {
+  font: inherit; font-size: .7em; line-height: 1.1;
+  border: 0; background: none; color: var(--ink-soft);
+  padding: 0; margin: 0; cursor: pointer; flex: 0 0 auto;
+  text-decoration: none;
+}
+/* the foot of the cell: the link to the sources, at the bottom of the
+   cell whatever the number of readings */
+.cell-foot {
+  position: absolute; right: 8px; bottom: 2px;
+  display: flex; justify-content: flex-end;
+}
+/* the text is small, but the clickable area is the minimum size (WCAG 2.2) */
+.info-btn::after {
+  content: ""; position: absolute; inset: -9px -5px;
+}
+.info-btn:hover { color: var(--accent); text-decoration: underline; }
+
+/* The buttons of the picker: delete on the left, then cancel and confirm.
+   They stay pinned to the bottom when the picker scrolls: the list of
+   colours is long, and the buttons are at the end of it. The negative
+   margins cancel the padding of the picker, so the bar reaches the
+   edges; the background hides what scrolls underneath. */
+.picker-actions {
+  display: flex; align-items: center; gap: 8px;
+  position: sticky; bottom: -12px; z-index: 2;
+  margin: 12px -12px -12px; padding: 10px 12px 12px;
+  background: var(--bg-raised);
+  border-top: 1px solid var(--line);
+}
+.picker-sep { flex: 1 1 auto; }
+.picker-del {
+  font: inherit; font-size: .95em; line-height: 1;
+  width: 28px; height: 28px; border-radius: var(--radius);
+  border: 1px solid var(--conflict); background: transparent;
+  color: var(--conflict); cursor: pointer;
+}
+.picker-del:hover { background: var(--conflict-soft); }
+.picker-cancel {
+  font: inherit; font-size: .82em; padding: 6px 10px; cursor: pointer;
+  border: 1px solid transparent; background: transparent; color: var(--ink-soft);
+  border-radius: var(--radius);
+}
+.picker-cancel:hover { border-color: var(--line); }
+.picker-ok {
+  font: inherit; font-size: .84em; font-weight: 600; padding: 7px 16px; cursor: pointer;
+  border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink);
+  border-radius: var(--radius);
+}
+.picker-ok:hover { filter: brightness(1.08); }
+
+.badge {
+  font-size: .72em; padding: 1px 6px; border-radius: 999px;
+  border: 1px solid transparent;
+  /* it can wrap: inside a narrow column the text used to spill out */
+  white-space: normal; max-width: 100%;
+}
+.badge-conflict { background: var(--conflict-soft); color: var(--conflict); border-color: var(--conflict); }
+/* the sources of the cell disagree with each other */
+.badge-disputed {
+  background: var(--warn-soft); color: var(--warn); border-color: var(--warn);
+}
+
+/* The "sources disagree" label sits at the top right of the cell.
+   The cell stays a table cell: making it a flex container breaks the table
+   layout. The link to the sources is anchored to the cell instead, and the
+   readings leave it the room. */
+.data-table td { position: relative; }
+.badge-conflict {
+  position: absolute; top: 3px; right: 3px; z-index: 3;
+  font-size: .62em; line-height: 1.4; padding: 0 5px;
+}
+.badge-ok { background: var(--accent-soft); color: var(--accent); }
+.badge-warn { background: var(--warn-soft); color: var(--warn); }
+
+/* ────────────────────────────────────────────────────────────────
+   Detail panel
+   ──────────────────────────────────────────────────────────────── */
+
+.detail {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(520px, 100%);
+  background: var(--bg-raised); border-left: 1px solid var(--line-strong);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, .18);
+  overflow: auto; padding: var(--gap); z-index: 50;
+}
+.detail-head { display: flex; align-items: flex-start; gap: var(--gap); margin-bottom: 10px; }
+.detail-head h2 { flex: 1 1 auto; margin: 0; }
+.detail-meta { color: var(--ink-soft); font-size: .85em; margin-bottom: 14px; }
+/* The reagents are tabs: one per reagent, with the readings of that
+   reagent inside. */
+.detail-tabs {
+  display: flex; gap: 2px; margin: 14px 0 10px;
+  overflow-x: auto; scrollbar-width: thin;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+.detail-tab {
+  font: inherit; font-size: .82em; line-height: 1.25;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+  white-space: nowrap; cursor: pointer;
+  border: 1px solid transparent; border-bottom: 0;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: none; color: var(--ink-soft);
+  padding: 6px 10px 7px;
+}
+/* the coverage under the name: --ink-faint is too faint on the dark
+   background (the tabs are read, the header strip is not) */
+.detail-tab small { font-size: .82em; color: var(--ink-soft); }
+.detail-tab:hover { color: var(--ink); background: var(--bg-sunken); }
+.detail-tab[aria-selected="true"] {
+  color: var(--ink); background: var(--bg-sunken);
+  border-color: var(--line); box-shadow: inset 0 2px 0 var(--accent);
+}
+.detail-panel {
+  position: relative;
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 10px 12px 10px;
+}
+/* the badge of a cell whose sources disagree: at the bottom right of the
+   card, out of the grid of the readings, so that it takes its own space */
+.detail-disputed {
+  position: absolute; right: 10px; bottom: 8px; z-index: 2;
+  font-size: .7em; line-height: 1.4; padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--conflict-soft); color: var(--conflict);
+  border: 1px solid var(--conflict);
+}
+.detail-reagent {
+  position: relative;
+  border: 0; border-radius: var(--radius); padding: 0;
+}
+/* the badge of a cell whose sources disagree */
+.badge-inline {
+  position: static; display: inline-block; margin-top: 8px;
+  font-size: .7em; line-height: 1.4; padding: 1px 6px;
+}
+/* the title of the popover and the badge share a row: the badge is on the
+   right, on the same baseline as the title */
+.popover-head {
+  grid-column: 1 / -1;
+  display: flex; align-items: baseline; gap: 10px;
+}
+.popover-head .popover-title { flex: 1 1 auto; margin: 0 0 8px; }
+.popover-head .badge {
+  position: static; flex: 0 0 auto; margin: 0 0 8px;
+}
+/* The readings are a grid: the colour, the description and the source stay
+   in their column, whatever the length of the text. */
+.reading {
+  display: grid; align-items: center; gap: 8px;
+  grid-template-columns: 84px minmax(0, 1fr) minmax(88px, max-content);
+  padding: 3px 0; font-size: .85em;
+}
+/* The columns belong to the container, not to the row: with subgrid every
+   row of the popover and of the detail panel shares the same columns, so
+   the sources stay aligned. */
+@supports (grid-template-columns: subgrid) {
+  .reading { grid-column: 1 / -1; grid-template-columns: subgrid; }
+}
+/* the columns are fixed: a reading without a colour has no strip, and its
+   description must stay in its column all the same */
+.reading .strip { width: 84px; grid-column: 1; }
+.reading .cap { min-width: 0; grid-column: 2; }
+.reading .src {
+  grid-column: 3;
+  color: var(--ink-soft); text-align: right; white-space: nowrap;
+}
+.popover-title { grid-column: 1 / -1; margin: 0 0 8px; }
+.reading-note {
+  margin: 2px 0 8px; padding-left: 2px;
+  color: var(--ink-soft); font-size: .92em; line-height: 1.35;
+}
+
+.popover {
+  position: fixed; z-index: 60; width: min(440px, 94vw);
+  background: var(--bg-raised); border: 1px solid var(--line-strong);
+  border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+  padding: 12px; font-size: .85em;
+}
+/* the popover body is the grid itself */
+#popover-body {
+  display: grid; gap: 2px 8px;
+  grid-template-columns: 84px minmax(0, 1fr) minmax(88px, max-content);
+}
+.detail-reagent {
+  display: grid; gap: 2px 8px;
+  grid-template-columns: 84px minmax(0, 1fr) minmax(88px, max-content);
+}
+.detail-reagent h3 { grid-column: 1 / -1; }
+#popover-body .popover-title { grid-column: 1 / -1; }
+/* the rows of the sources are the same block in the popover and in the
+   detail panel: in the popover it takes the whole width */
+#popover-body > .detail-reagent { grid-column: 1 / -1; }
+/* the warnings of a reading */
+.warning-head {
+  grid-column: 1 / -1;
+  display: flex; align-items: baseline; gap: 10px;
+}
+.warning-head .strip { width: 48px; }
+.warning-head .popover-title { margin: 0; }
+.warning-context { grid-column: 1 / -1; margin: 2px 0 8px; color: var(--ink-soft); }
+.warning-list { grid-column: 1 / -1; margin: 0; padding-left: 18px; }
+.warning-list li { margin: 0 0 4px; line-height: 1.4; }
+.warning-list li.warning-difference::marker { color: var(--conflict); }
+.detail-reagent .reading-note { grid-column: 1 / -1; }
+
+/* ────────────────────────────────────────────────────────────────
+   The plane behind an open overlay
+   ──────────────────────────────────────────────────────────────── */
+
+.backdrop {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgba(0, 0, 0, .28);
+  animation: fade .12s ease-out;
+}
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ────────────────────────────────────────────────────────────────
+   Sources list
+   ──────────────────────────────────────────────────────────────── */
+
+/* The footer is a set of accordions, one after the other in the page and
+   not gathered in a card: everything is there, but only what the reader
+   wants is open. */
+.data-section { margin: var(--gap) 0 0; }
+.data-section > .section-title {
+  margin: 0 0 4px; font-size: 1.05em;
+}
+.data-section > .muted { margin: 0 0 10px; }
+.faq {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: -1px;
+}
+.faq > summary {
+  cursor: pointer; padding: 11px 0; font-weight: 600;
+  list-style: none; display: flex; align-items: center; gap: 9px;
+}
+.faq > summary::-webkit-details-marker { display: none; }
+.faq > summary::before {
+  content: "\203A"; display: inline-block; font-size: 1.15em;
+  line-height: 1; color: var(--ink-soft); transition: transform .15s ease;
+}
+.faq[open] > summary::before { transform: rotate(90deg); }
+.faq > summary:hover { color: var(--accent); }
+.faq-body { padding: 0 0 14px 20px; }
+.faq-body > :first-child { margin-top: 0; }
+
+/* the glossary of the reagents */
+.reagent-list {
+  list-style: none; margin: 0 0 18px; padding: 0;
+  display: grid; gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+.reagent-item {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 10px 12px; background: var(--bg-raised);
+  display: flex; flex-direction: column;
+}
+.reagent-head {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  justify-content: space-between; gap: 8px;
+}
+.reagent-name { font-weight: 600; }
+/* the coverage sits at the foot of the card, aligned across the row */
+.reagent-meta {
+  margin: auto 0 0; padding-top: 6px; color: var(--ink-soft); font-size: .82em;
+}
+.reagent-note { margin: 6px 0 0; font-size: .88em; line-height: 1.4; }
+
+/* the empty state of the "matches" section */
+/* the empty state of a group: plain text inside the table, aligned with
+   the title of the group, not a card inside the card */
+.group-empty {
+  padding: 12px 10px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.group-empty p { margin: 0 0 4px; }
+.group-empty p:last-child { margin-bottom: 0; }
+.group-empty-text { margin-bottom: 8px !important; }
+.group-empty-conflicts { color: var(--conflict); font-size: .9em; }
+.group-empty-hint { color: var(--ink-soft); font-size: .9em; }
+
+.source-list { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 10px; }
+.source-list li { border-left: 3px solid var(--line-strong); padding-left: 10px; }
+.source-list .source-name { font-weight: 600; }
+.source-list .source-meta { color: var(--ink-soft); font-size: .85em; }
+
+
+/* ────────────────────────────────────────────────────────────────
+   Responsive & motion
+   ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  :root { --col-substance: 132px; }
+  /* the title and the buttons stay on one row: the label of the
+     download gives way to its arrow */
+  h1 { font-size: 1.1rem; }
+  .header-tools { gap: 0; }
+  .download-label { display: none; }
+  .banner { font-size: .82em; }
+  .detail { width: 100%; }
+  /* The cards of the next test: the row still scrolls sideways, but the
+     button cannot afford the whole label: it takes the short one. */
+  .next-cards { gap: 8px; }
+  .next-card { flex: 0 0 204px; padding: 8px; }
+  .next-add { font-size: 0; padding: 3px 9px; }
+  .next-add::after { content: attr(data-short); font-size: 12px; }
+  /* the grid of the colours is turned: a hue per row, with its name, and
+     the shades as columns */
+  .color-grid {
+    grid-template-columns: max-content repeat(var(--shades), 44px);
+    grid-auto-rows: 28px;
+  }
+  .color-grid-shade {
+    grid-row: 1; grid-column: calc(var(--shade-index) + 2);
+    padding: 0; text-align: center;
+  }
+  .color-grid-hue {
+    display: block; grid-column: 1; grid-row: calc(var(--hue-index) + 2);
+    font-size: .78em; padding-right: 8px;
+  }
+  .color-cell {
+    grid-column: calc(var(--shade-index) + 2); grid-row: calc(var(--hue-index) + 2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Touch
+   ────────────────────────────────────────────────────────────────
+   Su un telefono il dito gia' scorre: la scrollbar esterna, fissa in
+   fondo allo schermo, si mangerebbe il palmo e ruberebbe lo swipe
+   verticale. La scrollbar nativa invece e' l'unica indicazione che la
+   tabella continua a destra, e su un telefono non occupa spazio. */
+@media (hover: none) and (pointer: coarse) {
+  .hbar { display: none; }
+  .table-scroll {
+    scrollbar-width: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-scroll::-webkit-scrollbar { display: block; height: 8px; }
+}
+
+@media print {
+  .site-header, #observations, .detail, .popover, .skip-link { display: none !important; }
+  .table-scroll { max-height: none; overflow: visible; }
+  body { background: #fff; color: #000; }
+  .strip, .cell-no-data { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  /* on paper the accordions are all open: the sources and the licences
+     have to be on the page */
+  .faq > *:not(summary) { display: block !important; }
+  .faq::details-content { content-visibility: visible !important; }
+  .faq > summary { list-style: none; }
+  /* the floating scrollbar is a screen thing */
+  .hbar { display: none !important; }
+}

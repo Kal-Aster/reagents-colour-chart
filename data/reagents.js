@@ -1,0 +1,17293 @@
+window.REAGENTS = {
+ "sources": {
+  "PNW": {
+   "label": "PsychonautWiki",
+   "year": 2026,
+   "url": "https://psychonautwiki.org",
+   "license": "CC BY 4.0",
+   "fetchedAt": "2026-11-18 23:23 UTC"
+  }
+ },
+ "palette": {
+  "black": {
+   "shades": {
+    "light": "#bfbfbf",
+    "standard": "#333333",
+    "dark": "#111111"
+   }
+  },
+  "blue": {
+   "shades": {
+    "light": "#41a7f8",
+    "standard": "#2b37f6",
+    "dark": "#020f69"
+   }
+  },
+  "green": {
+   "shades": {
+    "light": "#7aefa6",
+    "standard": "#67f02c",
+    "dark": "#204a1c"
+   }
+  },
+  "yellow": {
+   "shades": {
+    "light": "#ffffcc",
+    "standard": "#f0d41d",
+    "dark": "#deb22e"
+   }
+  },
+  "orange": {
+   "shades": {
+    "light": "#fde9d9",
+    "standard": "#fd7322",
+    "dark": "#c04d01"
+   }
+  },
+  "brown": {
+   "shades": {
+    "light": "#8e563a",
+    "standard": "#510b0c",
+    "dark": "#320a0b"
+   }
+  },
+  "red": {
+   "shades": {
+    "light": "#ff6666",
+    "standard": "#ff0000",
+    "dark": "#8c113e"
+   }
+  },
+  "pink": {
+   "shades": {
+    "light": "#d59aca",
+    "standard": "#ff6fcf",
+    "dark": "#830c93"
+   }
+  },
+  "purple": {
+   "shades": {
+    "light": "#8064a2",
+    "standard": "#50268d",
+    "dark": "#270d45"
+   }
+  }
+ },
+ "reagents": [
+  {
+   "id": "Mq",
+   "name": "Marquis",
+   "wiki": "https://psychonautwiki.org/wiki/Marquis",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Me",
+   "name": "Mecke",
+   "wiki": "https://psychonautwiki.org/wiki/Mecke",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Md",
+   "name": "Mandelin",
+   "wiki": "https://psychonautwiki.org/wiki/Mandelin",
+   "baseColor": "yellow.standard",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Fr",
+   "name": "Froehde",
+   "wiki": "https://psychonautwiki.org/wiki/Froehde",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Li",
+   "name": "Liebermann",
+   "wiki": "https://psychonautwiki.org/wiki/Liebermann",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Si",
+   "name": "Simon's",
+   "wiki": "https://psychonautwiki.org/wiki/Simon's",
+   "baseColor": "orange.light",
+   "duration": 0,
+   "stir": false
+  },
+  {
+   "id": "Eh",
+   "name": "Ehrlich",
+   "wiki": "https://psychonautwiki.org/wiki/Ehrlich",
+   "duration": 300,
+   "stir": false
+  },
+  {
+   "id": "Ho",
+   "name": "Hofmann",
+   "wiki": "https://psychonautwiki.org/wiki/Hofmann",
+   "duration": 300,
+   "stir": false
+  },
+  {
+   "id": "Ga",
+   "name": "Gallic",
+   "wiki": "https://psychonautwiki.org/wiki/Gallic",
+   "stir": false
+  },
+  {
+   "id": "Ro",
+   "name": "Robadope",
+   "wiki": "https://psychonautwiki.org/wiki/Robadope",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Mo",
+   "name": "Morris",
+   "wiki": "https://psychonautwiki.org/wiki/Morris",
+   "baseColor": "pink.standard",
+   "duration": 30,
+   "stir": true
+  },
+  {
+   "id": "Zi",
+   "name": "Zimmermann",
+   "wiki": "https://psychonautwiki.org/wiki/Zimmermann",
+   "stir": false
+  },
+  {
+   "id": "Sc",
+   "name": "Scott",
+   "wiki": "https://psychonautwiki.org/wiki/Scott",
+   "baseColor": "pink.standard",
+   "stir": false
+  },
+  {
+   "id": "Fo",
+   "name": "Folin",
+   "wiki": "https://psychonautwiki.org/wiki/Folin",
+   "duration": 30,
+   "stir": false
+  },
+  {
+   "id": "Ca",
+   "name": "Cannabis (4-AP)",
+   "wiki": "https://psychonautwiki.org/wiki/Cannabis_(4-AP)",
+   "stir": false
+  }
+ ],
+ "substances": [
+  {
+   "id": "1cp-mipla",
+   "name": "1cP-MiPLA",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1cP-MiPLA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "1cp-al-lad",
+   "name": "1cP-AL-LAD",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1cP-AL-LAD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "1b-lsd",
+   "name": "1B-LSD",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1B-LSD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "1cp-lsd",
+   "name": "1cP-LSD",
+   "aliases": [
+    "curie"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1cP-LSD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-5-dma",
+   "name": "2,5-DMA",
+   "aliases": [
+    "DOH",
+    "DMA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2%2C5-DMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine"
+     ],
+     "psychoactive": [
+      "Psychedelic",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "1v-lsd",
+   "name": "1V-LSD",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1V-LSD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "1p-lsd",
+   "name": "1P-LSD",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1P-LSD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "red.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "1-4-butanediol",
+   "name": "1,4-Butanediol",
+   "aliases": [
+    "1,4-B",
+    "BD",
+    "BDO",
+    "One Comma Four",
+    "One Four Bee",
+    "Butylene Glycol",
+    "One Four B-D-O"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/1%2C4-Butanediol",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Alkanediol",
+      "Diol"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-fea",
+   "name": "2-FEA",
+   "aliases": [
+    "2-fluoroethylamphetamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2-FEA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-fa",
+   "name": "2-FA",
+   "aliases": [
+    "2-fluoroamphetamine",
+    "2-fmp"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2-FA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-fluorodeschloroketamine",
+   "name": "2-Fluorodeschloroketamine",
+   "aliases": [
+    "Fluoroketamine",
+    "2-FDCK",
+    "2-fluoro-Deschloroketamine",
+    "2-fluoro-2-oxo-PCM"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2-Fluorodeschloroketamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.light",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "25b-nboh",
+   "name": "25B-NBOH",
+   "aliases": [
+    "nboh-2cb",
+    "2cb-nboh",
+    "2c-b-nboh"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25B-NBOH",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "brown.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-fma",
+   "name": "2-FMA",
+   "aliases": [
+    "2-Fluoro-Methamphetamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2-FMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "25c-nbome",
+   "name": "25C-NBOMe",
+   "aliases": [
+    "Cimbi-82",
+    "NBOMe-2C-C",
+    "2C-C-NBOMe",
+    "25c",
+    "2c-nbome"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25C-NBOMe",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "brown.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "precipitate"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "25c-nboh",
+   "name": "25C-NBOH",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25C-NBOH",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "25d-nbome",
+   "name": "25D-NBOMe",
+   "aliases": [
+    "2c-d-nbome",
+    "25d"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25D-NBOMe",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "brown.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "25b-nbome",
+   "name": "25B-NBOMe",
+   "aliases": [
+    "25b"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25B-NBOMe",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 2
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "brown.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "25e-nboh",
+   "name": "25E-NBOH",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25E-NBOH",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "25i-nboh",
+   "name": "25I-NBOH",
+   "aliases": [
+    "Cimbi-27",
+    "nboh-2ci"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25I-NBOH",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "25i-nbome",
+   "name": "25I-NBOMe",
+   "aliases": [
+    "25i",
+    "Cimbi-5",
+    "2-c-i-nbome"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25I-NBOMe",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-b-fly",
+   "name": "2C-B-FLY",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-B-FLY",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines",
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard",
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-c",
+   "name": "2C-C",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-C",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark"
+      ],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": null,
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "green.dark"
+      ],
+      "observation": 2
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-d",
+   "name": "2C-D",
+   "aliases": [
+    "2C-M",
+    "LE-25",
+    "2cm"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-D",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": null,
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "green.dark"
+      ],
+      "observation": 2
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "25n-nbome",
+   "name": "25N-NBOMe",
+   "aliases": [
+    "2-c-n-nbome",
+    "25n"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/25N-NBOMe",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-b",
+   "name": "2C-B",
+   "aliases": [
+    "Nexus",
+    "Bees"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-B",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.light",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-e",
+   "name": "2C-E",
+   "aliases": [
+    "Eternity"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-E",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.dark",
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "green.dark",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.standard",
+       "black.dark"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "green.dark",
+       "black.dark"
+      ],
+      "observation": 2
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-h",
+   "name": "2C-H",
+   "aliases": [
+    "DMPEA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-H",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-p",
+   "name": "2C-P",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-P",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ],
+      "shape": "particles"
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "spots"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-i",
+   "name": "2C-I",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-I",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": null,
+      "observation": 1,
+      "shape": "spots"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "blue.standard"
+      ],
+      "observation": 2,
+      "shape": "spots"
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "spots"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-t-21",
+   "name": "2C-T-21",
+   "aliases": [
+    "Aurora"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-T-21",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-t-2",
+   "name": "2C-T-2",
+   "aliases": [
+    "Rosy"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-T-2",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "purple.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2c-t-7",
+   "name": "2C-T-7",
+   "aliases": [
+    "Beautiful",
+    "Blue Mystic",
+    "7th Heaven"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/2C-T-7",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "purple.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-4-ctmp",
+   "name": "3,4-CTMP",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3%2C4-CTMP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenidates"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-cl-pcp",
+   "name": "3-Cl-PCP",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-Cl-PCP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-fa",
+   "name": "3-FA",
+   "aliases": [
+    "PAL-353",
+    "3-Fluoroamphetamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-FA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-fpm",
+   "name": "3-FPM",
+   "aliases": [
+    "PAL-593",
+    "3-fph",
+    "3f-phenmetrazine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-FPM",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines",
+      "Phenylmorpholine"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ],
+      "shape": "spots"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-fma",
+   "name": "3-FMA",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-FMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-ho-pce",
+   "name": "3-HO-PCE",
+   "aliases": [
+    "Hydroxyeticyclidine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-HO-PCE",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-ho-pcp",
+   "name": "3-HO-PCP",
+   "aliases": [
+    "Hydroxyphencyclidine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-HO-PCP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-fea",
+   "name": "3-FEA",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-FEA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-meo-pcmo",
+   "name": "3-MeO-PCMo",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCMo",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-mmc",
+   "name": "3-MMC",
+   "aliases": [
+    "Metaphedrone",
+    "3-methylmethcathinone",
+    "3-meph",
+    "3-mephedrone"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-MMC",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "purple.standard"
+      ],
+      "shape": "ring"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "brown.standard"
+      ],
+      "shape": "ring"
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-meo-pce",
+   "name": "3-MeO-PCE",
+   "aliases": [
+    "Methoxyeticyclidine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCE",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "3c-p",
+   "name": "3C-P",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3C-P",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "3c-e",
+   "name": "3C-E",
+   "aliases": [
+    "3C-Escaline"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3C-E",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-aco-det",
+   "name": "4-AcO-DET",
+   "aliases": [
+    "4-Acetoxy-DET",
+    "Ethacetin",
+    "ethylacybin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DET",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-aco-met",
+   "name": "4-AcO-MET",
+   "aliases": [
+    "4-Acetoxy-MET",
+    "Metacetin",
+    "O-Acetylmetocin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-MET",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": null,
+      "observation": 1,
+      "shape": "spots"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ],
+      "observation": 2,
+      "shape": "spots"
+     }
+    ]
+   }
+  },
+  {
+   "id": "3-meo-pcp",
+   "name": "3-MeO-PCP",
+   "aliases": [
+    "3-MeO"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "red.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-bmc",
+   "name": "4-BMC",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-BMC",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ],
+      "fade": "red.standard"
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-aco-dmt",
+   "name": "4-AcO-DMT",
+   "aliases": [
+    "4-Acetoxy-DMT",
+    "Psilacetin",
+    "O-Acetylpsilocin",
+    "Synthetic mushrooms"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DMT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-aco-dipt",
+   "name": "4-AcO-DiPT",
+   "aliases": [
+    "4-Acetoxy-DiPT",
+    "Ipracetin",
+    "Aces",
+    "iprocetyl"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-aco-mipt",
+   "name": "4-AcO-MiPT",
+   "aliases": [
+    "Mipracetin",
+    "O-Acetylmiprocin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-MiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-det",
+   "name": "4-HO-DET",
+   "aliases": [
+    "Ethocin",
+    "CZ-74",
+    "4-hydroxy-det"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-DET",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.standard",
+       "purple.light"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-fma",
+   "name": "4-FMA",
+   "aliases": [
+    "4-fluromethamphetamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-FMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "red.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-dpt",
+   "name": "4-HO-DPT",
+   "aliases": [
+    "Procin",
+    "4-hydroxy-n",
+    "n-dipropyltryptamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-DPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "black.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-met",
+   "name": "4-HO-MET",
+   "aliases": [
+    "Metocin",
+    "Methylcybin",
+    "Colour",
+    "ethocin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-MET",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-dipt",
+   "name": "4-HO-DiPT",
+   "aliases": [
+    "Iprocin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-DiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-ept",
+   "name": "4-HO-EPT",
+   "aliases": [
+    "Eprocin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-EPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.light"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-mpt",
+   "name": "4-HO-MPT",
+   "aliases": [
+    "Meprocin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-MPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "black.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-ho-mipt",
+   "name": "4-HO-MiPT",
+   "aliases": [
+    "Miprocin",
+    "ho-mipt",
+    "4-ho"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-MiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": null
+     },
+     {
+      "source": "PNW",
+      "colors": null
+     },
+     {
+      "source": "PNW",
+      "colors": null
+     },
+     {
+      "source": "PNW",
+      "colors": null
+     },
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "blue.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "brown.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "4f-eph",
+   "name": "4F-EPH",
+   "aliases": [
+    "4-FEPH"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4F-EPH",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenidates"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-meo-pcp",
+   "name": "4-MeO-PCP",
+   "aliases": [
+    "Methoxydine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4-MeO-PCP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4f-mph",
+   "name": "4F-MPH",
+   "aliases": [
+    "4-FMPH"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/4F-MPH",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenidates"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5-apb",
+   "name": "5-APB",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5-APB",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines",
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "purple.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.standard",
+       "pink.dark"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5-meo-dalt",
+   "name": "5-MeO-DALT",
+   "aliases": [
+    "Foxtrot"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DALT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "red.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.dark",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5-meo-dibf",
+   "name": "5-MeO-DiBF",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DiBF",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard",
+       "green.standard",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5-mapb",
+   "name": "5-MAPB",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5-MAPB",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines",
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Entactogen"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "black.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5-meo-dipt",
+   "name": "5-MeO-DiPT",
+   "aliases": [
+    "Foxy Methoxy",
+    "Foxy",
+    "foxy-methoxy"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "5f-akb48",
+   "name": "5F-AKB48",
+   "aliases": [
+    "5F-APINACA",
+    "5F-AKB-48",
+    "5fapinaca"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5F-AKB48",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Indazolecarboxamide",
+      "Adamantanes"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "5f-pb-22",
+   "name": "5F-PB-22",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/5F-PB-22",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Indolecarboxylate"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "6-apdb",
+   "name": "6-APDB",
+   "aliases": [
+    "4-desoxy-mda"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/6-APDB",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines",
+      "Substituted phenethylamines",
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "purple.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "6-apb",
+   "name": "6-APB",
+   "aliases": [
+    "Benzofury"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/6-APB",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines",
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Psychedelic",
+      "Entactogen"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ab-fubinaca",
+   "name": "AB-FUBINACA",
+   "aliases": [
+    "Ab-fubi"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/AB-FUBINACA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Indazolecarboxamide"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "al-lad",
+   "name": "AL-LAD",
+   "aliases": [
+    "Aladdin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/AL-LAD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "a-php",
+   "name": "A-PHP",
+   "aliases": [
+    "α-PHP",
+    "alpha-PHP",
+    "PV7"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/A-PHP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone",
+      "Substituted cathinones",
+      "Substituted pyrrolidines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "a-pvp",
+   "name": "A-PVP",
+   "aliases": [
+    "α-PVP",
+    "alpha-PVP",
+    "Flakka",
+    "Flak",
+    "O-2387",
+    "β-ketone-prolintane",
+    "Prolintanone",
+    "Gravel"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/A-PVP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone",
+      "Substituted cathinones",
+      "Substituted pyrrolidines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "adrafinil",
+   "name": "Adrafinil",
+   "aliases": [
+    "Olmifon"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Adrafinil",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzhydryl"
+     ],
+     "psychoactive": [
+      "Stimulants",
+      "Nootropic",
+      "Eugeroics"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard",
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ald-52",
+   "name": "ALD-52",
+   "aliases": [
+    "1-Acetyl-LSD",
+    "1A-LSD",
+    "1A-LAD",
+    "Orange Sunshine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/ALD-52",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "allylescaline",
+   "name": "Allylescaline",
+   "aliases": [
+    "AL"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Allylescaline",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "red.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.light"
+      ],
+      "fade": "yellow.standard"
+     }
+    ]
+   }
+  },
+  {
+   "id": "acetylfentanyl",
+   "name": "Acetylfentanyl",
+   "aliases": [
+    "a-f"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Acetylfentanyl",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Anilidopiperidine"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "alprazolam",
+   "name": "Alprazolam",
+   "aliases": [
+    "Xanax",
+    "Ksalol"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Alprazolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.light",
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "amphetamine",
+   "name": "Amphetamine",
+   "aliases": [
+    "Speed",
+    "Adderall",
+    "Pep",
+    "Aderal"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Amphetamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "aniracetam",
+   "name": "Aniracetam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Aniracetam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Racetams"
+     ],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "baclofen",
+   "name": "Baclofen",
+   "aliases": [
+    "Lioresal",
+    "Gablofen"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Baclofen",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Butyric acid",
+      "Gabapentinoids"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "bromazepam",
+   "name": "Bromazepam",
+   "aliases": [
+    "Brozam",
+    "Lectopam",
+    "Lexomil",
+    "Lexotan",
+    "Lexilium",
+    "Lexaurin",
+    "Brazepam",
+    "Rekotnil",
+    "Bromaze",
+    "Somalium",
+    "Lexatin",
+    "Calmepam",
+    "Zepam",
+    "Lexotanil"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Bromazepam",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "bufotenin",
+   "name": "Bufotenin",
+   "aliases": [
+    "5-HO-DMT"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Bufotenin",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.light"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "bromo-dragonfly",
+   "name": "Bromo-DragonFLY",
+   "aliases": [
+    "DOB-DragonFLY",
+    "B-DFLY",
+    "Dragonfly",
+    "bromo-d-fly",
+    "bdfly"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Bromo-DragonFLY",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines",
+      "Substituted benzofurans"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "butylone",
+   "name": "Butylone",
+   "aliases": [
+    "bk-MBDB",
+    "B1",
+    "bk-methyl-j"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Butylone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "MDxx",
+      "Cathinone",
+      "Substituted cathinones"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "buprenorphine",
+   "name": "Buprenorphine",
+   "aliases": [
+    "Buprenex",
+    "Subutex",
+    "Butrans",
+    "Cizdol",
+    "Addnok",
+    "Transtec"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Buprenorphine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.light",
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "cathinone",
+   "name": "Cathinone",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Cathinone",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "caffeine",
+   "name": "Caffeine",
+   "aliases": [
+    "coffee",
+    "tea"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Caffeine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Xanthines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "carisoprodol",
+   "name": "Carisoprodol",
+   "aliases": [
+    "Soma"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Carisoprodol",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "1,3-Propanediol dicarbamate"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "coca",
+   "name": "Coca",
+   "aliases": [
+    "Cocaine",
+    "Coke",
+    "Blow",
+    "Girl",
+    "White",
+    "Snow",
+    "Nose candy",
+    "Chari"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Coca",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "cannabis",
+   "name": "Cannabis",
+   "aliases": [
+    "Marijuana",
+    "Weed",
+    "Pot",
+    "Mary Jane",
+    "Grass",
+    "Herb",
+    "Green",
+    "Bud",
+    "Tree",
+    "THC",
+    "Tetrahydrocannabinol",
+    "D9-THC",
+    "Hash"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Cannabis",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cannabinoid"
+     ],
+     "psychoactive": []
+    }
+   },
+   "reactions": {
+    "Ca": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "clonazepam",
+   "name": "Clonazepam",
+   "aliases": [
+    "Klonopin",
+    "K-Pins",
+    "Rivotril",
+    "kpin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Clonazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "clonazolam",
+   "name": "Clonazolam",
+   "aliases": [
+    "Clonitrazolam",
+    "Clam",
+    "C-lam"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Clonazolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "creatine",
+   "name": "Creatine",
+   "aliases": [
+    "N-Carbamimidoyl-N-methylglycine",
+    "Methylguanidoacetic acid"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Creatine",
+    "type": "Substance",
+    "class": {
+     "chemical": [],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "red.light",
+       "red.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "coluracetam",
+   "name": "Coluracetam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Coluracetam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Racetams"
+     ],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "det",
+   "name": "DET",
+   "aliases": [
+    "Diethyltryptamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DET",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "cocaine",
+   "name": "Cocaine",
+   "aliases": [
+    "Coke",
+    "Coca",
+    "Crack",
+    "Blow",
+    "Girl",
+    "White",
+    "Snow",
+    "Nose Candy",
+    "Yayo",
+    "Perico",
+    "Gear",
+    "Chari"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Cocaine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tropanes"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "codeine",
+   "name": "Codeine",
+   "aliases": [
+    "Lean",
+    "Purple Drank",
+    "Syrup"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Codeine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard",
+       "blue.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "orange.light",
+       "brown.light"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "dob",
+   "name": "DOB",
+   "aliases": [
+    "Brolamfetamine",
+    "Bromo-DMA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DOB",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "red.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "dmt",
+   "name": "DMT",
+   "aliases": [
+    "N,N-DMT",
+    "Dmitry",
+    "The Glory",
+    "The Spirit Molecule",
+    "dimethyltryptamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DMT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard",
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light",
+       "orange.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.light",
+       "red.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "precipitate"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "doc",
+   "name": "DOC",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DOC",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "dox",
+   "name": "DOx",
+   "aliases": [
+    "Doxepin HCl"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DOx",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "dom",
+   "name": "DOM",
+   "aliases": [
+    "STP (Serenity, Tranquility, and Peace)"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DOM",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "doi",
+   "name": "DOI",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DOI",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "yellow.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "dpt",
+   "name": "DPT",
+   "aliases": [
+    "Dipropyltryptamine",
+    "The Light"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "deschloroetizolam",
+   "name": "Deschloroetizolam",
+   "aliases": [
+    "etizolam-2"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Deschloroetizolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Thienodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "desomorphine",
+   "name": "Desomorphine",
+   "aliases": [
+    "Krokodil",
+    "Krok"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Desomorphine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "deschloroketamine",
+   "name": "Deschloroketamine",
+   "aliases": [
+    "DCK",
+    "DXE",
+    "O-PCM",
+    "2-Oxo-PCM"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Deschloroketamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "dextropropoxyphene",
+   "name": "Dextropropoxyphene",
+   "aliases": [
+    "Propoxyphene",
+    "Darvon",
+    "darvocet",
+    "coproxamol",
+    "capadex",
+    "di-gesic"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Dextropropoxyphene",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Phenylpropylamine"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark",
+       "purple.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "dipt",
+   "name": "DiPT",
+   "aliases": [
+    "diisopropyltryptamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/DiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard",
+       "red.dark"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "diazepam",
+   "name": "Diazepam",
+   "aliases": [
+    "Valium",
+    "Diastat",
+    "Mother's Little Helper",
+    "Apaurin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Diazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "diphenhydramine",
+   "name": "Diphenhydramine",
+   "aliases": [
+    "DPH",
+    "Benadryl",
+    "Nytol",
+    "Sominex",
+    "Unisom SleepMelts",
+    "ZzzQuil"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Diphenhydramine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Ethanolamine"
+     ],
+     "psychoactive": [
+      "Deliriant"
+     ]
+    }
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "diclazepam",
+   "name": "Diclazepam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Diclazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "dihydrocodeine",
+   "name": "Dihydrocodeine",
+   "aliases": [
+    "dhc"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Dihydrocodeine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.standard",
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "diphenidine",
+   "name": "Diphenidine",
+   "aliases": [
+    "dpd"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Diphenidine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Diarylethylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ept",
+   "name": "EPT",
+   "aliases": [
+    "EPT Fumarate"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/EPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ],
+      "shape": "spots"
+     }
+    ]
+   }
+  },
+  {
+   "id": "eth-cat",
+   "name": "ETH-CAT",
+   "aliases": [
+    "Ethcathinone",
+    "Ethylpropion"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/ETH-CAT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "eth-lad",
+   "name": "ETH-LAD",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/ETH-LAD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ephedrine",
+   "name": "Ephedrine",
+   "aliases": [
+    "Ephedra"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ephedrine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "escaline",
+   "name": "Escaline",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Escaline",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "ephylone",
+   "name": "Ephylone",
+   "aliases": [
+    "bk-EBDP",
+    "βk-EBDP",
+    "bk-ethyl-K",
+    "k-EBDP"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ephylone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.dark",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "spots"
+     }
+    ]
+   }
+  },
+  {
+   "id": "ethylphenidate",
+   "name": "Ethylphenidate",
+   "aliases": [
+    "EPH"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ethylphenidate",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenidates"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.light"
+      ],
+      "shape": "particles"
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "ethylmorphine",
+   "name": "Ethylmorphine",
+   "aliases": [
+    "Codethyline",
+    "Dionine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ethylmorphine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ephenidine",
+   "name": "Ephenidine",
+   "aliases": [
+    "NEDPA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ephenidine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Diarylethylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ethylone",
+   "name": "Ethylone",
+   "aliases": [
+    "bk-MDEA",
+    "MDEC"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ethylone",
+    "type": "Substance",
+    "class": {
+     "chemical": [],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "orange.dark"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "etizolam",
+   "name": "Etizolam",
+   "aliases": [
+    "Etilaam",
+    "Etizest",
+    "Depas",
+    "sedekopan",
+    "etizola",
+    "inxity",
+    "zoly",
+    "lamet",
+    "towa"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Etizolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Thienodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "flubromazepam",
+   "name": "Flubromazepam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Flubromazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "flualprazolam",
+   "name": "Flualprazolam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Flualprazolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "flunitrazepam",
+   "name": "Flunitrazepam",
+   "aliases": [
+    "Rohypnol",
+    "Roofies",
+    "Roches",
+    "Ruffies",
+    "Circles",
+    "Forget Pill",
+    "Forget Me Pill",
+    "La Rocha",
+    "Mexican Valium",
+    "R2",
+    "Roach 2",
+    "Rophies",
+    "Wolfies"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Flunitrazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "flubromazolam",
+   "name": "Flubromazolam",
+   "aliases": [
+    "f-lam",
+    "flam"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Flubromazolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "fentanyl",
+   "name": "Fentanyl",
+   "aliases": [
+    "fentanil",
+    "Sublimaze",
+    "Actiq",
+    "Durogesic",
+    "Duragesic",
+    "Fentora",
+    "Matrifen",
+    "Haldid",
+    "Onsolis",
+    "Instanyl",
+    "Abstral",
+    "Lazanda"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Fentanyl",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Anilidopiperidine",
+      "Substituted piperidines"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "flunitrazolam",
+   "name": "Flunitrazolam",
+   "aliases": [
+    "fln"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Flunitrazolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "ghb",
+   "name": "GHB",
+   "aliases": [
+    "G",
+    "Xyrem",
+    "Sodium oxybate"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/GHB",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Γ-Hydroxy acid"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "gabapentin",
+   "name": "Gabapentin",
+   "aliases": [
+    "Neurontin",
+    "Gabarone",
+    "Gralise"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Gabapentin",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Gabapentinoids"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "hxe",
+   "name": "HXE",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/HXE",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "brown.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard",
+       "blue.light"
+      ],
+      "fade": "blue.standard"
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "hydrocodone",
+   "name": "Hydrocodone",
+   "aliases": [
+    "Vicodin (with paracetamol)",
+    "Zohydro ER (extended-release)",
+    "Norco"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Hydrocodone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "hydromorphone",
+   "name": "Hydromorphone",
+   "aliases": [
+    "Dilaudid",
+    "Jurnista",
+    "Palladone"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Hydromorphone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard",
+       "purple.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard",
+       "black.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "heroin",
+   "name": "Heroin",
+   "aliases": [
+    "H",
+    "Smack",
+    "Junk",
+    "Brown",
+    "diamorphine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Heroin",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "isopropylphenidate",
+   "name": "Isopropylphenidate",
+   "aliases": [
+    "IPH",
+    "IPPH"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Isopropylphenidate",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenidates"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "ibogaine",
+   "name": "Ibogaine",
+   "aliases": [
+    "Endabuse",
+    "Iboga"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ibogaine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "brown.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "jwh-018",
+   "name": "JWH-018",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/JWH-018",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Naphthoylindole"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "jwh-073",
+   "name": "JWH-073",
+   "aliases": [
+    "Spice"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/JWH-073",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Naphthoylindole"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.dark",
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "lisdexamfetamine",
+   "name": "Lisdexamfetamine",
+   "aliases": [
+    "Vyvanse",
+    "Elvanse"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Lisdexamfetamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "lsz",
+   "name": "LSZ",
+   "aliases": [
+    "LA-SS-Az",
+    "Diazedine",
+    "Lambda"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/LSZ",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.light",
+       "blue.light"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "ketamine",
+   "name": "Ketamine",
+   "aliases": [
+    "K",
+    "Ket",
+    "Kitty",
+    "Special K",
+    "Cat Tranquilizer",
+    "Ketaset",
+    "Ketalar",
+    "Ketanest",
+    "Vitamin K",
+    "Purple",
+    "Jet",
+    "kittens"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Ketamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "spots"
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "lsd",
+   "name": "LSD",
+   "aliases": [
+    "LSD-25",
+    "Lucy",
+    "L",
+    "Acid",
+    "Cid",
+    "Tabs",
+    "Blotter",
+    "Gel",
+    "Windowpane"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/LSD",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Lysergamides"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "lorazepam",
+   "name": "Lorazepam",
+   "aliases": [
+    "Ativan",
+    "Orfidal",
+    "Lorsilan"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Lorazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mcpp",
+   "name": "MCPP",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MCPP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted piperazines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mdai",
+   "name": "MDAI",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MDAI",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Aminoindane"
+     ],
+     "psychoactive": [
+      "Entactogen"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "precipitate"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mdea",
+   "name": "MDEA",
+   "aliases": [
+    "MDE",
+    "Eve"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MDEA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "MDxx",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mxipr",
+   "name": "MXiPr",
+   "aliases": [
+    "MXiP"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MXiPr",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "blue.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "mda",
+   "name": "MDA",
+   "aliases": [
+    "Sass",
+    "Sally",
+    "Tenamfetamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MDA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine"
+     ],
+     "psychoactive": [
+      "Psychedelic",
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "blue.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "mdpv",
+   "name": "MDPV",
+   "aliases": [
+    "Bath Salts",
+    "NRG-1",
+    "bath_salts"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MDPV",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "MDxx",
+      "Substituted cathinones",
+      "Substituted pyrrolidines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ],
+      "fizz": true
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "mdma",
+   "name": "MDMA",
+   "aliases": [
+    "Molly",
+    "Mandy",
+    "Emma",
+    "MD",
+    "Ecstasy",
+    "E",
+    "X",
+    "XTC",
+    "Rolls",
+    "Beans",
+    "Pingers"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MDMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "MDxx",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "blue.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "melatonin",
+   "name": "Melatonin",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Melatonin",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Oneirogen"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "memantine",
+   "name": "Memantine",
+   "aliases": [
+    "Memaxa",
+    "Ebixa",
+    "Namenda",
+    "Namenda XR",
+    "Namzaric (with donepezil",
+    "both extended-release)",
+    "Namzaric"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Memantine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Adamantanes"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "black.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "methadone",
+   "name": "Methadone",
+   "aliases": [
+    "Dolophine",
+    "Methadose"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methadone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Diphenylpropylamine"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.light",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark",
+       "blue.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "methallylescaline",
+   "name": "Methallylescaline",
+   "aliases": [
+    "MAL"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methallylescaline",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mephedrone",
+   "name": "Mephedrone",
+   "aliases": [
+    "4-MMC",
+    "Drone",
+    "M-CAT",
+    "Meow Meow"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Mephedrone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone",
+      "Substituted cathinones"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "purple.standard"
+      ],
+      "shape": "ring"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "brown.standard"
+      ],
+      "shape": "ring"
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "spots"
+     }
+    ]
+   }
+  },
+  {
+   "id": "methcathinone",
+   "name": "Methcathinone",
+   "aliases": [
+    "Ephedrone",
+    "Methcat",
+    "Cat",
+    "Jeff",
+    "MC"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methcathinone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone",
+      "Substituted cathinones"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "methaqualone",
+   "name": "Methaqualone",
+   "aliases": [
+    "Quaaludes",
+    "Ludes",
+    "Mandrax",
+    "Sopor",
+    "Quack",
+    "Vitamin Q",
+    "Soaper",
+    "qualudes"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methaqualone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Quinazolinone"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.light"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "methamphetamine",
+   "name": "Methamphetamine",
+   "aliases": [
+    "Meth",
+    "Crystal",
+    "Desoxyn",
+    "Speed",
+    "Ma",
+    "Ice",
+    "Glass",
+    "Shard",
+    "Tina",
+    "T",
+    "Tweak",
+    "Crank",
+    "Shabu",
+    "Yaba"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methamphetamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard",
+       "blue.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "methiopropamine",
+   "name": "Methiopropamine",
+   "aliases": [
+    "MPA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methiopropamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Thiophene"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "blue.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "methoxetamine",
+   "name": "Methoxetamine",
+   "aliases": [
+    "MXE",
+    "Mexxy"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methoxetamine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.light"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "methylone",
+   "name": "Methylone",
+   "aliases": [
+    "bk-MDMA",
+    "M1",
+    "MDMC"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methylone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ],
+      "observation": 2
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "methylphenidate",
+   "name": "Methylphenidate",
+   "aliases": [
+    "Concerta",
+    "Methylin",
+    "Ritalin",
+    "Equasym XL",
+    "mph",
+    "biphentin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Methylphenidate",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenidates"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "purple.light"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mexedrone",
+   "name": "Mexedrone",
+   "aliases": [
+    "4-MMC-MeO",
+    "4-MMeOC"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Mexedrone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "black.standard",
+       "blue.standard"
+      ],
+      "observation": 1,
+      "shape": "spots"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.light",
+       "blue.standard"
+      ],
+      "observation": 2,
+      "shape": "spots"
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "shape": "spots"
+     }
+    ]
+   }
+  },
+  {
+   "id": "metizolam",
+   "name": "Metizolam",
+   "aliases": [
+    "Desmethyletizolam",
+    "metiz"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Metizolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Thienodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mipt",
+   "name": "MiPT",
+   "aliases": [
+    "n-methyl-n-isopropyltryptamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/MiPT",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "modafinil",
+   "name": "Modafinil",
+   "aliases": [
+    "Alertec",
+    "Modavigil",
+    "Modiodal",
+    "Provigil",
+    "Modalert"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Modafinil",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzhydryl"
+     ],
+     "psychoactive": [
+      "Stimulants",
+      "Eugeroics"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "orange.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "morphine",
+   "name": "Morphine",
+   "aliases": [
+    "MS-Contin",
+    "Oramorph",
+    "Zomorph",
+    "Sevredol",
+    "Duramorph"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Morphine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard",
+       "purple.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.dark"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Sc": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "nm-2-ai",
+   "name": "NM-2-AI",
+   "aliases": [
+    "NM-2AI"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/NM-2-AI",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Aminoindane"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "blue.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "nep",
+   "name": "NEP",
+   "aliases": [
+    "N-Ethylpentedrone",
+    "Ethyl-Pentedrone"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/NEP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "omberacetam",
+   "name": "Omberacetam",
+   "aliases": [
+    "Noopept",
+    "Ноопепт",
+    "GVS-111"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Omberacetam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Peptide"
+     ],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "black.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "o-pce",
+   "name": "O-PCE",
+   "aliases": [
+    "Eticyclidone",
+    "2-Oxo-PCE",
+    "2-DCNEK",
+    "Deschloro-N-ethyl-ketamine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/O-PCE",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "purple.standard"
+      ],
+      "shape": "ring"
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light",
+       "brown.standard"
+      ],
+      "shape": "ring"
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "blue.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "oxiracetam",
+   "name": "Oxiracetam",
+   "aliases": [
+    "neuractiv",
+    "neuromet",
+    "hydroxypiracetam"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Oxiracetam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Racetams"
+     ],
+     "psychoactive": [
+      "Stimulants",
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "oxycodone",
+   "name": "Oxycodone",
+   "aliases": [
+    "OxyContin",
+    "Oxy",
+    "Roxicodone",
+    "Oxecta",
+    "OxyIR",
+    "Endone",
+    "Oxynor",
+    "Codilek",
+    "Oxydor",
+    "Redocam",
+    "Oxygesic",
+    "Percodan",
+    "Percocet"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Oxycodone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "green.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "pma",
+   "name": "PMA",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/PMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen",
+      "Hallucinogens"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard",
+       "brown.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard",
+       "black.standard"
+      ],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "pmma",
+   "name": "PMMA",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/PMMA",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Entactogen"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Fo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "oxymorphone",
+   "name": "Oxymorphone",
+   "aliases": [
+    "Opana"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Oxymorphone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted morphinans"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "pce",
+   "name": "PCE",
+   "aliases": [
+    "Eticyclidine",
+    "PCEEA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/PCE",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "pentedrone",
+   "name": "Pentedrone",
+   "aliases": [
+    "Drone"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Pentedrone",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Cathinone"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "blue.standard",
+       "purple.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "pcp",
+   "name": "PCP",
+   "aliases": [
+    "Angel Dust",
+    "Sherman",
+    "Sernyl",
+    "Wet",
+    "Dust",
+    "Supergrass",
+    "Boat",
+    "Tic Tac",
+    "Zoom",
+    "phencyclidine"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/PCP",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Arylcyclohexylamines"
+     ],
+     "psychoactive": [
+      "Dissociatives"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "blue.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ],
+    "Ca": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "pethidine",
+   "name": "Pethidine",
+   "aliases": [
+    "Meperidine",
+    "Demerol",
+    "Dolantin",
+    "Dolcontral"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Pethidine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted piperidines"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ],
+      "observation": 2
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ],
+      "observation": 2
+     }
+    ]
+   }
+  },
+  {
+   "id": "phenobarbital",
+   "name": "Phenobarbital",
+   "aliases": [
+    "Phenobarbitone",
+    "Luminal",
+    "Phenobarb"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Phenobarbital",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Barbiturates"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "phenibut",
+   "name": "Phenibut",
+   "aliases": [
+    "Fenibut",
+    "Phenybut",
+    "PhGABA"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Phenibut",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Gabapentinoids"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "piracetam",
+   "name": "Piracetam",
+   "aliases": [
+    "nootropil",
+    "lucetam",
+    "noostan",
+    "breinox",
+    "oikamid",
+    "geratam",
+    "biotropil"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Piracetam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Racetams"
+     ],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "pramiracetam",
+   "name": "Pramiracetam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Pramiracetam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Racetams"
+     ],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "pregabalin",
+   "name": "Pregabalin",
+   "aliases": [
+    "Lyrica",
+    "Nervalin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Pregabalin",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Gabapentinoids"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "promethazine",
+   "name": "Promethazine",
+   "aliases": [
+    "Phenergan",
+    "Lergigan"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Promethazine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Phenothiazine"
+     ],
+     "psychoactive": [
+      "Deliriant",
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "proscaline",
+   "name": "Proscaline",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Proscaline",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted phenethylamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 1
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "red.standard"
+      ],
+      "observation": 2
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.dark",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [],
+      "fizz": true
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "psilocybin-mushrooms",
+   "name": "Psilocybin mushrooms",
+   "aliases": [
+    "Psilocybin",
+    "Magic Mushrooms",
+    "Shrooms",
+    "4-PO-DMT"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Psilocybin%20mushrooms",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light",
+       "brown.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "psilocin",
+   "name": "Psilocin",
+   "aliases": [
+    "Psilocine",
+    "Psilocyn",
+    "Psilotsin",
+    "4-HO-DMT",
+    "4-OH-DMT"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Psilocin",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "pink.standard",
+       "purple.standard",
+       "blue.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "pyrazolam",
+   "name": "Pyrazolam",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Pyrazolam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.light"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "psilocybe-cubensis",
+   "name": "Psilocybe cubensis",
+   "aliases": [
+    "Shrooms",
+    "Magic mushroom",
+    "Psilocybe Cubensis Ethanolic Tincture"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Psilocybe%20cubensis",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ],
+      "shape": "spots"
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "sts-135",
+   "name": "STS-135",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/STS-135",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Indolecarboxamide",
+      "Adamantanes"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard",
+       "purple.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "thj-018",
+   "name": "THJ-018",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/THJ-018",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Naphthoylindazole"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "thj-2201",
+   "name": "THJ-2201",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/THJ-2201",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Naphthoylindazole"
+     ],
+     "psychoactive": [
+      "Cannabinoid"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "brown.dark",
+       "black.dark"
+      ]
+     }
+    ],
+    "Ro": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "pink.standard",
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "tma-2",
+   "name": "TMA-2",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/TMA-2",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.dark",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "tma-6",
+   "name": "TMA-6",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/TMA-6",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Amphetamine",
+      "Substituted amphetamines"
+     ],
+     "psychoactive": [
+      "Psychedelic",
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": null
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "tetrahydrocannabinol",
+   "name": "Tetrahydrocannabinol",
+   "aliases": [
+    "THC",
+    "D9-THC",
+    "Cannabis",
+    "Hash",
+    "Marijuana",
+    "Weed"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Tetrahydrocannabinol",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Ca": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "tapentadol",
+   "name": "Tapentadol",
+   "aliases": [
+    "Nucynta",
+    "Palexia",
+    "Yantil",
+    "Yantil SR"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Tapentadol",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Phenylpropylamine"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.light",
+       "red.light",
+       "purple.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard",
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "temazepam",
+   "name": "Temazepam",
+   "aliases": [
+    "Restoril",
+    "Normison"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Temazepam",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.light"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Mo": [
+     {
+      "source": "PNW",
+      "colors": [
+       "pink.standard",
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "tianeptine",
+   "name": "Tianeptine",
+   "aliases": [
+    "Stablon",
+    "Coaxil",
+    "Tatinol"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Tianeptine",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Dibenzothiazepine",
+      "Antidepressants"
+     ],
+     "psychoactive": [
+      "Nootropic",
+      "Opioids",
+      "Antidepressants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "tramadol",
+   "name": "Tramadol",
+   "aliases": [
+    "Tramal",
+    "Tadol",
+    "Tramacur",
+    "Tramundin"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Tramadol",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Phenylpropylamine"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light",
+       "brown.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "brown.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "green.light",
+       "brown.light",
+       "black.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "purple.light"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "black.standard"
+      ]
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "u-47700",
+   "name": "U-47700",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/U-47700",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Benzamide"
+     ],
+     "psychoactive": [
+      "Opioids"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard",
+       "red.standard",
+       "brown.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "zolpidem",
+   "name": "Zolpidem",
+   "aliases": [
+    "Ambien",
+    "Intermezzo",
+    "Edluar",
+    "Zolpimist",
+    "Stilnox"
+   ],
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Zolpidem",
+    "type": "Substance",
+    "class": {
+     "chemical": [
+      "Imidazopyridine"
+     ],
+     "psychoactive": [
+      "Hallucinogens",
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "phentermine",
+   "name": "Phentermine",
+   "info": {
+    "wiki": "https://psychonautwiki.org/wiki/Phentermine",
+    "type": "Substance"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+};
