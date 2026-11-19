@@ -17,6 +17,9 @@
   /* the descriptions of the reagents: their licence, their sources and
      the texts by language */
   const DESCRIPTIONS = window.DESCRIPTIONS || {};
+  /* the reagents in alphabetical order, everywhere: the table, the select
+     and the reagent cards; the source orders them by coverage */
+  DATA.reagents.sort((a, b) => a.name.localeCompare(b.name));
   /* how many substances each reagent documents: the coverage the headers
      of the table and the reagent cards show */
   for (const reagent of DATA.reagents) {
