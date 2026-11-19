@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 data/.protestkit_labels.json
 dist/
+data.json
+psychonautwiki_schema.json
