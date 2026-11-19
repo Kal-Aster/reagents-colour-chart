@@ -148,7 +148,8 @@ class Blocks(HTMLParser):
 
 def download(url: str) -> bytes:
     """Una richiesta alla volta: Wikipedia risponde 429 a chi ne fa troppe
-    di fila, e dice quanto aspettare."""
+    di fila, e dice quanto aspettare. Anche una risposta che non arriva si
+    riprova."""
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     for attempt in range(5):
         time.sleep(1)
@@ -159,7 +160,9 @@ def download(url: str) -> bytes:
             if error.code != 429:
                 raise
             time.sleep(int(error.headers.get("Retry-After", 10 * (attempt + 1))))
-    raise RuntimeError(f"troppe richieste: {url}")
+        except (urllib.error.URLError, TimeoutError):
+            time.sleep(10 * (attempt + 1))
+    raise RuntimeError(f"nessuna risposta: {url}")
 
 
 def query(**parameters) -> dict:
