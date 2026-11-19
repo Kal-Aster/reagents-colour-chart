@@ -77,21 +77,18 @@ window.REAGENTS = {
   {
    "id": "Mq",
    "name": "Marquis",
-   "wiki": "https://psychonautwiki.org/wiki/Marquis",
    "duration": 30,
    "stir": false
   },
   {
    "id": "Me",
    "name": "Mecke",
-   "wiki": "https://psychonautwiki.org/wiki/Mecke",
    "duration": 30,
    "stir": false
   },
   {
    "id": "Md",
    "name": "Mandelin",
-   "wiki": "https://psychonautwiki.org/wiki/Mandelin",
    "baseColor": "yellow.standard",
    "duration": 30,
    "stir": false
@@ -99,21 +96,18 @@ window.REAGENTS = {
   {
    "id": "Fr",
    "name": "Froehde",
-   "wiki": "https://psychonautwiki.org/wiki/Froehde",
    "duration": 30,
    "stir": false
   },
   {
    "id": "Li",
    "name": "Liebermann",
-   "wiki": "https://psychonautwiki.org/wiki/Liebermann",
    "duration": 30,
    "stir": false
   },
   {
    "id": "Si",
    "name": "Simon's",
-   "wiki": "https://psychonautwiki.org/wiki/Simon's",
    "baseColor": "orange.light",
    "duration": 0,
    "stir": false
@@ -121,34 +115,29 @@ window.REAGENTS = {
   {
    "id": "Eh",
    "name": "Ehrlich",
-   "wiki": "https://psychonautwiki.org/wiki/Ehrlich",
    "duration": 300,
    "stir": false
   },
   {
    "id": "Ho",
    "name": "Hofmann",
-   "wiki": "https://psychonautwiki.org/wiki/Hofmann",
    "duration": 300,
    "stir": false
   },
   {
    "id": "Ga",
    "name": "Gallic",
-   "wiki": "https://psychonautwiki.org/wiki/Gallic",
    "stir": false
   },
   {
    "id": "Ro",
    "name": "Robadope",
-   "wiki": "https://psychonautwiki.org/wiki/Robadope",
    "duration": 30,
    "stir": false
   },
   {
    "id": "Mo",
    "name": "Morris",
-   "wiki": "https://psychonautwiki.org/wiki/Morris",
    "baseColor": "pink.standard",
    "duration": 30,
    "stir": true
@@ -156,27 +145,23 @@ window.REAGENTS = {
   {
    "id": "Zi",
    "name": "Zimmermann",
-   "wiki": "https://psychonautwiki.org/wiki/Zimmermann",
    "stir": false
   },
   {
    "id": "Sc",
    "name": "Scott",
-   "wiki": "https://psychonautwiki.org/wiki/Scott",
    "baseColor": "pink.standard",
    "stir": false
   },
   {
    "id": "Fo",
    "name": "Folin",
-   "wiki": "https://psychonautwiki.org/wiki/Folin",
    "duration": 30,
    "stir": false
   },
   {
    "id": "Ca",
    "name": "Cannabis (4-AP)",
-   "wiki": "https://psychonautwiki.org/wiki/Cannabis_(4-AP)",
    "stir": false
   }
  ],

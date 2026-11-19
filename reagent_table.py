@@ -1883,7 +1883,7 @@ def write_csv(path):
 #   palette    i 27 colori della fonte, riorganizzati per famiglia: nessuna sfumatura
 #              puo' mancare e nessuna puo' essere duplicata, perche' ogni famiglia
 #              ha esattamente light / standard / dark
-#   reagents   id, nome, pagina wiki e il colore PROPRIO del reattivo (la sua prima
+#   reagents   id, nome e il colore PROPRIO del reattivo (la sua prima
 #              osservazione, che non e' un risultato della reazione)
 #   substances  nome, alias, info (pagina wiki + tipo) e le reazioni per reattivo
 #   reactions  una voce per percorso osservato: la sequenza dei colori osservati,
@@ -2136,8 +2136,7 @@ def build_schema():
     base = reagent_base_colors()
     reagents = []
     for r in RG_ORDER:
-        rec = {"id": r["shortName"], "name": r["fullName"],
-               "wiki": "%s/wiki/%s" % (SOURCE_URL, r["fullName"].replace(" ", "_"))}
+        rec = {"id": r["shortName"], "name": r["fullName"]}
         if r["shortName"] in base:
             rec["baseColor"] = base[r["shortName"]]
         proc = REAGENT_PROCEDURE.get(r["fullName"], {})

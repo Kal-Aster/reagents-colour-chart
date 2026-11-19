@@ -136,31 +136,11 @@ const STRINGS = {
     dataTitle: "Reagenti e fonti",
     dataReagents: "Reagenti",
     reagentCoverage: "Dati per {n} sostanze su {t}",
-    /* Le note dei reagenti vengono dal primo paragrafo della loro voce su
-       Wikipedia (CC BY-SA 4.0), ridotto alla parte che serve. */
-    reagentNotes: {
-      Mq:
-        "Formaldeide in acido solforico concentrato. Sostanze diverse danno colori diversi; un po' di metanolo rallenta la reazione e rende più facile seguire il cambio di colore.",
-      Si:
-        "Reagisce con le ammine secondarie, come MDMA e metanfetamina, e dà una soluzione blu.",
-      Fr:
-        "Acido molibdico, o un molibdato, sciolto in acido solforico concentrato caldo. Serve soprattutto a riconoscere gli oppioidi.",
-      Li:
-        "Nitrito di potassio (o di sodio) in acido solforico concentrato. Si usa per cocaina, morfina, PMA e PMMA.",
-      Md:
-        "Metavanadato di ammonio in acido solforico concentrato. Si usa soprattutto per ketamina e PMA.",
-      Me:
-        "Acido selenioso in acido solforico concentrato.",
-      Mo:
-        "A base di tiocianato di cobalto(II), il composto del test di Scott per la cocaina.",
-      Eh:
-        "Contiene p-dimetilamminobenzaldeide (DMAB) e riconosce gli indoli, come LSD e triptamine.",
-      Fo:
-        "1,2-naftochinone-4-solfonato di sodio. In soluzione alcalina reagisce con ammine e amminoacidi e forma un prodotto fluorescente.",
-    },
+    reagentSource: "Fonte",
+    reagentSourceOriginal: "Testo originale, non tradotto.",
+    reagentSourceTranslated: "Testo tradotto dall'originale.",
     dataSources: "Fonti e licenze",
-    sourcesNote:
-      "Le descrizioni dei reagenti vengono da Wikipedia (CC BY-SA 4.0). I colori cambiano da un kit all'altro.",
+    descriptionsDownload: "Scarica le descrizioni dei reagenti (descriptions.js)",
 
     themeToggle: "Cambia tema chiaro/scuro",
   },
@@ -298,29 +278,11 @@ const STRINGS = {
     dataTitle: "Reagents and sources",
     dataReagents: "Reagents",
     reagentCoverage: "Data for {n} of {t} substances",
-    reagentNotes: {
-      Mq:
-        "Formaldehyde in concentrated sulfuric acid. Different compounds give different colours; a little methanol slows the reaction down so the colour change is easier to follow.",
-      Si:
-        "Reacts with secondary amines such as MDMA and methamphetamine to give a blue solution.",
-      Fr:
-        "Molybdic acid, or a molybdate salt, dissolved in hot concentrated sulfuric acid. Used above all to identify opioids.",
-      Li:
-        "Potassium (or sodium) nitrite in concentrated sulfuric acid. Used to test for cocaine, morphine, PMA and PMMA.",
-      Md:
-        "Ammonium metavanadate in concentrated sulfuric acid. Used mainly to detect ketamine and PMA.",
-      Me:
-        "Selenous acid in concentrated sulfuric acid.",
-      Mo:
-        "Based on cobalt(II) thiocyanate, the compound of the Scott test for cocaine.",
-      Eh:
-        "Contains p-dimethylaminobenzaldehyde (DMAB) and identifies indoles, such as LSD and tryptamines.",
-      Fo:
-        "Sodium 1,2-naphthoquinone-4-sulfonate. In alkaline solution it reacts with amines and amino acids to form a fluorescent product.",
-    },
+    reagentSource: "Source",
+    reagentSourceOriginal: "Original text, not translated.",
+    reagentSourceTranslated: "Text translated from the original.",
     dataSources: "Sources and licences",
-    sourcesNote:
-      "The reagent descriptions come from Wikipedia (CC BY-SA 4.0). Colours change from one kit to another.",
+    descriptionsDownload: "Download the reagent descriptions (descriptions.js)",
 
     themeToggle: "Switch light/dark theme",
   },

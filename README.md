@@ -15,8 +15,14 @@ pagina lo usa così com'è.
 Ogni cella espone **tutte** le letture: quando una fonte dà più esiti per la
 stessa coppia, la pagina li mostra tutti.
 
-Le descrizioni dei reagenti nella sezione "Reagenti" vengono dal primo
-paragrafo delle voci di Wikipedia (CC BY-SA 4.0).
+Le descrizioni dei reagenti nella sezione "Reagenti" sono un passaggio in
+inglese, riportato com'è e tradotto a mano in italiano, tutti e due in
+`data/descriptions.js`. Vengono dalle voci di Wikipedia (CC BY-SA 4.0) e,
+per il 4-AP, che su Wikipedia non c'è, da un articolo open access (Houtzager
+et al. 2024, CC BY 4.0). Il file è in CC BY-SA 4.0, scritto nel commento in
+cima e in `license`; `sources` ha le fonti principali con la loro licenza e
+`locales` i testi per lingua. Ogni descrizione ha il link al punto da cui
+viene, la sua fonte principale e dice se è tradotta.
 
 Le fonti usate in precedenza (Wikipedia, Grassroots Harm Reduction, EDM
 Identity, reagent-tests.uk, ProTestKit, Tang et al. 2010) sono servite a
@@ -26,8 +32,13 @@ dati estratti sono in `legacy/`, fuori dalla pagina.
 ## Portare i dati nella pagina
 
 ```bash
-python3 tools/build_data.py     # psychonautwiki_schema.json -> data/reagents.json e .js
+python3 tools/fetch_descriptions.py   # Wikipedia, Europe PMC -> data/descriptions.js
+python3 tools/build_data.py           # psychonautwiki_schema.json -> data/reagents.json e .js
 ```
+
+`fetch_descriptions.py` riscrive le fonti e l'inglese e non tocca le
+traduzioni: dice quali reagenti sono da tradurre e quali vanno rivisti perché l'originale inglese è cambiato
+dall'ultima volta.
 
 ## La pagina in un file solo
 
@@ -57,7 +68,7 @@ piu'.
 ```
 sources     { [fonte]: { label, year, url, license, fetchedAt } }
 palette     { [tinta]: { shades: { light, standard, dark } } }   hex di ogni colore
-reagents[]  { id, name, wiki, duration?, stir, baseColor? }
+reagents[]  { id, name, duration?, stir, baseColor? }
 substances[]
   id, name, aliases?
   info        { wiki, type, class? }

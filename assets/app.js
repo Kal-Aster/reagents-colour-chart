@@ -14,6 +14,9 @@
   } = window.Colors;
 
   const DATA = window.REAGENTS;
+  /* the descriptions of the reagents: their licence, their sources and
+     the texts by language */
+  const DESCRIPTIONS = window.DESCRIPTIONS || {};
   /* how many substances each reagent documents: the coverage the headers
      of the table and the reagent cards show */
   for (const reagent of DATA.reagents) {
@@ -2632,16 +2635,7 @@
       head.className = "reagent-head";
       const name = document.createElement("span");
       name.className = "reagent-name";
-      if (r.wiki) {
-        const a = document.createElement("a");
-        a.href = r.wiki;
-        a.target = "_blank";
-        a.rel = "noopener";
-        a.textContent = r.name;
-        name.append(a);
-      } else {
-        name.textContent = r.name;
-      }
+      name.textContent = r.name;
       /* the time, with the same little clock as the tiles */
       const when = document.createElement("span");
       when.className = "next-card-when";
@@ -2651,41 +2645,118 @@
       when.hidden = !time.textContent;
       head.append(name, when);
       li.append(head);
-
-      const note = document.createElement("p");
-      note.className = "reagent-note";
-      /* not every reagent has a note: t() would give back the key */
-      note.textContent = t("reagentNotes")[r.id] || "";
-      if (note.textContent) li.append(note);
       /* how many substances the sources document with this reagent */
       const coverage = document.createElement("p");
       coverage.className = "reagent-meta";
       coverage.textContent = interpolate(t("reagentCoverage"), { n: r.known, t: r.total });
       li.append(coverage);
+
+      /* the description, in the chosen language, with where it comes from
+         and whether it was translated: not every reagent has one */
+      const description = DESCRIPTIONS.locales?.[state.lang]?.reagents[r.name];
+      if (description) {
+        const note = document.createElement("p");
+        note.className = "reagent-note";
+        note.textContent = description.description;
+        li.append(note, sourceButton(r, description.source));
+      }
       ul.append(li);
     }
   }
 
+  /* "Source", at the foot of the card: it opens the popover with the link
+     and whether the text was translated */
+  function sourceButton(reagent, source) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn-quiet reagent-source";
+    button.textContent = t("reagentSource");
+    button.addEventListener("click", (ev) => openDescriptionSource(ev, reagent, source));
+    return button;
+  }
+
+  function openDescriptionSource(ev, reagent, source) {
+    const body = $("#popover-body");
+    body.textContent = "";
+    const title = document.createElement("h3");
+    title.className = "popover-title";
+    title.textContent = `${reagent.name} · ${t("reagentSource")}`;
+    /* the main source, with its licence; the link is the exact place */
+    const main = DESCRIPTIONS.sources?.[source.main];
+    const mainLine = document.createElement("p");
+    mainLine.className = "description-source";
+    mainLine.textContent = main ? [main.label, main.license].join(" · ") : "";
+    const link = document.createElement("a");
+    link.href = source.href;
+    link.target = "_blank";
+    link.rel = "noopener";
+    /* the address without the protocol, readable: "Simon's", not "Simon%27s" */
+    link.textContent = decodeURI(source.href).replace(/^https?:\/\//, "");
+    const linkLine = document.createElement("p");
+    linkLine.className = "description-source";
+    linkLine.append(link);
+    const translation = document.createElement("p");
+    translation.className = "description-source muted";
+    translation.textContent = t(source.translated ? "reagentSourceTranslated" : "reagentSourceOriginal");
+    body.append(title);
+    if (main) body.append(mainLine);
+    body.append(linkLine, translation);
+    showPopover(ev);
+  }
+
+  /* The sources of the dataset, then those of the descriptions of the
+     reagents, which are not in the dataset; the descriptions are one file,
+     downloaded once for all of their sources. */
   function renderSources() {
     const ul = $("#source-list");
     ul.textContent = "";
-    for (const [key, src] of Object.entries(DATA.sources)) {
-      const li = document.createElement("li");
-      const name = document.createElement("div");
-      name.className = "source-name";
-      const a = document.createElement("a");
-      a.href = src.url;
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = src.label;
-      name.append(a);
-      li.append(name);
-      const meta = document.createElement("div");
-      meta.className = "source-meta";
-      meta.textContent = [src.year, src.license].filter(Boolean).join(" · ");
-      li.append(meta);
-      ul.append(li);
+    for (const src of Object.values(DATA.sources)) {
+      ul.append(sourceItem(src));
     }
+    for (const src of Object.values(DESCRIPTIONS.sources || {})) {
+      ul.append(sourceItem(src));
+    }
+    const download = $("#descriptions-download");
+    download.textContent = "";
+    download.hidden = !DESCRIPTIONS.sources;
+    if (DESCRIPTIONS.sources) download.append(descriptionsDownload());
+  }
+
+  function sourceItem(src) {
+    const li = document.createElement("li");
+    const name = document.createElement("div");
+    name.className = "source-name";
+    const a = document.createElement("a");
+    a.href = src.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = src.label;
+    name.append(a);
+    li.append(name);
+    const meta = document.createElement("div");
+    meta.className = "source-meta";
+    meta.textContent = [src.year, src.license].filter(Boolean).join(" · ");
+    li.append(meta);
+    return li;
+  }
+
+  /* The file is made from the descriptions the page has loaded: the
+     single-file page has no data/ folder to link to. It is made once, and
+     the link drawn again in the other language reuses it. The comment at
+     the top of the original is not in the data: the licence is. */
+  let descriptionsUrl = null;
+
+  function descriptionsDownload() {
+    if (!descriptionsUrl) {
+      const content = `/* Licence: ${DESCRIPTIONS.license} */\n`
+        + "window.DESCRIPTIONS = " + JSON.stringify(DESCRIPTIONS, null, 1) + ";\n";
+      descriptionsUrl = URL.createObjectURL(new Blob([content], { type: "text/javascript" }));
+    }
+    const link = document.createElement("a");
+    link.download = "descriptions.js";
+    link.href = descriptionsUrl;
+    link.textContent = t("descriptionsDownload");
+    return link;
   }
 
   /* ── filters ──────────────────────────────────────────────────── */

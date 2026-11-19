@@ -94,23 +94,28 @@ def minify_js(js: str) -> str:
         return js
 
 
+DATA_FILES = ("data/reagents.js", "data/descriptions.js")
+
+
 def minify_data(js: str) -> str:
     """Il dataset occupa nove decimi del file: compatto diventa molto
     piu' piccolo e la pagina non cambia."""
-    start = js.find("{")
+    assignment = re.search(r"(window\.\w+)\s*=\s*(?=\{)", js)
     end = js.rfind("}")
-    if start < 0 or end < start:
+    if not assignment or end < assignment.end():
         return js
-    data = json.loads(js[start:end + 1])
-    return "window.REAGENTS=" + json.dumps(data, separators=(",", ":"),
-                                          ensure_ascii=False) + ";"
+    # il commento in cima (la licenza) resta com'e'
+    head = js[:assignment.start()]
+    data = json.loads(js[assignment.end():end + 1])
+    return head + assignment.group(1) + "=" + json.dumps(
+        data, separators=(",", ":"), ensure_ascii=False) + ";"
 
 
 def inline_scripts(html: str, minify: bool = True) -> str:
     def repl(m: re.Match) -> str:
         name = m.group(1).split("?")[0]
         js = read(ROOT / name)
-        if name.endswith("reagents.js"):
+        if name in DATA_FILES:
             js = minify_data(js)
         elif minify:
             js = minify_js(js)
