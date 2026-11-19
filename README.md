@@ -134,6 +134,22 @@ tools/serve.py              server di sviluppo
 assets/                     la pagina
 ```
 
+## Licenze
+
+| Parte | Licenza |
+|---|---|
+| Codice (`index.html`, `assets/`, `tools/`, `reagent_table.py`) | [AGPL-3.0](LICENSE) |
+| Dati della tabella (`data/reagents.*`) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| Descrizioni dei reagenti (`data/descriptions.js`) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+| Testi e documenti | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
+
+I dati della tabella sono un adattamento dei dati semantici di
+[PsychonautWiki](https://psychonautwiki.org), che restano in CC BY 4.0: la
+licenza non commerciale vale per lo schema, la pulizia e l'organizzazione di
+questo progetto, non per i dati della fonte. Le descrizioni restano in
+CC BY-SA perché vengono in gran parte da Wikipedia. Consultare la pagina, a
+qualunque scopo, non è regolato da nessuna di queste licenze.
+
 ## Avvertenza
 
 I test con reagenti sono **solo preliminari**. Un colore non è
