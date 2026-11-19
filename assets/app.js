@@ -2725,16 +2725,32 @@
     return li;
   }
 
-  /* The file is made from the descriptions the page has loaded: the
-     single-file page has no data/ folder to link to. It is made once, and
-     the link drawn again in the other language reuses it. The comment at
-     the top of the original is not in the data: the licence is. */
+  /* The file with the comment that says the licence and where the texts
+     come from. The page served over http links the file itself. Otherwise
+     the file is written again from the descriptions the page has loaded,
+     laid out as tools/fetch_descriptions.py lays it out; the comment comes
+     from the script in the single-file page, which the bundler leaves
+     with its comment and tags with the file it comes from. From the disk
+     a script loaded from a file cannot be read: there the comment is just
+     the licence. The file is made once, and the link drawn again in the
+     other language reuses it. */
   let descriptionsUrl = null;
 
   function descriptionsDownload() {
+    const external = document.querySelector('script[src*="data/descriptions.js"]');
+    const inline = document.querySelector('script[data-src="data/descriptions.js"]');
+    if (!descriptionsUrl && external && /^https?:$/.test(location.protocol)) {
+      descriptionsUrl = external.src;
+    }
     if (!descriptionsUrl) {
-      const content = `/* Licence: ${DESCRIPTIONS.license} */\n`
-        + "window.DESCRIPTIONS = " + JSON.stringify(DESCRIPTIONS, null, 1) + ";\n";
+      const assignment = "window.DESCRIPTIONS";
+      const text = inline?.textContent ?? "";
+      const comment = text.includes(assignment)
+        /* the bundler puts the script after a line break of its own */
+        ? text.slice(0, text.indexOf(assignment)).replace(/^\n/, "")
+        : `/* Licence: ${DESCRIPTIONS.license} */\n`;
+      const content = comment
+        + `${assignment} = ` + JSON.stringify(DESCRIPTIONS, null, 1) + ";\n";
       descriptionsUrl = URL.createObjectURL(new Blob([content], { type: "text/javascript" }));
     }
     const link = document.createElement("a");

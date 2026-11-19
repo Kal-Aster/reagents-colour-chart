@@ -121,7 +121,8 @@ def inline_scripts(html: str, minify: bool = True) -> str:
             js = minify_js(js)
         # uno script inline non puo' contenere la sequenza che chiude il tag
         js = js.replace("</script", "<\\/script")
-        return "<script>\n" + js + "\n</script>"
+        # il tag dice da che file viene: la pagina ritrova cosi' i suoi file
+        return f'<script data-src="{name}">\n' + js + "\n</script>"
 
     return SCRIPT_TAG.sub(repl, html)
 
