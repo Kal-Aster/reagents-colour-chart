@@ -742,10 +742,10 @@
     b.addEventListener("click", (ev) => openPopover(ev, substance, reagentId));
     foot.append(b);
     /* the foot is anchored to the cell, not to the readings: it is always
-       at the bottom of the cell, and the readings leave it the room */
-    td.append(foot);
-
-    td.append(wrap);
+       at the bottom of the cell, and the readings leave it the room. It
+       comes after the readings, so it is drawn on top of them: before,
+       the readings covered the link and it was hard to click. */
+    td.append(wrap, foot);
 
     if (obs) {
       td.dataset.outcome = outcome || "no";
