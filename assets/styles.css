@@ -142,7 +142,8 @@ a:hover { text-decoration: none; }
 #bundle-link { color: var(--ink); text-decoration: none; }
 
 .banner {
-  margin: 0 0 4px;
+  display: flex; align-items: flex-start; gap: 12px;
+  margin: 0 0 var(--gap);
   background: var(--warn-soft);
   border: 1px solid var(--warn);
   border-radius: var(--radius);
@@ -150,6 +151,22 @@ a:hover { text-decoration: none; }
   color: var(--warn);
   font-size: .9em;
 }
+.banner[hidden] { display: none; }
+.banner > span { flex: 1 1 auto; }
+/* the cross is in the corner, in the colour of the warning */
+.banner-close {
+  flex: 0 0 auto; margin: -3px -6px -3px 0; padding: 0;
+  width: 24px; height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: var(--radius); background: transparent;
+  color: var(--warn); font: inherit; line-height: 1; cursor: pointer;
+}
+.banner-close:hover { background: var(--warn); color: var(--warn-soft); }
+/* the closed warning: the "!" of the readings, in the size of a button;
+   the class of the "!" comes later in the sheet, hence the two classes */
+.warn-btn.banner-open { width: 24px; height: 24px; font-size: .85em; }
+.warn-btn.banner-open[hidden] { display: none; }
+.popover-banner { grid-column: 1 / -1; margin: 0; line-height: 1.45; }
 
 /* ────────────────────────────────────────────────────────────────
    Buttons and controls

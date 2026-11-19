@@ -11,6 +11,8 @@ const STRINGS = {
     banner:
       "I test colorimetrici sono presuntivi e qualitativi: un colore suggerisce quale sostanza potrebbe esserci, non quanta ce n'è, e un test negativo non la esclude. Solo un'analisi di laboratorio, come la gascromatografia-spettrometria di massa (GC-MS), dà una risposta certa.",
     skip: "Salta alla tabella",
+    bannerClose: "Chiudi l'avviso",
+    bannerOpen: "Mostra l'avviso",
 
     obsTitle: "Osservazioni",
     obsReagent: "Reagente",
@@ -151,6 +153,8 @@ const STRINGS = {
     banner:
       "Colour tests are presumptive and qualitative: a colour suggests which substance might be there, not how much of it, and a negative test does not rule it out. Only a laboratory analysis, such as gas chromatography–mass spectrometry (GC-MS), gives a certain answer.",
     skip: "Skip to the table",
+    bannerClose: "Close the warning",
+    bannerOpen: "Show the warning",
 
     obsTitle: "Observations",
     obsReagent: "Reagent",

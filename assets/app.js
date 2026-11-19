@@ -103,6 +103,13 @@
     } catch (e) { /* file:// can block the storage */ }
     return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
+  /* the warning, once closed, stays closed on the next visit */
+  function storedBannerClosed() {
+    try {
+      return localStorage.getItem("bannerClosed") === "1";
+    } catch (e) { /* file:// can block the storage */ }
+    return false;
+  }
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
@@ -129,6 +136,7 @@
     lang: "it",
     /* the page opens with the theme of the system; the button overrides it */
     theme: storedTheme(),
+    bannerClosed: storedBannerClosed(),
     /* {id, reagent, noReaction, proportion, stages:[{hue, modifier}]}
        Every test carries its own proportion of product to reagent: one test
        can be loaded differently from the next. */
@@ -2329,8 +2337,9 @@
   }
 
   /* The popover is fixed: it opens next to the button that opened it, and
-     stays inside the window. */
-  function showPopover(ev) {
+     stays inside the window. It starts from the left edge of the button,
+     or ends at its right edge for a button in the right corner. */
+  function showPopover(ev, { alignRight = false } = {}) {
     const pop = $("#popover");
     pop.hidden = false;
     lastFocused = ev.currentTarget;
@@ -2340,7 +2349,7 @@
     const vh = document.documentElement.clientHeight;
     let top = r.bottom + 6;
     if (top + pop.offsetHeight > vh - 8) top = Math.max(8, r.top - pop.offsetHeight - 6);
-    let left = r.left;
+    let left = alignRight ? r.right - pop.offsetWidth : r.left;
     if (left + pop.offsetWidth > vw - 8) left = vw - pop.offsetWidth - 8;
     pop.style.top = `${Math.max(8, top)}px`;
     pop.style.left = `${Math.max(8, left)}px`;
@@ -2769,12 +2778,32 @@
       `${STRINGS[state.lang].otherLang} — ${STRINGS[state.lang].langName}`);
     $("#theme-toggle").setAttribute("aria-label", t("themeToggle"));
     $("#detail-close").setAttribute("aria-label", t("detailClose"));
+    $("#banner-close").setAttribute("aria-label", t("bannerClose"));
+    $("#banner-open").setAttribute("aria-label", t("bannerOpen"));
     /* the single-file page has no link to itself */
     const download = $("#bundle-link");
     if (download) download.title = t("downloadHint");
     $(".skip-link")?.setAttribute("href", "#table-scroll");
     const skip = document.querySelector(".skip-link");
     if (skip) skip.textContent = t("skip");
+  }
+
+  /* The warning is open in the card, or closed behind a "!" in its
+     corner. */
+  function renderBanner() {
+    $("#banner").hidden = state.bannerClosed;
+    $("#banner-open").hidden = !state.bannerClosed;
+  }
+
+  /* the same warning, in the popover */
+  function openBanner(ev) {
+    const body = $("#popover-body");
+    body.textContent = "";
+    const text = document.createElement("p");
+    text.className = "popover-banner";
+    text.textContent = t("banner");
+    body.append(text);
+    showPopover(ev, { alignRight: true });
   }
 
   function applyTheme() {
@@ -2907,6 +2936,13 @@
       try { localStorage.setItem("theme", state.theme); } catch (e) { /* no storage */ }
       applyTheme();
     });
+    $("#banner-close").addEventListener("click", () => {
+      state.bannerClosed = true;
+      try { localStorage.setItem("bannerClosed", "1"); } catch (e) { /* no storage */ }
+      renderBanner();
+      $("#banner-open").focus();
+    });
+    $("#banner-open").addEventListener("click", openBanner);
     /* Copying the address is copying the link: the observations are in
        the fragment. The clipboard is not always there (a page opened from
        the disk, an old browser), so there is a fallback. */
@@ -2972,6 +3008,7 @@
     loadFromUrl();
     applyTheme();
     applyStrings();
+    renderBanner();
     initDrag();
     renderReagents();
     renderObservations();
