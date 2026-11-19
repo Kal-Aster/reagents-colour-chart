@@ -138,8 +138,6 @@ a:hover { text-decoration: none; }
 .titles { flex: 1 1 auto; min-width: 0; }
 .titles h1 { margin: 0; }
 .header-tools { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
-/* the download is a link that looks like the other buttons */
-#bundle-link { color: var(--ink); text-decoration: none; }
 
 .banner {
   display: flex; align-items: flex-start; gap: 12px;
@@ -1083,6 +1081,14 @@ td.cell-warning { background: var(--warn-soft); }
    not gathered in a card: everything is there, but only what the reader
    wants is open. */
 .data-section { margin: var(--gap) 0 0; }
+/* the licence of the page, under everything, outside the accordions */
+.site-footer { margin: calc(var(--gap) * 2) 0 var(--gap); }
+/* a row for each part of the page: its name, its licence, where to get it */
+.licence-row {
+  margin: 0 0 4px;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px;
+}
+.licence-label { min-width: 11em; }
 .data-section > .section-title {
   margin: 0 0 4px; font-size: 1.05em;
 }
@@ -1159,11 +1165,9 @@ td.cell-warning { background: var(--warn-soft); }
 
 @media (max-width: 640px) {
   :root { --col-substance: 132px; }
-  /* the title and the buttons stay on one row: the label of the
-     download gives way to its arrow */
+  /* the title and the buttons stay on one row */
   h1 { font-size: 1.1rem; }
   .header-tools { gap: 0; }
-  .download-label { display: none; }
   .banner { font-size: .82em; }
   .detail { width: 100%; }
   /* The cards of the next test: the row still scrolls sideways, but the

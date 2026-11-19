@@ -20,11 +20,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "index.html"
 
-# Il collegamento al file unico vale per la pagina in reparto, non per il
-# file unico stesso (che non contiene la cartella dist/).
-BUNDLE_LINK = re.compile(
-    r'\s*<a id="bundle-link"[^>]*>.*?</a>', re.S)
-
 LINK_TAG = re.compile(r'<link rel="stylesheet" href="([^"]+)"\s*>')
 SCRIPT_TAG = re.compile(r'<script src="([^"]+)"\s*></script>')
 
@@ -131,7 +126,6 @@ def build(out: Path, minify: bool = True) -> int:
     html = read(SOURCE)
     html = inline_style(html, minify)
     html = inline_scripts(html, minify)
-    html = BUNDLE_LINK.sub("", html)
     # il parametro di versione non serve piu': non ci sono file esterni
     html = re.sub(r"\?v=\d+", "", html)
     out.parent.mkdir(parents=True, exist_ok=True)

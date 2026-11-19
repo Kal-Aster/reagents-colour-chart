@@ -139,7 +139,10 @@ const STRINGS = {
     reagentSourceOriginal: "Testo originale, non tradotto.",
     reagentSourceTranslated: "Testo tradotto dall'originale.",
     dataSources: "Fonti e licenze",
-    descriptionsDownload: "Scarica le descrizioni dei reagenti (descriptions.js)",
+    licenceCode: "Codice",
+    licenceData: "Dati della tabella",
+    licenceDescriptions: "Descrizioni dei reagenti",
+    licenceTexts: "Altri testi",
 
     themeToggle: "Cambia tema chiaro/scuro",
   },
@@ -280,7 +283,10 @@ const STRINGS = {
     reagentSourceOriginal: "Original text, not translated.",
     reagentSourceTranslated: "Text translated from the original.",
     dataSources: "Sources and licences",
-    descriptionsDownload: "Download the reagent descriptions (descriptions.js)",
+    licenceCode: "Code",
+    licenceData: "Table data",
+    licenceDescriptions: "Reagent descriptions",
+    licenceTexts: "Other texts",
 
     themeToggle: "Switch light/dark theme",
   },

@@ -13,7 +13,9 @@
     hueName, modifierName,
   } = window.Colors;
 
-  const DATA = window.REAGENTS;
+  /* The page sorts the reagents and adds their coverage: it works on a
+     copy, and the data as loaded stays as it is, for the download. */
+  const DATA = structuredClone(window.REAGENTS);
   /* the descriptions of the reagents: their licence, their sources and
      the texts by language */
   const DESCRIPTIONS = window.DESCRIPTIONS || {};
@@ -2690,8 +2692,8 @@
   }
 
   /* The sources of the dataset, then those of the descriptions of the
-     reagents, which are not in the dataset; the descriptions are one file,
-     downloaded once for all of their sources. */
+     reagents, which are not in the dataset. */
+
   function renderSources() {
     const ul = $("#source-list");
     ul.textContent = "";
@@ -2701,10 +2703,67 @@
     for (const src of Object.values(DESCRIPTIONS.sources || {})) {
       ul.append(sourceItem(src));
     }
-    const download = $("#descriptions-download");
-    download.textContent = "";
-    download.hidden = !DESCRIPTIONS.sources;
-    if (DESCRIPTIONS.sources) download.append(descriptionsDownload());
+  }
+
+  /* ── the footer: licences and downloads ───────────────────────── */
+
+  const REPOSITORY_URL = "https://github.com/Kal-Aster/reagents-colour-chart";
+  const BUNDLE_FILE = "dist/tabella-dei-colori-dei-reagenti.html";
+  /* the single-file page has its scripts inline, each tagged with its file */
+  const IS_BUNDLE = !!document.querySelector("script[data-src]");
+  const AGPL = { name: "AGPL-3.0", url: "https://www.gnu.org/licenses/agpl-3.0.html" };
+  const BY_NC_SA = { name: "CC BY-NC-SA 4.0", url: "https://creativecommons.org/licenses/by-nc-sa/4.0/" };
+  const BY_SA = { name: "CC BY-SA 4.0", url: "https://creativecommons.org/licenses/by-sa/4.0/" };
+
+  /* One row for each part of the page: its licence, and where to get it.
+     The code is the page in a single file: the single-file page does not
+     offer itself again. */
+  const PAGE_PARTS = [
+    { key: "licenceCode", licence: AGPL, repository: true, bundle: true },
+    { key: "licenceData", licence: BY_NC_SA,
+      file: { path: "data/reagents.js", variable: "REAGENTS" } },
+    { key: "licenceDescriptions", licence: BY_SA,
+      file: { path: "data/descriptions.js", variable: "DESCRIPTIONS" } },
+    { key: "licenceTexts", licence: BY_SA },
+  ];
+
+  function renderLicence() {
+    const rows = PAGE_PARTS.map((part) => {
+      const row = document.createElement("p");
+      row.className = "licence-row";
+      const label = document.createElement("span");
+      label.className = "licence-label";
+      label.textContent = `${t(part.key)}:`;
+      row.append(label, externalLink(part.licence.name, part.licence.url));
+      if (part.repository) row.append(externalLink("GitHub", REPOSITORY_URL));
+      if (part.bundle && !IS_BUNDLE) {
+        const link = downloadLink(BUNDLE_FILE, BUNDLE_FILE.split("/").pop());
+        link.title = t("downloadHint");
+        row.append(link);
+      }
+      if (part.file) {
+        row.append(downloadLink(dataFileUrl(part.file, part.licence), part.file.path.split("/").pop()));
+      }
+      return row;
+    });
+    $("#page-licence").replaceChildren(...rows);
+  }
+
+  function externalLink(text, href) {
+    const link = document.createElement("a");
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = text;
+    return link;
+  }
+
+  function downloadLink(href, filename) {
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = filename;
+    link.textContent = t("download");
+    return link;
   }
 
   function sourceItem(src) {
@@ -2725,39 +2784,34 @@
     return li;
   }
 
-  /* The file with the comment that says the licence and where the texts
-     come from. The page served over http links the file itself. Otherwise
-     the file is written again from the descriptions the page has loaded,
-     laid out as tools/fetch_descriptions.py lays it out; the comment comes
-     from the script in the single-file page, which the bundler leaves
-     with its comment and tags with the file it comes from. From the disk
-     a script loaded from a file cannot be read: there the comment is just
-     the licence. The file is made once, and the link drawn again in the
-     other language reuses it. */
-  let descriptionsUrl = null;
+  /* A data file with the comment that says its licence. The page served
+     over http links the file itself. Otherwise the file is written again
+     from the data the page has loaded, laid out as the scripts that make
+     it lay it out; the comment comes from the script in the single-file
+     page, which the bundler leaves with its comment and tags with the
+     file it comes from. From the disk a script loaded from a file cannot
+     be read: there the comment is just the licence. Each file is made
+     once, and the link drawn again in the other language reuses it. */
+  const dataFileUrls = {};
 
-  function descriptionsDownload() {
-    const external = document.querySelector('script[src*="data/descriptions.js"]');
-    const inline = document.querySelector('script[data-src="data/descriptions.js"]');
-    if (!descriptionsUrl && external && /^https?:$/.test(location.protocol)) {
-      descriptionsUrl = external.src;
-    }
-    if (!descriptionsUrl) {
-      const assignment = "window.DESCRIPTIONS";
+  function dataFileUrl({ path, variable }, licence) {
+    if (dataFileUrls[path]) return dataFileUrls[path];
+    const external = document.querySelector(`script[src*="${path}"]`);
+    const inline = document.querySelector(`script[data-src="${path}"]`);
+    if (external && /^https?:$/.test(location.protocol)) {
+      dataFileUrls[path] = external.src;
+    } else {
+      const assignment = `window.${variable}`;
       const text = inline?.textContent ?? "";
       const comment = text.includes(assignment)
         /* the bundler puts the script after a line break of its own */
         ? text.slice(0, text.indexOf(assignment)).replace(/^\n/, "")
-        : `/* Licence: ${DESCRIPTIONS.license} */\n`;
+        : `/* Licence: ${licence.name} */\n`;
       const content = comment
-        + `${assignment} = ` + JSON.stringify(DESCRIPTIONS, null, 1) + ";\n";
-      descriptionsUrl = URL.createObjectURL(new Blob([content], { type: "text/javascript" }));
+        + `${assignment} = ` + JSON.stringify(window[variable], null, 1) + ";\n";
+      dataFileUrls[path] = URL.createObjectURL(new Blob([content], { type: "text/javascript" }));
     }
-    const link = document.createElement("a");
-    link.download = "descriptions.js";
-    link.href = descriptionsUrl;
-    link.textContent = t("descriptionsDownload");
-    return link;
+    return dataFileUrls[path];
   }
 
   /* substances whose absence from the data is worth naming out loud:
@@ -2797,9 +2851,6 @@
     $("#detail-close").setAttribute("aria-label", t("detailClose"));
     $("#banner-close").setAttribute("aria-label", t("bannerClose"));
     $("#banner-open").setAttribute("aria-label", t("bannerOpen"));
-    /* the single-file page has no link to itself */
-    const download = $("#bundle-link");
-    if (download) download.title = t("downloadHint");
     $(".skip-link")?.setAttribute("href", "#table-scroll");
     const skip = document.querySelector(".skip-link");
     if (skip) skip.textContent = t("skip");
@@ -2945,6 +2996,7 @@
       applyStrings();
       renderReagents();
       renderSources();
+      renderLicence();
       renderObservations();
       renderTable();
     });
@@ -3031,6 +3083,7 @@
     renderObservations();
     renderTable();
     renderSources();
+    renderLicence();
   }
 
   init();

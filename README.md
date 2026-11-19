@@ -49,8 +49,9 @@ python3 tools/bundle.py     # -> dist/tabella-dei-colori-dei-reagenti.html
 La pagina non ha dipendenze esterne (niente moduli, niente `fetch`): il
 bundler scioglie il foglio di stile e i quattro script dentro l'HTML e li
 minimizza. Il risultato è **un file da circa 250 kB** che si apre con un doppio
-clic, funziona offline e si può mandare per email. Il pulsante «Scarica»
-nell'intestazione lo scarica.
+clic, funziona offline e si può mandare per email. Lo scarica il link
+«Scarica» accanto alla licenza del codice, in fondo alla pagina; accanto alle
+licenze dei dati e delle descrizioni ci sono i loro file.
 
 ```bash
 .venv/bin/pip install rjsmin   # facoltativo: minifica anche il javascript
