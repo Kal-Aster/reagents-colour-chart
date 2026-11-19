@@ -27,7 +27,7 @@ viene, la sua fonte principale e dice se è tradotta.
 Le fonti usate in precedenza (Wikipedia, Grassroots Harm Reduction, EDM
 Identity, reagent-tests.uk, ProTestKit, Tang et al. 2010) sono servite a
 progettare il modello, ma i loro termini non ne permettono l'uso: estrattori e
-dati estratti sono in `legacy/`, fuori dalla pagina.
+dati estratti non sono nel repository.
 
 ## Portare i dati nella pagina
 
@@ -126,11 +126,12 @@ in alto alla pagina, che scorre in orizzontale in sincrono con la tabella.
 ```
 data/reagents.json          il dataset (copiato da psychonautwiki_schema.json)
 data/reagents.js            lo stesso dataset, come script (per file://)
+data/descriptions.js        le descrizioni dei reagenti, con fonti e licenza
 tools/build_data.py         porta il dataset nella pagina
+tools/fetch_descriptions.py recupera le descrizioni dei reagenti
 tools/bundle.py             la pagina in un file solo
 tools/serve.py              server di sviluppo
 assets/                     la pagina
-legacy/                     estrattori e dati delle fonti non più usate
 ```
 
 ## Avvertenza
