@@ -5,7 +5,7 @@ const STRINGS = {
   it: {
     langName: "Italiano",
     otherLang: "EN",
-    title: "Colori dei test con reagenti",
+    title: "Tabella dei colori dei reagenti",
     download: "Scarica",
     downloadHint: "La pagina in un file solo, da usare anche senza connessione",
     banner:
@@ -147,7 +147,7 @@ const STRINGS = {
   en: {
     langName: "English",
     otherLang: "IT",
-    title: "Reagent test colours",
+    title: "Reagent colour chart",
     download: "Download",
     downloadHint: "The page in a single file, to use offline too",
     banner:

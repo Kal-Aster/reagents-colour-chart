@@ -2766,6 +2766,7 @@
 
   function applyStrings() {
     document.documentElement.lang = state.lang;
+    document.title = t("title");
     for (const el of $$("[data-i18n]")) {
       const key = el.dataset.i18n;
       const value = t(key);

@@ -43,7 +43,7 @@ dall'ultima volta.
 ## La pagina in un file solo
 
 ```bash
-python3 tools/bundle.py     # -> dist/colori-dei-test-con-reagenti.html
+python3 tools/bundle.py     # -> dist/tabella-dei-colori-dei-reagenti.html
 ```
 
 La pagina non ha dipendenze esterne (niente moduli, niente `fetch`): il
@@ -54,7 +54,7 @@ nell'intestazione lo scarica.
 
 ```bash
 .venv/bin/pip install rjsmin   # facoltativo: minifica anche il javascript
-python3 tools/bundle.py                  # -> dist/colori-dei-test-con-reagenti.html
+python3 tools/bundle.py                  # -> dist/tabella-dei-colori-dei-reagenti.html
 python3 tools/bundle.py --no-minify      # css e js leggibili (900 kB)
 ```
 

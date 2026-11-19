@@ -150,7 +150,7 @@ window.DESCRIPTIONS = {
   "it": {
    "reagents": {
     "Marquis": {
-     "description": "Il reattivo di Marquis si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di formaldeide e acido solforico concentrato, che si fa gocciolare sulla sostanza da analizzare. Il metodo del Dipartimento di Giustizia degli Stati Uniti per prepararlo è aggiungere 100 mL di acido solforico concentrato (95–98%) a 5 mL di formaldeide al 40%. Composti diversi danno reazioni di colore diverse. Si può aggiungere metanolo per rallentare la reazione e osservare meglio il cambio di colore.",
+     "description": "Il reagente di Marquis si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di formaldeide e acido solforico concentrato, che si fa gocciolare sulla sostanza da analizzare. Il metodo del Dipartimento di Giustizia degli Stati Uniti per prepararlo è aggiungere 100 mL di acido solforico concentrato (95–98%) a 5 mL di formaldeide al 40%. Composti diversi danno reazioni di colore diverse. Si può aggiungere metanolo per rallentare la reazione e osservare meglio il cambio di colore.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Marquis_reagent",
       "translated": true,
@@ -158,7 +158,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Mecke": {
-     "description": "Il reattivo di Mecke si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di acido selenioso e acido solforico concentrato, che si fa gocciolare sulla sostanza da analizzare.",
+     "description": "Il reagente di Mecke si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di acido selenioso e acido solforico concentrato, che si fa gocciolare sulla sostanza da analizzare.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Mecke_reagent",
       "translated": true,
@@ -166,7 +166,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Mandelin": {
-     "description": "Il reattivo di Mandelin si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di metavanadato di ammonio e acido solforico concentrato. Si usa soprattutto per rilevare ketamina e PMA. A differenza dei reattivi più comuni, ha un colore rosso intenso che, se non c'è un alcaloide, vira al giallo; succede entro circa 48 ore dalla preparazione.",
+     "description": "Il reagente di Mandelin si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di metavanadato di ammonio e acido solforico concentrato. Si usa soprattutto per rilevare ketamina e PMA. A differenza dei reagenti più comuni, ha un colore rosso intenso che, se non c'è un alcaloide, vira al giallo; succede entro circa 48 ore dalla preparazione.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Mandelin_reagent",
       "translated": true,
@@ -174,7 +174,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Froehde": {
-     "description": "Il reattivo di Froehde si usa come semplice test a goccia per identificare in via presuntiva alcaloidi, in particolare oppioidi, e altri composti. È una miscela di acido molibdico, o di un sale molibdato, sciolto in acido solforico concentrato caldo, che si fa poi gocciolare sulla sostanza da analizzare.",
+     "description": "Il reagente di Froehde si usa come semplice test a goccia per identificare in via presuntiva alcaloidi, in particolare oppioidi, e altri composti. È una miscela di acido molibdico, o di un sale molibdato, sciolto in acido solforico concentrato caldo, che si fa poi gocciolare sulla sostanza da analizzare.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Froehde_reagent",
       "translated": true,
@@ -182,7 +182,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Liebermann": {
-     "description": "Il reattivo di Liebermann, che prende il nome dal chimico ungherese Leo Liebermann (1852-1926), si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di nitrito di potassio e acido solforico concentrato: 1 g di nitrito di potassio ogni 10 mL di acido solforico. Il nitrito di potassio si può sostituire con nitrito di sodio. Si usa per cocaina, morfina, PMA e PMMA.",
+     "description": "Il reagente di Liebermann, che prende il nome dal chimico ungherese Leo Liebermann (1852-1926), si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. È una miscela di nitrito di potassio e acido solforico concentrato: 1 g di nitrito di potassio ogni 10 mL di acido solforico. Il nitrito di potassio si può sostituire con nitrito di sodio. Si usa per cocaina, morfina, PMA e PMMA.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Liebermann_reagent",
       "translated": true,
@@ -190,7 +190,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Simon's": {
-     "description": "Il reattivo di Simon si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. Reagisce con le ammine secondarie, come MDMA e metanfetamina, e dà una soluzione blu.",
+     "description": "Il reagente di Simon si usa come semplice test a goccia per identificare in via presuntiva alcaloidi e altri composti. Reagisce con le ammine secondarie, come MDMA e metanfetamina, e dà una soluzione blu.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Simon's_reagent",
       "translated": true,
@@ -198,7 +198,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Ehrlich": {
-     "description": "Il reattivo di Ehrlich contiene p-dimetilamminobenzaldeide (DMAB) e può quindi fare da indicatore per identificare in via presuntiva gli indoli e l'urobilinogeno. Diversi test di Ehrlich usano il reattivo in esami medici: alcuni sono test antidroga, altri aiutano a diagnosticare varie malattie o reazioni avverse ai farmaci. Prende il nome dal premio Nobel Paul Ehrlich, che lo usò per distinguere il tifo da una semplice diarrea.",
+     "description": "Il reagente di Ehrlich contiene p-dimetilamminobenzaldeide (DMAB) e può quindi fare da indicatore per identificare in via presuntiva gli indoli e l'urobilinogeno. Diversi test di Ehrlich usano il reagente in esami medici: alcuni sono test antidroga, altri aiutano a diagnosticare varie malattie o reazioni avverse ai farmaci. Prende il nome dal premio Nobel Paul Ehrlich, che lo usò per distinguere il tifo da una semplice diarrea.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Ehrlich's_reagent",
       "translated": true,
@@ -206,7 +206,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Hofmann": {
-     "description": "Il reattivo di Ehrlich è simile ad altri test per gli indoli: il reattivo di van Urk, che usa 0,125 g di p-DMAB e 0,2 mL di soluzione di cloruro ferrico (25 mg/mL) in 100 mL di acido solforico al 65% (cioè 50 mL di acido solforico in 50 mL di acqua). A volte è chiamato reattivo di Hofmann o p-DMAB-TS (Test Solution) e dà colori leggermente diversi con indoli diversi.",
+     "description": "Il reagente di Ehrlich è simile ad altri test per gli indoli: il reagente di van Urk, che usa 0,125 g di p-DMAB e 0,2 mL di soluzione di cloruro ferrico (25 mg/mL) in 100 mL di acido solforico al 65% (cioè 50 mL di acido solforico in 50 mL di acqua). A volte è chiamato reagente di Hofmann o p-DMAB-TS (Test Solution) e dà colori leggermente diversi con indoli diversi.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Ehrlich's_reagent#Preparation",
       "translated": true,
@@ -214,7 +214,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Gallic": {
-     "description": "Il reattivo all'acido gallico si usa come semplice test a goccia per identificare in via presuntiva i precursori delle droghe. È una miscela di acido gallico e acido solforico concentrato.",
+     "description": "Il reagente all'acido gallico si usa come semplice test a goccia per identificare in via presuntiva i precursori delle droghe. È una miscela di acido gallico e acido solforico concentrato.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Gallic_acid_reagent",
       "translated": true,
@@ -222,7 +222,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Robadope": {
-     "description": "L'acetaldeide si può sostituire con l'acetone: in questo caso il reattivo rileva invece le ammine primarie e dà un prodotto di colore viola.",
+     "description": "L'acetaldeide si può sostituire con l'acetone: in questo caso il reagente rileva invece le ammine primarie e dà un prodotto di colore viola.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Simon's_reagent#Chemistry",
       "translated": true,
@@ -230,7 +230,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Morris": {
-     "description": "Sono disponibili procedure dettagliate per il test al tiocianato di cobalto, spesso venduto come \"reattivo di Morris\". Il reattivo è tiocianato di cobalto al 2% sciolto in acido diluito. Quando si usa per la cromatografia su strato sottile si aggiunge glicerolo, che stabilizza il complesso di cobalto: così diventa blu solo a contatto con un analita, e non perché si secca sulla lastra.",
+     "description": "Sono disponibili procedure dettagliate per il test al tiocianato di cobalto, spesso venduto come \"reagente di Morris\". Il reagente è tiocianato di cobalto al 2% sciolto in acido diluito. Quando si usa per la cromatografia su strato sottile si aggiunge glicerolo, che stabilizza il complesso di cobalto: così diventa blu solo a contatto con un analita, e non perché si secca sulla lastra.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Cobalt(II)_thiocyanate#Cobalt_thiocyanate_test",
       "translated": true,
@@ -238,7 +238,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Zimmermann": {
-     "description": "Il reattivo di Zimmermann è un semplice test a goccia, usato in cromatografia, per identificare in via presuntiva alcaloidi, in particolare benzodiazepine, e altri composti. Per questo si usa nei test antidroga.",
+     "description": "Il reagente di Zimmermann è un semplice test a goccia, usato in cromatografia, per identificare in via presuntiva alcaloidi, in particolare benzodiazepine, e altri composti. Per questo si usa nei test antidroga.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Zimmermann_reagent",
       "translated": true,
@@ -254,7 +254,7 @@ window.DESCRIPTIONS = {
      }
     },
     "Folin": {
-     "description": "Il reattivo di Folin, o 1,2-naftochinone-4-solfonato di sodio, è un reattivo chimico usato come agente derivatizzante per misurare i livelli di ammine e amminoacidi. In soluzione alcalina reagisce con loro e forma un prodotto fluorescente, facile da rilevare.",
+     "description": "Il reagente di Folin, o 1,2-naftochinone-4-solfonato di sodio, è un reagente chimico usato come agente derivatizzante per misurare i livelli di ammine e amminoacidi. In soluzione alcalina reagisce con loro e forma un prodotto fluorescente, facile da rilevare.",
      "source": {
       "href": "https://en.wikipedia.org/wiki/Folin's_reagent",
       "translated": true,

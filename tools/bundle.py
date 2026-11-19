@@ -6,7 +6,7 @@ metterla in un file solo basta sciogliere il foglio di stile e i quattro
 script dentro l'HTML. Il risultato si apre con un doppio clic, si può
 mandare per email e funziona offline.
 
-    python3 tools/bundle.py            -> dist/colori-dei-test-con-reagenti.html
+    python3 tools/bundle.py            -> dist/tabella-dei-colori-dei-reagenti.html
     python3 tools/bundle.py -o page.html
 """
 from __future__ import annotations
@@ -146,7 +146,7 @@ def main() -> int:
                     help="keep the css and the js readable")
     args = ap.parse_args()
 
-    out = Path(args.output) if args.output else ROOT / "dist" / "colori-dei-test-con-reagenti.html"
+    out = Path(args.output) if args.output else ROOT / "dist" / "tabella-dei-colori-dei-reagenti.html"
     if not out.is_absolute():
         out = ROOT / out
 
