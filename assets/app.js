@@ -129,7 +129,6 @@
     lang: "it",
     /* the page opens with the theme of the system; the button overrides it */
     theme: storedTheme(),
-    showAll: false,
     /* {id, reagent, noReaction, proportion, stages:[{hue, modifier}]}
        Every test carries its own proportion of product to reagent: one test
        can be loaded differently from the next. */
@@ -280,13 +279,6 @@
     }
     return fragment;
   }
-
-  /* the substances worth listing by default: those with more than one reagent */
-  const PRACTICAL = new Set(
-    DATA.substances
-      .filter((s) => Object.keys(s.reactions).length >= 2)
-      .map((s) => s.id),
-  );
 
   const REAGENT_BY_ID = Object.fromEntries(DATA.reagents.map((r) => [r.id, r]));
 
@@ -500,12 +492,6 @@
   }
 
   /* ── the table ────────────────────────────────────────────────── */
-
-  function visibleSubstances() {
-    let list = DATA.substances;
-    if (!state.showAll) list = list.filter((s) => PRACTICAL.has(s.id));
-    return list;
-  }
 
   /* The substances that the tests the user made cannot say anything about:
      no data for any of the reagents used. */
@@ -1325,7 +1311,7 @@
     /* the table is rebuilt from scratch: the sideways scroll has to be put
        back where it was */
     const keepScroll = document.querySelector(".table-scroll")?.scrollLeft || 0;
-    const list = visibleSubstances();
+    const list = DATA.substances;
     const withObs = activeObservations().length > 0;
 
     let matched = [];
@@ -1335,14 +1321,6 @@
         const ev = evaluate(s);
         if (ev.hits.length) matched.push({ s, ev });
         else rest.push(s);
-      }
-      /* the match considers every substance, not only the ones on display */
-      if (!state.showAll) {
-        for (const s of DATA.substances) {
-          if (PRACTICAL.has(s.id)) continue;
-          const ev = evaluate(s);
-          if (ev.hits.length) matched.push({ s, ev });
-        }
       }
       /* How many tests the substance fits comes first: a substance that
          fits two of three tests is stronger evidence than one that fits
@@ -1422,11 +1400,6 @@
     for (const { sc } of built) {
       if (sc) sc.scrollLeft = keepScroll;
     }
-
-    $("#table-shown").textContent = interpolate(t("shown"), {
-      n: matched.length + rest.length,
-      t: DATA.substances.length,
-    });
   }
 
 
@@ -2762,20 +2735,6 @@
     return link;
   }
 
-  /* ── filters ──────────────────────────────────────────────────── */
-
-  function buildFilters() {
-
-    /* the checkbox says what it does and keeps saying it: a checkbox that
-       changes its own label is a switch in disguise */
-    const all = $("#f-all");
-    all.addEventListener("change", () => {
-      state.showAll = all.checked;
-      renderTable();
-    });
-    $("#f-all-label").textContent = t("fAll");
-  }
-
   /* substances whose absence from the data is worth naming out loud:
      the ones a negative result must not be read as an all-clear */
   const NOTABLE = ["Fentanyl", "Synthetic opioids", "Levamisole", "PCP", "GHB"];
@@ -2938,7 +2897,6 @@
     $("#lang-toggle").addEventListener("click", () => {
       state.lang = state.lang === "it" ? "en" : "it";
       applyStrings();
-      buildFilters();
       renderReagents();
       renderSources();
       renderObservations();
@@ -3014,7 +2972,6 @@
     loadFromUrl();
     applyTheme();
     applyStrings();
-    buildFilters();
     initDrag();
     renderReagents();
     renderObservations();

@@ -190,10 +190,8 @@ select, input[type="search"], input[type="text"] {
   flex-wrap: wrap; margin-bottom: 10px;
 }
 .panel-head h2 { margin: 0; flex: 1 1 auto; }
-/* the counter and the "show all" box sit together */
-#table-shown { margin: 0; }
-#table-section .panel-head { justify-content: flex-end; }
-#table-section .field-check { margin: 0; }
+/* the table starts a little below the observations */
+#table-section { margin-top: calc(var(--gap) * 2); }
 
 /* ────────────────────────────────────────────────────────────────
    Observations
@@ -510,8 +508,6 @@ details.picker > summary::-webkit-details-marker { display: none; }
 
 .field { margin: 0; display: flex; flex-direction: column; gap: 3px; }
 .field > label { font-size: .78em; color: var(--ink-soft); }
-.field-check { justify-content: flex-end; }
-.field-check label { display: inline-flex; align-items: center; gap: 6px; font-size: .88em; cursor: pointer; }
 
 /* ────────────────────────────────────────────────────────────────
    The table

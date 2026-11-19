@@ -75,7 +75,6 @@ const STRINGS = {
     obsShareDone: "link copiato",
 
     tableTitle: "La tabella",
-    fAll: "Mostra tutte",
     hbarLabel: "Scorri la tabella lateralmente",
     coverage: "{n} su {t} documentate",
     colSubstance: "Sostanza",
@@ -106,8 +105,6 @@ const STRINGS = {
       "nessuno ha documentato questa sostanza con questo reagente: il test non poteva escluderla",
     sourcesWithData: "{n} fonti su {t} hanno dati",
     sourcesLink: "fonti",
-    showAll: "vedi tutte",
-    shown: "{n} sostanze su {t}",
 
     detailClose: "Chiudi il dettaglio",
     detailAliases: "Alias",
@@ -217,7 +214,6 @@ const STRINGS = {
     obsShareDone: "link copied",
 
     tableTitle: "The table",
-    fAll: "Show all",
     hbarLabel: "Scroll the table sideways",
     coverage: "{n} of {t} documented",
     colSubstance: "Substance",
@@ -248,8 +244,6 @@ const STRINGS = {
       "nobody documented this substance with this reagent: the test could not have excluded it",
     sourcesWithData: "{n} of {t} sources have data",
     sourcesLink: "sources",
-    showAll: "show all",
-    shown: "{n} of {t} substances",
 
     detailClose: "Close the detail",
     detailAliases: "Aliases",
