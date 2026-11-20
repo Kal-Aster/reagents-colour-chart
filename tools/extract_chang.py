@@ -19,6 +19,7 @@ import argparse
 import xml.etree.ElementTree as ElementTree
 
 from source_schema import add_observations, download, fetched_at, readings, substance, write
+from vocabulary import Vocabulary
 
 SOURCE_ID = "Chang2025"
 SOURCE = {
@@ -37,27 +38,8 @@ TABLES = {"TABLE 3": "Mq", "TABLE 4": "Md", "TABLE 5": "Me"}
 NO_CHANGE = "None"
 ARROW = "−→"
 
-# Il nome nell'articolo -> (il nome della sostanza, il tipo, gli alias). Il
-# nome e' quello di PsychonautWiki quando c'e', perche' build_data.py le unisca.
-SUBSTANCES = {
-    "Xylazine": ("Xylazine", "Adulterant", []),
-    "Amph.H2SO4": ("Amphetamine", "Substance", []),
-    "Amphetamine": ("Amphetamine", "Substance", []),
-    "Methamph.HCl": ("Methamphetamine", "Substance", []),
-    "Methamphetamine": ("Methamphetamine", "Substance", []),
-    "MDMA": ("MDMA", "Substance", []),
-    "Morphine.HCl": ("Morphine", "Substance", []),
-    "Morphine": ("Morphine", "Substance", []),
-    "Sucrose": ("Sucrose", "Adulterant", ["Sugar", "Table sugar"]),
-    "Caffeine": ("Caffeine", "Adulterant", []),
-    "Diazepam": ("Diazepam", "Substance", []),
-    "Lorazepam": ("Lorazepam", "Substance", []),
-    "Oxazepam": ("Oxazepam", "Substance", []),
-    "Cocaine.HCl": ("Cocaine", "Substance", []),
-    "Codeine": ("Codeine", "Substance", []),
-    "Diamorphine.HCl": ("Heroin", "Substance", []),
-    "Paracetamol": ("Paracetamol", "Adulterant", ["Acetaminophen", "APAP"]),
-}
+# I nomi dell'articolo ("Amph.H2SO4", "Cocaine.HCl") sono alias nel vocabolario
+# (data/substances.json).
 
 
 def text_of(element: ElementTree.Element) -> str:
@@ -75,6 +57,7 @@ def main() -> None:
     if not any(LICENSE_URL in href for href in licences):
         raise SystemExit(f"la licenza dell'articolo non e' piu' CC BY 4.0: {licences}")
 
+    vocabulary = Vocabulary()
     records: dict[str, dict] = {}
     found = set()
     for wrap in root.iter("table-wrap"):
@@ -85,8 +68,9 @@ def main() -> None:
         reagent = TABLES[label]
         rows = [[text_of(cell) for cell in row] for row in wrap.iter("tr")]
         for sample, change, _, _ in rows[1:]:
-            if sample not in SUBSTANCES:
-                raise SystemExit(f"{label}: sostanza da nominare: {sample!r}")
+            substance_id = vocabulary.resolve(SOURCE_ID, sample)
+            if substance_id is None:
+                continue
             if change == NO_CHANGE:
                 stages = []
             elif ARROW in change:
@@ -95,11 +79,11 @@ def main() -> None:
                 stages = [[change.split(ARROW, 1)[1].strip()]]
             else:
                 raise SystemExit(f"{label}: cambio di colore illeggibile: {change!r}")
-            name, kind, aliases = SUBSTANCES[sample]
-            record = records.setdefault(name, substance(name, kind, aliases))
+            record = records.setdefault(substance_id, substance(substance_id))
             add_observations(record["reactions"], reagent, [readings(SOURCE_ID, reagent, stages)])
     if found != set(TABLES):
         raise SystemExit(f"tabelle mancanti: {sorted(set(TABLES) - found)}")
+    vocabulary.finish()
 
     write(SOURCE_ID, {**SOURCE, "fetchedAt": fetched_at()}, list(records.values()))
 

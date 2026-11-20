@@ -1,9 +1,11 @@
 """Quello che gli estrattori delle fonti hanno in comune.
 
 Ogni estrattore (tools/extract_*.py) scarica una fonte, ne legge i colori e
-scrive sources/<fonte>.json nello schema di sources/PNW.json, ma
-solo con "sources" e "substances": la palette e i reagenti sono quelli di
-PsychonautWiki. tools/build_data.py unisce poi tutte le fonti.
+scrive sources/<fonte>.json nello schema di sources/PNW.json, ma solo con
+"sources" e "substances", e ogni sostanza solo con l'id e le reazioni: la
+palette e i reagenti sono quelli di PsychonautWiki, il resto della sostanza
+viene dal vocabolario (tools/vocabulary.py). tools/build_data.py unisce poi
+tutte le fonti.
 
 I file scaricati restano in sources/cache/, fuori dal repository come i file
 che ne escono: si rifanno da capo lanciando gli estrattori.
@@ -12,7 +14,6 @@ from __future__ import annotations
 
 import hashlib
 import json
-import re
 import subprocess
 import urllib.request
 from datetime import datetime, timezone
@@ -58,11 +59,6 @@ def pdf_text(path: Path) -> str:
     return result.stdout
 
 
-def slugify(name: str) -> str:
-    """Lo stesso id delle sostanze di extract_psychonautwiki.py."""
-    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-") or "x"
-
-
 def readings(source: str, reagent: str, stages: list[list[str]]) -> list[dict]:
     """Le letture di una osservazione: una per percorso di colori.
 
@@ -98,13 +94,9 @@ def add_observations(reactions: dict, reagent: str, observations: list[list[dict
                 entries.append(dict(reading))
 
 
-def substance(name: str, kind: str, aliases: list[str] | None = None) -> dict:
-    record = {"id": slugify(name), "name": name}
-    if aliases:
-        record["aliases"] = aliases
-    record["info"] = {"type": kind}
-    record["reactions"] = {}
-    return record
+def substance(substance_id: str) -> dict:
+    """Una sostanza della fonte: l'id del vocabolario e le sue reazioni."""
+    return {"id": substance_id, "reactions": {}}
 
 
 def fetched_at() -> str:

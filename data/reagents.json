@@ -14,7 +14,7 @@
    "url": "https://www.ojp.gov/pdffiles1/nij/183258.pdf",
    "license": "US government publication (facts only)",
    "script": "tools/extract_nij.py",
-   "fetchedAt": "2026-11-20 15:59 UTC"
+   "fetchedAt": "2026-11-20 19:41 UTC"
   },
   "CADS": {
    "label": "NIST/NIJ CADS",
@@ -22,7 +22,7 @@
    "url": "https://doi.org/10.18434/mds2-3627",
    "license": "NIST (public domain in the US)",
    "script": "tools/extract_cads.py",
-   "fetchedAt": "2026-11-20 15:59 UTC"
+   "fetchedAt": "2026-11-20 19:41 UTC"
   },
   "Chang2025": {
    "label": "Chang et al., Analytical Science Advances",
@@ -30,7 +30,7 @@
    "url": "https://doi.org/10.1002/ansa.70008",
    "license": "CC BY 4.0",
    "script": "tools/extract_chang.py",
-   "fetchedAt": "2026-11-20 15:59 UTC"
+   "fetchedAt": "2026-11-20 19:41 UTC"
   }
  },
  "palette": {
@@ -221,8 +221,8 @@
    "id": "1cp-mipla",
    "name": "1cP-MiPLA",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1cP-MiPLA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1cP-MiPLA",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -260,8 +260,8 @@
    "id": "1cp-al-lad",
    "name": "1cP-AL-LAD",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1cP-AL-LAD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1cP-AL-LAD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -308,8 +308,8 @@
    "id": "1b-lsd",
    "name": "1B-LSD",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1B-LSD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1B-LSD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -409,8 +409,8 @@
     "curie"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1cP-LSD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1cP-LSD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -485,8 +485,8 @@
     "DMA"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2%2C5-DMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2%2C5-DMA",
     "class": {
      "chemical": [
       "Amphetamine"
@@ -555,8 +555,8 @@
    "id": "1v-lsd",
    "name": "1V-LSD",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1V-LSD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1V-LSD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -594,8 +594,8 @@
    "id": "1p-lsd",
    "name": "1P-LSD",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1P-LSD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1P-LSD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -681,8 +681,8 @@
     "One Four B-D-O"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/1%2C4-Butanediol",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/1%2C4-Butanediol",
     "class": {
      "chemical": [
       "Alkanediol",
@@ -739,8 +739,8 @@
     "2-fluoroethylamphetamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2-FEA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2-FEA",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -852,8 +852,8 @@
     "2-fmp"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2-FA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2-FA",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -932,11 +932,12 @@
     "Fluoroketamine",
     "2-FDCK",
     "2-fluoro-Deschloroketamine",
-    "2-fluoro-2-oxo-PCM"
+    "2-fluoro-2-oxo-PCM",
+    "2-Fluoro deschloroketamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2-Fluorodeschloroketamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2-Fluorodeschloroketamine",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -1058,8 +1059,8 @@
     "2c-b-nboh"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25B-NBOH",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25B-NBOH",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1105,8 +1106,8 @@
     "2-Fluoro-Methamphetamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2-FMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2-FMA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -1208,8 +1209,8 @@
     "2c-nbome"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25C-NBOMe",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25C-NBOMe",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1311,8 +1312,8 @@
    "id": "25c-nboh",
    "name": "25C-NBOH",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25C-NBOH",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25C-NBOH",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1390,8 +1391,8 @@
     "25d"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25D-NBOMe",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25D-NBOMe",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1501,8 +1502,8 @@
     "25b"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25B-NBOMe",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25B-NBOMe",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1613,8 +1614,8 @@
    "id": "25e-nboh",
    "name": "25E-NBOH",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25E-NBOH",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25E-NBOH",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1668,8 +1669,8 @@
     "nboh-2ci"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25I-NBOH",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25I-NBOH",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1742,8 +1743,8 @@
     "2-c-i-nbome"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25I-NBOMe",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25I-NBOMe",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -1831,8 +1832,8 @@
    "id": "2c-b-fly",
    "name": "2C-B-FLY",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-B-FLY",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-B-FLY",
     "class": {
      "chemical": [
       "Substituted phenethylamines",
@@ -1975,8 +1976,8 @@
    "id": "2c-c",
    "name": "2C-C",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-C",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-C",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2104,8 +2105,8 @@
     "2cm"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-D",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-D",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2213,8 +2214,8 @@
     "25n"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/25N-NBOMe",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/25N-NBOMe",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2312,8 +2313,8 @@
     "Bees"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-B",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-B",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2425,8 +2426,8 @@
     "Eternity"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-E",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-E",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2540,8 +2541,8 @@
     "DMPEA"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-H",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-H",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2608,8 +2609,8 @@
    "id": "2c-p",
    "name": "2C-P",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-P",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-P",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2712,8 +2713,8 @@
    "id": "2c-i",
    "name": "2C-I",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-I",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-I",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2841,8 +2842,8 @@
     "Aurora"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-T-21",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-T-21",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2888,8 +2889,8 @@
     "Rosy"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-T-2",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-T-2",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -2966,8 +2967,8 @@
     "7th Heaven"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/2C-T-7",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/2C-T-7",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -3068,8 +3069,8 @@
    "id": "3-4-ctmp",
    "name": "3,4-CTMP",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3%2C4-CTMP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3%2C4-CTMP",
     "class": {
      "chemical": [
       "Substituted phenidates"
@@ -3160,8 +3161,8 @@
    "id": "3-cl-pcp",
    "name": "3-Cl-PCP",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-Cl-PCP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-Cl-PCP",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -3191,8 +3192,8 @@
     "3-Fluoroamphetamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-FA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-FA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -3253,8 +3254,8 @@
     "3f-phenmetrazine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-FPM",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-FPM",
     "class": {
      "chemical": [
       "Substituted amphetamines",
@@ -3375,8 +3376,8 @@
    "id": "3-fma",
    "name": "3-FMA",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-FMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-FMA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -3430,8 +3431,8 @@
     "Hydroxyeticyclidine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-HO-PCE",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-HO-PCE",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -3483,8 +3484,8 @@
     "Hydroxyphencyclidine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-HO-PCP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-HO-PCP",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -3539,8 +3540,8 @@
    "id": "3-fea",
    "name": "3-FEA",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-FEA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-FEA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -3640,8 +3641,8 @@
    "id": "3-meo-pcmo",
    "name": "3-MeO-PCMo",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCMo",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCMo",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -3712,8 +3713,8 @@
     "3-mephedrone"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-MMC",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-MMC",
     "class": {
      "chemical": [
       "Cathinone"
@@ -3853,8 +3854,8 @@
     "Methoxyeticyclidine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCE",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCE",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -3946,8 +3947,8 @@
    "id": "3c-p",
    "name": "3C-P",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3C-P",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3C-P",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -4024,8 +4025,8 @@
     "3C-Escaline"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3C-E",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3C-E",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -4099,8 +4100,8 @@
     "ethylacybin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DET",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DET",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4179,8 +4180,8 @@
     "O-Acetylmetocin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-AcO-MET",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-MET",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4294,8 +4295,8 @@
     "3-MeO"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/3-MeO-PCP",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -4398,8 +4399,8 @@
    "id": "4-bmc",
    "name": "4-BMC",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-BMC",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-BMC"
    },
    "reactions": {
     "Mq": [
@@ -4467,8 +4468,8 @@
     "Synthetic mushrooms"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DMT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DMT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4575,8 +4576,8 @@
     "iprocetyl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-DiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4649,8 +4650,8 @@
     "O-Acetylmiprocin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-AcO-MiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-AcO-MiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4716,8 +4717,8 @@
     "4-hydroxy-det"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-DET",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-DET",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4824,8 +4825,8 @@
     "4-fluromethamphetamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-FMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-FMA",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -4911,8 +4912,8 @@
     "n-dipropyltryptamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-DPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-DPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -4953,8 +4954,8 @@
     "ethocin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-MET",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-MET",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -5048,8 +5049,8 @@
     "Iprocin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-DiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-DiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -5114,8 +5115,8 @@
     "Eprocin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-EPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-EPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -5225,8 +5226,8 @@
     "Meprocin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-MPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-MPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -5266,8 +5267,8 @@
     "4-ho"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-HO-MiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-HO-MiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -5367,8 +5368,8 @@
     "4-FEPH"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4F-EPH",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4F-EPH",
     "class": {
      "chemical": [
       "Substituted phenidates"
@@ -5430,8 +5431,8 @@
     "Methoxydine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4-MeO-PCP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4-MeO-PCP",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -5505,8 +5506,8 @@
     "4-FMPH"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/4F-MPH",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/4F-MPH",
     "class": {
      "chemical": [
       "Substituted phenidates"
@@ -5606,8 +5607,8 @@
    "id": "5-apb",
    "name": "5-APB",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5-APB",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5-APB",
     "class": {
      "chemical": [
       "Substituted amphetamines",
@@ -5731,8 +5732,8 @@
     "Foxtrot"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DALT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DALT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -5823,8 +5824,8 @@
    "id": "5-meo-dibf",
    "name": "5-MeO-DiBF",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DiBF",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DiBF",
     "class": {
      "chemical": [
       "Substituted benzofurans"
@@ -5896,8 +5897,8 @@
    "id": "5-mapb",
    "name": "5-MAPB",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5-MAPB",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5-MAPB",
     "class": {
      "chemical": [
       "Substituted amphetamines",
@@ -6007,8 +6008,8 @@
     "foxy-methoxy"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5-MeO-DiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -6063,8 +6064,8 @@
     "5fapinaca"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5F-AKB48",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5F-AKB48",
     "class": {
      "chemical": [
       "Indazolecarboxamide",
@@ -6123,8 +6124,8 @@
    "id": "5f-pb-22",
    "name": "5F-PB-22",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/5F-PB-22",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/5F-PB-22",
     "class": {
      "chemical": [
       "Indolecarboxylate"
@@ -6206,8 +6207,8 @@
     "4-desoxy-mda"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/6-APDB",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/6-APDB",
     "class": {
      "chemical": [
       "Substituted amphetamines",
@@ -6305,8 +6306,8 @@
     "Benzofury"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/6-APB",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/6-APB",
     "class": {
      "chemical": [
       "Substituted amphetamines",
@@ -6432,8 +6433,8 @@
     "Ab-fubi"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/AB-FUBINACA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/AB-FUBINACA",
     "class": {
      "chemical": [
       "Indazolecarboxamide"
@@ -6491,8 +6492,8 @@
     "Aladdin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/AL-LAD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/AL-LAD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -6567,8 +6568,8 @@
     "PV7"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/A-PHP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/A-PHP",
     "class": {
      "chemical": [
       "Cathinone",
@@ -6696,8 +6697,8 @@
     "Gravel"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/A-PVP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/A-PVP",
     "class": {
      "chemical": [
       "Cathinone",
@@ -6822,8 +6823,8 @@
     "Olmifon"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Adrafinil",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Adrafinil",
     "class": {
      "chemical": [
       "Benzhydryl"
@@ -6938,8 +6939,8 @@
     "Orange Sunshine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/ALD-52",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/ALD-52",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -7011,8 +7012,8 @@
     "AL"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Allylescaline",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Allylescaline",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -7109,8 +7110,8 @@
     "a-f"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Acetylfentanyl",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Acetylfentanyl",
     "class": {
      "chemical": [
       "Anilidopiperidine"
@@ -7156,8 +7157,8 @@
     "Ksalol"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Alprazolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Alprazolam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -7256,11 +7257,13 @@
     "Speed",
     "Adderall",
     "Pep",
-    "Aderal"
+    "Aderal",
+    "d-Amphetamine HCl",
+    "Amph.H2SO4"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Amphetamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Amphetamine",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -7412,8 +7415,8 @@
    "id": "aniracetam",
    "name": "Aniracetam",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Aniracetam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Aniracetam",
     "class": {
      "chemical": [
       "Racetams"
@@ -7486,8 +7489,8 @@
     "Gablofen"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Baclofen",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Baclofen",
     "class": {
      "chemical": [
       "Butyric acid",
@@ -7539,8 +7542,8 @@
     "Lexotanil"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Bromazepam",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Bromazepam"
    },
    "reactions": {
     "Zi": [
@@ -7560,8 +7563,8 @@
     "5-HO-DMT"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Bufotenin",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Bufotenin",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -7616,8 +7619,8 @@
     "bdfly"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Bromo-DragonFLY",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Bromo-DragonFLY",
     "class": {
      "chemical": [
       "Substituted amphetamines",
@@ -7669,8 +7672,8 @@
     "bk-methyl-j"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Butylone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Butylone",
     "class": {
      "chemical": [
       "MDxx",
@@ -7796,8 +7799,8 @@
     "Transtec"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Buprenorphine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Buprenorphine",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -7853,8 +7856,8 @@
    "id": "cathinone",
    "name": "Cathinone",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Cathinone",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Cathinone"
    },
    "reactions": {
     "Mq": [
@@ -7913,12 +7916,11 @@
    "id": "caffeine",
    "name": "Caffeine",
    "aliases": [
-    "coffee",
-    "tea"
+    "coffee"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Caffeine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Caffeine",
     "class": {
      "chemical": [
       "Xanthines"
@@ -8012,8 +8014,8 @@
     "Soma"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Carisoprodol",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Carisoprodol",
     "class": {
      "chemical": [
       "1,3-Propanediol dicarbamate"
@@ -8045,21 +8047,57 @@
    }
   },
   {
-   "id": "coca",
-   "name": "Coca",
+   "id": "clonazepam",
+   "name": "Clonazepam",
    "aliases": [
-    "Cocaine",
-    "Coke",
-    "Blow",
-    "Girl",
-    "White",
-    "Snow",
-    "Nose candy",
-    "Chari"
+    "Klonopin",
+    "K-Pins",
+    "Rivotril",
+    "kpin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Coca",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Clonazepam",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
+   },
+   "reactions": {
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "clonazolam",
+   "name": "Clonazolam",
+   "aliases": [
+    "Clonitrazolam",
+    "Clam",
+    "C-lam"
+   ],
+   "info": {
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Clonazolam",
+    "class": {
+     "chemical": [
+      "Benzodiazepines"
+     ],
+     "psychoactive": [
+      "Depressant"
+     ]
+    }
    },
    "reactions": {
     "Mq": [
@@ -8077,6 +8115,284 @@
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Zi": [
+     {
+      "source": "PNW",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "creatine",
+   "name": "Creatine",
+   "aliases": [
+    "N-Carbamimidoyl-N-methylglycine",
+    "Methylguanidoacetic acid"
+   ],
+   "info": {
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Creatine",
+    "class": {
+     "chemical": [],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "pink.light",
+       "red.light",
+       "red.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "coluracetam",
+   "name": "Coluracetam",
+   "info": {
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Coluracetam",
+    "class": {
+     "chemical": [
+      "Racetams"
+     ],
+     "psychoactive": [
+      "Nootropic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Li": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Ga": [
+     {
+      "source": "PNW",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "det",
+   "name": "DET",
+   "aliases": [
+    "Diethyltryptamine"
+   ],
+   "info": {
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DET",
+    "class": {
+     "chemical": [
+      "Substituted tryptamines"
+     ],
+     "psychoactive": [
+      "Psychedelic"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "yellow.light",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Ho": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "cocaine-hcl",
+   "name": "Cocaine HCl",
+   "aliases": [
+    "Cocaine hydrochloride",
+    "Cocaine",
+    "Coke",
+    "Blow",
+    "Girl",
+    "White",
+    "Snow",
+    "Nose candy",
+    "Chari",
+    "Yayo",
+    "Perico",
+    "Gear",
+    "Cocaine.HCl"
+   ],
+   "info": {
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Cocaine",
+    "class": {
+     "chemical": [
+      "Substituted tropanes"
+     ],
+     "psychoactive": [
+      "Stimulants"
+     ]
+    }
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
       "colors": [
        "yellow.standard",
        "orange.standard",
@@ -8084,6 +8400,24 @@
        "brown.standard",
        "yellow.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Li": [
@@ -8157,357 +8491,17 @@
    }
   },
   {
-   "id": "cannabis",
-   "name": "Cannabis",
+   "id": "cocaine-base",
+   "name": "Cocaine base (crack)",
    "aliases": [
-    "Marijuana",
-    "Weed",
-    "Pot",
-    "Mary Jane",
-    "Grass",
-    "Herb",
-    "Green",
-    "Bud",
-    "Tree",
-    "THC",
-    "Tetrahydrocannabinol",
-    "D9-THC",
-    "Hash"
-   ],
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Cannabis",
-    "type": "Substance",
-    "class": {
-     "chemical": [
-      "Cannabinoid"
-     ],
-     "psychoactive": []
-    }
-   },
-   "reactions": {
-    "Ca": [
-     {
-      "source": "PNW",
-      "colors": [
-       "blue.standard"
-      ]
-     }
-    ]
-   }
-  },
-  {
-   "id": "clonazepam",
-   "name": "Clonazepam",
-   "aliases": [
-    "Klonopin",
-    "K-Pins",
-    "Rivotril",
-    "kpin"
-   ],
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Clonazepam",
-    "type": "Substance",
-    "class": {
-     "chemical": [
-      "Benzodiazepines"
-     ],
-     "psychoactive": [
-      "Depressant"
-     ]
-    }
-   },
-   "reactions": {
-    "Zi": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard"
-      ]
-     }
-    ]
-   }
-  },
-  {
-   "id": "clonazolam",
-   "name": "Clonazolam",
-   "aliases": [
-    "Clonitrazolam",
-    "Clam",
-    "C-lam"
-   ],
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Clonazolam",
-    "type": "Substance",
-    "class": {
-     "chemical": [
-      "Benzodiazepines"
-     ],
-     "psychoactive": [
-      "Depressant"
-     ]
-    }
-   },
-   "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Md": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Li": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Fr": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Ga": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Zi": [
-     {
-      "source": "PNW",
-      "colors": [
-       "blue.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.standard"
-      ]
-     }
-    ]
-   }
-  },
-  {
-   "id": "creatine",
-   "name": "Creatine",
-   "aliases": [
-    "N-Carbamimidoyl-N-methylglycine",
-    "Methylguanidoacetic acid"
-   ],
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Creatine",
-    "type": "Substance",
-    "class": {
-     "chemical": [],
-     "psychoactive": [
-      "Nootropic"
-     ]
-    }
-   },
-   "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Md": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Li": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Fr": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Si": [
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "pink.light",
-       "red.light",
-       "red.standard"
-      ]
-     }
-    ]
-   }
-  },
-  {
-   "id": "coluracetam",
-   "name": "Coluracetam",
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Coluracetam",
-    "type": "Substance",
-    "class": {
-     "chemical": [
-      "Racetams"
-     ],
-     "psychoactive": [
-      "Nootropic"
-     ]
-    }
-   },
-   "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Md": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Li": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Fr": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Ga": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ]
-   }
-  },
-  {
-   "id": "det",
-   "name": "DET",
-   "aliases": [
-    "Diethyltryptamine"
-   ],
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DET",
-    "type": "Substance",
-    "class": {
-     "chemical": [
-      "Substituted tryptamines"
-     ],
-     "psychoactive": [
-      "Psychedelic"
-     ]
-    }
-   },
-   "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard"
-      ]
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "green.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "gray.dark"
-      ]
-     }
-    ],
-    "Md": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "yellow.light",
-       "yellow.standard"
-      ]
-     }
-    ],
-    "Eh": [
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.standard"
-      ]
-     }
-    ],
-    "Ho": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard"
-      ]
-     }
-    ]
-   }
-  },
-  {
-   "id": "cocaine",
-   "name": "Cocaine",
-   "aliases": [
-    "Coke",
-    "Coca",
     "Crack",
-    "Blow",
-    "Girl",
-    "White",
-    "Snow",
-    "Nose Candy",
-    "Yayo",
-    "Perico",
-    "Gear",
-    "Chari"
+    "Freebase",
+    "Cocaine",
+    "Cocaine base"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Cocaine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Cocaine",
     "class": {
      "chemical": [
       "Substituted tropanes"
@@ -8528,10 +8522,6 @@
       "colors": [
        "pink.standard"
       ]
-     },
-     {
-      "source": "Chang2025",
-      "colors": []
      }
     ],
     "Me": [
@@ -8541,10 +8531,6 @@
      },
      {
       "source": "CADS",
-      "colors": []
-     },
-     {
-      "source": "Chang2025",
       "colors": []
      }
     ],
@@ -8558,24 +8544,6 @@
        "brown.standard",
        "yellow.standard"
       ]
-     },
-     {
-      "source": "NIJ",
-      "colors": [
-       "yellow.standard",
-       "orange.dark"
-      ]
-     },
-     {
-      "source": "NIJ",
-      "colors": [
-       "yellow.standard",
-       "yellow.dark"
-      ]
-     },
-     {
-      "source": "Chang2025",
-      "colors": []
      }
     ],
     "Li": [
@@ -8652,8 +8620,8 @@
     "Syrup"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Codeine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Codeine",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -8800,8 +8768,8 @@
     "Bromo-DMA"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DOB",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DOB",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -8898,8 +8866,8 @@
     "dimethyltryptamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DMT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DMT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -9003,8 +8971,8 @@
    "id": "doc",
    "name": "DOC",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DOC",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DOC",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -9067,60 +9035,15 @@
    }
   },
   {
-   "id": "dox",
-   "name": "DOx",
-   "aliases": [
-    "Doxepin HCl"
-   ],
-   "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DOx",
-    "type": "Substance"
-   },
-   "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": [
-       "red.dark"
-      ]
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": [
-       "red.dark"
-      ]
-     }
-    ],
-    "Md": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "red.dark"
-      ]
-     }
-    ],
-    "Fr": [
-     {
-      "source": "PNW",
-      "colors": [
-       "red.dark"
-      ]
-     }
-    ]
-   }
-  },
-  {
    "id": "dom",
    "name": "DOM",
    "aliases": [
-    "STP (Serenity, Tranquility, and Peace)"
+    "STP (Serenity, Tranquility, and Peace)",
+    "Dimethoxy-meth HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DOM",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DOM",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -9257,8 +9180,8 @@
    "id": "doi",
    "name": "DOI",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DOI",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DOI",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -9310,8 +9233,8 @@
     "The Light"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -9404,8 +9327,8 @@
     "etizolam-2"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Deschloroetizolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Deschloroetizolam",
     "class": {
      "chemical": [
       "Thienodiazepines"
@@ -9462,8 +9385,8 @@
     "Krok"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Desomorphine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Desomorphine",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -9513,8 +9436,8 @@
     "2-Oxo-PCM"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Deschloroketamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Deschloroketamine",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -9617,11 +9540,12 @@
     "darvocet",
     "coproxamol",
     "capadex",
-    "di-gesic"
+    "di-gesic",
+    "Propoxyphene HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Dextropropoxyphene",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Dextropropoxyphene",
     "class": {
      "chemical": [
       "Phenylpropylamine"
@@ -9729,8 +9653,8 @@
     "diisopropyltryptamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/DiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/DiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -9818,8 +9742,8 @@
     "Apaurin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Diazepam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Diazepam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -9925,8 +9849,8 @@
     "ZzzQuil"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Diphenhydramine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Diphenhydramine",
     "class": {
      "chemical": [
       "Ethanolamine"
@@ -9951,8 +9875,8 @@
    "id": "diclazepam",
    "name": "Diclazepam",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Diclazepam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Diclazepam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -10008,8 +9932,8 @@
     "dhc"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Dihydrocodeine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Dihydrocodeine",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -10047,8 +9971,8 @@
     "dpd"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Diphenidine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Diphenidine",
     "class": {
      "chemical": [
       "Diarylethylamines"
@@ -10162,8 +10086,8 @@
     "EPT Fumarate"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/EPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/EPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -10285,8 +10209,8 @@
     "Ethylpropion"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/ETH-CAT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/ETH-CAT",
     "class": {
      "chemical": [
       "Cathinone"
@@ -10354,8 +10278,8 @@
    "id": "eth-lad",
    "name": "ETH-LAD",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/ETH-LAD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/ETH-LAD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -10413,11 +10337,12 @@
    "id": "ephedrine",
    "name": "Ephedrine",
    "aliases": [
-    "Ephedra"
+    "Ephedra",
+    "Ephedrine HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ephedrine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ephedrine",
     "class": {
      "chemical": [
       "Amphetamine"
@@ -10540,8 +10465,8 @@
    "id": "escaline",
    "name": "Escaline",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Escaline",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Escaline",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -10645,8 +10570,8 @@
     "k-EBDP"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ephylone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ephylone",
     "class": {
      "chemical": [
       "Cathinone"
@@ -10788,8 +10713,8 @@
     "EPH"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ethylphenidate",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ethylphenidate",
     "class": {
      "chemical": [
       "Substituted phenidates"
@@ -10857,8 +10782,8 @@
     "Dionine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ethylmorphine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ethylmorphine",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -10914,8 +10839,8 @@
     "NEDPA"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ephenidine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ephenidine",
     "class": {
      "chemical": [
       "Diarylethylamines"
@@ -10980,8 +10905,8 @@
     "MDEC"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ethylone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ethylone",
     "class": {
      "chemical": [],
      "psychoactive": [
@@ -11092,8 +11017,8 @@
     "towa"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Etizolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Etizolam",
     "class": {
      "chemical": [
       "Thienodiazepines"
@@ -11177,8 +11102,8 @@
    "id": "flubromazepam",
    "name": "Flubromazepam",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Flubromazepam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Flubromazepam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -11246,8 +11171,8 @@
    "id": "flualprazolam",
    "name": "Flualprazolam",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Flualprazolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Flualprazolam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -11288,8 +11213,8 @@
     "Wolfies"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Flunitrazepam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Flunitrazepam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -11319,8 +11244,8 @@
     "flam"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Flubromazolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Flubromazolam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -11393,8 +11318,8 @@
     "Lazanda"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Fentanyl",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Fentanyl",
     "class": {
      "chemical": [
       "Anilidopiperidine",
@@ -11442,8 +11367,8 @@
     "fln"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Flunitrazolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Flunitrazolam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -11480,8 +11405,8 @@
     "Sodium oxybate"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/GHB",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/GHB",
     "class": {
      "chemical": [
       "Γ-Hydroxy acid"
@@ -11521,8 +11446,8 @@
     "Gralise"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Gabapentin",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Gabapentin",
     "class": {
      "chemical": [
       "Gabapentinoids"
@@ -11616,8 +11541,8 @@
    "id": "hxe",
    "name": "HXE",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/HXE",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/HXE",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -11740,11 +11665,12 @@
    "aliases": [
     "Vicodin (with paracetamol)",
     "Zohydro ER (extended-release)",
-    "Norco"
+    "Norco",
+    "Hydrocodone tartrate"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Hydrocodone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Hydrocodone",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -11839,8 +11765,8 @@
     "Palladone"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Hydromorphone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Hydromorphone",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -11910,11 +11836,13 @@
     "Smack",
     "Junk",
     "Brown",
-    "diamorphine"
+    "diamorphine",
+    "Diacetylmorphine HCl",
+    "Diamorphine.HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Heroin",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Heroin",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -12103,8 +12031,8 @@
     "IPPH"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Isopropylphenidate",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Isopropylphenidate",
     "class": {
      "chemical": [
       "Substituted phenidates"
@@ -12186,8 +12114,8 @@
     "Iboga"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ibogaine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ibogaine",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -12237,8 +12165,8 @@
    "id": "jwh-018",
    "name": "JWH-018",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/JWH-018",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/JWH-018",
     "class": {
      "chemical": [
       "Naphthoylindole"
@@ -12310,8 +12238,8 @@
     "Spice"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/JWH-073",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/JWH-073",
     "class": {
      "chemical": [
       "Naphthoylindole"
@@ -12349,8 +12277,8 @@
     "Elvanse"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Lisdexamfetamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Lisdexamfetamine",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -12393,8 +12321,8 @@
     "Lambda"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/LSZ",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/LSZ",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -12450,8 +12378,8 @@
     "kittens"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Ketamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Ketamine",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -12592,8 +12520,8 @@
     "Windowpane"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/LSD",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/LSD",
     "class": {
      "chemical": [
       "Lysergamides"
@@ -12702,8 +12630,8 @@
     "Lorsilan"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Lorazepam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Lorazepam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -12760,8 +12688,8 @@
    "id": "mcpp",
    "name": "MCPP",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MCPP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MCPP",
     "class": {
      "chemical": [
       "Substituted piperazines"
@@ -12826,8 +12754,8 @@
    "id": "mdai",
    "name": "MDAI",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MDAI",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MDAI",
     "class": {
      "chemical": [
       "Aminoindane"
@@ -12946,8 +12874,8 @@
     "Eve"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MDEA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MDEA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -13057,8 +12985,8 @@
     "MXiP"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MXiPr",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MXiPr",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -13130,11 +13058,12 @@
    "aliases": [
     "Sass",
     "Sally",
-    "Tenamfetamine"
+    "Tenamfetamine",
+    "MDA HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MDA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MDA",
     "class": {
      "chemical": [
       "Amphetamine"
@@ -13313,8 +13242,8 @@
     "bath_salts"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MDPV",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MDPV",
     "class": {
      "chemical": [
       "MDxx",
@@ -13448,11 +13377,13 @@
     "XTC",
     "Rolls",
     "Beans",
-    "Pingers"
+    "Pingers",
+    "MDMA HCl",
+    "Methylenedioxymethamphetamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MDMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MDMA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -13688,8 +13619,8 @@
    "id": "melatonin",
    "name": "Melatonin",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Melatonin",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Melatonin",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -13790,8 +13721,8 @@
     "Namzaric"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Memantine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Memantine",
     "class": {
      "chemical": [
       "Adamantanes"
@@ -13854,11 +13785,12 @@
    "name": "Methadone",
    "aliases": [
     "Dolophine",
-    "Methadose"
+    "Methadose",
+    "Methadone HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methadone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methadone",
     "class": {
      "chemical": [
       "Diphenylpropylamine"
@@ -13972,8 +13904,8 @@
     "MAL"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methallylescaline",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methallylescaline",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -14079,8 +14011,8 @@
     "Meow Meow"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Mephedrone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Mephedrone",
     "class": {
      "chemical": [
       "Cathinone",
@@ -14227,8 +14159,8 @@
     "MC"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methcathinone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methcathinone",
     "class": {
      "chemical": [
       "Cathinone",
@@ -14327,8 +14259,8 @@
     "qualudes"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methaqualone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methaqualone",
     "class": {
      "chemical": [
       "Quinazolinone"
@@ -14423,11 +14355,13 @@
     "Tweak",
     "Crank",
     "Shabu",
-    "Yaba"
+    "Yaba",
+    "d-Methamphetamine HCl",
+    "Methamph.HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methamphetamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methamphetamine",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -14670,8 +14604,8 @@
     "MPA"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methiopropamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methiopropamine",
     "class": {
      "chemical": [
       "Thiophene"
@@ -14760,8 +14694,8 @@
     "Mexxy"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methoxetamine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methoxetamine",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -14881,8 +14815,8 @@
     "MDMC"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methylone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methylone",
     "class": {
      "chemical": [
       "Cathinone"
@@ -15032,11 +14966,12 @@
     "Ritalin",
     "Equasym XL",
     "mph",
-    "biphentin"
+    "biphentin",
+    "Methylphenidate HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Methylphenidate",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Methylphenidate",
     "class": {
      "chemical": [
       "Substituted phenidates"
@@ -15174,8 +15109,8 @@
     "4-MMeOC"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Mexedrone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Mexedrone",
     "class": {
      "chemical": [
       "Cathinone"
@@ -15304,8 +15239,8 @@
     "metiz"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Metizolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Metizolam",
     "class": {
      "chemical": [
       "Thienodiazepines"
@@ -15369,8 +15304,8 @@
     "n-methyl-n-isopropyltryptamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/MiPT",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/MiPT",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -15414,8 +15349,8 @@
     "Modalert"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Modafinil",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Modafinil",
     "class": {
      "chemical": [
       "Benzhydryl"
@@ -15494,11 +15429,13 @@
     "Oramorph",
     "Zomorph",
     "Sevredol",
-    "Duramorph"
+    "Duramorph",
+    "Morphine monohydrate",
+    "Morphine.HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Morphine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Morphine",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -15663,8 +15600,8 @@
     "NM-2AI"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/NM-2-AI",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/NM-2-AI",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -15734,11 +15671,12 @@
    "name": "NEP",
    "aliases": [
     "N-Ethylpentedrone",
-    "Ethyl-Pentedrone"
+    "Ethyl-Pentedrone",
+    "N-Ethyl Pentedrone"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/NEP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/NEP",
     "class": {
      "chemical": [
       "Cathinone"
@@ -15849,8 +15787,8 @@
     "GVS-111"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Omberacetam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Omberacetam",
     "class": {
      "chemical": [
       "Peptide"
@@ -15924,8 +15862,8 @@
     "Deschloro-N-ethyl-ketamine"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/O-PCE",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/O-PCE",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -16022,8 +15960,8 @@
     "hydroxypiracetam"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Oxiracetam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Oxiracetam",
     "class": {
      "chemical": [
       "Racetams"
@@ -16089,11 +16027,12 @@
     "Redocam",
     "Oxygesic",
     "Percodan",
-    "Percocet"
+    "Percocet",
+    "Oxycodone HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Oxycodone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Oxycodone",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -16238,8 +16177,8 @@
    "id": "pma",
    "name": "PMA",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/PMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/PMA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -16370,8 +16309,8 @@
    "id": "pmma",
    "name": "PMMA",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/PMMA",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/PMMA",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -16493,8 +16432,8 @@
     "Opana"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Oxymorphone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Oxymorphone",
     "class": {
      "chemical": [
       "Substituted morphinans"
@@ -16543,23 +16482,10 @@
    }
   },
   {
-   "id": "pce",
-   "name": "PCE",
-   "aliases": [
-    "Eticyclidine",
-    "PCEEA"
-   ],
+   "id": "pceea",
+   "name": "PCEEA",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/PCE",
-    "type": "Substance",
-    "class": {
-     "chemical": [
-      "Arylcyclohexylamines"
-     ],
-     "psychoactive": [
-      "Dissociatives"
-     ]
-    }
+    "type": "Substance"
    },
    "reactions": {
     "Mq": [
@@ -16609,8 +16535,8 @@
     "Drone"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Pentedrone",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Pentedrone",
     "class": {
      "chemical": [
       "Cathinone"
@@ -16698,11 +16624,12 @@
     "Boat",
     "Tic Tac",
     "Zoom",
-    "phencyclidine"
+    "phencyclidine",
+    "Phencyclidine HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/PCP",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/PCP",
     "class": {
      "chemical": [
       "Arylcyclohexylamines"
@@ -16794,11 +16721,12 @@
     "Meperidine",
     "Demerol",
     "Dolantin",
-    "Dolcontral"
+    "Dolcontral",
+    "Meperidine HCl"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Pethidine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Pethidine",
     "class": {
      "chemical": [
       "Substituted piperidines"
@@ -16921,8 +16849,8 @@
     "Phenobarb"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Phenobarbital",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Phenobarbital",
     "class": {
      "chemical": [
       "Barbiturates"
@@ -16956,8 +16884,8 @@
     "PhGABA"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Phenibut",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Phenibut",
     "class": {
      "chemical": [
       "Gabapentinoids"
@@ -17031,8 +16959,8 @@
     "biotropil"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Piracetam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Piracetam",
     "class": {
      "chemical": [
       "Racetams"
@@ -17085,8 +17013,8 @@
    "id": "pramiracetam",
    "name": "Pramiracetam",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Pramiracetam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Pramiracetam",
     "class": {
      "chemical": [
       "Racetams"
@@ -17143,8 +17071,8 @@
     "Nervalin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Pregabalin",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Pregabalin",
     "class": {
      "chemical": [
       "Gabapentinoids"
@@ -17242,8 +17170,8 @@
     "Lergigan"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Promethazine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Promethazine",
     "class": {
      "chemical": [
       "Phenothiazine"
@@ -17269,8 +17197,8 @@
    "id": "proscaline",
    "name": "Proscaline",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Proscaline",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Proscaline",
     "class": {
      "chemical": [
       "Substituted phenethylamines"
@@ -17372,8 +17300,8 @@
     "4-PO-DMT"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Psilocybin%20mushrooms",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Psilocybin%20mushrooms",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -17438,8 +17366,8 @@
     "4-OH-DMT"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Psilocin",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Psilocin",
     "class": {
      "chemical": [
       "Substituted tryptamines"
@@ -17484,8 +17412,8 @@
    "id": "pyrazolam",
    "name": "Pyrazolam",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Pyrazolam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Pyrazolam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -17585,8 +17513,8 @@
     "Psilocybe Cubensis Ethanolic Tincture"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Psilocybe%20cubensis",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Psilocybe%20cubensis"
    },
    "reactions": {
     "Me": [
@@ -17612,8 +17540,8 @@
    "id": "sts-135",
    "name": "STS-135",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/STS-135",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/STS-135",
     "class": {
      "chemical": [
       "Indolecarboxamide",
@@ -17681,8 +17609,8 @@
    "id": "thj-018",
    "name": "THJ-018",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/THJ-018",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/THJ-018",
     "class": {
      "chemical": [
       "Naphthoylindazole"
@@ -17750,8 +17678,8 @@
    "id": "thj-2201",
    "name": "THJ-2201",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/THJ-2201",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/THJ-2201",
     "class": {
      "chemical": [
       "Naphthoylindazole"
@@ -17835,8 +17763,8 @@
    "id": "tma-2",
    "name": "TMA-2",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/TMA-2",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/TMA-2",
     "class": {
      "chemical": [
       "Substituted amphetamines"
@@ -17904,8 +17832,8 @@
    "id": "tma-6",
    "name": "TMA-6",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/TMA-6",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/TMA-6",
     "class": {
      "chemical": [
       "Amphetamine",
@@ -17984,19 +17912,33 @@
    }
   },
   {
-   "id": "tetrahydrocannabinol",
-   "name": "Tetrahydrocannabinol",
+   "id": "cannabis",
+   "name": "Cannabis (THC)",
    "aliases": [
+    "Tetrahydrocannabinol",
     "THC",
     "D9-THC",
-    "Cannabis",
     "Hash",
     "Marijuana",
-    "Weed"
+    "Weed",
+    "Pot",
+    "Mary Jane",
+    "Grass",
+    "Herb",
+    "Green",
+    "Bud",
+    "Tree",
+    "Cannabis"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Tetrahydrocannabinol",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Cannabis",
+    "class": {
+     "chemical": [
+      "Cannabinoid"
+     ],
+     "psychoactive": []
+    }
    },
    "reactions": {
     "Ca": [
@@ -18019,8 +17961,8 @@
     "Yantil SR"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Tapentadol",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Tapentadol",
     "class": {
      "chemical": [
       "Phenylpropylamine"
@@ -18069,8 +18011,8 @@
     "Normison"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Temazepam",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Temazepam",
     "class": {
      "chemical": [
       "Benzodiazepines"
@@ -18159,8 +18101,8 @@
     "Tatinol"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Tianeptine",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Tianeptine",
     "class": {
      "chemical": [
       "Dibenzothiazepine",
@@ -18218,8 +18160,8 @@
     "Tramundin"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Tramadol",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Tramadol",
     "class": {
      "chemical": [
       "Phenylpropylamine"
@@ -18308,8 +18250,8 @@
    "id": "u-47700",
    "name": "U-47700",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/U-47700",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/U-47700",
     "class": {
      "chemical": [
       "Benzamide"
@@ -18388,8 +18330,8 @@
     "Stilnox"
    ],
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Zolpidem",
     "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Zolpidem",
     "class": {
      "chemical": [
       "Imidazopyridine"
@@ -18425,8 +18367,8 @@
    "id": "phentermine",
    "name": "Phentermine",
    "info": {
-    "wiki": "https://psychonautwiki.org/wiki/Phentermine",
-    "type": "Substance"
+    "type": "Substance",
+    "wiki": "https://psychonautwiki.org/wiki/Phentermine"
    },
    "reactions": {
     "Mq": [
@@ -18469,7 +18411,8 @@
    "name": "Paracetamol",
    "aliases": [
     "Acetaminophen",
-    "APAP"
+    "APAP",
+    "Acetominophen"
    ],
    "info": {
     "type": "Adulterant"
@@ -18599,6 +18542,9 @@
   {
    "id": "benzphetamine",
    "name": "Benzphetamine",
+   "aliases": [
+    "Benzphetamine HCl"
+   ],
    "info": {
     "type": "Substance"
    },
@@ -18638,6 +18584,9 @@
   {
    "id": "brompheniramine",
    "name": "Brompheniramine",
+   "aliases": [
+    "Brompheniramine Maleate"
+   ],
    "info": {
     "type": "Substance"
    },
@@ -18686,6 +18635,9 @@
   {
    "id": "chlorpromazine",
    "name": "Chlorpromazine",
+   "aliases": [
+    "Chlorpromazine HCl"
+   ],
    "info": {
     "type": "Substance"
    },
@@ -18816,27 +18768,20 @@
   {
    "id": "doxepin",
    "name": "Doxepin",
+   "aliases": [
+    "Doxepin HCl"
+   ],
    "info": {
     "type": "Substance"
    },
    "reactions": {
-    "Md": [
+    "Mq": [
      {
-      "source": "NIJ",
+      "source": "PNW",
       "colors": [
-       "yellow.standard",
        "red.dark"
       ]
      },
-     {
-      "source": "NIJ",
-      "colors": [
-       "yellow.standard",
-       "brown.dark"
-      ]
-     }
-    ],
-    "Mq": [
      {
       "source": "NIJ",
       "colors": [
@@ -18850,7 +18795,50 @@
       ]
      }
     ],
+    "Me": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
     "Fr": [
+     {
+      "source": "PNW",
+      "colors": [
+       "red.dark"
+      ]
+     },
      {
       "source": "NIJ",
       "colors": [
@@ -18861,14 +18849,6 @@
       "source": "NIJ",
       "colors": [
        "brown.dark"
-      ]
-     }
-    ],
-    "Me": [
-     {
-      "source": "NIJ",
-      "colors": [
-       "red.dark"
       ]
      }
     ],
@@ -18955,6 +18935,9 @@
   {
    "id": "excedrin",
    "name": "Excedrin",
+   "aliases": [
+    "Exedrine"
+   ],
    "info": {
     "type": "Substance"
    },
@@ -19074,6 +19057,9 @@
   {
    "id": "mescaline",
    "name": "Mescaline",
+   "aliases": [
+    "Mescaline HCl"
+   ],
    "info": {
     "type": "Substance"
    },
@@ -19176,7 +19162,8 @@
    "id": "procaine",
    "name": "Procaine",
    "aliases": [
-    "Novocaine"
+    "Novocaine",
+    "Procaine HCl"
    ],
    "info": {
     "type": "Adulterant"
@@ -19196,6 +19183,9 @@
   {
    "id": "quinine",
    "name": "Quinine",
+   "aliases": [
+    "Quinine HCl"
+   ],
    "info": {
     "type": "Adulterant"
    },
@@ -19487,7 +19477,8 @@
    "id": "chlordiazepoxide",
    "name": "Chlordiazepoxide",
    "aliases": [
-    "Librium"
+    "Librium",
+    "Chlordiazepoxide HCl"
    ],
    "info": {
     "type": "Substance"
@@ -19534,6 +19525,9 @@
   {
    "id": "pseudoephedrine",
    "name": "Pseudoephedrine",
+   "aliases": [
+    "Pseudoephedrine HCl"
+   ],
    "info": {
     "type": "Substance"
    },
@@ -19669,6 +19663,9 @@
   {
    "id": "galactose",
    "name": "Galactose",
+   "aliases": [
+    "D-galactose"
+   ],
    "info": {
     "type": "Adulterant"
    },
@@ -19944,7 +19941,8 @@
    "name": "α-PiHP",
    "aliases": [
     "alpha-PiHP",
-    "α-Pyrrolidinoisohexanophenone"
+    "α-Pyrrolidinoisohexanophenone",
+    "Pyrrolidinoisohexanophenone"
    ],
    "info": {
     "type": "Substance"
@@ -20061,7 +20059,8 @@
    "id": "4-cyano-cumyl-butinaca",
    "name": "4-cyano-CUMYL-BUTINACA",
    "aliases": [
-    "4CN-CUMYL-BUTINACA"
+    "4CN-CUMYL-BUTINACA",
+    "4-cyano CUMYL-BUTINACA"
    ],
    "info": {
     "type": "Substance"

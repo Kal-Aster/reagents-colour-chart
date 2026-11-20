@@ -29,6 +29,7 @@ import zipfile
 
 from source_schema import (CACHE, add_observations, download, fetched_at, pdf_text,
                            readings, substance, write)
+from vocabulary import Vocabulary
 
 SOURCE_ID = "CADS"
 SOURCE = {
@@ -49,30 +50,27 @@ REAGENTS = {"Marquis": "Mq", "Mecke": "Me", "Froehde": "Fr", "Simon’s": "Si"}
 NO_COLOUR_CHANGE = "NCC"
 NOT_PERFORMED = "NP"
 
-# I campioni puri: il campione -> (il nome come compare nel referto, il nome
-# della sostanza, il tipo, gli alias). Il nome della sostanza e' quello di
-# PsychonautWiki quando c'e', perche' build_data.py le unisca. Un campione puro
-# che manca da questo elenco ferma lo script: va nominato a mano.
+# I campioni puri: il campione -> il nome della sostanza come compare nel
+# referto, che e' un alias nel vocabolario (data/substances.json). Un campione
+# puro che manca da questo elenco ferma lo script: va nominato a mano.
 PURE_SAMPLES = {
-    "CADS 009": ("2-Fluoro deschloroketamine", "2-Fluorodeschloroketamine", "Substance", []),
-    "CADS 014": ("Methamphetamine", "Methamphetamine", "Substance", []),
-    "CADS 015": ("Methamphetamine", "Methamphetamine", "Substance", []),
-    "CADS 016": ("Tianeptine", "Tianeptine", "Substance", []),
-    "CADS 017": ("Pyrrolidinoisohexanophenone", "α-PiHP", "Substance",
-                 ["alpha-PiHP", "α-Pyrrolidinoisohexanophenone"]),
-    "CADS 020": ("BMDP", "BMDP", "Substance", ["3,4-Methylenedioxy-N-benzylcathinone"]),
-    "CADS 021": ("FUB-AMB", "FUB-AMB", "Substance", ["MMB-FUBINACA", "AMB-FUBINACA"]),
-    "CADS 022": ("N-Ethyl Pentedrone", "NEP", "Substance", []),
-    "CADS 026": ("4-cyano CUMYL-BUTINACA", "4-cyano-CUMYL-BUTINACA", "Substance",
-                 ["4CN-CUMYL-BUTINACA"]),
-    "CADS 028": ("Eutylone", "Eutylone", "Substance", ["bk-EBDB"]),
-    "CADS 031": ("Tadalafil", "Tadalafil", "Substance", []),
-    "CADS 035": ("Valeryl fentanyl", "Valerylfentanyl", "Substance", ["Valeryl fentanyl"]),
-    "CADS 038": ("Cocaine base", "Cocaine", "Substance", []),
-    "CADS 039": ("Aniracetam", "Aniracetam", "Substance", []),
-    "CADS 041": ("Adrafinil", "Adrafinil", "Substance", []),
-    "CADS 045": ("4-Fluoro ABUTINACA", "4F-ABUTINACA", "Substance", ["4-Fluoro ABUTINACA"]),
-    "CADS 046": ("Methylenedioxymethamphetamine", "MDMA", "Substance", []),
+    "CADS 009": "2-Fluoro deschloroketamine",
+    "CADS 014": "Methamphetamine",
+    "CADS 015": "Methamphetamine",
+    "CADS 016": "Tianeptine",
+    "CADS 017": "Pyrrolidinoisohexanophenone",
+    "CADS 020": "BMDP",
+    "CADS 021": "FUB-AMB",
+    "CADS 022": "N-Ethyl Pentedrone",
+    "CADS 026": "4-cyano CUMYL-BUTINACA",
+    "CADS 028": "Eutylone",
+    "CADS 031": "Tadalafil",
+    "CADS 035": "Valeryl fentanyl",
+    "CADS 038": "Cocaine base",
+    "CADS 039": "Aniracetam",
+    "CADS 041": "Adrafinil",
+    "CADS 045": "4-Fluoro ABUTINACA",
+    "CADS 046": "Methylenedioxymethamphetamine",
 }
 
 # una formula chimica nel riepilogo; "Variable" e' la carbossimetilcellulosa
@@ -145,14 +143,18 @@ def main() -> None:
         raise SystemExit(f"campioni puri da nominare: {sorted(pure - set(PURE_SAMPLES))}, "
                          f"non piu' puri: {sorted(set(PURE_SAMPLES) - pure)}")
 
+    vocabulary = Vocabulary()
     records: dict[str, dict] = {}
     observations: dict[tuple[str, str], list[list[dict]]] = {}
     for sample in sorted(pure):
-        label, name, kind, aliases = PURE_SAMPLES[sample]
+        label = PURE_SAMPLES[sample]
         text = reports[sample]
         if label.lower() not in text.lower():
             raise SystemExit(f"{sample}: il referto non nomina {label!r}")
-        record = records.setdefault(name, substance(name, kind, aliases))
+        name = vocabulary.resolve(SOURCE_ID, label)
+        if name is None:
+            continue
+        records.setdefault(name, substance(name))
         for reagent_name, values in colour_results(text).items():
             for value in values:
                 if value == NOT_PERFORMED:
@@ -162,6 +164,7 @@ def main() -> None:
     for (name, reagent), found in observations.items():
         add_observations(records[name]["reactions"], reagent, found)
 
+    vocabulary.finish()
     write(SOURCE_ID, {**SOURCE, "fetchedAt": fetched_at()}, list(records.values()))
 
 

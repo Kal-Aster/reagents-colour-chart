@@ -30,6 +30,7 @@ import re
 
 from source_schema import (add_observations, download, fetched_at, pdf_text, readings,
                            substance, write)
+from vocabulary import Vocabulary
 
 SOURCE_ID = "NIJ"
 SOURCE = {
@@ -46,69 +47,10 @@ PDF = ("https://www.ojp.gov/pdffiles1/nij/183258.pdf", "nij-0604-01.pdf",
 REAGENTS = {4: "Md", 5: "Mq", 7: "Eh", 9: "Fr", 10: "Me", 12: "Si"}
 REAGENT_COUNT = 12
 
-# Il nome nello standard -> (il nome della sostanza, il tipo, gli alias). Il
-# nome e' quello di PsychonautWiki quando c'e', perche' build_data.py le unisca.
-# Lo standard scrive due nomi in due modi: "Acetominophen" ed "Exedrine".
-SUBSTANCES = {
-    "Acetaminophen": ("Paracetamol", "Adulterant", ["Acetaminophen", "APAP"]),
-    "Acetominophen": ("Paracetamol", "Adulterant", ["Acetaminophen", "APAP"]),
-    "Alprazolam": ("Alprazolam", "Substance", []),
-    "Amobarbital": ("Amobarbital", "Substance", []),
-    "Aspirin": ("Aspirin", "Adulterant", ["Acetylsalicylic acid"]),
-    "Baking Soda": ("Sodium bicarbonate", "Adulterant", ["Baking soda"]),
-    "Benzphetamine HCl": ("Benzphetamine", "Substance", []),
-    "Brompheniramine Maleate": ("Brompheniramine", "Substance", []),
-    "Chlordiazepoxide HCl": ("Chlordiazepoxide", "Substance", ["Librium"]),
-    "Chlorpromazine HCl": ("Chlorpromazine", "Substance", []),
-    "Cocaine HCl": ("Cocaine", "Substance", []),
-    "Codeine": ("Codeine", "Substance", []),
-    "Contac": ("Contac", "Substance", []),
-    "d-Amphetamine HCl": ("Amphetamine", "Substance", []),
-    "d-Methamphetamine HCl": ("Methamphetamine", "Substance", []),
-    "Diacetylmorphine HCl": ("Heroin", "Substance", []),
-    "Diazepam": ("Diazepam", "Substance", []),
-    # 2,5-dimetossi-4-metilanfetamina: lo standard del 1981 la chiama STP
-    "Dimethoxy-meth HCl": ("DOM", "Substance", []),
-    "Doxepin HCl": ("Doxepin", "Substance", []),
-    "Dristan": ("Dristan", "Substance", []),
-    "Ephedrine HCl": ("Ephedrine", "Substance", []),
-    "Exedrine": ("Excedrin", "Substance", []),
-    "Hydrocodone tartrate": ("Hydrocodone", "Substance", []),
-    "LSD": ("LSD", "Substance", []),
-    # la nota 5 dello standard: e' il gas lacrimogeno, non la spezia
-    "Mace": ("2-Chloroacetophenone", "Substance", ["Mace", "CN", "Phenacyl chloride"]),
-    "MDA HCl": ("MDA", "Substance", []),
-    "MDMA HCl": ("MDMA", "Substance", []),
-    "Meperidine HCl": ("Pethidine", "Substance", []),
-    "Mescaline HCl": ("Mescaline", "Substance", []),
-    "Methadone HCl": ("Methadone", "Substance", []),
-    "Methaqualone": ("Methaqualone", "Substance", []),
-    "Methylphenidate HCl": ("Methylphenidate", "Substance", []),
-    "Morphine monohydrate": ("Morphine", "Substance", []),
-    "Nutmeg": ("Nutmeg", "Substance", []),
-    "Opium": ("Opium", "Substance", []),
-    "Oxycodone HCl": ("Oxycodone", "Substance", []),
-    "Pentobarbital": ("Pentobarbital", "Substance", []),
-    "Phenobarbital": ("Phenobarbital", "Substance", []),
-    "Phencyclidine HCl": ("PCP", "Substance", []),
-    "Procaine HCl": ("Procaine", "Adulterant", ["Novocaine"]),
-    "Propoxyphene HCl": ("Dextropropoxyphene", "Substance", []),
-    "Pseudoephedrine HCl": ("Pseudoephedrine", "Substance", []),
-    "Quinine HCl": ("Quinine", "Adulterant", []),
-    "Salt": ("Sodium chloride", "Adulterant", ["Salt"]),
-    "Secobarbital": ("Secobarbital", "Substance", []),
-    "Sugar": ("Sucrose", "Adulterant", ["Sugar", "Table sugar"]),
-    "Tea": ("Tea", "Substance", []),
-    "THC": ("Tetrahydrocannabinol", "Substance", []),
-    "Tobacco": ("Tobacco", "Substance", []),
-    # la nota della tabella 3
-    "D-galactose": ("Galactose", "Adulterant", []),
-    "glucose": ("Glucose", "Adulterant", ["Dextrose"]),
-    "mannitol": ("Mannitol", "Adulterant", []),
-    "oregano": ("Oregano", "Substance", []),
-    "rosemary": ("Rosemary", "Substance", []),
-    "thyme": ("Thyme", "Substance", []),
-}
+# I nomi dello standard sono alias nel vocabolario (data/substances.json), anche
+# quelli scritti male ("Acetominophen", "Exedrine"). Due non sono ovvi:
+# "Dimethoxy-meth HCl" e' il DOM (lo standard del 1981 lo chiama STP), "Mace" e'
+# il gas lacrimogeno della nota 5, il 2-cloroacetofenone, non la spezia.
 
 ROW = re.compile(r"^A\.(\d+)\s+(.+)$")
 # la notazione Munsell in fondo al nome del colore, quando la riga non ha
@@ -191,18 +133,17 @@ def main() -> None:
     print(f"tabella 1: {len(colours)} righe | tabella 3: {len(specificity)} sostanze | "
           f"nota: {', '.join(negatives)}")
 
-    unknown = ({name for name, _ in colours} | set(specificity) | set(negatives)) - set(SUBSTANCES)
-    if unknown:
-        raise SystemExit(f"sostanze da nominare: {sorted(unknown)}")
-
+    vocabulary = Vocabulary()
     # la tabella 3 e la tabella 1 devono dire la stessa cosa: un + ha il suo
     # colore, un - non ce l'ha (per sostanza, perche' le tabelle scrivono i
     # nomi in modo diverso). Solo per i reagenti della pagina: per l'acido
     # nitrico la tabella 3 da' un + alla clorpromazina che la tabella 1 non ha.
-    coloured = {(SUBSTANCES[name][0], reagent) for name, reagent in colours}
+    coloured = {(vocabulary.resolve(SOURCE_ID, name), reagent)
+                for name, reagent in colours if reagent in REAGENTS}
     for name, signs in specificity.items():
+        substance_id = vocabulary.resolve(SOURCE_ID, name)
         for index, positive in enumerate(signs):
-            if index + 1 in REAGENTS and positive != ((SUBSTANCES[name][0], index + 1) in coloured):
+            if index + 1 in REAGENTS and positive != ((substance_id, index + 1) in coloured):
                 raise SystemExit(f"tabelle 1 e 3 in disaccordo: {name}, A.{index + 1}")
 
     records: dict[str, dict] = {}
@@ -210,8 +151,10 @@ def main() -> None:
     def add(name: str, reagent: int, stages: list[list[str]]) -> None:
         if reagent not in REAGENTS:
             return
-        canonical, kind, aliases = SUBSTANCES[name]
-        record = records.setdefault(canonical, substance(canonical, kind, aliases))
+        substance_id = vocabulary.resolve(SOURCE_ID, name)
+        if substance_id is None:
+            return
+        record = records.setdefault(substance_id, substance(substance_id))
         reagent_id = REAGENTS[reagent]
         add_observations(record["reactions"], reagent_id,
                          [readings(SOURCE_ID, reagent_id, stages)])
@@ -226,6 +169,7 @@ def main() -> None:
         for reagent in REAGENTS:
             add(name, reagent, [])
 
+    vocabulary.finish()
     write(SOURCE_ID, {**SOURCE, "fetchedAt": fetched_at()}, list(records.values()))
 
 

@@ -11,10 +11,28 @@ nomi dei colori alla palette della pagina:
 
 | Fonte | Licenza | Script | Cosa porta |
 |---|---|---|---|
-| [PsychonautWiki](https://psychonautwiki.org) | dati semantici CC BY 4.0 | `tools/extract_psychonautwiki.py` | 211 sostanze, 15 reagenti |
+| [PsychonautWiki](https://psychonautwiki.org) | dati semantici CC BY 4.0 | `tools/extract_psychonautwiki.py` | 210 sostanze, 15 reagenti |
 | [NIJ Standard-0604.01](https://www.ojp.gov/pdffiles1/nij/183258.pdf) (2000) | pubblicazione del governo USA, se ne usano solo i fatti | `tools/extract_nij.py` | 49 sostanze, molte non controllate: paracetamolo, aspirina, zucchero, sale, bicarbonato, procaina, chinino, glucosio, mannitolo… |
 | [NIST/NIJ CADS](https://doi.org/10.18434/mds2-3627) | dati di dipendenti NIST: pubblico dominio negli USA, licenza NIST altrove | `tools/extract_cads.py` | i 17 campioni sequestrati con un composto solo |
 | [Chang et al. 2025](https://doi.org/10.1002/ansa.70008) | CC BY 4.0 | `tools/extract_chang.py` | 14 polveri, tra cui saccarosio, paracetamolo, caffeina e xilazina |
+
+Le sostanze stanno in un vocabolario, `data/substances.json`: per ognuna id,
+nome, tipo, voce di PsychonautWiki, classe e alias, cioè tutti i nomi raccolti
+dalle fonti e i nomi di strada. Le fonti danno solo reazioni: ogni estrattore
+cerca il nome della sua fonte fra nomi e alias del vocabolario
+(`tools/vocabulary.py`). Gli alias possono essere ambigui ("speed" è
+l'anfetamina e la metanfetamina), ma un nome ambiguo o sconosciuto ferma
+l'estrazione: una coppia fonte-nome ambigua si risolve a mano in
+`data/name-conflicts.json`, un nome nuovo si aggiunge come alias. Gli alias che
+una fonte porta e il vocabolario non ha sono un avviso; `rejected` tiene i nomi
+che una fonte dà a una sostanza e che non sono suoi ("tea" per la caffeina).
+
+Per PsychonautWiki si cerca il nome del database dei reagenti, non la sostanza
+a cui l'API l'ha agganciato: l'aggancio aveva messo la cocaina cloridrato
+sotto "Coca", la doxepina sotto "DOx", il PCEEA sotto "PCE", e la stessa
+riga della cannabis sotto Cannabis e sotto THC. Nella pagina è "Cannabis
+(THC)": il test si fa sulla pianta o sulla resina, e il colore viene dai
+cannabinoidi che contiene.
 
 Le letture di una sostanza che più fonti documentano stanno nella stessa
 cella, una accanto all'altra: la pagina non sceglie fra le fonti. Ogni cella
@@ -72,8 +90,8 @@ python3 tools/build_data.py           # tutte le fonti -> data/reagents.json e .
 
 Gli estrattori scaricano le fonti in `sources/cache/` (con `--offline` usano
 solo quello che c'è già) e controllano lo sha256 dei file del NIST e del NIJ:
-se la fonte cambia, si fermano. Si fermano anche davanti a un colore, una
-sostanza o un campione puro che non conoscono: vanno decisi a mano. CADS e NIJ
+se la fonte cambia, si fermano. Si fermano anche davanti a un colore, un nome
+di sostanza o un campione puro che non conoscono: vanno decisi a mano. CADS e NIJ
 leggono i PDF con `pdftotext` (poppler-utils). `sources/` resta fuori dal
 repository; `data/reagents.json` ci sta.
 
@@ -179,12 +197,15 @@ in alto alla pagina, che scorre in orizzontale in sincrono con la tabella.
 ## Struttura
 
 ```
-data/reagents.json          il dataset (PsychonautWiki e le fonti in sources/)
+data/reagents.json          il dataset (il vocabolario e le reazioni delle fonti)
+data/substances.json        il vocabolario delle sostanze
+data/name-conflicts.json    le coppie fonte-nome risolte a mano
 data/reagents.js            lo stesso dataset, come script (per file://)
 data/descriptions.js        le descrizioni dei reagenti, con fonti e licenza
 tools/extract_*.py          estraggono le fonti in sources/, PsychonautWiki compresa
 tools/colour_names.py       dai nomi dei colori delle fonti alla palette
 tools/source_schema.py      quello che gli estrattori hanno in comune
+tools/vocabulary.py         a quale sostanza va un nome di una fonte
 tools/build_data.py         unisce le fonti e porta il dataset nella pagina
 tools/fetch_descriptions.py recupera le descrizioni dei reagenti
 tools/bundle.py             la pagina in un file solo
@@ -197,7 +218,7 @@ assets/                     la pagina
 | Parte | Licenza |
 |---|---|
 | Codice (`index.html`, `assets/`, `tools/`) | [AGPL-3.0](LICENSE) |
-| Dati della tabella (`data/reagents.*`) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| Dati della tabella (`data/reagents.*`, `data/substances.json`, `data/name-conflicts.json`) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
 | Descrizioni dei reagenti (`data/descriptions.js`) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Testi e documenti | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 

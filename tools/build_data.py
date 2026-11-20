@@ -2,12 +2,13 @@
 """Porta il dataset nella pagina.
 
 Il dataset parte da quello estratto da PsychonautWiki (sources/PNW.json), che
-da' la palette, i reagenti e le prime sostanze, e vi aggiunge le altre fonti
-estratte da tools/extract_*.py in sources/: le loro letture vanno accanto a
-quelle di PsychonautWiki nella stessa sostanza, quando c'e' gia', o in una
-sostanza nuova. Lo script scrive data/reagents.json e, siccome la pagina si
-apre anche dal disco, dove fetch() non puo' leggere un file locale, anche
-data/reagents.js come script semplice.
+da' la palette e i reagenti, e vi aggiunge le altre fonti estratte da
+tools/extract_*.py in sources/. Le fonti danno solo reazioni legate a un id;
+ogni sostanza e' la sua voce del vocabolario (data/substances.json: nome,
+alias, tipo, voce di PsychonautWiki, classe) con le reazioni di tutte le
+fonti, nell'ordine del vocabolario. Lo script scrive data/reagents.json e,
+siccome la pagina si apre anche dal disco, dove fetch() non puo' leggere un
+file locale, anche data/reagents.js come script semplice.
 
     python3 tools/build_data.py
     python3 tools/build_data.py percorso/dello/schema.json
@@ -19,6 +20,7 @@ import json
 from pathlib import Path
 
 from source_schema import BASE_COLOURS, SOURCES
+from vocabulary import load as load_vocabulary
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = SOURCES / "PNW.json"
@@ -42,23 +44,35 @@ HEADER = """\
 """
 
 
-def merge(data: dict, extracted: dict) -> None:
-    """Aggiunge una fonte estratta al dataset: le sue letture vanno nella
-    sostanza con lo stesso id, i suoi alias si aggiungono a quelli che ci sono."""
-    data["sources"].update(extracted["sources"])
-    by_id = {record["id"]: record for record in data["substances"]}
-    for record in extracted["substances"]:
-        existing = by_id.get(record["id"])
-        if existing is None:
-            data["substances"].append(record)
-            by_id[record["id"]] = record
+def compose(sources: list[dict]) -> list[dict]:
+    """Le sostanze della pagina: le voci del vocabolario che hanno reazioni, con
+    le reazioni di tutte le fonti, nell'ordine delle fonti."""
+    reactions: dict[str, dict] = {}
+    for source in sources:
+        for record in source["substances"]:
+            merged = reactions.setdefault(record["id"], {})
+            for reagent, entries in record["reactions"].items():
+                merged.setdefault(reagent, []).extend(entries)
+    vocabulary = load_vocabulary()
+    unknown = set(reactions) - {entry["id"] for entry in vocabulary}
+    if unknown:
+        raise SystemExit(f"reazioni per sostanze che il vocabolario non ha: {sorted(unknown)}")
+    substances = []
+    for entry in vocabulary:
+        if entry["id"] not in reactions:
             continue
-        known = {existing["name"].lower(), *(alias.lower() for alias in existing.get("aliases", []))}
-        aliases = [alias for alias in record.get("aliases", []) if alias.lower() not in known]
-        if aliases:
-            existing["aliases"] = existing.get("aliases", []) + aliases
-        for reagent, entries in record["reactions"].items():
-            existing["reactions"].setdefault(reagent, []).extend(entries)
+        substance = {"id": entry["id"], "name": entry["name"]}
+        if entry.get("aliases"):
+            substance["aliases"] = entry["aliases"]
+        info = {"type": entry["type"]}
+        if entry.get("wiki"):
+            info["wiki"] = entry["wiki"]
+        if entry.get("class"):
+            info["class"] = entry["class"]
+        substance["info"] = info
+        substance["reactions"] = reactions[entry["id"]]
+        substances.append(substance)
+    return substances
 
 
 def check(data: dict) -> None:
@@ -91,11 +105,15 @@ def main() -> None:
     if not args.schema.exists():
         raise SystemExit(f"manca {args.schema}: lancia tools/extract_psychonautwiki.py --schema")
     data = json.loads(args.schema.read_text(encoding="utf-8"))
+    sources = [data]
     for source in EXTRACTED:
         path = SOURCES / f"{source}.json"
         if not path.exists():
             raise SystemExit(f"manca {path}: lancia lo script della fonte (tools/extract_*.py)")
-        merge(data, json.loads(path.read_text(encoding="utf-8")))
+        sources.append(json.loads(path.read_text(encoding="utf-8")))
+    for source in sources[1:]:
+        data["sources"].update(source["sources"])
+    data["substances"] = compose(sources)
     check(data)
 
     payload = json.dumps(data, indent=1, ensure_ascii=False)

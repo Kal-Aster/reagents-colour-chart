@@ -21,6 +21,8 @@ Nessun effetto collaterale all'import: i file si scrivono solo quando main() gir
 """
 import argparse, csv, html, json, os, re, sys, time, urllib.request
 
+from vocabulary import Vocabulary
+
 # === SEZIONE 0 - CONFIG ==========================================================
 API = "https://api.psychonautwiki.org/"
 # I percorsi di default sono relativi al repository: funziona da qualunque cartella
@@ -2338,6 +2340,28 @@ def schema_reactions(cells):
     return out
 
 
+def substance_ids():
+    """L'id di ogni voce della fonte, nell'ordine di SUBS.
+
+    La sostanza viene dal vocabolario (data/substances.json), non
+    dall'aggancio dell'API: "Cocaine (Coke, Coca, ...)" era agganciata alla
+    pianta, "Doxepin HCl" a DOx. Si cerca il nome del database dei reagenti,
+    intero in name-conflicts.json, poi la parte prima della parentesi; gli
+    altri nomi della voce che il vocabolario non ha sono un avviso. Un nome
+    sconosciuto o ambiguo ferma lo script."""
+    vocabulary = Vocabulary()
+    ids = []
+    for s in SUBS:
+        raw = (s.get("rawName") or s["name"]).strip()
+        head = raw[:raw.find("(")].strip() if "(" in raw else raw
+        substance_id = vocabulary.resolve(SOURCE_ID, raw, head)
+        if substance_id is not None:
+            vocabulary.note_aliases(substance_id, [head] + split_top_level(first_paren(raw)))
+        ids.append(substance_id)
+    vocabulary.finish()
+    return ids
+
+
 def build_schema():
     """Il dataset nel formato pubblico."""
     base = reagent_base_colors()
@@ -2354,25 +2378,22 @@ def build_schema():
             rec["target"] = REAGENT_TARGET[r["fullName"]]
         reagents.append(rec)
 
-    substances = []
-    for s in SUBS:
-        rec = {"id": slugify(s["name"]), "name": s["name"]}
-        al = schema_aliases(s)
-        if al:
-            rec["aliases"] = al
-        info = {"wiki": s.get("url"), "type": "Substance"}
-        cls = s.get("class") or {}
-        if cls.get("chemical") or cls.get("psychoactive"):
-            info["class"] = {"chemical": cls.get("chemical") or [],
-                             "psychoactive": cls.get("psychoactive") or []}
-        rec["info"] = info
+    substances = {}
+    for s, substance_id in zip(SUBS, substance_ids()):
+        rec = {"id": substance_id}
         by_rg = {}
         for c in s["cells"]:
             by_rg.setdefault(c["reagent"], []).append(c)
         # una coppia senza letture ("no instant reaction") e' nessun dato: non c'e'
         reactions = {rk: schema_reactions(cells) for rk, cells in by_rg.items()}
         rec["reactions"] = {rk: entries for rk, entries in reactions.items() if entries}
-        substances.append(rec)
+        # due voci della fonte per la stessa sostanza (il THC e' agganciato due
+        # volte): le letture vanno insieme, ognuna una volta
+        merged = substances.setdefault(substance_id, {"id": substance_id, "reactions": {}})
+        for rk, entries in rec["reactions"].items():
+            known = merged["reactions"].setdefault(rk, [])
+            known.extend(entry for entry in entries if entry not in known)
+    substances = list(substances.values())
 
     year = 2026
     m = re.match(r"(\d{4})", (D or {}).get("fetchedAt") or "")
@@ -2394,7 +2415,7 @@ def write_schema(path):
     # ogni campione registrato deve comparire in almeno un percorso della sua coppia
     lost = 0
     entries = 0
-    for s, sub in zip(SUBS, data["substances"]):
+    for s in SUBS:
         for c in s["cells"]:
             mo = cell_model(c)
             seqs = schema_paths(mo)
@@ -2405,9 +2426,6 @@ def write_schema(path):
             for t in c["start"]:
                 if color_id(t["name"]) not in seen:
                     lost += 1
-    ids = [x["id"] for x in data["substances"]]
-    if len(set(ids)) != len(ids):
-        raise SystemExit("slug non univoci fra le sostanze")
     if lost:
         raise SystemExit("campioni persi nell'export: %d" % lost)
     ensure_dir(path)
@@ -2495,8 +2513,8 @@ def check(csv_path=None, html_path=None, schema_path=None):
             for shade, hexv in h["shades"].items():
                 hex_by_id["%s.%s" % (hue, shade)] = hexv
         n_e = n_bad = n_null = 0
-        for s in SUBS:
-            sub = next((x for x in sc["substances"] if x["name"] == s["name"]), None)
+        for s, substance_id in zip(SUBS, substance_ids()):
+            sub = next((x for x in sc["substances"] if x["id"] == substance_id), None)
             if sub is None:
                 n_bad += 1
                 continue
