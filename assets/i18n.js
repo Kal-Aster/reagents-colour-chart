@@ -45,6 +45,8 @@ const STRINGS = {
     partialReturn:
       "Nella documentazione {hue} compare due volte: verifica che il tuo sia quello finale, dopo {before}.",
     partialLater: "La reazione va avanti: dopo {seen} la documentazione prevede ancora {rest}.",
+    partialTarget:
+      "Il {reagent} non ha dato il colore che cerca ({target}), come documentato, ma il colore è diverso: la documentazione dice {doc}, tu hai indicato {seen}. Un reagente vecchio, i leganti di una compressa o una lettura tardiva possono cambiare il colore.",
     partialMissedStart: "La documentazione inizia con {missed}: potresti non aver visto le prime fasi.",
     partialMissedBetween:
       "Fra {from} e {to} la documentazione prevede anche {missed}: potresti non averlo visto.",
@@ -191,6 +193,8 @@ const STRINGS = {
     partialReturn:
       "In the documentation {hue} appears twice: check that yours is the final one, after {before}.",
     partialLater: "The reaction goes on: after {seen} the documentation still expects {rest}.",
+    partialTarget:
+      "The {reagent} did not give the colour it looks for ({target}), as documented, but the colour is different: the documentation says {doc}, you set {seen}. An old reagent, the binders of a tablet or a late reading can change the colour.",
     partialMissedStart: "The documentation starts with {missed}: you may have missed the first phases.",
     partialMissedBetween:
       "Between {from} and {to} the documentation also has {missed}: you may have missed it.",

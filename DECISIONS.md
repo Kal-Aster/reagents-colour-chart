@@ -279,6 +279,7 @@ Le decisioni non ancora prese sono in fondo.
 | D209 | Il colore atteso conta solo se è **completo**: presente e senza una forma (niente macchie, niente precipitato) | Le macchie blu dei catinoni con lo Scott non sono il blu della cocaina, e la fonte le marca come esito negativo |
 | D210 | La famiglia `black` diventa **`gray`**, una scala: grigio, grigio scuro, nero | `black.light` era un grigio chiaro e `black.standard` un grigio scuro chiamato "nero"; il nero vero delle fonti è `gray.dark`. "Black" va al nero, "grey" al grigio, "greyish black" e "dark grey" al grigio scuro |
 | D211 | "Not dissolving" è un campo della lettura (`dissolves: false`), mostrato con gli altri dettagli | È un'osservazione, come le bolle o le macchie |
+| D212 | Il **confronto col colore atteso** si fa per fonte: se l'hai visto, corrispondono solo le letture che lo hanno; se non l'hai visto, una lettura dello stesso colore corrisponde come sempre, e un colore diverso è una corrispondenza **parziale** solo se la fonte non documenta il colore atteso per quella sostanza | Chi vede marrone col Simon's resta compatibile con l'LSD ("no blue"), con un avviso sul reagente vecchio, ma non con la MDMA: CADS la documenta "Blue-Purple", e chi vede viola la trova comunque. Per fonte, perché le fonti possono essere in disaccordo; senza toccare il modello, perché le tappe servono al gradiente |
 
 ---
 
@@ -306,6 +307,6 @@ Le decisioni non ancora prese sono in fondo.
 | O6 | Quanto dato sul caricamento mettere nelle celle | Le fonti con note di quantità (Erowid, Dancesafe) sono sparse e non strutturate: meglio un set curato e citato che una matrice incompleta |
 | O7 | ~~Se e come mostrare le osservazioni dell'utente accanto alle fonti~~ | **Chiuso (D47)**: non vengono salvate |
 | O8 | Come popolare l'asse del caricamento oltre la metanfetamina con Simon's | Le fonti con dati di quantità sono articoli scientifici, non tabelle: va cercato caso per caso (Tusiewicz et al. 2021 per i catinoni; UNODC per le norme di protocollo) |
-| O9 | Il colore atteso nel **confronto** della pagina (D208, D209) | Per un reagente di classe si confronta prima "c'è il colore atteso o no", poi il colore preciso: chi vede marrone col Simon's è compatibile con tutte le sostanze senza blu |
+| O9 | ~~Il colore atteso nel **confronto** della pagina (D208, D209)~~ | **Chiuso (D212)** |
 | O10 | Come rappresentare **due colori insieme** ("reddish with grey spots") | Per ora sono due letture; lo schema ha solo sequenze nel tempo |
 | O11 | Le **letture ripetute** fra osservazioni diverse della stessa fonte (2C-C/Liebermann, Pethidine/Froehde) | Toglierle in build_data.py perde solo l'informazione, che la pagina non mostra, che la fonte ha visto quel risultato due volte |

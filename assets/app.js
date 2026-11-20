@@ -318,8 +318,48 @@
    * The warnings say why a match is not full, so a match is full exactly
    * when there are none. Each is a string key, the values in conflict —
    * which the popover writes in bold — and its kind: "check" for what is
-   * left to check, "difference" for what contradicts the documentation. */
-  function matchReading(reading, seen) {
+   * left to check, "difference" for what contradicts the documentation.
+   *
+   * A reagent that looks for a class has a colour that means "found", its
+   * target: the blue of the Simon's; only a complete target counts, not
+   * spots or a precipitate. If the user saw it, only the readings that
+   * have it match: that is what the test is for. If the user did not, a
+   * reading with the same colour matches as usual, even when the source
+   * also documents the target (CADS has the MDMA blue or purple). A
+   * different colour is a match, a partial one, only when the source
+   * documents no target for the substance: an old reagent, the binders of
+   * a tablet or a late reading can colour a test that found nothing, but
+   * a substance the source sees turn blue does not just turn brown.
+   *
+   * "readings" are the readings of the cell: the ones of the same source
+   * say whether it documents the target. */
+  function matchReading(reading, seen, readings = [reading]) {
+    const result = matchColours(reading, seen);
+    const target = REAGENT_BY_ID[seen.reagent]?.target;
+    const colors = reactionColors(reading, seen.reagent);
+    if (!target || !colors) return result;
+    const stages = seenReaction(seen);
+    const hasTarget = (one) => !one.shape &&
+      (reactionColors(one, seen.reagent) || []).some((color) => target.includes(hueOf(color)));
+    const seenFound = stages.some((stage) => target.includes(stage.hue));
+    if (seenFound) return hasTarget(reading) ? result : { outcome: "no", warnings: [] };
+    if (hasTarget(reading)) return { outcome: "no", warnings: [] };
+    if (result.outcome !== "no") return result;
+    const sourceFound = readings.some((one) => one.source === reading.source && hasTarget(one));
+    if (sourceFound) return result;
+    const sequence = (hues) => hues.length
+      ? hues.map((hue) => hueName(hue, state.lang)).join(" → ")
+      : t("noReaction");
+    return { outcome: "parziale", warnings: [{ kind: "check", key: "partialTarget", vars: {
+      reagent: reagentName(seen.reagent),
+      target: target.map((hue) => hueName(hue, state.lang)).join(" / "),
+      doc: sequence(colors.map(hueOf)),
+      seen: sequence(stages.map((stage) => stage.hue)),
+    } }] };
+  }
+
+  /* The colours of a reading against the colours seen. */
+  function matchColours(reading, seen) {
     const none = { outcome: "no", warnings: [] };
     /* the reaction only: the reagent's own colour is left out on both
        sides */
@@ -437,7 +477,7 @@
     const rank = ["no", "differenze", "parziale", "pieno"];
     let best = "no";
     for (const reading of readings) {
-      const { outcome } = matchReading(reading, seen);
+      const { outcome } = matchReading(reading, seen, readings);
       if (rank.indexOf(outcome) > rank.indexOf(best)) best = outcome;
     }
     /* The user saw no reaction and a source documents a colour: a real
@@ -623,7 +663,7 @@
        when it matches, fully or not. */
     const seenHere = activeObservations().filter((o) => o.reagent === reagentId);
     const matches = (reading) =>
-      seenHere.some((sn) => matchReading(reading, sn).outcome !== "no");
+      seenHere.some((sn) => matchReading(reading, sn, readings).outcome !== "no");
 
     const lines = document.createElement("div");
     lines.className = "cell-readings";
@@ -655,7 +695,7 @@
         /* A strip that matches with something left to check gets a "!"
            beside it: a click lists everything there is to check about
            that reading. */
-        const warnings = isMatch ? matchReading(reading, obs).warnings : [];
+        const warnings = isMatch ? matchReading(reading, obs, readings).warnings : [];
         /* the sources that gave this reading: it is shown once, but more
            than one source may have documented it */
         const sources = [...new Set(readings
@@ -711,7 +751,26 @@
          reading, so the descriptions stay in the same column */
       const bar = document.createElement("div");
       bar.className = "strip strip-empty";
-      line.append(bar);
+      /* a "no reaction" can match with something to check too: the user
+         saw a colour that is not the one the reagent looks for */
+      const matching = key === "no-reaction" ? list.find(matches) : null;
+      const warnings = matching ? matchReading(matching, obs, readings).warnings : [];
+      if (warnings.length) {
+        const stripRow = document.createElement("div");
+        stripRow.className = "strip-row";
+        const warn = document.createElement("button");
+        warn.type = "button";
+        warn.className = "warn-btn";
+        warn.textContent = "!";
+        warn.setAttribute("aria-label", t("warningsLabel"));
+        const sources = [...new Set(list.map((reading) => reading.source))];
+        warn.addEventListener("click", (event) =>
+          openWarnings(event, substance, reagentId, matching, sources, warnings));
+        stripRow.append(bar, warn);
+        line.append(stripRow);
+      } else {
+        line.append(bar);
+      }
       const span = document.createElement("span");
       span.className = "cell-text";
       span.textContent = key === "no-reaction" ? t("noReaction") : t("inconsistent");
