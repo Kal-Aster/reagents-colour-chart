@@ -140,6 +140,7 @@ substances[]
                            [] nessuna reazione, null risultato incoerente
       proportion?          low | standard | high (assente: standard)
       observation?         1, 2… quando la fonte ha più osservazioni della coppia
+                           (una lettura ripetuta in più osservazioni compare una volta)
       shape?               spots | ring | precipitate | particles
       fizz?                la reazione fa bolle
       dissolves?           false: il campione non si scioglie

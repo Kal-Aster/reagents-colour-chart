@@ -2320,13 +2320,6 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark"
-      ],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
-      "colors": [
        "yellow.standard"
       ],
       "observation": 2
@@ -17936,11 +17929,6 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard"
       ],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
-      "colors": [],
       "observation": 2
      },
      {

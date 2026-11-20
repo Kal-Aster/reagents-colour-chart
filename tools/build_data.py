@@ -53,6 +53,15 @@ def sort_name(name: str) -> str:
     return name.casefold()
 
 
+def same_reading(first: dict, second: dict) -> bool:
+    """Due letture uguali a parte l'osservazione che le ha date: la fonte ha
+    visto lo stesso risultato due volte (2C-C col Liebermann). La pagina ne
+    mostra una, la prima."""
+    def without_observation(reading: dict) -> dict:
+        return {key: value for key, value in reading.items() if key != "observation"}
+    return without_observation(first) == without_observation(second)
+
+
 def compose(sources: list[dict]) -> list[dict]:
     """Le sostanze della pagina: le voci del vocabolario che hanno reazioni, con
     le reazioni di tutte le fonti, nell'ordine delle fonti. Le sostanze sono
@@ -62,7 +71,10 @@ def compose(sources: list[dict]) -> list[dict]:
         for record in source["substances"]:
             merged = reactions.setdefault(record["id"], {})
             for reagent, entries in record["reactions"].items():
-                merged.setdefault(reagent, []).extend(entries)
+                cell = merged.setdefault(reagent, [])
+                for entry in entries:
+                    if not any(same_reading(entry, other) for other in cell):
+                        cell.append(entry)
     vocabulary = load_vocabulary()
     unknown = set(reactions) - {entry["id"] for entry in vocabulary}
     if unknown:

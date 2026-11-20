@@ -283,6 +283,7 @@ Le decisioni non ancora prese sono in fondo.
 | D213 | Le sostanze stanno in un **vocabolario** (`data/substances.json`): id, nome, tipo, voce di PsychonautWiki, classe, alias. Le fonti danno solo reazioni legate a un id | Le corrispondenze dei nomi erano sparse negli estrattori, e gli alias di PsychonautWiki presi così com'erano mettevano "Doxepin HCl" sotto DOx e "tea" sotto la caffeina |
 | D214 | Gli **alias possono essere ambigui**, i nomi delle fonti no: un nome ambiguo o sconosciuto ferma l'estrazione, e si risolve in `data/name-conflicts.json` (coppia fonte-nome) o aggiungendo un alias. Gli alias nuovi di una fonte sono un avviso | Gli alias servono alla ricerca, e i nomi di strada sono condivisi ("speed"); una reazione invece non deve mai andare a una sostanza indovinata |
 | D215 | Per PsychonautWiki conta il **nome del database dei reagenti**, non l'aggancio dell'API: la cocaina cloridrato ("Coca") e la cocaina base ("Cocaine (Crack)") sono due voci, la riga di DOx è la doxepina, quella di PCE è il PCEEA (DOx e PCE non hanno dati), Cannabis e THC sono una voce sola, "Cannabis (THC)", perché il campione è la pianta | L'API aggancia le voci alle sostanze del wiki per nome, e ne sbagliava quattro |
+| D216 | Una **lettura ripetuta** in più osservazioni della stessa coppia compare una volta: `build_data.py` tiene la prima | La pagina non mostra le osservazioni, quindi due righe uguali non dicevano niente in più; si perde solo che la fonte ha visto il risultato due volte (2C-C col Liebermann, Pethidine col Froehde) |
 
 ---
 
@@ -312,5 +313,5 @@ Le decisioni non ancora prese sono in fondo.
 | O8 | Come popolare l'asse del caricamento oltre la metanfetamina con Simon's | Le fonti con dati di quantità sono articoli scientifici, non tabelle: va cercato caso per caso (Tusiewicz et al. 2021 per i catinoni; UNODC per le norme di protocollo) |
 | O9 | ~~Il colore atteso nel **confronto** della pagina (D208, D209)~~ | **Chiuso (D212)** |
 | O10 | Come rappresentare **due colori insieme** ("reddish with grey spots") | Per ora sono due letture; lo schema ha solo sequenze nel tempo |
-| O11 | Le **letture ripetute** fra osservazioni diverse della stessa fonte (2C-C/Liebermann, Pethidine/Froehde) | Toglierle in build_data.py perde solo l'informazione, che la pagina non mostra, che la fonte ha visto quel risultato due volte |
+| O11 | ~~Le **letture ripetute** fra osservazioni diverse della stessa fonte~~ | **Chiuso (D216)** |
 | O12 | Quanto il database dei reagenti di PsychonautWiki **dipende dal NIJ** | La doxepina ha esattamente i nomi ISCC dello standard ("blackish red", "very dark red"): dove le due fonti concordano non sono due conferme indipendenti. Da verificare sui numeri di riferimento fra parentesi |
