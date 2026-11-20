@@ -49,6 +49,7 @@
     const out = [];
     if (reading.shape) out.push(t(`shapes.${reading.shape}`));
     if (reading.fizz) out.push(t("readingFizz"));
+    if (reading.dissolves === false) out.push(t("readingUndissolved"));
     if (reading.fade) {
       out.push(interpolate(t("readingFade"), { color: colorName(reading.fade, state.lang) }));
     }
@@ -2781,6 +2782,22 @@
     meta.className = "source-meta";
     meta.textContent = [src.year, src.license].filter(Boolean).join(" · ");
     li.append(meta);
+    /* The script that read the source and changed its colour names into
+       the palette, and when: the change the data underwent, said where the
+       source is. */
+    if (src.script) {
+      const extracted = document.createElement("div");
+      extracted.className = "source-meta";
+      const date = (src.fetchedAt || "").slice(0, 10);
+      const [before, after] = interpolate(t("sourceExtracted"), { date }).split("{script}");
+      const script = document.createElement("a");
+      script.href = `${REPOSITORY_URL}/blob/master/${src.script}`;
+      script.target = "_blank";
+      script.rel = "noopener";
+      script.textContent = src.script;
+      extracted.append(before, script, after ?? "");
+      li.append(extracted);
+    }
     return li;
   }
 

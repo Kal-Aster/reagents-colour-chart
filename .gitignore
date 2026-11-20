@@ -2,5 +2,4 @@ __pycache__/
 *.pyc
 .venv/
 dist/
-data.json
-psychonautwiki_schema.json
+sources/

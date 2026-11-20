@@ -115,6 +115,7 @@ const STRINGS = {
     timingInstant: "istantanea",
     timingStir: "mescola",
     readingFizz: "fa bolle",
+    readingUndissolved: "non si scioglie",
     readingFade: "{color} svanisce",
     shapes: {
       spots: "a macchie",
@@ -139,6 +140,7 @@ const STRINGS = {
     reagentSourceOriginal: "Testo originale, non tradotto.",
     reagentSourceTranslated: "Testo tradotto dall'originale.",
     dataSources: "Fonti e licenze",
+    sourceExtracted: "Colori ricondotti alla palette da {script} il {date}",
     licenceCode: "Codice",
     licenceData: "Dati della tabella",
     licenceDescriptions: "Descrizioni dei reagenti",
@@ -259,6 +261,7 @@ const STRINGS = {
     timingInstant: "instant",
     timingStir: "stir",
     readingFizz: "fizzes",
+    readingUndissolved: "does not dissolve",
     readingFade: "{color} fades",
     shapes: {
       spots: "in spots",
@@ -283,6 +286,7 @@ const STRINGS = {
     reagentSourceOriginal: "Original text, not translated.",
     reagentSourceTranslated: "Text translated from the original.",
     dataSources: "Sources and licences",
+    sourceExtracted: "Colours mapped to the palette by {script} on {date}",
     licenceCode: "Code",
     licenceData: "Table data",
     licenceDescriptions: "Reagent descriptions",

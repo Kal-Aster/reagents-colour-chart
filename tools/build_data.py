@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Porta il dataset nella pagina.
 
-Il dataset e' quello estratto da PsychonautWiki (psychonautwiki_schema.json),
-nello schema della fonte: la pagina lo legge cosi' com'e'. Lo script lo copia
-in data/reagents.json e, siccome la pagina si apre anche dal disco, dove
-fetch() non puo' leggere un file locale, anche in data/reagents.js come
-script semplice.
+Il dataset parte da quello estratto da PsychonautWiki (sources/PNW.json), che
+da' la palette, i reagenti e le prime sostanze, e vi aggiunge le altre fonti
+estratte da tools/extract_*.py in sources/: le loro letture vanno accanto a
+quelle di PsychonautWiki nella stessa sostanza, quando c'e' gia', o in una
+sostanza nuova. Lo script scrive data/reagents.json e, siccome la pagina si
+apre anche dal disco, dove fetch() non puo' leggere un file locale, anche
+data/reagents.js come script semplice.
 
     python3 tools/build_data.py
     python3 tools/build_data.py percorso/dello/schema.json
@@ -16,14 +18,22 @@ import argparse
 import json
 from pathlib import Path
 
+from source_schema import BASE_COLOURS, SOURCES
+
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "psychonautwiki_schema.json"
+SOURCE = SOURCES / "PNW.json"
 OUT = ROOT / "data" / "reagents.json"
-# il dataset e' un adattamento dei dati di PsychonautWiki (CC BY 4.0): lo
-# schema, la pulizia e l'organizzazione sono di questo progetto
+# le fonti estratte, nell'ordine in cui la pagina le elenca dopo PsychonautWiki
+EXTRACTED = ["NIJ", "CADS", "Chang2025"]
+# il dataset e' un adattamento dei dati delle fonti: lo schema, la pulizia,
+# l'organizzazione e la conversione dei colori sono di questo progetto
 HEADER = """\
-/* Reagent colour data, adapted from PsychonautWiki (https://psychonautwiki.org),
- * whose semantic data is licensed CC BY 4.0.
+/* Reagent colour data, adapted from:
+{sources}
+ *
+ * Each source names the script that extracted it ("script") and when
+ * ("fetchedAt"). The scripts change the sources' colour names into the
+ * colours of this palette; the original texts are not included.
  *
  * This adaptation: CC BY-NC-SA 4.0
  * (https://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -32,17 +42,69 @@ HEADER = """\
 """
 
 
+def merge(data: dict, extracted: dict) -> None:
+    """Aggiunge una fonte estratta al dataset: le sue letture vanno nella
+    sostanza con lo stesso id, i suoi alias si aggiungono a quelli che ci sono."""
+    data["sources"].update(extracted["sources"])
+    by_id = {record["id"]: record for record in data["substances"]}
+    for record in extracted["substances"]:
+        existing = by_id.get(record["id"])
+        if existing is None:
+            data["substances"].append(record)
+            by_id[record["id"]] = record
+            continue
+        known = {existing["name"].lower(), *(alias.lower() for alias in existing.get("aliases", []))}
+        aliases = [alias for alias in record.get("aliases", []) if alias.lower() not in known]
+        if aliases:
+            existing["aliases"] = existing.get("aliases", []) + aliases
+        for reagent, entries in record["reactions"].items():
+            existing["reactions"].setdefault(reagent, []).extend(entries)
+
+
+def check(data: dict) -> None:
+    """Le letture usano solo reagenti e colori del dataset, e il colore del
+    reagente che gli estrattori aggiungono e' quello di PsychonautWiki."""
+    reagents = {reagent["id"]: reagent for reagent in data["reagents"]}
+    for reagent, colour in BASE_COLOURS.items():
+        if reagents[reagent].get("baseColor") != colour:
+            raise SystemExit(f"{reagent}: colore del reagente {colour}, "
+                             f"PsychonautWiki dice {reagents[reagent].get('baseColor')}")
+    palette = {f"{hue}.{shade}" for hue, family in data["palette"].items()
+               for shade in family["shades"]}
+    for record in data["substances"]:
+        for reagent, entries in record["reactions"].items():
+            if reagent not in reagents:
+                raise SystemExit(f"{record['name']}: reagente sconosciuto {reagent}")
+            for entry in entries:
+                if entry["source"] not in data["sources"]:
+                    raise SystemExit(f"{record['name']}: fonte sconosciuta {entry['source']}")
+                unknown = set(entry["colors"] or []) - palette
+                if unknown:
+                    raise SystemExit(f"{record['name']}/{reagent}: colori fuori palette {unknown}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("schema", nargs="?", type=Path, default=SOURCE)
     args = parser.parse_args()
 
+    if not args.schema.exists():
+        raise SystemExit(f"manca {args.schema}: lancia tools/extract_psychonautwiki.py --schema")
     data = json.loads(args.schema.read_text(encoding="utf-8"))
+    for source in EXTRACTED:
+        path = SOURCES / f"{source}.json"
+        if not path.exists():
+            raise SystemExit(f"manca {path}: lancia lo script della fonte (tools/extract_*.py)")
+        merge(data, json.loads(path.read_text(encoding="utf-8")))
+    check(data)
+
     payload = json.dumps(data, indent=1, ensure_ascii=False)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(payload + "\n", encoding="utf-8")
+    sources = "\n".join(f" *   {source['label']} ({source['url']}), {source['license']};"
+                        for source in data["sources"].values())
     (OUT.parent / "reagents.js").write_text(
-        HEADER + "window.REAGENTS = " + payload + ";\n", encoding="utf-8")
+        HEADER.format(sources=sources) + "window.REAGENTS = " + payload + ";\n", encoding="utf-8")
 
     readings = sum(len(readings) for substance in data["substances"]
                    for readings in substance["reactions"].values())

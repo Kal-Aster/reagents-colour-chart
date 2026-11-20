@@ -6,14 +6,44 @@ l'evoluzione del colore nel tempo.
 
 ## Da dove vengono i dati
 
-L'unica fonte è **PsychonautWiki**. La sua pagina "Copyrights" rilascia i
-**dati semantici** del wiki in **CC BY 4.0** e il testo delle pagine in
-CC BY-SA 4.0; la licenza dichiarata dal dataset è quella della fonte in
-`sources`. Il dataset è in `psychonautwiki_schema.json`, generato a parte; la
-pagina lo usa così com'è.
+Le fonti sono quattro, ognuna con uno script che la legge e ne riconduce i
+nomi dei colori alla palette della pagina:
 
-Ogni cella espone **tutte** le letture: quando una fonte dà più esiti per la
-stessa coppia, la pagina li mostra tutti.
+| Fonte | Licenza | Script | Cosa porta |
+|---|---|---|---|
+| [PsychonautWiki](https://psychonautwiki.org) | dati semantici CC BY 4.0 | `tools/extract_psychonautwiki.py` | 211 sostanze, 15 reagenti |
+| [NIJ Standard-0604.01](https://www.ojp.gov/pdffiles1/nij/183258.pdf) (2000) | pubblicazione del governo USA, se ne usano solo i fatti | `tools/extract_nij.py` | 49 sostanze, molte non controllate: paracetamolo, aspirina, zucchero, sale, bicarbonato, procaina, chinino, glucosio, mannitolo… |
+| [NIST/NIJ CADS](https://doi.org/10.18434/mds2-3627) | dati di dipendenti NIST: pubblico dominio negli USA, licenza NIST altrove | `tools/extract_cads.py` | i 17 campioni sequestrati con un composto solo |
+| [Chang et al. 2025](https://doi.org/10.1002/ansa.70008) | CC BY 4.0 | `tools/extract_chang.py` | 14 polveri, tra cui saccarosio, paracetamolo, caffeina e xilazina |
+
+Le letture di una sostanza che più fonti documentano stanno nella stessa
+cella, una accanto all'altra: la pagina non sceglie fra le fonti. Ogni cella
+espone **tutte** le letture: quando una fonte dà più esiti per la stessa
+coppia, la pagina li mostra tutti.
+
+I nomi dei colori diventano colori della palette con le regole di
+`tools/colour_names.py`, le stesse del testo di PsychonautWiki: un composto
+vale per tutte le sue famiglie ("Pink-orange" è rosa oppure arancione), "-ish"
+aggiunge la sua famiglia, "light" e "dark" scelgono la tinta. I testi
+originali non entrano nel dataset: l'elenco delle fonti della pagina dice con
+quale script e in che data ogni fonte è stata letta.
+
+Alcune scelte su cosa entra:
+
+- **CADS**: solo i campioni con un composto solo. In una miscela il colore non
+  si attribuisce a un componente, e nemmeno la sua assenza: CADS 030 contiene
+  saccarosio e col Marquis non reagisce, il saccarosio puro sì.
+- **Cobalto tiocianato**: resta fuori. NIJ e CADS lo usano da solo, mentre
+  la pagina ha lo **Scott** (che poi acidifica ed estrae: resta blu quasi solo
+  la cocaina) e il **Morris** (che basifica, per la ketamina). Il cobalto da
+  solo dà blu con quasi tutte le ammine: nella colonna dello Scott o del
+  Morris sembrerebbe un disaccordo fra le fonti.
+- **NIJ**: entrano Mandelin, Marquis, Froehde, Mecke, Simon's e il p-DMAB come
+  **Ehrlich**, che è lo stesso reattivo; Dille-Koppanyi, Duquenois-Levine,
+  acido nitrico, cloruro ferrico e Zwikker restano fuori. Della tabella 3
+  entrano anche i "nessuna reazione".
+- **Chang et al.**: le tabelle 3-5, i colori visti dagli autori; la tabella 2
+  riassume la letteratura e resta fuori.
 
 Le descrizioni dei reagenti nella sezione "Reagenti" sono un passaggio in
 inglese, riportato com'è e tradotto a mano in italiano, tutti e due in
@@ -32,9 +62,20 @@ dati estratti non sono nel repository.
 ## Portare i dati nella pagina
 
 ```bash
+python3 tools/extract_psychonautwiki.py --no-csv --schema   # -> sources/PNW.json
+python3 tools/extract_nij.py          # NIJ 0604.01  -> sources/NIJ.json
+python3 tools/extract_cads.py         # NIST CADS    -> sources/CADS.json
+python3 tools/extract_chang.py        # Chang 2025   -> sources/Chang2025.json
 python3 tools/fetch_descriptions.py   # Wikipedia, Europe PMC -> data/descriptions.js
-python3 tools/build_data.py           # psychonautwiki_schema.json -> data/reagents.json e .js
+python3 tools/build_data.py           # tutte le fonti -> data/reagents.json e .js
 ```
+
+Gli estrattori scaricano le fonti in `sources/cache/` (con `--offline` usano
+solo quello che c'è già) e controllano lo sha256 dei file del NIST e del NIJ:
+se la fonte cambia, si fermano. Si fermano anche davanti a un colore, una
+sostanza o un campione puro che non conoscono: vanno decisi a mano. CADS e NIJ
+leggono i PDF con `pdftotext` (poppler-utils). `sources/` resta fuori dal
+repository; `data/reagents.json` ci sta.
 
 `fetch_descriptions.py` riscrive le fonti e l'inglese e non tocca le
 traduzioni: dice quali reagenti sono da tradurre e quali vanno rivisti perché l'originale inglese è cambiato
@@ -64,12 +105,13 @@ piu'.
 
 ## Il formato dei dati
 
-`data/reagents.json` è lo schema di PsychonautWiki:
+`data/reagents.json` è lo schema di PsychonautWiki, con le letture di tutte le
+fonti:
 
 ```
-sources     { [fonte]: { label, year, url, license, fetchedAt } }
+sources     { [fonte]: { label, year, url, license, script, fetchedAt } }
 palette     { [tinta]: { shades: { light, standard, dark } } }   hex di ogni colore
-reagents[]  { id, name, duration?, stir, baseColor? }
+reagents[]  { id, name, duration?, stir, baseColor?, target? }
 substances[]
   id, name, aliases?
   info        { wiki, type, class? }
@@ -82,12 +124,24 @@ substances[]
       observation?         1, 2… quando la fonte ha più osservazioni della coppia
       shape?               spots | ring | precipitate | particles
       fizz?                la reazione fa bolle
+      dissolves?           false: il campione non si scioglie
       fade?                il colore che svanisce
 ```
 
 Un reagente senza letture non compare. `duration` è il tempo del test in
 secondi (0 = istantaneo), `stir` dice se va mescolato, `baseColor` è il colore
-del reagente stesso. Tutto il resto — lo stato della cella, il disaccordo fra
+del reagente stesso. `target` sono le famiglie del colore atteso dai reagenti
+che cercano una classe (il blu del Simon's per le ammine secondarie): una
+lettura lo contiene o no. I reagenti senza `target` danno un'impronta.
+
+I grigi sono una famiglia sola, `gray`, che va dal grigio (`gray.light`) al
+grigio scuro (`gray.standard`) al nero (`gray.dark`).
+
+Una coppia che una fonte non documenta non ha letture di quella fonte: è
+"nessun dato". PsychonautWiki marca ogni esito con `isPositive`, che dice se
+è un indizio della sostanza, non se il colore cambia; un esito negativo che
+nomina un colore ("Dark brown" col Simon's) dà quel colore, perché è quello
+che si vede, e "no instant reaction" non dà letture. Tutto il resto — lo stato della cella, il disaccordo fra
 le letture, la copertura di un reagente — la pagina lo calcola al caricamento.
 
 ## Documenti
@@ -125,10 +179,13 @@ in alto alla pagina, che scorre in orizzontale in sincrono con la tabella.
 ## Struttura
 
 ```
-data/reagents.json          il dataset (copiato da psychonautwiki_schema.json)
+data/reagents.json          il dataset (PsychonautWiki e le fonti in sources/)
 data/reagents.js            lo stesso dataset, come script (per file://)
 data/descriptions.js        le descrizioni dei reagenti, con fonti e licenza
-tools/build_data.py         porta il dataset nella pagina
+tools/extract_*.py          estraggono le fonti in sources/, PsychonautWiki compresa
+tools/colour_names.py       dai nomi dei colori delle fonti alla palette
+tools/source_schema.py      quello che gli estrattori hanno in comune
+tools/build_data.py         unisce le fonti e porta il dataset nella pagina
 tools/fetch_descriptions.py recupera le descrizioni dei reagenti
 tools/bundle.py             la pagina in un file solo
 tools/serve.py              server di sviluppo
@@ -139,15 +196,15 @@ assets/                     la pagina
 
 | Parte | Licenza |
 |---|---|
-| Codice (`index.html`, `assets/`, `tools/`, `reagent_table.py`) | [AGPL-3.0](LICENSE) |
+| Codice (`index.html`, `assets/`, `tools/`) | [AGPL-3.0](LICENSE) |
 | Dati della tabella (`data/reagents.*`) | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
 | Descrizioni dei reagenti (`data/descriptions.js`) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | Testi e documenti | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 
-I dati della tabella sono un adattamento dei dati semantici di
-[PsychonautWiki](https://psychonautwiki.org), che restano in CC BY 4.0: la
-licenza non commerciale vale per lo schema, la pulizia e l'organizzazione di
-questo progetto, non per i dati della fonte. Le descrizioni restano in
+I dati della tabella sono un adattamento delle fonti elencate sopra, che
+restano con la loro licenza: la licenza non commerciale vale per lo schema, la
+pulizia, l'organizzazione e la conversione dei colori di questo progetto, non
+per i dati delle fonti. Le descrizioni restano in
 CC BY-SA perché vengono in gran parte da Wikipedia. Consultare la pagina, a
 qualunque scopo, non è regolato da nessuna di queste licenze.
 

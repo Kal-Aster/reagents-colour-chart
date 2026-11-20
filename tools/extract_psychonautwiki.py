@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""reagent_table.py - pipeline unica della matrice sostanza x reattivo.
+"""extract_psychonautwiki.py - estrae la fonte PsychonautWiki.
 
 Scarica i dati semantici da PsychonautWiki (CC BY 4.0), li normalizza e li salva;
-con --html esporta anche la tabella visuale.
+con --schema li scrive nello schema della pagina, come le altre fonti in
+sources/, e con --html esporta anche la tabella visuale.
 
-    python3 reagent_table.py            # scarica, normalizza, salva i dati
-    python3 reagent_table.py --html     # ... ed esporta anche index.html
-    python3 reagent_table.py --offline  # non riscarica: riusa il data.json locale
-    python3 reagent_table.py --check    # verifica le uscite (exit 1 se non tornano)
+    python3 tools/extract_psychonautwiki.py --no-csv --schema   # la fonte per build_data.py
+    python3 tools/extract_psychonautwiki.py --offline ...       # non riscarica: riusa la cache
+    python3 tools/extract_psychonautwiki.py --html              # ... ed esporta anche la tabella
+    python3 tools/extract_psychonautwiki.py --check             # verifica le uscite (exit 1 se non tornano)
 
-Uscite:
-    data.json                                dataset normalizzato (con provenienza e licenza dentro)
-    psychonautwiki_reagenti_sostanze.csv    formato lungo: una riga per record
-    index.html                               la tabella visuale (solo con --html)
+Uscite, tutte in sources/ (fuori dal repository):
+    cache/psychonautwiki.json    dataset normalizzato (con provenienza e licenza dentro)
+    PNW.json                     la fonte nello schema della pagina (solo con --schema)
+    psychonautwiki.csv           formato lungo: una riga per record
+    psychonautwiki.html          la tabella visuale (solo con --html)
 
 Nessun effetto collaterale all'import: i file si scrivono solo quando main() gira.
 """
@@ -21,13 +23,14 @@ import argparse, csv, html, json, os, re, sys, time, urllib.request
 
 # === SEZIONE 0 - CONFIG ==========================================================
 API = "https://api.psychonautwiki.org/"
-# I percorsi di default sono relativi allo script: funziona da qualunque cartella
+# I percorsi di default sono relativi al repository: funziona da qualunque cartella
 # e su qualunque macchina (i percorsi si sovrascrivono con --data/--csv/--html/--schema).
-HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_DATA = os.path.join(HERE, "data.json")
-DEFAULT_CSV = os.path.join(HERE, "psychonautwiki_reagenti_sostanze.csv")
-DEFAULT_HTML = os.path.join(HERE, "index.html")
-DEFAULT_SCHEMA = os.path.join(HERE, "psychonautwiki_schema.json")
+# Stanno in sources/ come quelli delle altre fonti (tools/source_schema.py).
+SOURCES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "sources")
+DEFAULT_DATA = os.path.join(SOURCES, "cache", "psychonautwiki.json")
+DEFAULT_CSV = os.path.join(SOURCES, "psychonautwiki.csv")
+DEFAULT_HTML = os.path.join(SOURCES, "psychonautwiki.html")
+DEFAULT_SCHEMA = os.path.join(SOURCES, "PNW.json")
 
 
 def ensure_dir(path):
@@ -238,7 +241,8 @@ SHADE = {"light", "dark", "pale", "faint", "bright", "slight", "very", "deep", "
 FORMS = {"spots": "macchie", "spot": "macchie", "streaks": "strisce", "streak": "strisce",
          "ring": "anello", "particles": "particelle", "particle": "particelle",
          "clouds": "nubi", "cloud": "nubi", "precipitate": "precipitato",
-         "precipitates": "precipitato", "dots": "punti", "dot": "punti"}
+         "precipitates": "precipitato", "precip": "precipitato",
+         "precipitation": "precipitato", "dots": "punti", "dot": "punti"}
 
 # la fonte abbrevia i composti anche con parentesi: "(orange) red", "Brown-Green (yellow)"
 PAREN_COL = re.compile(r"\(\s*%s\s*\)" % FAMCAP, re.I)
@@ -395,7 +399,7 @@ def parse(desc):
 def cell_forms(desc):
     """Forme citate nella descrizione: 'macchie', 'precipitato', 'anello'."""
     out = []
-    for m in re.finditer(r"\b(spots?|streaks?|ring|particles|clouds?|precipitates?|dots?)\b",
+    for m in re.finditer(r"\b(spots?|streaks?|ring|particles|clouds?|precipitation|precipitates?|precip|dots?)\b",
                          (desc or "").lower()):
         lab = FORMS.get(m.group(1))
         if lab and lab not in out:
@@ -728,8 +732,14 @@ def cell_model(cell):
                                 break
                         chain.insert(pos, {"kind": "missing", "fam": f,
                                            "mods": m.get("mods", []), "phase": ph_i,
-                                           "text": m.get("text", "")})
+                                           "text": m.get("text", ""),
+                                           "recorded": bool(m["tones"])})
+    # un campione che il testo non nomina: il colore proprio del reattivo e' il
+    # solo campione iniziale che il testo puo' tacere
+    undocumented = bool(free) or (initial is not None and (
+        base is None or fam_of(canon_hex(initial["hex"])) != base))
     return {"phases": phases, "initial": initial, "extras": [] if chain is not None else [t for _, t in free],
+            "undocumented": undocumented, "desc": cell.get("desc", ""),
             "undoc": undoc, "final_fam": final_fam, "n_raw": len(raw), "n_uniq": len(tones),
             "dynamic": dynamic, "fizz": fizz, "chain": chain, "has_alt": has_alt,
             "init_label": init_label}
@@ -761,7 +771,8 @@ def fork_branch(g, m, fam=None):
         return {"op": "single", "mentions": [m], "forked": True}
     tones = [t for t in m.get("tones", []) if fam_of(canon_hex(t["hex"])) == fam]
     mm = {"text": m["text"], "fams": [fam], "tones": tones, "mods": m.get("mods", []),
-          "noun": m.get("noun", ""), "missing": [] if tones else [fam], "compound": True}
+          "noun": m.get("noun", ""), "missing": [] if tones else [fam], "compound": True,
+          "recorded": bool(m.get("tones"))}
     return {"op": "single", "mentions": [mm], "forked": True}
 
 
@@ -1916,18 +1927,49 @@ REAGENT_PROCEDURE = {
     "Hofmann": {"duration": 300},
 }
 
+# Il colore atteso dei reattivi che cercano una classe: il colore che vuol dire
+# "trovata", come famiglie della palette. Una lettura lo contiene o no; la pagina
+# confronta il colore atteso con i colori registrati. I reattivi che non sono qui
+# (Marquis, Mecke, Mandelin, Froehde, Liebermann, Morris, Gallic, Folin) danno
+# un'impronta: conta il colore stesso.
+REAGENT_TARGET = {
+    # ammine secondarie: "blue solution" (Wikipedia, Simon's reagent)
+    "Simon's": ["blue"],
+    # ammine primarie: "pink or red" (Analytical Methods 2026, doi:10.1039/D6AY00085A)
+    "Robadope": ["pink", "red"],
+    # cocaina: blu (Wikipedia, Scott test)
+    "Scott": ["blue"],
+    # indoli: LSD "deep purple" (NIJ 0604.01, p-DMAB)
+    "Ehrlich": ["purple"],
+    # indoli: "violet-red or violet-blue" (Wikipedia, Ehrlich's reagent, van Urk)
+    "Hofmann": ["blue", "purple", "red"],
+    # benzodiazepine: "reddish-purple" (Wikipedia, Zimmermann reagent)
+    "Zimmermann": ["purple", "red"],
+    # rosa se prevale il CBD, blu se prevale il THC (Houtzager et al. 2024)
+    "Cannabis (4-AP)": ["pink", "blue"],
+}
+
+
+# La famiglia "black" della fonte va dal grigio chiaro al nero: nello schema e'
+# "gray", e gray.dark e' il nero. Dentro lo script resta "black".
+SCHEMA_HUE = {"black": "gray"}
+
+
+def schema_hue(hue):
+    return SCHEMA_HUE.get(hue, hue)
+
 
 def color_id(name):
     """'red2' -> 'red.standard' (il nome della fonte tradotto nel riferimento)."""
     hue = name.rstrip("123")
-    return "%s.%s" % (hue, SHADE_BY_TONE[name[-1]])
+    return "%s.%s" % (schema_hue(hue), SHADE_BY_TONE[name[-1]])
 
 
 def build_palette():
     """La palette per famiglia: ogni famiglia ha light, standard e dark."""
     fams = {}
     for c in COLORS:
-        hue = c["name"].rstrip("123")
+        hue = schema_hue(c["name"].rstrip("123"))
         fams.setdefault(hue, {})[SHADE_BY_TONE[c["name"][-1]]] = c["hex"]
     return {h: {"shades": fams[h]} for h in fams}
 
@@ -2055,27 +2097,107 @@ def is_incoherent(cell):
     return bool(ft) and bool(fo) and not (ft & fo)
 
 
+GREY_RE = re.compile(r"\bgr[ae]y", re.I)
+BLACK_RE = re.compile(r"\bblack", re.I)
+
+
+def text_color(fam, mods, text=""):
+    """Il colore che il testo nomina e nessun campione registra: la famiglia nella
+    tonalita' che la sfumatura del testo implica.
+
+    I grigi sono una scala: "grey" e' il grigio (gray.light), "dark grey" e
+    "greyish black" il grigio scuro (gray.standard), "black" il nero (gray.dark)."""
+    if fam == "black":
+        lighter = any(str(mod).lower() in ("light", "pale", "faint", "slight") for mod in mods or [])
+        darker = any(str(mod).lower() in ("dark", "deep") for mod in mods or [])
+        if BLACK_RE.search(text or ""):
+            tone = "standard" if GREY_RE.search(text) or lighter else "dark"
+        else:
+            tone = "standard" if darker else "light"
+        return "%s.%s" % (schema_hue(fam), tone)
+    return color_id(missing_color(fam, mods)["name"])
+
+
+def with_text_color(path, colour):
+    """Il percorso con una tappa del testo in fondo, se dice qualcosa: la stessa
+    famiglia della tappa prima ("brown" dopo il marrone scuro del campione) no."""
+    if path and path[-1].split(".")[0] == colour.split(".")[0]:
+        return path
+    return path + [colour]
+
+
 def schema_paths(mo):
-    """I percorsi della cella con la sequenza dei colori OSSERVATI, nello stesso
-    ordine con cui la tabella li disegna (il registro fa la spina dorsale)."""
+    """I percorsi della cella, nello stesso ordine con cui la tabella li disegna.
+
+    Il registro fa la spina dorsale: i colori sono quelli OSSERVATI. Il testo li
+    integra solo dove nomina qualcosa che nessun campione registra:
+    - una tappa della sequenza ("yellow > green > brown" senza il verde) entra
+      nella sua posizione; se e' un composto, un percorso per famiglia. Non entra
+      se la sua fase ha gia' un campione (le altre parole sono il resto del nome,
+      "red orange") o se la cella ha un campione che il testo non nomina: quello
+      e' probabilmente la tappa, descritta in altro modo ("rusty brown" e' il
+      campione rosso);
+    - un'alternativa ("violet / violet-blue" senza il blu) e' un percorso suo.
+    La famiglia mancante di un composto che ha gia' un campione ("reddish brown"
+    con il solo marrone) non aggiunge niente: e' un nome, non un passaggio, e il
+    percorso del suo ramo non esiste.
+    """
+    initial = [color_id(mo["initial"]["name"])] if mo["initial"] else []
     if mo.get("dynamic"):
         return [[color_id(t["name"]) for t in mo["dynamic"]["traj"]]]
     if mo.get("chain") is not None:
-        seq = [color_id(mo["initial"]["name"])] if mo["initial"] else []
-        for st in mo["chain"]:
-            if st.get("kind") == "tone":
-                seq.append(color_id(st["tone"]["name"]))
-        return [seq]
-    tracks = build_tracks(mo)
+        paths = [list(initial)]
+        steps = mo["chain"]
+        # una fase con un campione e' gia' descritta: le altre parole della fase
+        # sono il resto del suo nome ("red orange", "yellow brown"), non tappe
+        recorded_phases = {step["phase"] for step in steps if step.get("kind") == "tone"}
+        index = 0
+        while index < len(steps):
+            step = steps[index]
+            if step.get("kind") == "tone":
+                paths = [path + [color_id(step["tone"]["name"])] for path in paths]
+                index += 1
+                continue
+            # le famiglie mancanti della stessa menzione stanno di seguito: sono
+            # alternative della stessa tappa, non tappe diverse
+            group = [step]
+            while (index + len(group) < len(steps)
+                   and steps[index + len(group)].get("kind") == "missing"
+                   and steps[index + len(group)]["text"] == step["text"]
+                   and steps[index + len(group)]["phase"] == step["phase"]):
+                group.append(steps[index + len(group)])
+            index += len(group)
+            if step.get("recorded") or step["phase"] in recorded_phases or mo["undocumented"]:
+                continue
+            colors = [text_color(missing["fam"], missing.get("mods"), mo["desc"])
+                      for missing in group]
+            paths = [with_text_color(path, colour) for path in paths for colour in colors]
+        return paths
     out = []
-    for tr in tracks:
-        seq = [color_id(mo["initial"]["name"])] if mo["initial"] else []
+    for tr in build_tracks(mo):
+        seq = list(initial)
+        complete = True
         for node in tr:
+            node_recorded = any(m.get("tones") for g in node for m in g.get("mentions", []))
             for g in node:
                 for m in g.get("mentions", []):
-                    for t in (m.get("tones") or []):
+                    tones = m.get("tones") or []
+                    for t in tones:
                         seq.append(color_id(t["name"]))
-        out.append(seq)
+                    if tones:
+                        continue
+                    if m.get("compound") and m.get("recorded"):
+                        # il ramo di una famiglia del composto senza campione,
+                        # quando il composto ne ha per un'altra famiglia
+                        complete = False
+                    # un'alternativa e' un percorso suo; altrimenti, come nella
+                    # catena, il testo aggiunge solo a una fase senza campioni
+                    if not g.get("forked") and (node_recorded or mo["undocumented"]):
+                        continue
+                    for fam in (m.get("missing") or []):
+                        seq = with_text_color(seq, text_color(fam, m.get("mods"), mo["desc"]))
+        if complete:
+            out.append(seq)
     return out
 
 
@@ -2084,11 +2206,65 @@ SHAPE_BY_FORM = {"macchie": "spots", "precipitato": "precipitate",
 FIZZ_RE = re.compile(r"\b(fizz\w*|foam\w*|bubbl\w*)", re.I)
 
 
-# "black or no color change": la fonte offre due esiti, uno dei quali e' l'assenza
-# di reazione. Sono 3 record nel corpus (A-PHP/Zimmermann, Buprenorphine/Marquis,
-# Buprenorphine/Liebermann): valgono come due osservazioni distinte, una con il
-# colore e una con la sequenza vuota.
-ALT_NEG_RE = re.compile(r"\bor\b[^()]{0,24}?\bno (?:colou?r change|reaction|change)\b", re.I)
+# "black or no color change", "no change or yellowish", "clear or red": la fonte
+# offre due esiti, uno dei quali e' l'assenza di reazione. Valgono come due
+# osservazioni distinte, una con il colore e una con la sequenza vuota.
+ALT_NEG_RE = re.compile(r"\bor\b[^()]{0,24}?\b(?:no (?:colou?r change|reaction|change)|clear)\b"
+                        r"|\b(?:no(?: colou?r)? change|no|clear)\s+or\b|\bpossible\b"
+                        r"|^\s*no (?:colou?r )?change\s*-?>", re.I)
+# "no instant reaction": subito non succede niente, ma un colore puo' venire dopo
+# (il NIJ da' all'LSD il verde oliva col Marquis). Non e' nessuna reazione: e'
+# nessun dato.
+NO_INSTANT_RE = re.compile(r"\bno instant reaction\b", re.I)
+# "no blue color change": manca il colore atteso del reattivo. E' nessuna
+# reazione, e il colore deve essere quello atteso.
+NO_TARGET_RE = re.compile(r"\bno (\w+) colou?r change\b", re.I)
+# "not dissolving": il campione non si scioglie
+UNDISSOLVED_RE = re.compile(r"\bnot dissolving\b", re.I)
+# "reddish with grey spots": due colori insieme, il secondo con la sua forma.
+# Finche' lo schema non ha colori contemporanei sono due letture.
+WITH_FORM_RE = re.compile(r"^(.+?)\s+with\s+(.*\b(?:spots?|streaks?|precipitates?|particles|dots?))\s*$",
+                          re.I)
+
+
+def reagent_target(short_name):
+    """Il colore atteso del reattivo, dal suo nome breve."""
+    for r in RG:
+        if r["shortName"] == short_name:
+            return REAGENT_TARGET.get(r["fullName"], [])
+    return []
+
+
+def negative_paths(cell):
+    """I percorsi di una cella senza campioni, che per la fonte non e' un indizio
+    della sostanza (positive e' falso in tutte): i colori che il testo nomina,
+    perche' sono quelli che si vedono, o nessuna reazione. "Dark brown" col
+    Simon's e' marrone scuro: non e' il blu atteso, ma e' quello che si vede.
+    "no blue color change" e' nessuna reazione.
+
+    Ritorna le coppie (percorso, testo da cui viene), perche' la forma di una
+    lettura e' quella del suo testo: "reddish with grey spots" e' il rosso e il
+    grigio a macchie."""
+    desc = cell["desc"]
+    for match in NO_TARGET_RE.finditer(desc):
+        named = fam_to_families(match.group(1))
+        target = reagent_target(cell["reagent"])
+        if not set(named) & set(target):
+            raise SystemExit("%s: %r nomina un colore che non e' quello atteso (%s)"
+                             % (cell["reagent"], desc, target))
+    text = strip_index(NO_TARGET_RE.sub("", desc))
+    together = WITH_FORM_RE.match(text)
+    parts = [together.group(1), together.group(2)] if together else [text]
+    base = reagent_base_colors().get(cell["reagent"])
+    out = []
+    for part in parts:
+        mo = cell_model(dict(cell, desc=part))
+        for seq in [seq for seq in schema_paths(mo) if seq] or [[]]:
+            if base and seq and seq[0] != base:
+                # il colore proprio del reattivo e' la prima tappa, come nei campioni
+                seq = [base] + seq
+            out.append((seq, part))
+    return out
 
 
 def schema_reactions(cells):
@@ -2096,9 +2272,22 @@ def schema_reactions(cells):
 
     Le 21 coppie con due osservazioni della stessa fonte (testo identico, campioni
     diversi) restano distinte dal campo 'observation': senza, le loro voci
-    sarebbero indistinguibili una volta appiattite nell'array."""
+    sarebbero indistinguibili una volta appiattite nell'array. Un colore che il
+    testo nomina e che registra l'altra osservazione e' di quella, come nella
+    tabella HTML: qui non apre un percorso.
+
+    Una cella senza campioni ha i percorsi di negative_paths(). Una cella con
+    campioni non da' mai un percorso vuoto: senza colori della reazione e' un
+    ramo che non ha niente da dire, non l'assenza di reazione."""
     out = []
     for oi, cell in enumerate(cells):
+        if len(cells) > 1:
+            siblings = set()
+            for other_index, other in enumerate(cells):
+                if other_index != oi:
+                    siblings |= set(fams_of_cell(other))
+            if siblings:
+                cell = dict(cell, _sib=siblings)
         mo = cell_model(cell)
         incoh = is_incoherent(cell)
         form = cell_forms(cell["desc"])
@@ -2108,8 +2297,24 @@ def schema_reactions(cells):
         dyn = mo.get("dynamic")
         if dyn and dyn.get("fade_fam"):
             fade = color_id(std_color(dyn["fade_fam"])["name"])
-        seqs = schema_paths(mo)
-        for seq in seqs:
+        if not cell["start"]:
+            if NO_INSTANT_RE.search(cell["desc"]):
+                continue
+            found = negative_paths(cell)
+            seqs = [seq for seq, _ in found]
+            shapes = [SHAPE_BY_FORM.get(cell_forms(part)) for _, part in found]
+        else:
+            initial = [color_id(mo["initial"]["name"])] if mo["initial"] else []
+            seqs = [seq for seq in schema_paths(mo) if seq and seq != initial] or [initial]
+            # due tappe uguali di seguito sono una; due percorsi uguali, uno
+            seqs = [[colour for index, colour in enumerate(seq) if index == 0 or seq[index - 1] != colour]
+                    for seq in seqs]
+            seqs = [list(seq) for seq in dict.fromkeys(map(tuple, seqs))]
+            shapes = [shape] * len(seqs)
+        # una lettura incoerente e' una sola, qualunque siano i percorsi
+        if incoh:
+            seqs = seqs[:1]
+        for seq, shape in zip(seqs, shapes):
             r = {"source": SOURCE_ID,
                  "colors": None if incoh else seq}
             if len(cells) > 1:
@@ -2120,6 +2325,8 @@ def schema_reactions(cells):
                 r["shape"] = shape
             if fade:
                 r["fade"] = fade
+            if UNDISSOLVED_RE.search(cell["desc"]):
+                r["dissolves"] = False
             out.append(r)
         # l'alternativa esplicita "colore or nessuna reazione" e' una seconda
         # osservazione, con la sequenza vuota
@@ -2143,6 +2350,8 @@ def build_schema():
         if "duration" in proc:
             rec["duration"] = proc["duration"]
         rec["stir"] = bool(proc.get("stir"))
+        if r["fullName"] in REAGENT_TARGET:
+            rec["target"] = REAGENT_TARGET[r["fullName"]]
         reagents.append(rec)
 
     substances = []
@@ -2160,7 +2369,9 @@ def build_schema():
         by_rg = {}
         for c in s["cells"]:
             by_rg.setdefault(c["reagent"], []).append(c)
-        rec["reactions"] = {rk: schema_reactions(cells) for rk, cells in by_rg.items()}
+        # una coppia senza letture ("no instant reaction") e' nessun dato: non c'e'
+        reactions = {rk: schema_reactions(cells) for rk, cells in by_rg.items()}
+        rec["reactions"] = {rk: entries for rk, entries in reactions.items() if entries}
         substances.append(rec)
 
     year = 2026
@@ -2169,7 +2380,7 @@ def build_schema():
         year = int(m.group(1))
     return {
         "sources": {SOURCE_ID: {"label": SOURCE_LABEL, "year": year, "url": SOURCE_URL,
-                                "license": SOURCE_LICENSE,
+                                "license": SOURCE_LICENSE, "script": "tools/extract_psychonautwiki.py",
                                 "fetchedAt": (D or {}).get("fetchedAt", "")}},
         "palette": build_palette(),
         "reagents": reagents,
@@ -2306,12 +2517,17 @@ def check(csv_path=None, html_path=None, schema_path=None):
                         n_bad += 1
                         print("   SCORRETTO", s["name"], rk, e, g)
                         continue
-                    # i colori della voce devono essere campioni registrati
+                    # i colori della voce sono campioni registrati o famiglie che
+                    # il testo nomina (le tappe e le alternative senza campione)
+                    # e il colore proprio del reattivo, la prima tappa
+                    named = {schema_hue(fam) for c in cells for fam in text_families(c["desc"])}
                     for cid in (g["colors"] or []):
-                        if hex_by_id.get(cid) not in [x["hex"] for c in cells for x in c["start"]]:
+                        if (hex_by_id.get(cid) not in [x["hex"] for c in cells for x in c["start"]]
+                                and cid.split(".")[0] not in named
+                                and cid != reagent_base_colors().get(rk)):
                             n_bad += 1
-                            print("   COLORE NON REGISTRATO", s["name"], rk, cid)
-        print("schema: %d voci | null: %d | colori non presenti fra i campioni: %d" % (n_e, n_null, n_bad))
+                            print("   COLORE NE' REGISTRATO NE' NEL TESTO", s["name"], rk, cid)
+        print("schema: %d voci | null: %d | colori ne' registrati ne' nel testo: %d" % (n_e, n_null, n_bad))
         ok &= (n_bad == 0)
 
     # --- l'HTML (solo se e' stato scritto) ---------------------------------------
@@ -2339,7 +2555,7 @@ def main(argv=None):
                     help="esporta anche la tabella HTML (con --html PATH si sceglie dove)")
     ap.add_argument("--schema", nargs="?", const=DEFAULT_SCHEMA, default=None,
                     help="esporta anche il dataset nel formato pubblico (JSON)")
-    ap.add_argument("--offline", action="store_true", help="non riscarica: riusa il data.json locale")
+    ap.add_argument("--offline", action="store_true", help="non riscarica: riusa la cache locale")
     ap.add_argument("--no-csv", action="store_true", help="non scrivere il CSV")
     ap.add_argument("--check", action="store_true", help="verifica le uscite (exit 1 se non tornano)")
     args = ap.parse_args(argv)

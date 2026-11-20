@@ -1,5 +1,12 @@
-/* Reagent colour data, adapted from PsychonautWiki (https://psychonautwiki.org),
- * whose semantic data is licensed CC BY 4.0.
+/* Reagent colour data, adapted from:
+ *   PsychonautWiki (https://psychonautwiki.org), CC BY 4.0;
+ *   NIJ Standard-0604.01 (https://www.ojp.gov/pdffiles1/nij/183258.pdf), US government publication (facts only);
+ *   NIST/NIJ CADS (https://doi.org/10.18434/mds2-3627), NIST (public domain in the US);
+ *   Chang et al., Analytical Science Advances (https://doi.org/10.1002/ansa.70008), CC BY 4.0;
+ *
+ * Each source names the script that extracted it ("script") and when
+ * ("fetchedAt"). The scripts change the sources' colour names into the
+ * colours of this palette; the original texts are not included.
  *
  * This adaptation: CC BY-NC-SA 4.0
  * (https://creativecommons.org/licenses/by-nc-sa/4.0/).
@@ -12,11 +19,36 @@ window.REAGENTS = {
    "year": 2026,
    "url": "https://psychonautwiki.org",
    "license": "CC BY 4.0",
+   "script": "tools/extract_psychonautwiki.py",
    "fetchedAt": "2026-11-18 23:23 UTC"
+  },
+  "NIJ": {
+   "label": "NIJ Standard-0604.01",
+   "year": 2000,
+   "url": "https://www.ojp.gov/pdffiles1/nij/183258.pdf",
+   "license": "US government publication (facts only)",
+   "script": "tools/extract_nij.py",
+   "fetchedAt": "2026-11-20 15:59 UTC"
+  },
+  "CADS": {
+   "label": "NIST/NIJ CADS",
+   "year": 2026,
+   "url": "https://doi.org/10.18434/mds2-3627",
+   "license": "NIST (public domain in the US)",
+   "script": "tools/extract_cads.py",
+   "fetchedAt": "2026-11-20 15:59 UTC"
+  },
+  "Chang2025": {
+   "label": "Chang et al., Analytical Science Advances",
+   "year": 2025,
+   "url": "https://doi.org/10.1002/ansa.70008",
+   "license": "CC BY 4.0",
+   "script": "tools/extract_chang.py",
+   "fetchedAt": "2026-11-20 15:59 UTC"
   }
  },
  "palette": {
-  "black": {
+  "gray": {
    "shades": {
     "light": "#bfbfbf",
     "standard": "#333333",
@@ -117,19 +149,30 @@ window.REAGENTS = {
    "name": "Simon's",
    "baseColor": "orange.light",
    "duration": 0,
-   "stir": false
+   "stir": false,
+   "target": [
+    "blue"
+   ]
   },
   {
    "id": "Eh",
    "name": "Ehrlich",
    "duration": 300,
-   "stir": false
+   "stir": false,
+   "target": [
+    "purple"
+   ]
   },
   {
    "id": "Ho",
    "name": "Hofmann",
    "duration": 300,
-   "stir": false
+   "stir": false,
+   "target": [
+    "blue",
+    "purple",
+    "red"
+   ]
   },
   {
    "id": "Ga",
@@ -140,7 +183,11 @@ window.REAGENTS = {
    "id": "Ro",
    "name": "Robadope",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "target": [
+    "pink",
+    "red"
+   ]
   },
   {
    "id": "Mo",
@@ -152,13 +199,20 @@ window.REAGENTS = {
   {
    "id": "Zi",
    "name": "Zimmermann",
-   "stir": false
+   "stir": false,
+   "target": [
+    "purple",
+    "red"
+   ]
   },
   {
    "id": "Sc",
    "name": "Scott",
    "baseColor": "pink.standard",
-   "stir": false
+   "stir": false,
+   "target": [
+    "blue"
+   ]
   },
   {
    "id": "Fo",
@@ -169,7 +223,11 @@ window.REAGENTS = {
   {
    "id": "Ca",
    "name": "Cannabis (4-AP)",
-   "stir": false
+   "stir": false,
+   "target": [
+    "pink",
+    "blue"
+   ]
   }
  ],
  "substances": [
@@ -280,7 +338,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -303,7 +361,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ],
       "shape": "spots"
      }
@@ -312,7 +370,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -772,7 +830,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "blue.standard"
+      ]
      }
     ],
     "Ho": [
@@ -905,11 +965,19 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -932,6 +1000,10 @@ window.REAGENTS = {
     "Fr": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -984,13 +1056,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.standard"
+       "pink.standard",
+       "blue.standard"
       ]
      }
     ]
@@ -1180,7 +1247,9 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       "yellow.standard",
+       "green.standard",
+       "red.standard"
       ],
       "shape": "spots"
      }
@@ -1210,7 +1279,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1237,7 +1306,10 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "orange.light",
+       "green.standard"
+      ],
       "shape": "precipitate"
      }
     ],
@@ -1296,7 +1368,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1307,16 +1379,6 @@ window.REAGENTS = {
        "green.standard"
       ],
       "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [],
-      "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [],
-      "observation": 2
      },
      {
       "source": "PNW",
@@ -1366,6 +1428,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
+       "brown.standard",
        "green.dark"
       ]
      }
@@ -1395,7 +1458,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1476,11 +1539,6 @@ window.REAGENTS = {
     "Me": [
      {
       "source": "PNW",
-      "colors": [],
-      "observation": 1
-     },
-     {
-      "source": "PNW",
       "colors": [
        "green.standard"
       ],
@@ -1491,11 +1549,6 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard"
       ],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
-      "colors": [],
       "observation": 2
      }
     ],
@@ -1524,7 +1577,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1617,12 +1670,6 @@ window.REAGENTS = {
        "yellow.standard",
        "green.standard"
       ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard"
-      ]
      }
     ]
    }
@@ -1677,7 +1724,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1735,7 +1782,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1753,7 +1800,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1879,7 +1926,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -1989,11 +2036,6 @@ window.REAGENTS = {
       "colors": [
        "green.dark"
       ],
-      "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [],
       "observation": 1
      },
      {
@@ -2119,7 +2161,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark",
+       "gray.dark",
        "yellow.standard"
       ]
      }
@@ -2220,7 +2262,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "red.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2237,7 +2279,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2331,7 +2373,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2426,7 +2468,7 @@ window.REAGENTS = {
        "green.standard",
        "green.dark",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2445,7 +2487,7 @@ window.REAGENTS = {
       "colors": [
        "green.standard",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2480,7 +2522,7 @@ window.REAGENTS = {
       "colors": [
        "orange.light",
        "pink.standard",
-       "black.dark"
+       "gray.dark"
       ],
       "observation": 1
      },
@@ -2489,7 +2531,7 @@ window.REAGENTS = {
       "colors": [
        "orange.light",
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ],
       "observation": 2
      }
@@ -2655,7 +2697,17 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "orange.light",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "gray.light"
+      ],
       "shape": "spots"
      }
     ],
@@ -2691,7 +2743,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2701,7 +2753,7 @@ window.REAGENTS = {
       "colors": [
        "brown.standard",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2712,7 +2764,7 @@ window.REAGENTS = {
        "yellow.standard",
        "brown.standard",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2720,7 +2772,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2731,7 +2783,7 @@ window.REAGENTS = {
        "orange.standard",
        "brown.standard",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2762,7 +2814,17 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "orange.light",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       "orange.light",
+       "gray.light"
+      ],
       "shape": "spots"
      }
     ],
@@ -2884,13 +2946,6 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
-      ],
-      "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [
        "orange.standard",
        "purple.standard"
       ],
@@ -2901,13 +2956,6 @@ window.REAGENTS = {
       "colors": [
        "orange.standard",
        "red.standard"
-      ],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.standard"
       ],
       "observation": 2
      }
@@ -2959,7 +3007,7 @@ window.REAGENTS = {
       "colors": [
        "orange.standard",
        "purple.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2969,7 +3017,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "red.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -2985,7 +3033,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       "purple.dark",
+       "orange.standard"
       ]
      }
     ],
@@ -3435,7 +3484,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ]
@@ -3469,7 +3518,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "pink.standard"
+      ]
      },
      {
       "source": "PNW",
@@ -3691,6 +3742,12 @@ window.REAGENTS = {
     "Mq": [
      {
       "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "PNW",
       "colors": []
      }
     ],
@@ -3851,7 +3908,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -3918,7 +3975,9 @@ window.REAGENTS = {
     "Mq": [
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "orange.standard"
+      ]
      },
      {
       "source": "PNW",
@@ -3942,7 +4001,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4015,7 +4074,7 @@ window.REAGENTS = {
        "yellow.standard",
        "brown.standard",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4079,7 +4138,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4087,7 +4146,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4110,7 +4169,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -4160,7 +4219,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4171,7 +4230,7 @@ window.REAGENTS = {
        "yellow.standard",
        "orange.standard",
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4179,7 +4238,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4197,7 +4256,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4210,7 +4269,8 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": []
+      "colors": [],
+      "shape": "precipitate"
      }
     ],
     "Ho": [
@@ -4438,6 +4498,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
+       "green.standard",
        "brown.standard"
       ]
      }
@@ -4453,7 +4514,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4463,7 +4524,7 @@ window.REAGENTS = {
       "colors": [
        "green.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4472,7 +4533,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4554,7 +4615,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4565,7 +4626,7 @@ window.REAGENTS = {
        "yellow.standard",
        "orange.standard",
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4574,7 +4635,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4629,7 +4690,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4645,7 +4706,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -4685,7 +4746,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       "yellow.standard",
+       "green.standard"
       ]
      }
     ],
@@ -4693,13 +4755,15 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "blue.standard",
+       "gray.dark"
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "green.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -4708,7 +4772,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4717,7 +4781,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4736,7 +4800,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4878,7 +4942,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.light",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -4921,7 +4985,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4929,7 +4993,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4938,7 +5002,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -4948,7 +5012,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "green.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5022,7 +5086,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5037,7 +5101,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5089,7 +5153,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5114,7 +5178,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "orange.light",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5153,7 +5217,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5192,7 +5256,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.light",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -5232,22 +5296,6 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": null
-     },
-     {
-      "source": "PNW",
-      "colors": null
-     },
-     {
-      "source": "PNW",
-      "colors": null
-     },
-     {
-      "source": "PNW",
-      "colors": null
-     },
-     {
-      "source": "PNW",
-      "colors": null
      }
     ],
     "Me": [
@@ -5255,7 +5303,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5264,7 +5312,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5274,7 +5322,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "green.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5301,7 +5349,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "blue.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5312,7 +5360,7 @@ window.REAGENTS = {
        "orange.light",
        "brown.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5590,7 +5638,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5598,7 +5646,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5608,7 +5656,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "purple.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5616,7 +5664,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5635,11 +5683,17 @@ window.REAGENTS = {
       "colors": [
        "brown.light",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
     "Eh": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.light"
+      ]
+     },
      {
       "source": "PNW",
       "colors": []
@@ -5651,7 +5705,7 @@ window.REAGENTS = {
       "colors": [
        "orange.light",
        "blue.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5734,7 +5788,7 @@ window.REAGENTS = {
       "colors": [
        "orange.dark",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5829,7 +5883,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5874,7 +5928,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5882,7 +5936,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5891,7 +5945,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5899,7 +5953,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -5916,7 +5970,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.light",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -6054,7 +6108,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "orange.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6122,7 +6176,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       "yellow.standard",
+       "green.standard"
       ]
      },
      {
@@ -6184,6 +6239,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
+       "purple.dark",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
        "purple.dark"
       ]
      }
@@ -6193,7 +6255,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6203,7 +6265,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "red.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6213,7 +6275,7 @@ window.REAGENTS = {
       "colors": [
        "orange.standard",
        "purple.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6284,7 +6346,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6294,7 +6356,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6302,7 +6364,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6406,7 +6468,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -6802,6 +6864,18 @@ window.REAGENTS = {
        "orange.standard",
        "brown.standard"
       ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.standard"
+      ]
      }
     ],
     "Me": [
@@ -6817,6 +6891,12 @@ window.REAGENTS = {
       "colors": [
        "red.standard",
        "brown.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
       ]
      }
     ],
@@ -6851,6 +6931,12 @@ window.REAGENTS = {
       "colors": [
        "red.standard",
        "brown.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
       ]
      }
     ]
@@ -6984,7 +7070,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -6993,7 +7079,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -7023,7 +7109,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.light"
+       "gray.light"
       ],
       "fade": "yellow.standard"
      }
@@ -7100,17 +7186,29 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -7131,7 +7229,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.light"
+       "blue.light",
+       "purple.standard"
       ]
      }
     ],
@@ -7142,6 +7241,24 @@ window.REAGENTS = {
        "pink.standard",
        "green.light"
       ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ]
    }
@@ -7175,11 +7292,58 @@ window.REAGENTS = {
        "orange.standard"
       ],
       "shape": "spots"
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.standard",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.standard",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "red.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "gray.dark"
+      ]
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
       "colors": []
      }
     ],
@@ -7196,6 +7360,27 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "blue.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -7217,7 +7402,10 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "orange.light",
+       "brown.dark"
+      ]
      }
     ],
     "Ho": [
@@ -7254,11 +7442,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -7283,6 +7481,12 @@ window.REAGENTS = {
     "Ho": [
      {
       "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "CADS",
       "colors": []
      }
     ]
@@ -7448,11 +7652,15 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "purple.standard"
+      ]
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "gray.dark"
+      ]
      }
     ],
     "Me": [
@@ -7512,7 +7720,8 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "green.standard",
+       "gray.dark"
       ]
      },
      {
@@ -7520,7 +7729,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -7629,8 +7838,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.light",
-       "black.dark"
+       "gray.light",
+       "gray.dark"
       ]
      },
      {
@@ -7738,17 +7947,29 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
       "colors": []
      }
     ],
@@ -7758,10 +7979,6 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard"
       ]
-     },
-     {
-      "source": "PNW",
-      "colors": []
      }
     ],
     "Fr": [
@@ -8253,7 +8470,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -8319,11 +8536,29 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "pink.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
       "colors": []
      }
     ],
@@ -8337,6 +8572,24 @@ window.REAGENTS = {
        "brown.standard",
        "yellow.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Li": [
@@ -8356,6 +8609,10 @@ window.REAGENTS = {
     "Fr": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -8427,6 +8684,18 @@ window.REAGENTS = {
       "colors": [
        "purple.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "gray.dark"
+      ]
      }
     ],
     "Me": [
@@ -8435,6 +8704,24 @@ window.REAGENTS = {
       "colors": [
        "blue.standard",
        "blue.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "blue.dark"
       ]
      }
     ],
@@ -8448,6 +8735,27 @@ window.REAGENTS = {
        "brown.light"
       ],
       "shape": "spots"
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
+      ]
      }
     ],
     "Li": [
@@ -8460,7 +8768,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -8469,6 +8777,12 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
       ]
      }
     ],
@@ -8544,7 +8858,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -8553,7 +8867,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -8653,7 +8967,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -8682,7 +8996,10 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "orange.light",
+       "gray.dark"
+      ],
       "shape": "precipitate"
      }
     ],
@@ -8748,7 +9065,11 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "orange.light",
+       "gray.standard"
+      ],
+      "shape": "precipitate"
      }
     ],
     "Ho": [
@@ -8828,14 +9149,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
      }
     ],
     "Me": [
      {
       "source": "PNW",
       "colors": [
+       "yellow.standard",
        "green.standard",
        "brown.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
       ]
      }
     ],
@@ -8846,6 +9180,20 @@ window.REAGENTS = {
        "yellow.standard",
        "green.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
      }
     ],
     "Li": [
@@ -8853,7 +9201,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -8862,6 +9210,18 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
        "green.standard"
       ]
      }
@@ -8882,6 +9242,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
      }
     ],
     "Ho": [
@@ -8983,7 +9350,7 @@ window.REAGENTS = {
       "colors": [
        "orange.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -8993,7 +9360,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -9135,7 +9502,7 @@ window.REAGENTS = {
       "colors": [
        "green.dark",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -9143,7 +9510,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard",
+       "gray.standard",
        "purple.standard"
       ]
      }
@@ -9283,9 +9650,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark",
+       "gray.dark",
        "purple.standard",
        "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
       ]
      }
     ],
@@ -9294,8 +9673,22 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.standard",
+       "gray.standard",
        "brown.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
       ]
      }
     ],
@@ -9305,6 +9698,40 @@ window.REAGENTS = {
       "colors": [
        "brown.standard"
       ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ]
    }
@@ -9333,7 +9760,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -9349,7 +9776,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -9421,6 +9848,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Me": [
@@ -9429,11 +9864,27 @@ window.REAGENTS = {
       "colors": [
        "yellow.light"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
       "colors": []
      }
     ],
@@ -9447,6 +9898,10 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Zi": [
@@ -9456,12 +9911,18 @@ window.REAGENTS = {
        "pink.light",
        "purple.standard"
       ]
-     },
+     }
+    ],
+    "Eh": [
      {
-      "source": "PNW",
-      "colors": [
-       "pink.light"
-      ]
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ]
    }
@@ -9586,7 +10047,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.standard",
+       "gray.standard",
        "green.standard"
       ]
      }
@@ -9739,13 +10200,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -9861,7 +10322,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -9876,7 +10337,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       "yellow.standard",
+       "brown.standard"
       ]
      }
     ],
@@ -9984,11 +10446,25 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -10002,6 +10478,10 @@ window.REAGENTS = {
        "brown.standard",
        "yellow.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Li": [
@@ -10020,11 +10500,23 @@ window.REAGENTS = {
       "colors": [
        "brown.standard"
       ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Eh": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -10037,6 +10529,10 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -10083,7 +10579,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -10101,7 +10597,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -10132,7 +10628,11 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "orange.light",
+       "gray.standard"
+      ],
+      "shape": "precipitate"
      }
     ],
     "Ho": [
@@ -10286,7 +10786,10 @@ window.REAGENTS = {
     "Sc": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ],
       "shape": "spots"
      }
     ]
@@ -10542,7 +11045,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.dark"
+       "yellow.dark",
+       "green.standard"
       ]
      }
     ],
@@ -10748,12 +11252,6 @@ window.REAGENTS = {
        "pink.light",
        "purple.standard"
       ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light"
-      ]
      }
     ]
    }
@@ -10780,12 +11278,6 @@ window.REAGENTS = {
       "colors": [
        "pink.light",
        "purple.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light"
       ]
      }
     ]
@@ -10828,12 +11320,6 @@ window.REAGENTS = {
       "colors": [
        "pink.light",
        "purple.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light"
       ]
      }
     ]
@@ -10949,6 +11435,10 @@ window.REAGENTS = {
       "colors": [
        "green.standard"
       ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
      }
     ],
     "Md": [
@@ -11171,7 +11661,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light"
+       "pink.light",
+       "purple.standard"
       ]
      }
     ],
@@ -11186,7 +11677,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       "yellow.standard",
+       "blue.standard"
       ]
      },
      {
@@ -11283,6 +11775,10 @@ window.REAGENTS = {
       "colors": [
        "purple.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Me": [
@@ -11292,11 +11788,27 @@ window.REAGENTS = {
        "green.standard",
        "blue.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
+      ]
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -11312,6 +11824,22 @@ window.REAGENTS = {
       "colors": [
        "orange.light"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ]
    }
@@ -11382,7 +11910,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "blue.standard",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ]
@@ -11418,6 +11946,30 @@ window.REAGENTS = {
        "brown.standard",
        "purple.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "gray.dark"
+      ]
      }
     ],
     "Me": [
@@ -11426,12 +11978,58 @@ window.REAGENTS = {
       "colors": [
        "blue.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "blue.dark"
+      ]
      }
     ],
     "Md": [
      {
       "source": "PNW",
       "colors": null
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
+      ]
      }
     ],
     "Li": [
@@ -11444,7 +12042,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -11454,7 +12052,19 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
       ]
      }
     ],
@@ -11532,6 +12142,13 @@ window.REAGENTS = {
      }
     ],
     "Md": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
      {
       "source": "PNW",
       "colors": []
@@ -11669,7 +12286,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -11802,30 +12419,6 @@ window.REAGENTS = {
     }
    },
    "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Li": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Fr": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
     "Eh": [
      {
       "source": "PNW",
@@ -11840,7 +12433,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.light",
+       "gray.light",
        "blue.light"
       ]
      }
@@ -11896,12 +12489,6 @@ window.REAGENTS = {
      }
     ],
     "Md": [
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard"
-      ]
-     },
      {
       "source": "PNW",
       "colors": [
@@ -11964,8 +12551,14 @@ window.REAGENTS = {
     "Zi": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "purple.standard"
+      ],
       "shape": "spots"
+     },
+     {
+      "source": "PNW",
+      "colors": []
      }
     ],
     "Mo": [
@@ -11979,13 +12572,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.standard"
+       "pink.standard",
+       "blue.standard"
       ]
      }
     ],
@@ -12030,36 +12618,6 @@ window.REAGENTS = {
     }
    },
    "reactions": {
-    "Mq": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Me": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Md": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Li": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
-    "Fr": [
-     {
-      "source": "PNW",
-      "colors": []
-     }
-    ],
     "Eh": [
      {
       "source": "PNW",
@@ -12067,6 +12625,12 @@ window.REAGENTS = {
        "pink.light",
        "pink.standard",
        "purple.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
       ]
      }
     ],
@@ -12098,6 +12662,48 @@ window.REAGENTS = {
        "green.light"
       ]
      }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
     ]
    }
   },
@@ -12126,17 +12732,33 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.dark"
+      ]
      }
     ],
     "Me": [
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.dark"
+      ]
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
       "colors": []
      }
     ],
@@ -12309,7 +12931,10 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "orange.light",
+       "gray.light"
+      ],
       "shape": "precipitate"
      }
     ],
@@ -12354,7 +12979,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -12363,7 +12988,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -12373,7 +12998,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -12382,7 +13007,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "blue.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -12398,19 +13023,21 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      },
      {
       "source": "PNW",
       "colors": [
+       "green.standard",
        "blue.dark"
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "green.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -12538,13 +13165,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "purple.standard",
+       "gray.dark"
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "brown.standard",
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
       ]
      }
     ],
@@ -12560,7 +13195,19 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.dark",
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
       ]
      }
     ],
@@ -12569,7 +13216,8 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "purple.standard",
+       "gray.dark"
       ]
      },
      {
@@ -12577,7 +13225,21 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "blue.dark",
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -12585,7 +13247,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -12593,7 +13255,19 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
       ]
      }
     ],
@@ -12690,7 +13364,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       "yellow.standard",
+       "green.standard"
       ]
      },
      {
@@ -12809,13 +13484,33 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "purple.standard",
+       "gray.dark"
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "brown.standard",
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "purple.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "brown.standard"
       ]
      }
     ],
@@ -12831,7 +13526,31 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "green.dark",
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "green.standard"
       ]
      }
     ],
@@ -12840,7 +13559,8 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "purple.standard",
+       "gray.dark"
       ]
      },
      {
@@ -12848,7 +13568,14 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "blue.dark",
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -12856,7 +13583,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -12864,7 +13591,19 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "gray.dark"
       ]
      }
     ],
@@ -12896,6 +13635,27 @@ window.REAGENTS = {
       "colors": [
        "orange.light",
        "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.light",
+       "purple.standard"
       ]
      }
     ],
@@ -13006,6 +13766,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
+       "orange.standard",
        "green.standard"
       ]
      }
@@ -13066,7 +13827,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.light",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -13129,6 +13890,18 @@ window.REAGENTS = {
        "pink.standard",
        "purple.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "pink.light"
+      ]
      }
     ],
     "Me": [
@@ -13153,6 +13926,13 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "green.dark",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
        "blue.dark"
       ]
      }
@@ -13227,7 +14007,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "brown.dark"
+      ]
      }
     ],
     "Me": [
@@ -13239,7 +14021,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "brown.dark"
+      ]
      }
     ],
     "Md": [
@@ -13260,7 +14044,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "brown.dark"
+      ]
      }
     ],
     "Fr": [
@@ -13272,7 +14058,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "brown.dark"
+      ]
      }
     ],
     "Ro": [
@@ -13320,6 +14108,12 @@ window.REAGENTS = {
    },
    "reactions": {
     "Mq": [
+     {
+      "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
      {
       "source": "PNW",
       "colors": []
@@ -13427,7 +14221,10 @@ window.REAGENTS = {
     "Sc": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ],
       "shape": "spots"
      }
     ]
@@ -13560,11 +14357,19 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -13575,11 +14380,41 @@ window.REAGENTS = {
        "yellow.standard",
        "orange.light"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.standard"
+      ]
      }
     ],
     "Si": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
       "colors": []
      }
     ]
@@ -13627,6 +14462,51 @@ window.REAGENTS = {
        "red.standard",
        "brown.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.dark",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.dark",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "red.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "gray.dark"
+      ]
      }
     ],
     "Me": [
@@ -13634,6 +14514,24 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.light",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
        "yellow.standard"
       ]
      }
@@ -13644,6 +14542,27 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "green.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -13659,6 +14578,22 @@ window.REAGENTS = {
     "Fr": [
      {
       "source": "PNW",
+      "colors": [
+       "red.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -13681,6 +14616,27 @@ window.REAGENTS = {
        "orange.light",
        "blue.standard",
        "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.light",
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.light",
+       "purple.standard"
       ]
      }
     ],
@@ -13714,7 +14670,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "pink.standard"
+      ]
      }
     ]
    }
@@ -13752,7 +14710,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -13848,7 +14806,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       "yellow.standard",
+       "gray.light"
       ]
      },
      {
@@ -13978,6 +14937,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
+       "green.standard",
        "brown.dark"
       ]
      }
@@ -13987,7 +14947,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -14018,19 +14978,9 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.standard"
+       "gray.standard"
       ],
       "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [],
-      "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [],
-      "observation": 2
      },
      {
       "source": "PNW",
@@ -14115,6 +15065,18 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": null
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard"
+      ]
      }
     ],
     "Md": [
@@ -14125,6 +15087,20 @@ window.REAGENTS = {
        "orange.standard",
        "red.standard",
        "brown.standard",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
        "yellow.standard"
       ]
      }
@@ -14144,11 +15120,26 @@ window.REAGENTS = {
       "colors": [
        "yellow.dark"
       ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Si": [
      {
       "source": "PNW",
+      "colors": [
+       "orange.light",
+       "purple.light"
+      ]
+     },
+     {
+      "source": "NIJ",
       "colors": [
        "orange.light",
        "purple.light"
@@ -14172,6 +15163,18 @@ window.REAGENTS = {
     "Sc": [
      {
       "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
       "colors": []
      }
     ]
@@ -14264,7 +15267,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "orange.light",
-       "black.standard",
+       "gray.standard",
        "blue.standard"
       ],
       "observation": 1,
@@ -14298,7 +15301,10 @@ window.REAGENTS = {
     "Sc": [
      {
       "source": "PNW",
-      "colors": [],
+      "colors": [
+       "pink.standard",
+       "blue.standard"
+      ],
       "shape": "spots"
      }
     ]
@@ -14524,6 +15530,24 @@ window.REAGENTS = {
        "red.standard",
        "purple.light"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "purple.dark"
+      ]
      }
     ],
     "Me": [
@@ -14532,6 +15556,24 @@ window.REAGENTS = {
       "colors": [
        "blue.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "gray.dark"
+      ]
      }
     ],
     "Md": [
@@ -14539,7 +15581,32 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.standard"
+       "gray.standard"
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -14553,7 +15620,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      },
      {
@@ -14568,6 +15635,18 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "purple.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
       ]
      }
     ],
@@ -14688,11 +15767,19 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -14713,6 +15800,10 @@ window.REAGENTS = {
     "Fr": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
       "colors": []
      }
     ],
@@ -14742,6 +15833,22 @@ window.REAGENTS = {
       "colors": [
        "pink.standard",
        "purple.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.light",
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.light",
+       "gray.light"
       ]
      }
     ]
@@ -14815,7 +15922,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "pink.standard",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ]
@@ -15017,6 +16124,12 @@ window.REAGENTS = {
       "colors": [
        "purple.light"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.light"
+      ]
      }
     ],
     "Me": [
@@ -15025,6 +16138,12 @@ window.REAGENTS = {
       "colors": [
        "yellow.light",
        "green.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
       ]
      }
     ],
@@ -15042,6 +16161,20 @@ window.REAGENTS = {
        "yellow.standard",
        "brown.standard"
       ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.dark"
+      ]
      }
     ],
     "Li": [
@@ -15056,6 +16189,12 @@ window.REAGENTS = {
     "Fr": [
      {
       "source": "PNW",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
       "colors": [
        "yellow.standard"
       ]
@@ -15095,12 +16234,6 @@ window.REAGENTS = {
       "colors": [
        "pink.light",
        "purple.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light"
       ]
      }
     ],
@@ -15152,7 +16285,9 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "green.standard"
+       "green.standard",
+       "red.standard",
+       "brown.standard"
       ]
      },
      {
@@ -15170,7 +16305,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -15183,7 +16318,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "blue.standard"
+      ]
      }
     ],
     "Eh": [
@@ -15193,14 +16330,6 @@ window.REAGENTS = {
      }
     ],
     "Ro": [
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light",
-       "pink.standard"
-      ],
-      "observation": 1
-     },
      {
       "source": "PNW",
       "colors": [
@@ -15215,15 +16344,7 @@ window.REAGENTS = {
       "colors": [
        "pink.light",
        "pink.standard",
-       "black.standard"
-      ],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light",
-       "pink.standard"
+       "gray.standard"
       ],
       "observation": 2
      }
@@ -15295,7 +16416,9 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "green.standard"
+       "green.standard",
+       "red.standard",
+       "brown.standard"
       ]
      },
      {
@@ -15313,7 +16436,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -15326,7 +16449,9 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": []
+      "colors": [
+       "blue.standard"
+      ]
      }
     ],
     "Eh": [
@@ -15416,7 +16541,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -15606,17 +16731,29 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Me": [
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -15641,6 +16778,24 @@ window.REAGENTS = {
     "Ca": [
      {
       "source": "PNW",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
       "colors": []
      }
     ]
@@ -15682,6 +16837,12 @@ window.REAGENTS = {
        "orange.standard"
       ],
       "observation": 2
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
+      ]
      }
     ],
     "Me": [
@@ -15703,11 +16864,19 @@ window.REAGENTS = {
        "orange.light"
       ],
       "observation": 2
+     },
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ],
     "Md": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "NIJ",
       "colors": []
      }
     ],
@@ -15732,6 +16901,27 @@ window.REAGENTS = {
        "yellow.standard"
       ],
       "observation": 2
+     },
+     {
+      "source": "PNW",
+      "colors": [],
+      "observation": 2
+     },
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
      }
     ]
    }
@@ -16115,16 +17305,6 @@ window.REAGENTS = {
      },
      {
       "source": "PNW",
-      "colors": [],
-      "observation": 1
-     },
-     {
-      "source": "PNW",
-      "colors": [],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
       "colors": [
        "red.standard"
       ],
@@ -16146,7 +17326,8 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "brown.dark"
+       "brown.dark",
+       "gray.dark"
       ]
      }
     ],
@@ -16155,7 +17336,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16393,7 +17574,8 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       "purple.standard",
+       "gray.dark"
       ]
      }
     ],
@@ -16463,7 +17645,7 @@ window.REAGENTS = {
       "colors": [
        "purple.standard",
        "purple.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16488,7 +17670,7 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16555,7 +17737,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16599,7 +17781,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16608,7 +17790,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16618,7 +17800,7 @@ window.REAGENTS = {
       "colors": [
        "yellow.standard",
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16627,7 +17809,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16636,7 +17818,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -16646,7 +17828,7 @@ window.REAGENTS = {
       "colors": [
        "brown.light",
        "brown.dark",
-       "black.dark"
+       "gray.dark"
       ]
      }
     ],
@@ -17010,6 +18192,10 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": []
      }
     ],
     "Li": [
@@ -17021,6 +18207,16 @@ window.REAGENTS = {
     "Fr": [
      {
       "source": "PNW",
+      "colors": []
+     },
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
       "colors": []
      }
     ]
@@ -17084,7 +18280,7 @@ window.REAGENTS = {
       "colors": [
        "green.light",
        "brown.light",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -17100,7 +18296,7 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "yellow.standard",
-       "black.standard"
+       "gray.standard"
       ]
      }
     ],
@@ -17183,7 +18379,8 @@ window.REAGENTS = {
     "Eh": [
      {
       "source": "PNW",
-      "colors": []
+      "colors": [],
+      "dissolves": false
      }
     ],
     "Ho": [
@@ -17276,6 +18473,1897 @@ window.REAGENTS = {
       "source": "PNW",
       "colors": [
        "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "paracetamol",
+   "name": "Paracetamol",
+   "aliases": [
+    "Acetaminophen",
+    "APAP"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "gray.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "aspirin",
+   "name": "Aspirin",
+   "aliases": [
+    "Acetylsalicylic acid"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.standard"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "benzphetamine",
+   "name": "Benzphetamine",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "brompheniramine",
+   "name": "Brompheniramine",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "chlorpromazine",
+   "name": "Chlorpromazine",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "purple.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "contac",
+   "name": "Contac",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "doxepin",
+   "name": "Doxepin",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "dristan",
+   "name": "Dristan",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.light"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "excedrin",
+   "name": "Excedrin",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "2-chloroacetophenone",
+   "name": "2-Chloroacetophenone",
+   "aliases": [
+    "Mace",
+    "CN",
+    "Phenacyl chloride"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.light"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.light"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.dark"
+      ]
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mescaline",
+   "name": "Mescaline",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "opium",
+   "name": "Opium",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "brown.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "red.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "procaine",
+   "name": "Procaine",
+   "aliases": [
+    "Novocaine"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "quinine",
+   "name": "Quinine",
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "green.dark"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "yellow.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "sodium-chloride",
+   "name": "Sodium chloride",
+   "aliases": [
+    "Salt"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "sucrose",
+   "name": "Sucrose",
+   "aliases": [
+    "Sugar",
+    "Table sugar"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.dark"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     },
+     {
+      "source": "Chang2025",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "nutmeg",
+   "name": "Nutmeg",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": [
+       "brown.standard"
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "sodium-bicarbonate",
+   "name": "Sodium bicarbonate",
+   "aliases": [
+    "Baking soda"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "chlordiazepoxide",
+   "name": "Chlordiazepoxide",
+   "aliases": [
+    "Librium"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "pseudoephedrine",
+   "name": "Pseudoephedrine",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "tea",
+   "name": "Tea",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "tobacco",
+   "name": "Tobacco",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "galactose",
+   "name": "Galactose",
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "glucose",
+   "name": "Glucose",
+   "aliases": [
+    "Dextrose"
+   ],
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mannitol",
+   "name": "Mannitol",
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "oregano",
+   "name": "Oregano",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "rosemary",
+   "name": "Rosemary",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "thyme",
+   "name": "Thyme",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Md": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Eh": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Fr": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ],
+    "Si": [
+     {
+      "source": "NIJ",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "pihp",
+   "name": "α-PiHP",
+   "aliases": [
+    "alpha-PiHP",
+    "α-Pyrrolidinoisohexanophenone"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "bmdp",
+   "name": "BMDP",
+   "aliases": [
+    "3,4-Methylenedioxy-N-benzylcathinone"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": [
+       "green.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "fub-amb",
+   "name": "FUB-AMB",
+   "aliases": [
+    "MMB-FUBINACA",
+    "AMB-FUBINACA"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "pink.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4-cyano-cumyl-butinaca",
+   "name": "4-cyano-CUMYL-BUTINACA",
+   "aliases": [
+    "4CN-CUMYL-BUTINACA"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "pink.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": [
+       "brown.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "eutylone",
+   "name": "Eutylone",
+   "aliases": [
+    "bk-EBDB"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "green.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "tadalafil",
+   "name": "Tadalafil",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": [
+       "blue.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       "gray.dark"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "valerylfentanyl",
+   "name": "Valerylfentanyl",
+   "aliases": [
+    "Valeryl fentanyl"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Si": [
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "4f-abutinaca",
+   "name": "4F-ABUTINACA",
+   "aliases": [
+    "4-Fluoro ABUTINACA"
+   ],
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Fr": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Mq": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ],
+    "Me": [
+     {
+      "source": "CADS",
+      "colors": [
+       "yellow.standard"
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "xylazine",
+   "name": "Xylazine",
+   "info": {
+    "type": "Adulterant"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "Chang2025",
+      "colors": [
+       "red.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "orange.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "red.standard"
+      ]
+     },
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "purple.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "Chang2025",
+      "colors": [
+       "blue.standard"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "oxazepam",
+   "name": "Oxazepam",
+   "info": {
+    "type": "Substance"
+   },
+   "reactions": {
+    "Mq": [
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard"
+      ]
+     }
+    ],
+    "Md": [
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard",
+       "orange.standard"
+      ]
+     }
+    ],
+    "Me": [
+     {
+      "source": "Chang2025",
+      "colors": [
+       "yellow.standard"
       ]
      }
     ]
