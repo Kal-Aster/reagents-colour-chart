@@ -314,4 +314,4 @@ Le decisioni non ancora prese sono in fondo.
 | O9 | ~~Il colore atteso nel **confronto** della pagina (D208, D209)~~ | **Chiuso (D212)** |
 | O10 | Come rappresentare **due colori insieme** ("reddish with grey spots") | Per ora sono due letture; lo schema ha solo sequenze nel tempo |
 | O11 | ~~Le **letture ripetute** fra osservazioni diverse della stessa fonte~~ | **Chiuso (D216)** |
-| O12 | Quanto il database dei reagenti di PsychonautWiki **dipende dal NIJ** | La doxepina ha esattamente i nomi ISCC dello standard ("blackish red", "very dark red"): dove le due fonti concordano non sono due conferme indipendenti. Da verificare sui numeri di riferimento fra parentesi |
+| O12 | ~~Quanto il database dei reagenti di PsychonautWiki **dipende dal NIJ**~~ | **Chiuso, non serve**: la pagina non conta quante fonti concordano, quindi una lettura copiata non cambia il confronto. Torna utile solo se un giorno il confronto peserà le fonti indipendenti |
