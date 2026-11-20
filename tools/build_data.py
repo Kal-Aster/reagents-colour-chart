@@ -27,6 +27,9 @@ SOURCE = SOURCES / "PNW.json"
 OUT = ROOT / "data" / "reagents.json"
 # le fonti estratte, nell'ordine in cui la pagina le elenca dopo PsychonautWiki
 EXTRACTED = ["NIJ", "CADS", "Chang2025"]
+# le lettere greche si ordinano scritte per esteso: α-PiHP sta con le a, come
+# alpha-PiHP, non dopo la z (la pagina fa lo stesso, in assets/app.js)
+GREEK_LETTERS = {"α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta"}
 # il dataset e' un adattamento dei dati delle fonti: lo schema, la pulizia,
 # l'organizzazione e la conversione dei colori sono di questo progetto
 HEADER = """\
@@ -44,9 +47,16 @@ HEADER = """\
 """
 
 
+def sort_name(name: str) -> str:
+    for letter, spelled in GREEK_LETTERS.items():
+        name = name.replace(letter, spelled)
+    return name.casefold()
+
+
 def compose(sources: list[dict]) -> list[dict]:
     """Le sostanze della pagina: le voci del vocabolario che hanno reazioni, con
-    le reazioni di tutte le fonti, nell'ordine delle fonti."""
+    le reazioni di tutte le fonti, nell'ordine delle fonti. Le sostanze sono
+    in ordine alfabetico."""
     reactions: dict[str, dict] = {}
     for source in sources:
         for record in source["substances"]:
@@ -72,7 +82,7 @@ def compose(sources: list[dict]) -> list[dict]:
         substance["info"] = info
         substance["reactions"] = reactions[entry["id"]]
         substances.append(substance)
-    return substances
+    return sorted(substances, key=lambda substance: sort_name(substance["name"]))
 
 
 def check(data: dict) -> None:

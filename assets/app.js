@@ -22,6 +22,14 @@
   /* the reagents in alphabetical order, everywhere: the table, the select
      and the reagent cards; the source orders them by coverage */
   DATA.reagents.sort((a, b) => a.name.localeCompare(b.name));
+  /* Substance names are sorted with their Greek letters spelled out:
+     α-PiHP goes with the a's, as alpha-PiHP, not after the z's. The same
+     rule as tools/build_data.py. */
+  const GREEK_LETTERS = { "α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta" };
+  function compareSubstanceNames(first, second) {
+    const spelled = (name) => name.replace(/[αβγδ]/g, (letter) => GREEK_LETTERS[letter]);
+    return spelled(first).localeCompare(spelled(second));
+  }
   /* how many substances each reagent documents: the coverage the headers
      of the table and the reagent cards show */
   for (const reagent of DATA.reagents) {
@@ -1381,7 +1389,9 @@
     /* the table is rebuilt from scratch: the sideways scroll has to be put
        back where it was */
     const keepScroll = document.querySelector(".table-scroll")?.scrollLeft || 0;
-    const list = DATA.substances;
+    /* alphabetical, whatever the type and the source the substance comes
+       from: it is also the order among the ones that fit equally well */
+    const list = DATA.substances.slice().sort((a, b) => compareSubstanceNames(a.name, b.name));
     const withObs = activeObservations().length > 0;
 
     let matched = [];
@@ -1403,10 +1413,9 @@
       matched.sort((a, b) => b.ev.hits.length - a.ev.hits.length ||
         a.ev.differences - b.ev.differences ||
         b.ev.mask - a.ev.mask ||
-        a.s.name.localeCompare(b.s.name));
+        compareSubstanceNames(a.s.name, b.s.name));
     } else {
-      rest = list.slice().sort((a, b) =>
-        typeOrder(a) - typeOrder(b) || a.name.localeCompare(b.name));
+      rest = list;
     }
 
     const groups = [];
@@ -1472,10 +1481,6 @@
     }
   }
 
-
-  function typeOrder(s) {
-    return { Substance: 0, Adulterant: 1, Class: 2, Forms: 3 }[s.info.type] ?? 4;
-  }
 
   /* ── the next test to make ───────────────────────────────────────
      Which reagent tells the candidates apart most? The candidates are
