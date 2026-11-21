@@ -129,7 +129,7 @@ fonti:
 ```
 sources     { [fonte]: { label, year, url, license, script, fetchedAt } }
 palette     { [tinta]: { shades: { light, standard, dark } } }   hex di ogni colore
-reagents[]  { id, name, duration?, stir, baseColor?, target? }
+reagents[]  { id, name, duration?, stir, baseColor?, target?, forms? }
 substances[]
   id, name, aliases?
   info        { wiki, type, class? }
@@ -145,7 +145,7 @@ substances[]
       proportion?          low | standard | high (assente: standard)
       observation?         1, 2… quando la fonte ha più osservazioni della coppia
                            (una lettura ripetuta in più osservazioni compare una volta)
-      fizz?                la reazione fa bolle
+      fizz?                la reazione fa effervescenza
       dissolves?           false: il campione non si scioglie
       fade?                il colore che svanisce
 ```
@@ -155,6 +155,9 @@ secondi (0 = istantaneo), `stir` dice se va mescolato, `baseColor` è il colore
 del reagente stesso. `target` sono le famiglie del colore atteso dai reagenti
 che cercano una classe (il blu del Simon's per le ammine secondarie): una
 lettura lo contiene o no. I reagenti senza `target` danno un'impronta.
+`forms` sono gli stati in cui il reagente si vende, il primo è il più comune:
+Marquis, Mecke, Froehde, Liebermann, Ehrlich, Hofmann e Morris si trovano
+soprattutto in cristalli, che danno gli stessi colori; gli altri sono liquidi.
 
 I grigi sono una famiglia sola, `gray`, che va dal grigio (`gray.light`) al
 grigio scuro (`gray.standard`) al nero (`gray.dark`).
@@ -193,6 +196,31 @@ python3 tools/serve.py 8000     # http://localhost:8000
 La pagina contiene: il banner sull'avvertenza, la sezione **osservazioni**
 che riordina la tabella e suggerisce il prossimo test, la **matrice** (riga =
 sostanza, colonna = reagente) e in fondo i reagenti, le fonti e le licenze.
+
+Un'osservazione è una griglia: una riga per **fase** della reazione, una
+colonna per ogni cosa vista, col suo nome in cima: **liquido** (la reazione
+sciolta nella goccia), **macchie** o **precipitato**. Si sceglie quando si crea
+la colonna, col "+" in fondo a una fase, e si può ripetere: due liquidi sono
+una goccia striata. Il liquido ha un centro e dei bordi, "uguali al centro"
+o di un altro colore: l'anello di una reazione che comincia ai bordi. Una
+cella è un colore, "nessuna reazione" (solo il liquido), "non ancora",
+"uguale a prima" o "sparisce" (solo macchie e precipitato); sotto l'ultima
+fase c'è già la fase dopo, sbiadita. Due spunte dicono se fa effervescenza e
+se non si scioglie. Per i reagenti che esistono anche in cristalli, che sono
+il predefinito, si sceglie lo stato: sui cristalli non c'è niente da
+sciogliere, quindi una colonna sola, senza forme, bordi né "non si scioglie",
+e il confronto guarda solo i colori. Tutto sta nel link:
+
+```
+#obs=Si:ls/orange.light,_+red,gray.light!fizz@high;Mq:purple+gray.dark!crystals
+```
+
+le colonne prima di `/` (`l` liquido, `s` macchie, `p` precipitato), le fasi
+separate da `+`, le colonne da `,`, i bordi dopo `^`, `_` non ancora, `=`
+uguale a prima, `-` sparisce, i dettagli dopo `!`, la proporzione dopo `@`.
+Per i reagenti che esistono anche in cristalli lo stato è sempre scritto
+(`!crystals` o `!liquid`); i cristalli non hanno le lettere delle colonne.
+I link di prima, senza colonne né stato, sono un liquido solo.
 
 La tabella scorre in orizzontale da sola, con le prime due colonne agganciate a
 sinistra. Le intestazioni di colonna stanno in una striscia separata agganciata

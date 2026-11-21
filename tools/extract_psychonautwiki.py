@@ -1955,6 +1955,12 @@ REAGENT_TARGET = {
     "Cannabis (4-AP)": ["pink", "blue"],
 }
 
+# Gli stati in cui si vende il reattivo, il primo e' il predefinito della
+# pagina: questi si trovano soprattutto in cristalli, che danno gli stessi
+# colori. Gli altri sono solo liquidi, e lo schema non dice niente.
+REAGENT_FORMS = {name: ["crystals", "liquid"] for name in
+                 ["Marquis", "Mecke", "Froehde", "Liebermann", "Ehrlich", "Hofmann", "Morris"]}
+
 
 # La famiglia "black" della fonte va dal grigio chiaro al nero: nello schema e'
 # "gray", e gray.dark e' il nero. Dentro lo script resta "black".
@@ -2582,6 +2588,8 @@ def build_schema():
         rec["stir"] = bool(proc.get("stir"))
         if r["fullName"] in REAGENT_TARGET:
             rec["target"] = REAGENT_TARGET[r["fullName"]]
+        if r["fullName"] in REAGENT_FORMS:
+            rec["forms"] = REAGENT_FORMS[r["fullName"]]
         reagents.append(rec)
 
     substances = {}

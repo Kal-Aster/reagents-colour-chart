@@ -103,13 +103,21 @@
    "id": "Mq",
    "name": "Marquis",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Me",
    "name": "Mecke",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Md",
@@ -122,13 +130,21 @@
    "id": "Fr",
    "name": "Froehde",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Li",
    "name": "Liebermann",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Si",
@@ -147,6 +163,10 @@
    "stir": false,
    "target": [
     "purple"
+   ],
+   "forms": [
+    "crystals",
+    "liquid"
    ]
   },
   {
@@ -158,6 +178,10 @@
     "blue",
     "purple",
     "red"
+   ],
+   "forms": [
+    "crystals",
+    "liquid"
    ]
   },
   {
@@ -180,7 +204,11 @@
    "name": "Morris",
    "baseColor": "pink.standard",
    "duration": 30,
-   "stir": true
+   "stir": true,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Zi",

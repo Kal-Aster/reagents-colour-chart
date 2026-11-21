@@ -72,7 +72,7 @@
   }
 
   /* What a reading says besides its colours: a shape (grey spots, a
-     purple ring), it fizzes, a colour fades away. Consecutive phases in
+     purple ring), it effervesces, a colour fades away. Consecutive phases in
      the same shape are one shape, named with its last colour. */
   function readingExtras(reading) {
     const out = [];
@@ -102,13 +102,119 @@
     return base && reading.colors[0] === base ? reading.colors.slice(1) : reading.colors;
   }
 
-  /* The same for what the user saw: a first phase in the reagent's own
-     hue is the reagent. Seeing only that is seeing nothing happen. */
-  function seenReaction(seen) {
+  /* ── what the user saw ──
+     An observation is a grid: a row per phase of the reaction, a column
+     per thing seen. A column has a shape, chosen when it is made, and the
+     same shape can come more than once:
+       "liquid"       the reaction dissolved in the drop (two liquids are a
+                      streaked drop);
+       "spots"        product that stays in grains;
+       "precipitate"  product that settles.
+     A cell is what that thing looks like in that phase:
+       {kind: "colour", hue, modifier, edge?}  a colour; a liquid can have
+                      edges of another colour, the ring of a reaction that
+                      starts at the edges ({hue, modifier} or {none: true});
+       {kind: "none", edge?}  no reaction: a liquid that did not change;
+       {kind: "notyet"}  the thing is not there yet;
+       {kind: "same"}    the same as in the phase before;
+       {kind: "gone"}    the thing is not there any more;
+       {kind: "absent"}  no cell: after a thing is gone;
+       {kind: "empty"}   still to choose.
+     The last row can be the next phase, ready to be written and all the
+     same as before (phase.ghost): it says nothing until a cell of it is
+     changed. */
+  const COLUMN_SHAPES = ["liquid", "spots", "precipitate"];
+
+  /* The state of the reagent: liquid, or crystals for the reagents sold
+     that way too, the first of their forms being the usual one. On a
+     crystal there is no dissolving: the colour has no shape, no edges,
+     and the observation is one column of colours. */
+  function defaultForm(reagentId) {
+    return REAGENT_BY_ID[reagentId]?.forms?.[0] ?? "liquid";
+  }
+
+  function onCrystals(obs) {
+    return obs.form === "crystals";
+  }
+
+  /* Crystals keep what they can show: the first liquid, without edges. */
+  function toCrystals(obs) {
+    const keep = Math.max(0, obs.columns.indexOf("liquid"));
+    obs.columns = [obs.columns[keep] ? "liquid" : null];
+    obs.phases = obs.phases.map((phase, index) => {
+      const cell = { ...phase[keep] };
+      delete cell.edge;
+      /* before the colour, the crystal had no reaction */
+      const kept = [cell.kind === "notyet" ? { kind: index === 0 ? "none" : "same" }
+        : ["absent", "gone"].includes(cell.kind) ? { kind: "same" } : cell];
+      kept.ghost = phase.ghost;
+      return kept;
+    });
+    obs.undissolved = false;
+    obs.form = "crystals";
+    dropEmptyPhases(obs);
+  }
+
+  /* Would crystals lose something of this observation? */
+  function crystalsLose(obs) {
+    return obs.columns.length > 1 || obs.phases.some((phase) => phase.some((cell) => cell.edge));
+  }
+
+  /* The things seen, each the sequence of its colours: the parts a reading
+     has. Coloured edges around a drop that has not reacted are where the
+     reaction starts: they come first in the sequence of the liquid (the
+     purple ring of the Zimmermann, then brown). Coloured edges around a
+     coloured centre are seen at the same time: they are a part of their
+     own, as in the readings (pink with violet edges). "The same as before"
+     adds nothing. */
+  function observationParts(obs) {
+    const parts = [];
+    obs.columns.forEach((shape, column) => {
+      if (!shape) return;
+      const part = [];
+      const ring = [];
+      for (const phase of obs.phases) {
+        const cell = phase[column];
+        if (!cell) continue;
+        if (cell.edge && !cell.edge.none) {
+          const edge = { hue: cell.edge.hue, modifier: cell.edge.modifier, shape: "ring" };
+          (cell.kind === "colour" ? ring : part).push(edge);
+        }
+        if (cell.kind === "colour") {
+          part.push({ hue: cell.hue, modifier: cell.modifier, shape: shape === "liquid" ? "uniform" : shape });
+        }
+      }
+      parts.push(part, ring);
+    });
+    return parts.filter((part) => part.length);
+  }
+
+  /* The colours seen, the parts one after the other. */
+  function seenStages(obs) {
+    return observationParts(obs).flat();
+  }
+
+  /* Nothing happened: a liquid with no reaction, and no colour anywhere. */
+  function seenNothing(obs) {
+    return obs.phases[0].some((cell, column) => obs.columns[column] === "liquid" && cell.kind === "none")
+      && !seenStages(obs).length;
+  }
+
+  /* The parts the user saw without the reagent's own colour: a first
+     phase in the reagent's hue is the reagent, not the reaction. Parts
+     that are nothing but that colour are gone. */
+  function seenParts(seen) {
     const base = REAGENT_BY_ID[seen.reagent]?.baseColor;
-    if (seen.noReaction) return [];
-    if (base && seen.stages[0]?.hue === hueOf(base)) return seen.stages.slice(1);
-    return seen.stages;
+    return observationParts(seen)
+      .map((part) => (base && part[0].shape === "uniform" && part[0].hue === hueOf(base) ? part.slice(1) : part))
+      .filter((part) => part.length);
+  }
+
+  /* The same, flat: seeing only the reagent's colour is seeing nothing
+     happen. */
+  function seenReaction(seen) {
+    if (seenNothing(seen)) return [];
+    return seenParts(seen).flat();
   }
 
   /* Do the sources of a cell disagree? One sees a colour and another sees
@@ -175,9 +281,10 @@
     /* the page opens with the theme of the system; the button overrides it */
     theme: storedTheme(),
     bannerClosed: storedBannerClosed(),
-    /* {id, reagent, noReaction, proportion, stages:[{hue, modifier}]}
-       Every test carries its own proportion of product to reagent: one test
-       can be loaded differently from the next. */
+    /* {id, reagent, auto, proportion, phases, fizz, undissolved}: the
+       phases are the grid described above. Every test carries its own
+       proportion of product to reagent: one test can be loaded differently
+       from the next. */
     observations: [],
   };
 
@@ -189,29 +296,70 @@
      con sé i test che hai fatto e la pagina non deve salvare niente
      (D47). Il formato è leggibile, così si può anche correggerlo a mano:
 
-       #obs=marquis:orange.deep@high;robadope:none&lang=en
+       #obs=Si:ls/orange.light,_+red,gray.light!fizz@high;Mq:purple+black!crystals&lang=en
 
-     ogni osservazione è  reagente : fasi @ proporzione
-     ogni fase è  tinta[.intensità]  e le fasi sono separate da "+";
-     "none" vuol dire nessuna reazione; una fase vuota è una fase
-     ancora da scegliere. */
+     ogni osservazione è  reagente : colonne / fasi ! dettagli @ proporzione
+     le colonne sono una lettera per forma: l liquido, s macchie,
+     p precipitato; le fasi sono separate da "+", le colonne da ",";
+     una cella è  tinta[.intensità] o "none" (nessuna reazione), con i
+     bordi dopo "^" (una tinta o "none"); "_" non ancora, "=" uguale a
+     prima, "-" sparisce, niente se la cosa non c'è più.
+     Per i reagenti che esistono anche in cristalli lo stato è sempre
+     scritto, "!crystals" o "!liquid"; i cristalli hanno una colonna sola
+     e niente lettere. I link di prima, senza colonne e senza stato, sono
+     un liquido solo. */
+  const SHAPE_LETTERS = { liquid: "l", spots: "s", precipitate: "p" };
+  const DETAIL_FLAGS = ["fizz", "undissolved"];
+
+  function colourToken(colour) {
+    return colour.hue + (colour.modifier ? "." + colour.modifier : "");
+  }
+
+  function cellToken(cell) {
+    const edge = !cell.edge ? "" : cell.edge.none ? "^none" : "^" + colourToken(cell.edge);
+    if (cell.kind === "colour") return colourToken(cell) + edge;
+    if (cell.kind === "none") return "none" + edge;
+    return { notyet: "_", same: "=", gone: "-" }[cell.kind] ?? "";
+  }
+
+  function parseColour(token) {
+    const dot = token.indexOf(".");
+    const hue = dot < 0 ? token : token.slice(0, dot);
+    const modifier = dot < 0 ? null : token.slice(dot + 1);
+    if (!HUES.includes(hue)) return null;
+    return { hue, modifier: SHADES.includes(modifier) ? modifier : null };
+  }
+
+  function parseCell(token) {
+    if (token === "_") return { kind: "notyet" };
+    if (token === "=") return { kind: "same" };
+    if (token === "-") return { kind: "gone" };
+    if (!token) return { kind: "absent" };
+    const [centre, edgeToken] = token.split("^");
+    const edge = edgeToken === "none" ? { none: true } : edgeToken ? parseColour(edgeToken) : null;
+    const cell = centre === "none" ? { kind: "none" } : { kind: "colour", ...parseColour(centre) };
+    if (cell.kind === "colour" && !cell.hue) return { kind: "absent" };
+    if (edge) cell.edge = edge;
+    return cell;
+  }
+
   function encodeState() {
     /* Only the completed tests go into the link: a row still in progress
        is not something to share, and the link must not change because
        the reader has chosen another reagent for the next test. When
        there is nothing completed, the link is empty. */
     const parts = state.observations.filter(isActive).map((o) => {
-      let stages;
-      if (o.noReaction) {
-        stages = "none";
-      } else {
-        stages = o.stages
-          .map((st) => (st.hue ? st.hue + (st.modifier ? "." + st.modifier : "") : ""))
-          .join("+");
-      }
+      const columns = onCrystals(o) ? ""
+        : o.columns.map((shape) => SHAPE_LETTERS[shape] || "").join("") + "/";
+      const phases = o.phases.filter((phase) => !phase.ghost)
+        /* a thing gone leaves no trailing commas */
+        .map((phase) => phase.map(cellToken).join(",").replace(/,+$/, ""))
+        .join("+");
+      const form = REAGENT_BY_ID[o.reagent]?.forms ? "!" + (o.form || "liquid") : "";
+      const flags = form + DETAIL_FLAGS.filter((flag) => o[flag]).map((flag) => "!" + flag).join("");
       const prop = o.proportion && o.proportion !== "standard"
         ? "@" + o.proportion : "";
-      return `${o.reagent}:${stages}${prop}`;
+      return `${o.reagent}:${columns}${phases}${flags}${prop}`;
     });
     if (!parts.length) return "";
     let frag = "obs=" + parts.join(";");
@@ -221,6 +369,7 @@
 
   function decodeState(frag) {
     const out = { observations: [], lang: null };
+    const shapeOf = Object.fromEntries(Object.entries(SHAPE_LETTERS).map(([shape, letter]) => [letter, shape]));
     for (const chunk of frag.split("&")) {
       const eq = chunk.indexOf("=");
       if (eq < 0) continue;
@@ -245,32 +394,27 @@
           if (prop === "high" || prop === "low") proportion = prop;
           rest = rest.slice(0, at);
         }
-        const stages = [];
-        let noReaction = false;
-        if (rest === "none") {
-          noReaction = true;
-        } else {
-          for (const one2 of rest.split("+")) {
-            if (!one2) { stages.push({ hue: null, modifier: null }); continue; }
-            const dot = one2.indexOf(".");
-            const hue = dot < 0 ? one2 : one2.slice(0, dot);
-            const mod = dot < 0 ? null : one2.slice(dot + 1);
-            if (!HUES.includes(hue)) continue;
-            stages.push({
-              hue,
-              modifier: SHADES.includes(mod) ? mod : null,
-            });
-          }
+        const [body, ...flags] = rest.split("!");
+        /* the links from before have no columns: one liquid */
+        const slash = body.indexOf("/");
+        const columns = slash < 0 ? ["liquid"]
+          : [...body.slice(0, slash)].map((letter) => shapeOf[letter]).filter(Boolean);
+        const phases = (slash < 0 ? body : body.slice(slash + 1))
+          .split("+").map((phase) => phase.split(",").map(parseCell));
+        if (!columns.length) continue;
+        for (const phase of phases) {
+          phase.length = Math.min(phase.length, columns.length);
+          while (phase.length < columns.length) phase.push({ kind: "absent" });
         }
-        if (!stages.length && !noReaction) continue;
-        out.observations.push({
-          id: Math.random().toString(36).slice(2),
-          reagent,
-          noReaction,
-          proportion,
-          stages: noReaction ? [{ hue: null, modifier: null }] : stages,
-          auto: true,
-        });
+        /* without a state the link is from before the crystals: liquid */
+        const crystals = flags.includes("crystals") && REAGENT_BY_ID[reagent]?.forms?.includes("crystals");
+        const obs = {
+          id: Math.random().toString(36).slice(2), reagent, proportion, columns, phases, auto: true,
+          form: crystals ? "crystals" : "liquid",
+        };
+        for (const flag of DETAIL_FLAGS) obs[flag] = flags.includes(flag);
+        if (crystals) toCrystals(obs);
+        if (isActive(obs)) out.observations.push(obs);
       }
     }
     return out;
@@ -369,7 +513,7 @@
    * "readings" are the readings of the cell: the ones of the same source
    * say whether it documents the target. */
   function matchReading(reading, seen, readings = [reading]) {
-    const result = matchColours(reading, seen);
+    const result = matchParts(reading, seen);
     const target = REAGENT_BY_ID[seen.reagent]?.target;
     const colors = reactionColors(reading, seen.reagent);
     if (!target || !colors) return result;
@@ -379,7 +523,10 @@
        which are product that did not dissolve */
     const hasTarget = (one) => (one.parts || []).flat().some((stage) =>
       (!stage.shape || stage.shape === "ring") && target.includes(hueOf(stage.color)));
-    const seenFound = stages.some((stage) => target.includes(stage.hue));
+    /* the target counts in the whole liquid or in a ring, as in the
+       readings (D219) */
+    const seenFound = stages.some((stage) => target.includes(stage.hue) &&
+      (onCrystals(seen) || stage.shape === "uniform" || stage.shape === "ring"));
     if (seenFound) return hasTarget(reading) ? result : { outcome: "no", warnings: [] };
     if (hasTarget(reading)) return { outcome: "no", warnings: [] };
     if (result.outcome !== "no") return result;
@@ -396,18 +543,136 @@
     } }] };
   }
 
-  /* The colours of a reading against the colours seen. */
-  function matchColours(reading, seen) {
-    const none = { outcome: "no", warnings: [] };
-    /* the reaction only: the reagent's own colour is left out on both
-       sides */
+  /* The parts the user saw against the parts of a reading (D223). Every
+     part seen is matched with the part of the reading that fits it best.
+     The reading fits if at least one part does; a part seen that the
+     reading does not explain is a note — the cut of a tablet, another
+     substance — unless no liquid seen is explained: then the match is
+     partial, the colour of the drop being the main thing. A part of the
+     reading nobody saw is a note too: spots are easy to miss. */
+  function matchParts(reading, seen) {
+    const none = { outcome: "no", warnings: [], confirmations: 0 };
     const colors = reactionColors(reading, seen.reagent);
-    const stages = seenReaction(seen);
+    const userParts = seenParts(seen);
     /* nothing happened: it matches a reading where nothing happens */
-    if (!stages.length) {
-      return colors?.length === 0 ? { outcome: "pieno", warnings: [] } : none;
+    if (!userParts.length) {
+      return colors?.length === 0 ? { outcome: "pieno", warnings: [], confirmations: 0 } : none;
     }
     if (!colors?.length) return none;
+    const base = REAGENT_BY_ID[seen.reagent]?.baseColor;
+    const docParts = reading.parts
+      .map((part) => (base && part[0]?.color === base ? part.slice(1) : part))
+      .filter((part) => part.length);
+
+    const rank = ["no", "differenze", "parziale", "pieno"];
+    const better = (first, second) => rank.indexOf(first.outcome) - rank.indexOf(second.outcome)
+      || second.warnings.length - first.warnings.length;
+    const matched = userParts.map((userPart) => {
+      let best = null;
+      docParts.forEach((docPart, index) => {
+        const result = { ...matchPart(docPart, userPart, onCrystals(seen)), index };
+        if (result.outcome !== "no" && (!best || better(result, best) > 0)) best = result;
+      });
+      return { userPart, best };
+    });
+    const explained = matched.filter((one) => one.best);
+    if (!explained.length) return none;
+
+    const warnings = [];
+    let confirmations = 0;
+    let outcome = "pieno";
+    for (const { best } of explained) {
+      warnings.push(...best.warnings);
+      confirmations += best.confirmations;
+      if (rank.indexOf(best.outcome) < rank.indexOf(outcome)) outcome = best.outcome;
+    }
+    const isLiquid = (part) => part.some((stage) => stage.shape === "uniform" || stage.shape === "ring");
+    const unexplained = matched.filter((one) => !one.best);
+    const liquidSeen = userParts.some(isLiquid);
+    const liquidExplained = explained.some((one) => isLiquid(one.userPart));
+    for (const { userPart } of unexplained) {
+      const vars = { part: partCaption(userPart) };
+      if (liquidSeen && !liquidExplained && isLiquid(userPart)) {
+        warnings.push({ kind: "check", key: "partialLiquidUnexplained", vars });
+      } else {
+        warnings.push({ kind: "note", key: "noteUnexplainedPart", vars });
+      }
+    }
+    const used = new Set(explained.map((one) => one.best.index));
+    docParts.forEach((docPart, index) => {
+      if (used.has(index)) return;
+      warnings.push({ kind: "note", key: "noteDocumentedPart", vars: {
+        part: docPart.map((stage) => stageName(stage.color, stage.shape)).join(" → "),
+      } });
+    });
+    if (seen.fizz && reading.fizz) confirmations += 1;
+    if (seen.undissolved && reading.dissolves === false) confirmations += 1;
+    /* the reading is for a different amount of product: the match is real,
+       but weaker */
+    const level = seen.proportion || "standard";
+    if (levelOf(reading) !== level) {
+      warnings.push({ kind: "check", key: "partialProportion", vars: {
+        doc: t(`proportionShort.${levelOf(reading)}`),
+        seen: t(`proportionShort.${level}`),
+      } });
+    }
+    if (outcome === "pieno" && warnings.some((warning) => warning.kind === "check")) outcome = "parziale";
+    return { outcome, warnings, confirmations };
+  }
+
+  /* A colour with how it looks: "grigio, macchie". */
+  function stageName(color, shape) {
+    const name = colorName(color, state.lang);
+    return !shape || shape === "uniform" ? name : `${name} (${t(`shapes.${shape}`)})`;
+  }
+
+  function partCaption(part) {
+    return part.map((stage) => stageName(`${stage.hue}.${stage.modifier || "standard"}`, stage.shape)).join(" → ");
+  }
+
+  /* One part seen against one part of a reading: the colours in their
+     order, then how they look. A colour in the same shape the reading
+     documents confirms it; "uniform" never rules anything out; a colour
+     seen in the liquid that the part has only in spots or a precipitate
+     is partial; a shape the part does not document is a note, because
+     the sources rarely write the shapes down. */
+  function matchPart(docPart, userPart, anyShape = false) {
+    const result = matchSequence(docPart.map((stage) => stage.color), userPart);
+    /* on crystals the colour has no shape: the colours are all there is */
+    if (result.outcome === "no" || anyShape) return { ...result, confirmations: 0 };
+    const warnings = [...result.warnings];
+    let confirmations = 0;
+    for (const stage of userPart) {
+      const shapes = new Set(docPart.filter((one) => hueOf(one.color) === stage.hue)
+        .map((one) => one.shape || "uniform"));
+      if (!shapes.size) continue;
+      const vars = {
+        color: hueName(stage.hue, state.lang),
+        seen: t(`shapes.${stage.shape}`),
+        doc: [...shapes].map((shape) => t(`shapes.${shape}`)).join(" / "),
+      };
+      if (shapes.has(stage.shape)) {
+        if (stage.shape !== "uniform") confirmations += 1;
+      } else if (stage.shape === "uniform" || stage.shape === "ring") {
+        /* the liquid and its edges are the same reaction */
+        if (!shapes.has("uniform") && !shapes.has("ring")) {
+          warnings.push({ kind: "check", key: "partialShapeOnly", vars });
+        }
+      } else if (shapes.has("uniform") || shapes.has("ring")) {
+        warnings.push({ kind: "note", key: "noteShapeUndocumented", vars });
+      } else {
+        warnings.push({ kind: "check", key: "partialShapeDifferent", vars });
+      }
+    }
+    const checked = warnings.some((warning) => warning.kind === "check");
+    const outcome = result.outcome === "pieno" && checked ? "parziale" : result.outcome;
+    return { outcome, warnings, confirmations };
+  }
+
+  /* The colours of a part of a reading against the colours seen in a part. */
+  function matchSequence(colors, stages) {
+    const none = { outcome: "no", warnings: [] };
+    if (!colors.length) return none;
     const docHues = colors.map(hueOf);
     const last = docHues.length - 1;
     const sequence = (colors) => captionOf(colors, state.lang).replace(/\n→ /g, " → ");
@@ -462,7 +727,10 @@
       const lastMatched = positions[positions.length - 1];
       if (extra.length && lastMatched !== last) return none;
       const seenCaption = (stages) => stages.map((stage) => hueName(stage.hue, state.lang)).join(" → ");
-      if (positions[0] > 0) {
+      /* shades of the hue just seen are not phases missed: purple light
+         and then purple is the purple the user saw */
+      const sameHue = (from, to, hue) => docHues.slice(from, to).every((one) => one === hue);
+      if (positions[0] > 0 && !sameHue(0, positions[0], docHues[positions[0]])) {
         warnings.push({ kind: "check", key: "partialMissedStart", vars: {
           missed: sequence(colors.slice(0, positions[0])),
         } });
@@ -470,13 +738,15 @@
       positions.forEach((position, index) => {
         const previous = positions[index - 1];
         if (index === 0 || position === previous + 1) return;
+        if (sameHue(previous + 1, position, docHues[previous]) ||
+            sameHue(previous + 1, position, docHues[position])) return;
         warnings.push({ kind: "check", key: "partialMissedBetween", vars: {
           from: hueName(docHues[previous], state.lang),
           to: hueName(docHues[position], state.lang),
           missed: sequence(colors.slice(previous + 1, position)),
         } });
       });
-      if (lastMatched < last) {
+      if (lastMatched < last && !sameHue(lastMatched + 1, last + 1, docHues[lastMatched])) {
         warnings.push({ kind: "check", key: "partialLater", vars: {
           seen: seenCaption(stages),
           rest: sequence(colors.slice(lastMatched + 1)),
@@ -489,15 +759,6 @@
         } });
       }
     }
-    /* the reading is for a different amount of product: the match is real,
-       but weaker */
-    const level = seen.proportion || "standard";
-    if (levelOf(reading) !== level) {
-      warnings.push({ kind: "check", key: "partialProportion", vars: {
-        doc: t(`proportionShort.${levelOf(reading)}`),
-        seen: t(`proportionShort.${level}`),
-      } });
-    }
     const outcome = warnings.some((warning) => warning.kind === "difference") ? "differenze"
       : warnings.length ? "parziale" : "pieno";
     return { outcome, warnings };
@@ -508,9 +769,7 @@
     if (!readings) return "no";
     /* an observation where the colour has not been chosen yet says nothing:
        it matches nothing and contradicts nothing */
-    if (!seen.noReaction && (!seen.stages.length || seen.stages.some((s) => !s.hue))) {
-      return "no";
-    }
+    if (!isActive(seen)) return "no";
     /* the outcomes from the strongest to the weakest */
     const rank = ["no", "differenze", "parziale", "pieno"];
     let best = "no";
@@ -537,8 +796,18 @@
      takes no part in the matching: it would only move rows around without
      any reason. */
   function isActive(obs) {
-    if (obs.noReaction) return true;
-    return obs.stages.some((st) => st.hue);
+    return seenNothing(obs) || seenStages(obs).length > 0;
+  }
+
+  /* How many details of a test the best readings of a cell confirm: a
+     shape, the fizzing. Among the substances that fit as well, the ones
+     with more confirmations come first. */
+  function cellConfirmations(readings, seen, outcome) {
+    if (!readings || !isHit(outcome)) return 0;
+    return Math.max(0, ...readings.map((reading) => {
+      const result = matchReading(reading, seen, readings);
+      return result.outcome === outcome ? result.confirmations || 0 : 0;
+    }));
   }
 
   function activeObservations() {
@@ -562,9 +831,11 @@
     const bits = [];
     let mask = 0;
     let conflicts = 0;
+    let confirmations = 0;
     for (const seen of activeObservations()) {
       const readings = substance.reactions[seen.reagent];
       const outcome = matchCell(readings, seen);
+      confirmations += cellConfirmations(readings, seen, outcome);
       const hit = isHit(outcome);
       /* is there any data for this substance with this reagent? */
       const hasData = !!readings;
@@ -573,7 +844,7 @@
       if (outcome === "conflitto") conflicts++;
     }
     return {
-      bits, mask, conflicts,
+      bits, mask, conflicts, confirmations,
       hits: bits.filter((b) => b.hit),
       /* the tests it fits with something no source documents */
       differences: bits.filter((b) => b.outcome === "differenze").length,
@@ -1436,13 +1707,15 @@
          fits two of three tests is stronger evidence than one that fits
          only the first test, and the mask alone did not say so (with
          three tests, 100 came before 011). Then the mask, so that two
-         substances that fit the same tests are next to each other, and
-         then the name. Among the substances that fit as many tests, the
+         substances that fit the same tests are next to each other; then
+         the details the readings confirm (a shape, the fizzing), and then
+         the name. Among the substances that fit as many tests, the
          ones where the user saw something no source documents come
          after. */
       matched.sort((a, b) => b.ev.hits.length - a.ev.hits.length ||
         a.ev.differences - b.ev.differences ||
         b.ev.mask - a.ev.mask ||
+        b.ev.confirmations - a.ev.confirmations ||
         compareSubstanceNames(a.s.name, b.s.name));
     } else {
       rest = list;
@@ -1923,6 +2196,7 @@
       const taken = !free.some((r) => r.id === last.reagent);
       if (free.length && (taken || (last.auto && free[0].id !== last.reagent))) {
         last.reagent = free[0].id;
+        setForm(last, defaultForm(last.reagent));
       }
       return;
     }
@@ -1935,9 +2209,14 @@
       /* the reagent was offered, not chosen: the draft keeps following
          the free ones until the reader picks one by hand */
       auto: true,
-      noReaction: false,
       proportion: "standard",
-      stages: [{ hue: null, modifier: null }],
+      form: defaultForm(free[0].id),
+      /* the first column gets its shape with its first colour; on crystals
+         it is the colour itself */
+      columns: [defaultForm(free[0].id) === "crystals" ? "liquid" : null],
+      phases: [[{ kind: "empty" }]],
+      fizz: false,
+      undissolved: false,
     });
   }
 
@@ -2003,6 +2282,11 @@
     }
     sel.addEventListener("change", () => {
       obs.reagent = sel.value;
+      /* a test still empty takes the usual state of its reagent; a test
+         written keeps its state when the reagent has it */
+      const forms = REAGENT_BY_ID[obs.reagent]?.forms || ["liquid"];
+      if (!isActive(obs)) setForm(obs, defaultForm(obs.reagent));
+      else if (!forms.includes(obs.form)) setForm(obs, "liquid");
       /* the reader has chosen this reagent: the row in progress stops
          following the free ones */
       obs.auto = false;
@@ -2026,6 +2310,43 @@
        next test */
     head.append(reagentWrap, when);
     li.append(head);
+
+    /* the state of the reagent and the proportion share a row */
+    const settings = document.createElement("div");
+    settings.className = "obs-settings";
+    li.append(settings);
+
+    /* ── the state of the reagent, for the ones sold as crystals too ── */
+    const forms = REAGENT_BY_ID[obs.reagent]?.forms;
+    if (forms) {
+      const formField = document.createElement("div");
+      formField.className = "obs-field";
+      const formLabel = document.createElement("label");
+      formLabel.className = "obs-field-label";
+      formLabel.textContent = t("obsFormLabel");
+      formLabel.htmlFor = `form-${obs.id}`;
+      const formSelect = document.createElement("select");
+      formSelect.id = `form-${obs.id}`;
+      for (const form of forms) {
+        const option = document.createElement("option");
+        option.value = form;
+        option.textContent = t(`forms.${form}`);
+        option.selected = form === (obs.form || "liquid");
+        formSelect.append(option);
+      }
+      formSelect.addEventListener("change", () => {
+        /* crystals cannot show spots, a precipitate or edges: say so before
+           they go */
+        if (formSelect.value === "crystals" && crystalsLose(obs) && !window.confirm(t("obsCrystalsConfirm"))) {
+          formSelect.value = obs.form;
+          return;
+        }
+        setForm(obs, formSelect.value);
+        refreshObservations();
+      });
+      formField.append(formLabel, formSelect);
+      settings.append(formField);
+    }
 
     /* ── the proportion of product to reagent ── */
     /* the label is written small and the select holds the short names:
@@ -2057,7 +2378,7 @@
     });
     propWrap.append(prop);
     field.append(propHead, propWrap);
-    li.append(field);
+    settings.append(field);
 
     /* ── the phases of the reaction ── */
     const reactionField = document.createElement("div");
@@ -2065,284 +2386,29 @@
     const reactionLabel = document.createElement("span");
     reactionLabel.className = "obs-field-label";
     reactionLabel.textContent = t("obsReactionLabel");
-    const stagesWrap = document.createElement("div");
-    stagesWrap.className = "obs-stages";
-    reactionField.append(reactionLabel, stagesWrap);
+    placeGhost(obs);
+    reactionField.append(reactionLabel, phaseGrid(obs));
     li.append(reactionField);
 
-    function renderStages() {
-      /* the picker is rebuilt: the overlay it owned has to go, or the plane
-         would stay with nothing behind it */
-      const wasOpen = [...stagesWrap.querySelectorAll(".picker")].findIndex((d) => d.open);
-      hideOverlay();
-      stagesWrap.textContent = "";
-
-      /* A phase after the first comes with the arrow that leads into it,
-         and the two wrap together: a line never starts with a colour cut
-         off from its arrow, nor ends with an arrow that leads nowhere. */
-      const arrow = () => {
-        const sign = document.createElement("span");
-        sign.className = "stage-arrow";
-        sign.setAttribute("aria-hidden", "true");
-        sign.textContent = "\u2192";
-        return sign;
-      };
-      obs.stages.forEach((st, i) => {
-        if (i === 0) {
-          stagesWrap.append(stageNode(st, i));
-          return;
-        }
-        const group = document.createElement("span");
-        group.className = "stage-group";
-        group.append(arrow(), stageNode(st, i));
-        stagesWrap.append(group);
-      });
-
-      if (wasOpen >= 0) {
-        const det = stagesWrap.querySelectorAll(".picker")[wasOpen];
-        if (det) det.open = true;
-      }
-
-      syncUrl();
-      /* The plus that adds another phase comes with its own arrow, and the
-         two wrap together. Not when a phase is still waiting for a colour:
-         that one is already a plus, and two side by side would be
-         confusing. */
-      const waiting = obs.stages.some((st) => !st.hue);
-      if (!obs.noReaction && !waiting) {
-        const tail = document.createElement("span");
-        tail.className = "stage-group";
-        const add = document.createElement("button");
-        add.type = "button";
-        add.className = "btn btn-quiet stage-add";
-        add.textContent = "+";
-        add.setAttribute("aria-label", t("obsAddStage"));
-        add.addEventListener("click", () => {
-          obs.stages.push({ hue: null, modifier: null });
-          renderStages();
-          /* the new phase opens right away: the point of the button is to
-             choose the colour now, not to go and look for it */
-          const dets = stagesWrap.querySelectorAll(".picker");
-          const last = dets[dets.length - 1];
-          if (!last) return;
-          last.open = true;
-          /* the panel may have moved while the phase was added: the
-             popover is placed again once the layout has settled */
-          requestAnimationFrame(() => {
-            if (last.open) placePopover(last);
-          });
-        });
-        tail.append(arrow(), add);
-        stagesWrap.append(tail);
-      }
-    }
-
-    function stageNode(st, index) {
-      const span = document.createElement("span");
-      span.className = "stage";
-
-      const det = document.createElement("details");
-      det.className = "picker";
-      det.dataset.obs = obs.id;
-
-      /* the choice is staged: the picker shows a preview and only writes it
-       * when the colour is confirmed */
-      let draft = { hue: st.hue, modifier: st.modifier, noReaction: obs.noReaction };
-
-      const sum = document.createElement("summary");
-      sum.className = "swatch-btn";
-      const chip = document.createElement("span");
-      chip.className = "swatch-chip";
-      const label = document.createElement("span");
-
-      function paint() {
-        if (obs.noReaction) {
-          chip.classList.add("swatch-chip-none");
-          chip.style.background = "transparent";
-          chip.style.display = "";
-          label.textContent = t("obsNoReaction");
-        } else if (!st.hue) {
-          /* the phase with no colour yet is the dashed button with a
-             plus: the same sign as the one that adds another phase */
-          chip.style.display = "none";
-          sum.classList.add("swatch-btn-plus");
-          sum.setAttribute("aria-label", t("obsAddReaction"));
-          label.textContent = "+";
-        } else {
-          chip.classList.remove("swatch-chip-none");
-          chip.style.display = "";
-          chip.style.background = hexFor(st.hue, st.modifier);
-          label.textContent = colorName(`${st.hue}.${st.modifier || "standard"}`, state.lang);
-        }
-      }
-      paint();
-
-      sum.append(chip, label);
-      det.append(sum);
-
-      const pop = document.createElement("div");
-      pop.className = "picker-pop";
-
-      /* "no reaction" comes first, on its own, and can be clicked again to
-         go back to the colours */
-      const none = document.createElement("button");
-      none.type = "button";
-      none.className = "swatch swatch-none";
-      const noneBox = document.createElement("span");
-      noneBox.className = "box box-none";
-      const noneLbl = document.createElement("span");
-      noneLbl.className = "lbl";
-      noneLbl.textContent = t("obsNoReaction");
-      none.append(noneBox, noneLbl);
-      none.addEventListener("click", () => {
-        draft.noReaction = !draft.noReaction;
-        none.setAttribute("aria-pressed", draft.noReaction ? "true" : "false");
-        if (draft.noReaction) {
-          for (const input of grid.querySelectorAll("input")) input.checked = false;
-        }
-        showChoice();
-      });
-      /* a reaction that already has a colour cannot turn into "no
-         reaction": the choice is only there for the first phase */
-      if (index === 0) pop.append(none);
-
-      /* The colours: a grid of every hue in every shade, as the data has
-         them. On a wide screen the hues are the columns and the shades the
-         rows; on a phone the grid is turned, a hue per row with its name.
-         Each swatch says where it goes, and the stylesheet places it. */
-      const fs = document.createElement("fieldset");
-      const legend = document.createElement("legend");
-      legend.textContent = t("obsColour");
-      fs.append(legend);
-      const grid = document.createElement("div");
-      grid.className = "color-grid";
-      grid.style.setProperty("--hues", HUES.length);
-      grid.style.setProperty("--shades", SHADES.length);
-      SHADES.forEach((shade, shadeIndex) => {
-        const name = document.createElement("span");
-        name.className = "color-grid-shade";
-        name.style.setProperty("--shade-index", shadeIndex);
-        name.textContent = modifierName(shade, state.lang);
-        grid.append(name);
-      });
-      HUES.forEach((hue, hueIndex) => {
-        const name = document.createElement("span");
-        name.className = "color-grid-hue";
-        name.style.setProperty("--hue-index", hueIndex);
-        name.textContent = hueName(hue, state.lang);
-        grid.append(name);
-        SHADES.forEach((shade, shadeIndex) => {
-          const color = `${hue}.${shade}`;
-          const cell = document.createElement("label");
-          cell.className = "color-cell";
-          cell.style.setProperty("--hue-index", hueIndex);
-          cell.style.setProperty("--shade-index", shadeIndex);
-          cell.title = colorName(color, state.lang);
-          const input = document.createElement("input");
-          input.type = "radio";
-          input.name = `color-${obs.id}-${index}`;
-          input.value = color;
-          input.setAttribute("aria-label", colorName(color, state.lang));
-          input.addEventListener("change", () => {
-            draft.hue = hue;
-            draft.modifier = shade;
-            draft.noReaction = false;
-            showChoice();
-          });
-          const box = document.createElement("span");
-          box.className = "box";
-          box.style.background = hexFor(hue, shade);
-          cell.append(input, box);
-          grid.append(cell);
-        });
-      });
-      fs.append(grid);
-      /* the name of the colour chosen: on a wide screen the grid has no
-         room for the names of the hues */
-      const choice = document.createElement("p");
-      choice.className = "color-choice";
-      choice.setAttribute("aria-live", "polite");
-      fs.append(choice);
-      pop.append(fs);
-      pop.classList.add("color-pop");
-
-      function showChoice() {
-        none.setAttribute("aria-pressed", draft.noReaction ? "true" : "false");
-        choice.textContent = draft.noReaction ? t("obsNoReaction")
-          : draft.hue ? colorName(`${draft.hue}.${draft.modifier || "standard"}`, state.lang)
-          : "";
-      }
-      syncControls();
-
-      /* the buttons: delete on the left, then cancel and confirm */
-      const actions = document.createElement("div");
-      actions.className = "picker-actions";
-
-      if (obs.stages.length > 1) {
-        const del = document.createElement("button");
-        del.type = "button";
-        del.className = "picker-del";
-        del.textContent = "\u2715";
-        del.setAttribute("aria-label", t("obsRemoveStage"));
-        del.addEventListener("click", () => {
-          obs.stages.splice(index, 1);
-          hideOverlay();
-          renderStages();
-          renderTable();
-        });
-        actions.append(del);
-      }
-      actions.append(Object.assign(document.createElement("span"), { className: "picker-sep" }));
-
-      const cancel = document.createElement("button");
-      cancel.type = "button";
-      cancel.className = "picker-cancel";
-      cancel.textContent = t("obsCancel");
-      cancel.addEventListener("click", () => { det.open = false; });
-      actions.append(cancel);
-
-      const ok = document.createElement("button");
-      ok.type = "button";
-      ok.className = "picker-ok";
-      ok.textContent = t("obsConfirm");
-      ok.addEventListener("click", () => {
-        st.hue = draft.hue;
-        st.modifier = draft.modifier;
-        obs.noReaction = draft.noReaction;
-        det.open = false;
-        /* the observation is now complete: a new empty row appears below */
-        renderObservations();
+    /* ── the details: two ticks, always in sight ── */
+    const ticks = document.createElement("div");
+    ticks.className = "obs-ticks";
+    /* on a crystal nothing dissolves */
+    const flags = onCrystals(obs) ? [["fizz", "obsFizz"]] : [["fizz", "obsFizz"], ["undissolved", "obsUndissolved"]];
+    for (const [flag, key] of flags) {
+      const label = document.createElement("label");
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = Boolean(obs[flag]);
+      box.addEventListener("change", () => {
+        obs[flag] = box.checked;
+        syncUrl();
         renderTable();
       });
-      actions.append(ok);
-      pop.append(actions);
-
-      det.append(pop);
-      span.append(det);
-
-      /* The controls follow the draft. The draft is prepared when the
-       * picker opens: the "toggle" event arrives too late and would wipe
-       * a colour that was just picked. */
-      function syncControls() {
-        const chosen = draft.hue ? `${draft.hue}.${draft.modifier || "standard"}` : null;
-        for (const input of grid.querySelectorAll("input")) {
-          input.checked = !draft.noReaction && input.value === chosen;
-        }
-        showChoice();
-      }
-
-      sum.addEventListener("click", () => {
-        if (!det.open) {
-          draft = { hue: st.hue, modifier: st.modifier, noReaction: obs.noReaction };
-          syncControls();
-        }
-      });
-
-      return span;
+      label.append(box, t(key));
+      ticks.append(label);
     }
-
-
-    renderStages();
+    li.append(ticks);
 
     /* the incomplete tile is not deleted: it is where the next test
        goes, and it has no delete button */
@@ -2366,6 +2432,544 @@
   }
 
 
+
+  /* ── the grid of the phases ─────────────────────────────────────── */
+
+  /* The cell whose picker opens once the tiles are drawn again: the first
+     one of a column just added. */
+  let openAfterRender = null;
+
+  function refreshObservations() {
+    /* the picker that is open goes with the tiles: the plane behind it
+       has to go too, or it would stay with nothing in front */
+    hideOverlay();
+    renderObservations();
+    renderTable();
+  }
+
+  /* The next phase, ready to be written: below every thing still there,
+     the same as before. It is there when the last phase has a colour; a
+     thing still to choose gets its place once it has one. */
+  function placeGhost(obs) {
+    while (obs.phases.length > 1 && obs.phases[obs.phases.length - 1].ghost) obs.phases.pop();
+    const last = obs.phases[obs.phases.length - 1];
+    if (!last.some((cell) => cell.kind === "colour" || (cell.edge && !cell.edge.none))) return;
+    const ghost = last.map((cell) =>
+      ["gone", "absent", "empty"].includes(cell.kind) ? { kind: "absent" } : { kind: "same" });
+    ghost.ghost = true;
+    obs.phases.push(ghost);
+  }
+
+  /* The state of the reagent of a test. An empty test simply takes it;
+     a written one going to crystals keeps what crystals can show. Back
+     to liquid, the colours are a liquid. */
+  function setForm(obs, form) {
+    if (form === "crystals") {
+      if (isActive(obs)) toCrystals(obs);
+      else Object.assign(obs, { form, columns: ["liquid"], phases: [[{ kind: "empty" }]] });
+      return;
+    }
+    obs.form = form;
+    if (!isActive(obs)) obs.columns = [null];
+  }
+
+  /* A column goes from every phase. The last one takes the observation
+     with it: a test with nothing seen is no test. */
+  function removeColumn(obs, column) {
+    obs.columns.splice(column, 1);
+    for (const phase of obs.phases) phase.splice(column, 1);
+    if (!obs.columns.length) {
+      state.observations = state.observations.filter((one) => one !== obs);
+      return;
+    }
+    dropEmptyPhases(obs);
+  }
+
+  /* A cell goes: what it said is taken back. A thing that was there before
+     is the same as before; one that was not is not there yet — a liquid in
+     the first phase is a liquid with no reaction. The only cell of its
+     column takes the column with it. */
+  function removeCell(obs, phaseIndex, column) {
+    const says = (cell) => cell && ["colour", "none", "gone"].includes(cell.kind);
+    const others = obs.phases.some((phase, index) => index !== phaseIndex && !phase.ghost && says(phase[column]));
+    if (!others) {
+      removeColumn(obs, column);
+      return;
+    }
+    const before = obs.phases.slice(0, phaseIndex).some((phase) => says(phase[column]));
+    const liquidStart = obs.columns[column] === "liquid" && phaseIndex === 0
+      && !otherLiquidColoured(obs, phaseIndex, column);
+    obs.phases[phaseIndex][column] = before ? { kind: "same" }
+      : liquidStart ? { kind: "none" } : { kind: "notyet" };
+    dropEmptyPhases(obs);
+  }
+
+  /* A phase where nothing changes says nothing: it goes. The first phase
+     goes when nothing is there yet, and the one after it becomes the
+     first. */
+  function dropEmptyPhases(obs) {
+    obs.phases = obs.phases.filter((phase, index) => phase.ghost || index === 0
+      || phase.some((cell) => !["same", "absent"].includes(cell.kind)));
+    while (obs.phases.length > 1 && !obs.phases[1].ghost
+      && obs.phases[0].every((cell) => ["notyet", "absent"].includes(cell.kind))) {
+      obs.phases.shift();
+      obs.phases[0] = obs.phases[0].map((cell) => (cell.kind === "same" ? { kind: "notyet" } : cell));
+    }
+  }
+
+  /* What a "same" cell shows: the last thing its column says. */
+  function resolvedCell(obs, phaseIndex, column) {
+    for (let index = phaseIndex; index >= 0; index -= 1) {
+      const cell = obs.phases[index][column];
+      if (cell && cell.kind !== "same") return cell;
+    }
+    return null;
+  }
+
+  /* Has the thing of a column a colour in a phase before this one, or
+     after it? Before: it was there, and it can disappear. After: this
+     phase can still be the one before it appears. */
+  function colouredBefore(obs, phaseIndex, column) {
+    return obs.phases.slice(0, phaseIndex).some((phase) => phase[column]?.kind === "colour");
+  }
+
+  function colouredAfter(obs, phaseIndex, column) {
+    return obs.phases.slice(phaseIndex + 1).some((phase) => phase[column]?.kind === "colour");
+  }
+
+  /* Does another liquid of this phase have a colour? Then this one cannot
+     be "no reaction": the drop did change. */
+  function otherLiquidColoured(obs, phaseIndex, column) {
+    return obs.columns.some((shape, other) => other !== column && shape === "liquid" &&
+      resolvedCell(obs, phaseIndex, other)?.kind === "colour");
+  }
+
+  function cellName(cell, shape) {
+    if (!cell || cell.kind === "empty" || cell.kind === "absent") return t("obsAddReaction");
+    const edge = !cell.edge ? "" : cell.edge.none ? t("obsEdgesNone")
+      : interpolate(t("obsEdgesColour"), { color: colorName(`${cell.edge.hue}.${cell.edge.modifier || "standard"}`, state.lang) });
+    let name;
+    if (cell.kind === "none") name = t("obsNoReaction");
+    else if (cell.kind === "notyet") name = t("obsNotYet");
+    else if (cell.kind === "gone") name = t("obsGone");
+    else {
+      name = colorName(`${cell.hue}.${cell.modifier || "standard"}`, state.lang);
+      if (shape && shape !== "liquid") name = `${t(`columns.${shape}`)} ${name}`;
+    }
+    return [name, edge].filter(Boolean).join(", ");
+  }
+
+  /* The drop of a cell: its colour, its shape, its edges. */
+  function paintDrop(drop, cell, shape) {
+    drop.className = "cell-chip";
+    drop.textContent = "";
+    if (cell?.kind === "colour") {
+      drop.style.setProperty("--chip", hexFor(cell.hue, cell.modifier));
+      if (shape === "spots") drop.classList.add("chip-spots");
+      if (shape === "precipitate") drop.classList.add("chip-precipitate");
+    } else if (cell?.kind === "none") {
+      drop.classList.add("cell-none");
+    } else if (cell?.kind === "notyet" || cell?.kind === "gone") {
+      drop.classList.add(`cell-${cell.kind}`);
+      drop.textContent = "–";
+    } else {
+      drop.classList.add("cell-empty");
+      drop.textContent = "+";
+    }
+    if (cell?.edge?.none) {
+      drop.classList.add("chip-edge-none");
+    } else if (cell?.edge) {
+      drop.style.setProperty("--edge", hexFor(cell.edge.hue, cell.edge.modifier));
+      drop.classList.add("chip-edge");
+    }
+  }
+
+  /* The phases one under the other, the things seen side by side with
+     their names on top; an arrow leads every thing into the next phase. */
+  function phaseGrid(obs) {
+    const columns = obs.columns.length;
+    const grid = document.createElement("div");
+    grid.className = "phase-grid";
+    grid.style.setProperty("--columns", columns);
+    const spacer = () => document.createElement("span");
+
+    /* on crystals there is one column, with no name: the colour itself */
+    if (!onCrystals(obs)) grid.append(spacer());
+    obs.columns.forEach((shape, column) => {
+      if (onCrystals(obs)) return;
+      const head = document.createElement("span");
+      head.className = "column-head";
+      if (shape) {
+        head.append(t(`columns.${shape}`));
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "column-remove";
+        remove.textContent = "\u2715";
+        remove.setAttribute("aria-label", interpolate(t("obsRemoveColumn"), { name: t(`columns.${shape}`) }));
+        remove.title = remove.getAttribute("aria-label");
+        remove.addEventListener("click", () => {
+          removeColumn(obs, column);
+          refreshObservations();
+        });
+        head.append(remove);
+      }
+      grid.append(head);
+    });
+    if (!onCrystals(obs)) grid.append(spacer());
+
+    obs.phases.forEach((phase, phaseIndex) => {
+      const ghost = Boolean(phase.ghost);
+      if (phaseIndex > 0) {
+        grid.append(spacer());
+        for (let column = 0; column < columns; column += 1) {
+          const arrow = document.createElement("span");
+          arrow.className = "phase-arrow" + (ghost ? " phase-ghost" : "");
+          arrow.setAttribute("aria-hidden", "true");
+          const before = obs.phases[phaseIndex - 1][column];
+          const carried = before && !["absent", "gone"].includes(before.kind)
+            && phase[column] && phase[column].kind !== "absent";
+          arrow.textContent = carried ? "↓" : "";
+          grid.append(arrow);
+        }
+        grid.append(spacer());
+      }
+
+      const label = document.createElement("span");
+      label.className = "phase-label" + (ghost ? " phase-ghost" : "");
+      label.textContent = interpolate(t("obsPhase"), { n: phaseIndex + 1 });
+      grid.append(label);
+
+      for (let column = 0; column < columns; column += 1) {
+        const cell = phase[column];
+        if (!cell || cell.kind === "absent") {
+          grid.append(spacer());
+          continue;
+        }
+        const node = phaseCellNode(obs, phaseIndex, column);
+        /* only the drop is faded: the picker it opens is not */
+        if (ghost) node.querySelector("summary").classList.add("phase-ghost");
+        grid.append(node);
+      }
+
+      /* the "+" drop: another thing seen, from this phase on */
+      const end = spacer();
+      if (!ghost && !onCrystals(obs) && !phase.some((cell) => cell.kind === "empty")) {
+        const add = document.createElement("button");
+        add.type = "button";
+        add.className = "cell-chip cell-empty add-thing";
+        add.textContent = "+";
+        add.title = t("obsAddThing");
+        add.setAttribute("aria-label", t("obsAddThing"));
+        add.addEventListener("click", () => {
+          if (obs.phases[obs.phases.length - 1].ghost) obs.phases.pop();
+          obs.columns.push(null);
+          /* not there before this phase; after it, the same as before */
+          obs.phases.forEach((other, otherIndex) => {
+            other.push(otherIndex === phaseIndex ? { kind: "empty" }
+              : otherIndex < phaseIndex ? { kind: "notyet" } : { kind: "same" });
+          });
+          openAfterRender = { id: obs.id, phaseIndex, column: columns };
+          refreshObservations();
+        });
+        end.append(add);
+      }
+      grid.append(end);
+    });
+    return grid;
+  }
+
+  /* A grid of every hue in every shade, as the data has them. On a wide
+     screen the hues are the columns and the shades the rows; on a phone
+     the grid is turned, a hue per row with its name. Each swatch says
+     where it goes, and the stylesheet places it. */
+  function colourGrid(name, choose) {
+    const grid = document.createElement("div");
+    grid.className = "color-grid";
+    grid.style.setProperty("--hues", HUES.length);
+    grid.style.setProperty("--shades", SHADES.length);
+    SHADES.forEach((shade, shadeIndex) => {
+      const shadeName = document.createElement("span");
+      shadeName.className = "color-grid-shade";
+      shadeName.style.setProperty("--shade-index", shadeIndex);
+      shadeName.textContent = modifierName(shade, state.lang);
+      grid.append(shadeName);
+    });
+    const inputs = [];
+    HUES.forEach((hue, hueIndex) => {
+      const hueLabel = document.createElement("span");
+      hueLabel.className = "color-grid-hue";
+      hueLabel.style.setProperty("--hue-index", hueIndex);
+      hueLabel.textContent = hueName(hue, state.lang);
+      grid.append(hueLabel);
+      SHADES.forEach((shade, shadeIndex) => {
+        const color = `${hue}.${shade}`;
+        const label = document.createElement("label");
+        label.className = "color-cell";
+        label.style.setProperty("--hue-index", hueIndex);
+        label.style.setProperty("--shade-index", shadeIndex);
+        label.title = colorName(color, state.lang);
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = name;
+        input.value = color;
+        input.setAttribute("aria-label", colorName(color, state.lang));
+        input.addEventListener("change", () => choose(hue, shade));
+        const box = document.createElement("span");
+        box.className = "box";
+        box.style.background = hexFor(hue, shade);
+        label.append(input, box);
+        grid.append(label);
+        inputs.push(input);
+      });
+    });
+    return { grid, inputs };
+  }
+
+  /* A cell: only the drop, with its colour, its shape and its edges; the
+     name is its label. It opens the picker of that cell. */
+  function phaseCellNode(obs, phaseIndex, column) {
+    const phase = obs.phases[phaseIndex];
+    const cell = phase[column];
+    const shape = obs.columns[column];
+    const shown = cell.kind === "same" ? resolvedCell(obs, phaseIndex, column) : cell;
+    /* a column with no shape yet is being made: its picker asks the
+       shape first */
+    const creating = !shape;
+    const name = `color-${obs.id}-${phaseIndex}-${column}`;
+
+    const det = document.createElement("details");
+    det.className = "picker";
+    det.dataset.obs = obs.id;
+    const sum = document.createElement("summary");
+    sum.className = "cell-summary";
+    const drop = document.createElement("span");
+    paintDrop(drop, shown, shape);
+    if (cell.kind === "same") drop.classList.add("cell-same");
+    const label = cell.kind === "same" ? `${t("obsSame")} (${cellName(shown, shape)})` : cellName(cell, shape);
+    sum.title = label;
+    sum.setAttribute("aria-label", label);
+    sum.append(drop);
+    det.append(sum);
+
+    /* the choice is staged: the picker shows it and writes it only when it
+       is confirmed */
+    const initialDraft = () => ({
+      shape: shape || "liquid",
+      kind: cell.kind === "empty" ? "colour" : cell.kind,
+      hue: cell.hue ?? null,
+      modifier: cell.modifier ?? null,
+      edge: cell.edge ? { ...cell.edge } : null,
+      edgesDiffer: Boolean(cell.edge),
+    });
+    let draft = initialDraft();
+
+    const pop = document.createElement("div");
+    pop.className = "picker-pop color-pop";
+
+    const pressable = (text, action) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = text;
+      button.addEventListener("click", () => { action(); syncControls(); });
+      return button;
+    };
+
+    /* what is seen: only when the column is being made */
+    const shapeButtons = [];
+    if (creating) {
+      const section = document.createElement("div");
+      section.className = "picker-section";
+      const title = document.createElement("p");
+      title.className = "picker-section-title";
+      title.textContent = t("obsWhat");
+      const row = document.createElement("div");
+      row.className = "shape-choices";
+      for (const one of COLUMN_SHAPES) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "shape-choice";
+        const sample = document.createElement("span");
+        sample.className = "cell-chip shape-sample" + (one === "liquid" ? "" : ` chip-${one}`);
+        button.append(sample, t(`columns.${one}`));
+        button.addEventListener("click", () => {
+          draft.shape = one;
+          if (one !== "liquid") {
+            draft.edge = null;
+            draft.edgesDiffer = false;
+            if (draft.kind === "none") draft.kind = "colour";
+          }
+          syncControls();
+        });
+        row.append(button);
+        shapeButtons.push([one, button]);
+      }
+      section.append(title, row);
+      pop.append(section);
+    }
+
+    /* the centre, or the colour of spots and precipitate */
+    const centre = document.createElement("div");
+    centre.className = "picker-section";
+    const centreTitle = document.createElement("p");
+    centreTitle.className = "picker-section-title";
+    const centreExtra = document.createElement("div");
+    centreExtra.className = "picker-extra";
+    const toggle = (kind) => () => { draft.kind = draft.kind === kind ? "colour" : kind; };
+    const noneButton = pressable(t("obsNoReaction"), toggle("none"));
+    const notYetButton = pressable(t("obsNotYet"), toggle("notyet"));
+    const sameButton = pressable(t("obsSame"), toggle("same"));
+    const goneButton = pressable(t("obsGone"), toggle("gone"));
+    centreExtra.append(noneButton, notYetButton, sameButton, goneButton);
+    const centreColours = colourGrid(name, (hue, modifier) => {
+      Object.assign(draft, { kind: "colour", hue, modifier });
+      syncControls();
+    });
+    const choice = document.createElement("p");
+    choice.className = "color-choice";
+    choice.setAttribute("aria-live", "polite");
+    centre.append(centreTitle, centreExtra, centreColours.grid, choice);
+    pop.append(centre);
+
+    /* the edges of a liquid: the same as the centre unless they are not */
+    const edges = document.createElement("div");
+    edges.className = "picker-section";
+    const edgesHead = document.createElement("div");
+    edgesHead.className = "picker-section-head";
+    const edgesTitle = document.createElement("p");
+    edgesTitle.className = "picker-section-title";
+    edgesTitle.textContent = t("obsEdges");
+    const sameAsCentre = document.createElement("label");
+    const sameBox = document.createElement("input");
+    sameBox.type = "checkbox";
+    /* unticked, the edges are to be chosen: until they are, they are the
+       same as the centre */
+    sameBox.addEventListener("change", () => {
+      draft.edgesDiffer = !sameBox.checked;
+      if (sameBox.checked) draft.edge = null;
+      syncControls();
+    });
+    sameAsCentre.append(sameBox, t("obsEdgesSame"));
+    edgesHead.append(edgesTitle, sameAsCentre);
+    const edgesBody = document.createElement("div");
+    const edgesExtra = document.createElement("div");
+    edgesExtra.className = "picker-extra";
+    const edgeNoneButton = pressable(t("obsNoReaction"), () => { draft.edge = { none: true }; });
+    edgesExtra.append(edgeNoneButton);
+    const edgeColours = colourGrid(`${name}-edge`, (hue, modifier) => {
+      draft.edge = { hue, modifier };
+      syncControls();
+    });
+    edgesBody.append(edgesExtra, edgeColours.grid);
+    edges.append(edgesHead, edgesBody);
+    pop.append(edges);
+
+    function syncControls() {
+      const liquid = draft.shape === "liquid";
+      const crystals = onCrystals(obs);
+      for (const [one, button] of shapeButtons) button.setAttribute("aria-pressed", String(draft.shape === one));
+      centreTitle.textContent = t(liquid && !crystals ? "obsCentre" : "obsColour");
+      const before = colouredBefore(obs, phaseIndex, column);
+      /* no reaction: a liquid in the first phase, unless another liquid of
+         it has a colour */
+      noneButton.hidden = !liquid || phaseIndex > 0;
+      noneButton.disabled = otherLiquidColoured(obs, phaseIndex, column);
+      const noReaction = !noneButton.hidden && !noneButton.disabled;
+      /* not yet: before the phase where the thing appears */
+      notYetButton.hidden = creating || before || noReaction || !colouredAfter(obs, phaseIndex, column);
+      /* the same as before: after a phase where the thing was there */
+      sameButton.hidden = phaseIndex === 0 || !before;
+      /* disappears: spots or a precipitate that were there; the liquid
+         does not disappear */
+      goneButton.hidden = liquid || creating || !before;
+      for (const [kind, button] of [["none", noneButton], ["notyet", notYetButton], ["same", sameButton], ["gone", goneButton]]) {
+        button.setAttribute("aria-pressed", String(draft.kind === kind));
+      }
+      const chosen = draft.kind === "colour" && draft.hue ? `${draft.hue}.${draft.modifier || "standard"}` : null;
+      for (const input of centreColours.inputs) input.checked = input.value === chosen;
+      choice.textContent = chosen ? colorName(chosen, state.lang) : "";
+      /* the edges: only for a liquid, and not when the cell repeats the
+         phase before or the thing is not there */
+      edges.hidden = !liquid || crystals || ["same", "notyet"].includes(draft.kind);
+      sameBox.checked = !draft.edgesDiffer;
+      edgesBody.hidden = !draft.edgesDiffer;
+      edgeNoneButton.setAttribute("aria-pressed", String(Boolean(draft.edge?.none)));
+      const edgeChosen = draft.edge && !draft.edge.none ? `${draft.edge.hue}.${draft.edge.modifier || "standard"}` : null;
+      for (const input of edgeColours.inputs) input.checked = input.value === edgeChosen;
+    }
+    syncControls();
+
+    /* the buttons: delete on the left, then cancel and confirm */
+    const actions = document.createElement("div");
+    actions.className = "picker-actions";
+    /* the delete takes back this cell only: a cell that says something */
+    if (!creating && !phase.ghost && ["colour", "none", "gone"].includes(cell.kind)) {
+      const del = document.createElement("button");
+      del.type = "button";
+      del.className = "picker-del";
+      del.textContent = "\u2715";
+      del.setAttribute("aria-label", t("obsRemoveCell"));
+      del.title = t("obsRemoveCell");
+      del.addEventListener("click", () => {
+        removeCell(obs, phaseIndex, column);
+        det.open = false;
+        refreshObservations();
+      });
+      actions.append(del);
+    }
+    actions.append(Object.assign(document.createElement("span"), { className: "picker-sep" }));
+    const cancel = document.createElement("button");
+    cancel.type = "button";
+    cancel.className = "picker-cancel";
+    cancel.textContent = t("obsCancel");
+    cancel.addEventListener("click", () => { det.open = false; });
+    const ok = document.createElement("button");
+    ok.type = "button";
+    ok.className = "picker-ok";
+    ok.textContent = t("obsConfirm");
+    ok.addEventListener("click", () => {
+      const liquid = draft.shape === "liquid";
+      const edge = liquid && draft.edgesDiffer ? draft.edge : null;
+      /* a colour, or for a liquid at least coloured edges */
+      if (draft.kind === "colour" && !draft.hue && !(edge && !edge.none)) return;
+      obs.columns[column] = draft.shape;
+      let next;
+      if (draft.kind === "colour" && draft.hue) next = { kind: "colour", hue: draft.hue, modifier: draft.modifier };
+      else if (draft.kind === "colour" || draft.kind === "none") next = { kind: "none" };
+      else next = { kind: draft.kind };
+      if (edge && (next.kind === "colour" || next.kind === "none")) next.edge = edge;
+      phase[column] = next;
+      /* a changed cell makes the next phase a real one */
+      if (draft.kind !== "same") phase.ghost = false;
+      det.open = false;
+      refreshObservations();
+    });
+    actions.append(cancel, ok);
+    pop.append(actions);
+    det.append(pop);
+
+    /* The draft is prepared when the picker opens: the "toggle" event
+       arrives too late and would wipe a colour that was just picked. */
+    sum.addEventListener("click", () => {
+      if (!det.open) {
+        draft = initialDraft();
+        syncControls();
+      }
+    });
+    /* A column being made and left without a colour — the picker
+       cancelled or closed — was never there. */
+    det.addEventListener("toggle", () => {
+      if (det.open || !creating || obs.columns.length === 1 || obs.columns[column]) return;
+      obs.columns.splice(column, 1);
+      for (const one of obs.phases) one.splice(column, 1);
+      refreshObservations();
+    });
+    if (openAfterRender && openAfterRender.id === obs.id &&
+        openAfterRender.phaseIndex === phaseIndex && openAfterRender.column === column) {
+      openAfterRender = null;
+      requestAnimationFrame(() => { det.open = true; });
+    }
+    return det;
+  }
 
   /* ── popover ──────────────────────────────────────────────────── */
 
@@ -2421,11 +3025,12 @@
     const list = document.createElement("ul");
     list.className = "warning-list";
     /* what contradicts the documentation comes first */
-    const ordered = [...warnings].sort((a, b) =>
-      (b.kind === "difference") - (a.kind === "difference"));
+    const weight = { difference: 0, check: 1, note: 2 };
+    const ordered = [...warnings].sort((a, b) => weight[a.kind] - weight[b.kind]);
     for (const warning of ordered) {
       const item = document.createElement("li");
       if (warning.kind === "difference") item.className = "warning-difference";
+      if (warning.kind === "note") item.className = "warning-note";
       item.append(interpolateStrong(t(warning.key), warning.vars));
       list.append(item);
     }

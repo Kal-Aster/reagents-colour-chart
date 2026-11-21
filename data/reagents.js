@@ -117,13 +117,21 @@ window.REAGENTS = {
    "id": "Mq",
    "name": "Marquis",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Me",
    "name": "Mecke",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Md",
@@ -136,13 +144,21 @@ window.REAGENTS = {
    "id": "Fr",
    "name": "Froehde",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Li",
    "name": "Liebermann",
    "duration": 30,
-   "stir": false
+   "stir": false,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Si",
@@ -161,6 +177,10 @@ window.REAGENTS = {
    "stir": false,
    "target": [
     "purple"
+   ],
+   "forms": [
+    "crystals",
+    "liquid"
    ]
   },
   {
@@ -172,6 +192,10 @@ window.REAGENTS = {
     "blue",
     "purple",
     "red"
+   ],
+   "forms": [
+    "crystals",
+    "liquid"
    ]
   },
   {
@@ -194,7 +218,11 @@ window.REAGENTS = {
    "name": "Morris",
    "baseColor": "pink.standard",
    "duration": 30,
-   "stir": true
+   "stir": true,
+   "forms": [
+    "crystals",
+    "liquid"
+   ]
   },
   {
    "id": "Zi",

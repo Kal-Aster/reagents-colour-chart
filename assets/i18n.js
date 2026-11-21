@@ -37,11 +37,28 @@ const STRINGS = {
       high: "alta",
       low: "bassa",
     },
-    obsAddReaction: "+ aggiungi reazione",
-    obsAddStage: "Aggiungi una fase",
+    obsAddReaction: "scegli il colore",
+    obsPhase: "Fase {n}",
+    obsAddThing: "Un'altra cosa che vedi in questa fase: un altro liquido, macchie, un precipitato",
+    obsWhat: "Che cosa vedi",
+    obsCentre: "Centro",
+    obsEdges: "Bordi",
+    obsEdgesSame: "uguale al centro",
+    obsEdgesNone: "bordi senza reazione",
+    obsEdgesColour: "bordi {color}",
+    obsNotYet: "non ancora",
+    obsSame: "uguale a prima",
+    obsGone: "sparisce",
+    obsRemoveCell: "Togli questa cella",
+    obsRemoveColumn: "Togli la colonna {name}",
+    obsFizz: "fa effervescenza",
+    obsFormLabel: "Reagente in",
+    forms: { crystals: "cristalli", liquid: "liquido" },
+    obsCrystalsConfirm:
+      "Sui cristalli si vedono solo i colori: le macchie, il precipitato e i bordi di questo test si perdono. Continuare?",
+    obsUndissolved: "non si scioglie",
     obsCancel: "annulla",
     obsConfirm: "conferma",
-    obsRemoveStage: "Togli la fase",
     partialReturn:
       "Nella documentazione {hue} compare due volte: verifica che il tuo sia quello finale, dopo {before}.",
     partialLater: "La reazione va avanti: dopo {seen} la documentazione prevede ancora {rest}.",
@@ -54,6 +71,17 @@ const STRINGS = {
       "Hai visto {extra} dopo {last}: nessuna fonte lo documenta. Può succedere aspettando più del tempo indicato o con un test venuto male: se puoi, ripeti il test.",
     partialIntensity:
       "L'intensità documentata è {doc}, tu hai indicato {seen}: verifica quale delle due hai visto.",
+    partialShapeOnly:
+      "La documentazione vede {color} solo come {doc}, tu l'hai indicato in tutto il liquido: guarda se è nel liquido o in macchie o depositi.",
+    partialShapeDifferent:
+      "Hai indicato {color} come {seen}, la documentazione lo vede come {doc}.",
+    noteShapeUndocumented:
+      "Hai indicato {color} come {seen}: la documentazione non lo dice, ma le fonti annotano di rado come si presenta il colore.",
+    noteUnexplainedPart:
+      "Hai visto anche {part}: questa lettura non lo spiega. Può essere un taglio o un'altra sostanza.",
+    noteDocumentedPart: "La documentazione vede anche {part}: guarda se c'è.",
+    partialLiquidUnexplained:
+      "Il colore del liquido che hai visto ({part}) non è in questa lettura: corrispondono solo macchie o depositi.",
     partialProportion:
       "Questa lettura è documentata alla proporzione {doc}, tu hai indicato la proporzione {seen}: il colore può variare in base alla proporzione tra sostanza e reagente.",
     warningsLabel: "Cosa verificare su questa lettura",
@@ -116,11 +144,18 @@ const STRINGS = {
     detailWiki: "Vedi la voce della fonte",
     timingInstant: "istantanea",
     timingStir: "mescola",
-    readingFizz: "fa bolle",
+    readingFizz: "fa effervescenza",
     readingUndissolved: "non si scioglie",
     readingFade: "{color} svanisce",
     readingShape: "{shape} ({color})",
+    /* what a column of an observation describes */
+    columns: {
+      liquid: "liquido",
+      spots: "macchie",
+      precipitate: "precipitato",
+    },
     shapes: {
+      uniform: "uniforme",
       spots: "macchie",
       ring: "anello",
       precipitate: "precipitato",
@@ -185,11 +220,28 @@ const STRINGS = {
       high: "high",
       low: "low",
     },
-    obsAddReaction: "+ add reaction",
-    obsAddStage: "Add a phase",
+    obsAddReaction: "choose the colour",
+    obsPhase: "Phase {n}",
+    obsAddThing: "Something else you see in this phase: another liquid, spots, a precipitate",
+    obsWhat: "What you see",
+    obsCentre: "Centre",
+    obsEdges: "Edges",
+    obsEdgesSame: "same as the centre",
+    obsEdgesNone: "edges with no reaction",
+    obsEdgesColour: "{color} edges",
+    obsNotYet: "not yet",
+    obsSame: "same as before",
+    obsGone: "disappears",
+    obsRemoveCell: "Remove this cell",
+    obsRemoveColumn: "Remove the {name} column",
+    obsFizz: "effervesces",
+    obsFormLabel: "Reagent as",
+    forms: { crystals: "crystals", liquid: "liquid" },
+    obsCrystalsConfirm:
+      "On crystals only the colours show: the spots, the precipitate and the edges of this test go. Continue?",
+    obsUndissolved: "does not dissolve",
     obsCancel: "cancel",
     obsConfirm: "confirm",
-    obsRemoveStage: "Remove the phase",
     partialReturn:
       "In the documentation {hue} appears twice: check that yours is the final one, after {before}.",
     partialLater: "The reaction goes on: after {seen} the documentation still expects {rest}.",
@@ -202,6 +254,17 @@ const STRINGS = {
       "You saw {extra} after {last}: no source documents it. It can happen if you waited longer than the stated time or the test went wrong: if you can, repeat the test.",
     partialIntensity:
       "The documented intensity is {doc}, you set {seen}: check which of the two you saw.",
+    partialShapeOnly:
+      "The documentation sees {color} only as {doc}, you saw it in the whole liquid: check whether it is in the liquid or in spots or deposits.",
+    partialShapeDifferent:
+      "You saw {color} as {seen}, the documentation sees it as {doc}.",
+    noteShapeUndocumented:
+      "You saw {color} as {seen}: the documentation does not say so, but the sources rarely write down how the colour looks.",
+    noteUnexplainedPart:
+      "You also saw {part}: this reading does not explain it. It may be a cut or another substance.",
+    noteDocumentedPart: "The documentation also sees {part}: check whether it is there.",
+    partialLiquidUnexplained:
+      "The colour of the liquid you saw ({part}) is not in this reading: only spots or deposits match.",
     partialProportion:
       "This reading is documented at the {doc} proportion, you set the {seen} proportion: the colour can vary with the proportion of substance to reagent.",
     warningsLabel: "What to check about this reading",
@@ -264,11 +327,17 @@ const STRINGS = {
     detailWiki: "See the source's entry",
     timingInstant: "instant",
     timingStir: "stir",
-    readingFizz: "fizzes",
+    readingFizz: "effervesces",
     readingUndissolved: "does not dissolve",
     readingFade: "{color} fades",
     readingShape: "{shape} ({color})",
+    columns: {
+      liquid: "liquid",
+      spots: "spots",
+      precipitate: "precipitate",
+    },
     shapes: {
+      uniform: "uniform",
       spots: "spots",
       ring: "ring",
       precipitate: "precipitate",
