@@ -528,7 +528,34 @@
     const seenFound = stages.some((stage) => target.includes(stage.hue) &&
       (onCrystals(seen) || stage.shape === "uniform" || stage.shape === "ring"));
     if (seenFound) return hasTarget(reading) ? result : { outcome: "no", warnings: [] };
-    if (hasTarget(reading)) return { outcome: "no", warnings: [] };
+    if (hasTarget(reading)) {
+      /* The target only in a phase that passes — the purple ring of the
+         Zimmermann that turns brown — is easy to miss: what the user saw
+         is documented after it, so the substance stays, a partial match
+         that asks to look again. A target that is the result rules the
+         substance out: it does not go unseen. */
+      const transient = reading.parts.flatMap((part) => {
+        const last = part[part.length - 1];
+        const final = target.includes(hueOf(last.color)) && last.shape !== "spots" && last.shape !== "precipitate";
+        return final ? [] : part.filter((stage) =>
+          (!stage.shape || stage.shape === "ring") && target.includes(hueOf(stage.color)));
+      });
+      const finalTarget = reading.parts.some((part) => {
+        const last = part[part.length - 1];
+        return target.includes(hueOf(last.color)) && last.shape !== "spots" && last.shape !== "precipitate";
+      });
+      if (finalTarget || !transient.length || result.outcome === "no") return { outcome: "no", warnings: [] };
+      const last = reading.parts.find((part) => part.includes(transient[0])).slice(-1)[0];
+      return {
+        ...result,
+        outcome: result.outcome === "pieno" ? "parziale" : result.outcome,
+        warnings: [...result.warnings, { kind: "check", key: "partialTargetMissed", vars: {
+          reagent: reagentName(seen.reagent),
+          target: stageName(transient[0].color, transient[0].shape),
+          then: stageName(last.color, last.shape),
+        } }],
+      };
+    }
     if (result.outcome !== "no") return result;
     const sourceFound = readings.some((one) => one.source === reading.source && hasTarget(one));
     if (sourceFound) return result;
