@@ -28,7 +28,7 @@ window.REAGENTS = {
    "url": "https://www.ojp.gov/pdffiles1/nij/183258.pdf",
    "license": "US government publication (facts only)",
    "script": "tools/extract_nij.py",
-   "fetchedAt": "2026-11-20 19:41 UTC"
+   "fetchedAt": "2026-11-21 12:59 UTC"
   },
   "CADS": {
    "label": "NIST/NIJ CADS",
@@ -36,7 +36,7 @@ window.REAGENTS = {
    "url": "https://doi.org/10.18434/mds2-3627",
    "license": "NIST (public domain in the US)",
    "script": "tools/extract_cads.py",
-   "fetchedAt": "2026-11-20 19:41 UTC"
+   "fetchedAt": "2026-11-21 12:59 UTC"
   },
   "Chang2025": {
    "label": "Chang et al., Analytical Science Advances",
@@ -44,7 +44,7 @@ window.REAGENTS = {
    "url": "https://doi.org/10.1002/ansa.70008",
    "license": "CC BY 4.0",
    "script": "tools/extract_chang.py",
-   "fetchedAt": "2026-11-20 19:41 UTC"
+   "fetchedAt": "2026-11-21 12:59 UTC"
   }
  },
  "palette": {
@@ -267,8 +267,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -276,8 +282,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "blue.standard"
+       [
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -315,7 +327,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -323,13 +339,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -337,17 +361,24 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "gray.dark",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Li": [
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -355,13 +386,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -381,13 +413,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -548,8 +581,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -575,8 +614,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "red.light"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "red.light"
+        }
+       ]
       ]
      }
     ],
@@ -608,8 +653,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -653,8 +704,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.light",
-       "purple.standard"
+       [
+        {
+         "color": "red.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -697,8 +754,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -706,8 +769,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -715,8 +784,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -724,8 +799,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -733,8 +814,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -762,8 +849,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -771,7 +864,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -779,13 +876,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -793,7 +898,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -835,8 +944,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -856,7 +971,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -916,13 +1035,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -936,8 +1056,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -945,7 +1071,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -971,13 +1101,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -997,8 +1135,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -1051,9 +1195,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.light",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1077,13 +1229,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.light"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -1115,15 +1268,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -1153,8 +1318,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1162,7 +1333,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -1170,9 +1345,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1180,7 +1363,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1206,8 +1393,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1221,8 +1414,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -1253,7 +1452,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1261,7 +1464,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1269,9 +1476,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ]
@@ -1300,8 +1515,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "green.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1309,14 +1530,22 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -1325,18 +1554,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -1345,8 +1590,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1354,7 +1605,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1386,7 +1641,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ]
@@ -1412,8 +1671,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -1421,8 +1686,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "green.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1430,8 +1701,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1439,7 +1716,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1447,14 +1728,22 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -1494,8 +1783,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1503,29 +1798,55 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "red.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ],
+       [
+        {
+         "color": "red.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Md": [
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -1534,8 +1855,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1543,7 +1870,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1563,10 +1894,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "green.standard"
-      ],
-      "shape": "precipitate"
+       [
+        {
+         "color": "green.standard",
+         "shape": "precipitate"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
@@ -1601,7 +1935,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -1609,8 +1947,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "green.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1618,18 +1962,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -1638,8 +1998,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1647,8 +2013,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1674,7 +2046,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -1682,8 +2058,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -1709,7 +2091,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light"
+       [
+        {
+         "color": "pink.light"
+        }
+       ]
       ]
      }
     ],
@@ -1717,8 +2103,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -1726,15 +2118,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -1764,7 +2168,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1772,8 +2180,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1781,8 +2195,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1790,7 +2210,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1798,7 +2222,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1806,8 +2234,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -1838,8 +2272,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1847,8 +2287,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1856,8 +2302,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1865,8 +2317,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1874,7 +2332,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1882,8 +2344,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1931,7 +2399,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1939,8 +2411,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1948,9 +2426,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1958,7 +2444,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -1966,8 +2456,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -1975,8 +2471,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2030,8 +2532,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2039,10 +2547,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.light",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2050,9 +2568,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2060,8 +2586,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2069,8 +2601,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2084,10 +2622,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2107,8 +2655,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -2141,22 +2695,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "green.dark"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2164,22 +2736,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "green.dark"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2187,9 +2777,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2197,15 +2795,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2213,15 +2813,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.light",
-       "green.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2229,10 +2831,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard",
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2258,7 +2870,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -2284,9 +2900,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2294,9 +2918,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2304,8 +2936,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2313,14 +2951,22 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -2329,9 +2975,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2351,10 +3005,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2367,8 +3031,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "green.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -2406,7 +3076,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -2414,9 +3088,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2424,8 +3106,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2433,8 +3121,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark",
-       "yellow.standard"
+       [
+        {
+         "color": "gray.dark"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2442,8 +3136,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2468,8 +3168,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "green.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -2478,8 +3184,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2514,8 +3226,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.dark",
-       "orange.light"
+       [
+        {
+         "color": "yellow.dark"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -2523,11 +3241,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "green.dark",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2535,8 +3265,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2544,9 +3280,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2554,7 +3298,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2568,10 +3316,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ],
+       [
+        {
+         "color": "purple.standard",
+         "shape": "ring"
+        }
+       ]
       ]
      }
     ],
@@ -2579,18 +3340,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.standard",
-       "gray.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -2599,8 +3376,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -2630,9 +3413,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2640,8 +3431,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2649,9 +3446,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2659,7 +3464,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2697,8 +3506,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2706,9 +3521,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2716,10 +3539,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2727,7 +3560,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2735,10 +3572,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2752,43 +3599,62 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": null,
-      "observation": 1,
-      "shape": "spots"
+      "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        }
+       ],
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
       ],
-      "observation": 2,
-      "shape": "spots"
+      "observation": 2
      }
     ],
     "Si": [
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "red.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "red.standard"
+        }
+       ],
+       [
+        {
+         "color": "gray.light",
+         "shape": "spots"
+        }
+       ]
       ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "gray.light"
-      ],
-      "shape": "spots"
      }
     ],
     "Ho": [
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2796,8 +3662,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -2823,7 +3695,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2831,10 +3707,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -2842,8 +3728,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2851,7 +3743,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2859,7 +3755,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2873,35 +3773,52 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard"
-      ],
-      "shape": "particles"
+       [
+        {
+         "color": "pink.light",
+         "shape": "spots"
+        },
+        {
+         "color": "pink.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Si": [
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "red.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "red.standard"
+        }
+       ],
+       [
+        {
+         "color": "gray.light",
+         "shape": "spots"
+        }
+       ]
       ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "gray.light"
-      ],
-      "shape": "spots"
      }
     ],
     "Ho": [
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -2930,7 +3847,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ],
       "fizz": true
      }
@@ -2939,9 +3860,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2949,8 +3878,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -2958,16 +3893,28 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -2976,8 +3923,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -3006,7 +3959,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ],
       "fizz": true
      }
@@ -3015,7 +3972,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3023,8 +3984,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -3055,7 +4022,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ],
       "fizz": true
      }
@@ -3064,9 +4035,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3074,9 +4053,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3084,7 +4071,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3092,8 +4083,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark",
-       "orange.standard"
+       [
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3107,12 +4104,24 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ],
+       [
+        {
+         "color": "purple.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Si": [
@@ -3125,7 +4134,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3169,25 +4182,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "red.standard",
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3249,8 +4260,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -3299,7 +4316,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3339,13 +4360,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -3365,7 +4387,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3391,7 +4417,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3411,8 +4441,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -3458,7 +4494,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3508,9 +4548,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3518,13 +4566,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3538,7 +4587,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light"
+       [
+        {
+         "color": "pink.light"
+        }
+       ]
       ]
      }
     ],
@@ -3558,18 +4611,50 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       [
+        {
+         "color": "blue.light",
+         "shape": "spots"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
@@ -3582,7 +4667,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light"
+       [
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -3590,8 +4679,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -3620,7 +4715,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3628,7 +4727,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3636,7 +4739,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3644,7 +4751,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ]
@@ -3673,19 +4784,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.light"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -3693,8 +4799,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "purple.standard"
+       [
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3702,8 +4814,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -3738,8 +4856,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -3747,8 +4871,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3756,8 +4886,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -3789,8 +4925,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3798,8 +4940,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -3825,8 +4973,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3834,8 +4988,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3843,9 +5003,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3853,7 +5021,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3894,8 +5066,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3903,7 +5081,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3911,8 +5093,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3920,7 +5108,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3946,9 +5138,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "red.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -3962,8 +5162,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -3971,8 +5177,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -4005,7 +5217,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -4023,25 +5239,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "red.standard",
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4049,13 +5263,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4081,9 +5303,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4097,26 +5327,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "purple.standard"
-      ],
-      "shape": "ring"
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.light",
-       "brown.standard"
-      ],
-      "shape": "ring"
+       [
+        {
+         "color": "purple.light",
+         "shape": "ring"
+        },
+        {
+         "color": "purple.standard",
+         "shape": "ring"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
+      ]
      }
     ],
     "Mo": [
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -4145,7 +5383,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -4153,8 +5395,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "red.standard"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4162,10 +5410,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4215,13 +5473,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4229,8 +5495,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4238,9 +5510,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4295,8 +5575,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4304,7 +5590,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4312,7 +5602,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4320,8 +5614,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4335,7 +5635,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4343,8 +5647,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -4376,8 +5686,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4385,8 +5701,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4394,10 +5716,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4405,8 +5737,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4420,7 +5758,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -4452,9 +5794,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4468,8 +5818,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4477,9 +5833,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4487,8 +5851,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4496,7 +5866,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -4504,8 +5878,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4519,7 +5899,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4527,8 +5911,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -4559,8 +5949,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4568,8 +5964,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4577,10 +5979,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4588,7 +6000,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4596,7 +6012,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4604,9 +6024,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4619,16 +6047,39 @@ window.REAGENTS = {
     "Si": [
      {
       "source": "PNW",
-      "colors": [],
-      "shape": "precipitate"
+      "colors": [
+       [
+        {
+         "color": "gray.standard",
+         "shape": "precipitate"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "PNW",
+      "colors": [
+       [
+        {
+         "color": "gray.dark",
+         "shape": "precipitate"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "green.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4636,17 +6087,19 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": null,
-      "observation": 1,
-      "shape": "spots"
+      "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
       ],
-      "observation": 2,
-      "shape": "spots"
+      "observation": 2
      }
     ]
    }
@@ -4675,8 +6128,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "yellow.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4684,9 +6143,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4694,7 +6161,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -4702,7 +6173,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4710,8 +6185,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -4741,11 +6222,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "fade": "red.standard"
      }
@@ -4754,7 +6247,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4774,7 +6271,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -4801,7 +6302,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4809,7 +6314,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -4839,8 +6348,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "red.light"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "red.light"
+        }
+       ]
       ]
      }
     ],
@@ -4848,7 +6363,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -4856,9 +6375,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4866,8 +6393,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4887,8 +6420,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4925,8 +6464,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -4934,15 +6479,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard",
-       "gray.dark"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4950,8 +6507,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4959,8 +6522,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4968,8 +6537,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "green.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4977,9 +6552,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -4993,10 +6576,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.standard",
-       "purple.light"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -5004,7 +6597,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -5033,7 +6630,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5041,7 +6642,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5055,8 +6660,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5064,7 +6675,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5101,8 +6716,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "gray.standard"
+       [
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5110,8 +6731,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -5140,7 +6767,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5148,8 +6779,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "gray.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5157,8 +6794,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5166,15 +6809,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "brown.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "gray.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5182,8 +6827,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "green.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5197,7 +6848,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.light"
+       [
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ],
@@ -5205,7 +6860,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5213,7 +6872,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5221,8 +6884,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -5254,9 +6923,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5264,7 +6941,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5272,8 +6953,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5281,9 +6968,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5291,8 +6986,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5300,7 +7001,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5320,7 +7025,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ]
@@ -5357,8 +7066,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5366,8 +7081,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5375,9 +7096,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5385,8 +7114,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5394,7 +7129,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5402,9 +7141,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "blue.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "blue.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5412,10 +7159,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "brown.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5423,7 +7180,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ]
@@ -5452,8 +7213,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "gray.standard"
+       [
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5461,8 +7228,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -5497,7 +7270,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -5505,16 +7282,28 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -5523,7 +7312,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -5531,7 +7324,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -5557,7 +7354,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5565,7 +7366,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -5577,7 +7382,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -5685,8 +7494,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5694,7 +7509,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -5726,8 +7545,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5747,8 +7572,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -5776,7 +7607,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5784,7 +7619,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5792,9 +7631,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5802,7 +7649,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5810,8 +7661,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5819,9 +7676,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5829,7 +7694,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      },
      {
@@ -5841,9 +7710,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard",
-       "gray.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5851,9 +7728,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.standard",
-       "pink.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "pink.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5861,8 +7746,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -5870,7 +7761,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ]
@@ -5897,8 +7792,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5906,7 +7807,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5914,8 +7819,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5923,7 +7834,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -5931,7 +7846,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5939,8 +7858,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "gray.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5960,8 +7885,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -5975,8 +7906,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -6005,8 +7942,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6014,9 +7957,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "red.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6030,9 +7981,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.dark",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "orange.dark"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6040,7 +7999,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6048,7 +8011,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6056,7 +8023,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6070,8 +8041,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -6097,10 +8074,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard",
-       "green.standard",
-       "blue.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6108,8 +8095,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6117,9 +8110,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6127,7 +8128,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6135,7 +8140,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6143,8 +8152,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -6175,8 +8190,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "green.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6184,8 +8205,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6199,8 +8226,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ]
@@ -6244,9 +8277,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6291,7 +8332,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6299,7 +8344,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6307,22 +8356,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6330,7 +8397,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6338,8 +8409,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6376,7 +8453,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6384,8 +8465,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6393,9 +8480,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6403,7 +8498,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6411,8 +8510,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6420,8 +8525,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6429,7 +8540,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6449,7 +8564,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -6463,8 +8582,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -6472,7 +8597,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ]
@@ -6504,14 +8633,24 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark",
-       "red.dark"
+       [
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6519,8 +8658,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6528,9 +8673,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6538,9 +8691,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6548,8 +8709,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6563,9 +8730,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.dark"
+        }
+       ]
       ]
      }
     ],
@@ -6616,11 +8791,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6628,7 +8815,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -6636,7 +8827,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -6668,13 +8863,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -6682,7 +8878,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -6694,8 +8894,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -6740,7 +8946,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -6748,11 +8958,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6760,7 +8982,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -6768,7 +8994,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -6794,7 +9024,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -6802,7 +9036,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6810,8 +9048,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -6819,8 +9063,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6828,7 +9078,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ]
@@ -6863,7 +9117,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6916,7 +9174,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6924,7 +9186,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6932,8 +9198,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "blue.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -6964,27 +9236,37 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "CADS",
-      "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -6992,21 +9274,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7014,8 +9302,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7023,8 +9317,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7032,21 +9332,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -7105,7 +9411,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light"
+       [
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -7113,8 +9423,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7170,7 +9486,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7184,7 +9504,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -7225,7 +9549,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7233,9 +9561,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7243,9 +9579,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7253,8 +9597,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7262,8 +9612,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7271,8 +9627,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "red.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7292,8 +9654,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.light"
+        }
+       ]
       ],
       "fade": "yellow.standard"
      }
@@ -7392,15 +9760,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "blue.light",
-       "purple.standard"
+       [
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7408,8 +9788,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -7461,48 +9847,84 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
-      ],
-      "shape": "spots"
-     },
-     {
-      "source": "NIJ",
-      "colors": [
-       "red.standard",
-       "red.dark"
+       [
+        {
+         "color": "orange.standard",
+         "shape": "spots"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.standard",
-       "brown.dark"
+       [
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.standard",
-       "red.dark"
+       [
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.standard",
-       "brown.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7510,8 +9932,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
@@ -7523,36 +9951,56 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "blue.standard"
-      ]
-     },
-     {
-      "source": "NIJ",
-      "colors": [
-       "yellow.standard",
-       "blue.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7566,8 +10014,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7575,8 +10029,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "brown.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7624,7 +10084,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -7678,8 +10142,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7687,7 +10157,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7695,7 +10169,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7774,15 +10252,27 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7790,13 +10280,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ]
@@ -7816,13 +10314,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7830,7 +10336,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -7838,13 +10348,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ]
@@ -7878,7 +10396,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ]
@@ -7912,19 +10434,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -7932,8 +10466,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "purple.standard"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -7953,8 +10493,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8013,8 +10559,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8022,13 +10574,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "blue.light"
+       [
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ],
@@ -8036,7 +10589,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -8070,7 +10627,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
@@ -8082,8 +10643,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.light",
-       "gray.dark"
+       [
+        {
+         "color": "gray.light"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
@@ -8095,7 +10662,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8135,7 +10706,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8143,8 +10718,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8152,17 +10733,33 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -8170,15 +10767,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.light",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8186,9 +10785,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "green.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -8196,8 +10803,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8217,9 +10830,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8284,7 +10905,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8360,7 +10985,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -8429,11 +11058,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8441,7 +11082,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -8528,8 +11173,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -8537,13 +11188,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -8551,7 +11210,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -8559,13 +11222,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -8609,8 +11280,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -8677,13 +11354,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -8719,7 +11397,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8737,11 +11419,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -8749,13 +11443,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -8797,8 +11492,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -8865,25 +11566,49 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "orange.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      },
      {
@@ -8895,13 +11620,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -8939,8 +11665,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ],
@@ -8948,8 +11680,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ],
@@ -8986,19 +11724,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9006,26 +11756,44 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard",
-       "blue.light"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9033,32 +11801,65 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "orange.light",
-       "brown.light"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.light"
+        }
+       ],
+       [
+        {
+         "color": "green.dark",
+         "shape": "spots"
+        }
+       ]
+      ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9066,13 +11867,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9080,13 +11889,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9175,8 +11992,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9184,13 +12007,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9198,13 +12029,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9280,10 +12119,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "red.light",
-       "red.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "red.light"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ]
@@ -9378,7 +12227,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -9392,7 +12245,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9400,7 +12257,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9444,8 +12305,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -9475,7 +12342,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9483,9 +12354,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9493,8 +12372,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard",
-       "purple.standard"
+       [
+        {
+         "color": "gray.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -9523,8 +12408,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9532,15 +12423,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9548,9 +12441,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9558,7 +12459,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9566,7 +12471,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -9601,21 +12510,37 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark",
-       "purple.standard",
-       "green.standard"
+       [
+        {
+         "color": "gray.dark"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9623,23 +12548,43 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "red.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9647,7 +12592,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9655,7 +12604,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9663,13 +12616,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -9727,7 +12688,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      },
      {
@@ -9773,8 +12738,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9869,7 +12840,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9877,9 +12852,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -9913,7 +12896,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ]
@@ -9942,13 +12929,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9956,7 +12944,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -9964,8 +12956,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -9973,8 +12971,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10018,8 +13022,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -10027,8 +13037,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ]
@@ -10057,8 +13073,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10072,9 +13094,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10082,7 +13112,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10096,9 +13130,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard",
-       "red.dark"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10112,9 +13154,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ]
@@ -10147,10 +13197,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard",
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10158,15 +13218,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "green.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10174,10 +13236,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light",
-       "orange.light",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10185,8 +13257,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10200,9 +13278,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.light",
-       "red.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10216,17 +13302,24 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "gray.dark"
-      ],
-      "shape": "precipitate"
+       [
+        {
+         "color": "gray.dark",
+         "shape": "precipitate"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -10256,8 +13349,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "green.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10265,8 +13364,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "green.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10274,8 +13379,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10283,8 +13394,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10292,8 +13409,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10307,9 +13430,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10347,8 +13478,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10356,8 +13493,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "brown.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10365,8 +13508,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10380,10 +13529,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "gray.standard"
-      ],
-      "shape": "precipitate"
+       [
+        {
+         "color": "gray.standard",
+         "shape": "precipitate"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
@@ -10414,7 +13566,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -10422,7 +13578,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10430,8 +13590,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "yellow.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -10471,7 +13637,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10479,15 +13649,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10495,22 +13677,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10518,8 +13718,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10527,20 +13733,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10564,8 +13784,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10573,7 +13799,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -10599,19 +13829,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10619,13 +13861,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10633,22 +13883,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "red.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10656,19 +13924,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10710,7 +13990,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10718,9 +14002,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10728,9 +14020,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10738,7 +14038,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10746,8 +14050,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.dark",
-       "brown.standard"
+       [
+        {
+         "color": "red.dark"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10761,7 +14071,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10775,7 +14089,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -10792,8 +14110,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10801,7 +14125,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -10809,13 +14137,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "blue.light"
+       [
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -10823,13 +14159,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -10881,7 +14225,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
@@ -10897,11 +14245,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -10913,9 +14273,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -10923,7 +14291,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
@@ -10998,8 +14370,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.light"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -11007,8 +14385,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11016,8 +14400,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11025,7 +14415,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -11033,8 +14427,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -11067,13 +14467,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -11081,13 +14482,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11095,11 +14497,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11107,9 +14521,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.dark",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.dark"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11117,8 +14539,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11126,16 +14554,28 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -11156,9 +14596,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11178,10 +14626,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ]
    }
@@ -11209,7 +14660,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -11217,13 +14672,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11231,8 +14694,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -11240,7 +14709,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11248,7 +14721,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -11256,15 +14733,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11284,7 +14763,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11292,7 +14775,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11300,10 +14787,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ]
    }
@@ -11328,7 +14818,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11336,8 +14830,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11345,8 +14845,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11354,8 +14860,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11363,8 +14875,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11372,8 +14890,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11387,10 +14911,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "gray.standard"
-      ],
-      "shape": "precipitate"
+       [
+        {
+         "color": "gray.standard",
+         "shape": "precipitate"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
@@ -11438,7 +14965,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11446,15 +14977,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11462,7 +14995,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -11524,8 +15061,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11533,7 +15076,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -11563,8 +15110,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11572,7 +15125,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11580,8 +15137,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11589,9 +15152,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "blue.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -11619,7 +15190,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11627,8 +15202,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11636,11 +15217,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11648,7 +15241,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11656,8 +15253,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.dark",
-       "green.standard"
+       [
+        {
+         "color": "yellow.dark"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11665,9 +15268,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "orange.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "orange.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11681,8 +15292,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11690,7 +15307,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light"
+       [
+        {
+         "color": "pink.light"
+        }
+       ]
       ]
      }
     ],
@@ -11756,10 +15377,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.light"
-      ],
-      "shape": "particles"
+       [
+        {
+         "color": "blue.light",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Sc": [
@@ -11843,7 +15467,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -11851,7 +15479,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11859,8 +15491,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -11880,13 +15518,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11894,7 +15540,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11902,13 +15552,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ]
@@ -11928,8 +15586,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11937,7 +15601,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -11945,7 +15613,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -11953,7 +15625,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12006,8 +15682,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12015,7 +15697,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
@@ -12051,8 +15737,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -12084,7 +15776,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12098,7 +15794,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12106,7 +15806,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -12120,8 +15824,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -12226,8 +15936,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -12262,8 +15978,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -12290,13 +16012,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12369,8 +16099,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12378,8 +16114,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12393,7 +16135,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -12401,8 +16147,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -12574,32 +16326,54 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "purple.standard"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12607,25 +16381,41 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12637,29 +16427,53 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12667,13 +16481,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12681,21 +16496,37 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12727,8 +16558,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -12760,7 +16597,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -12768,15 +16609,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "brown.light"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12784,22 +16637,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "blue.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12807,7 +16678,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12815,8 +16690,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard",
-       "blue.light"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ],
       "fade": "blue.standard"
      }
@@ -12849,8 +16730,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -12888,7 +16775,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
@@ -12900,20 +16791,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "blue.standard"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -12931,13 +16836,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      },
      {
@@ -12984,10 +16890,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.standard",
-       "purple.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -12995,15 +16911,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13017,15 +16935,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard",
-       "purple.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "blue.standard",
-       "gray.standard"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ]
@@ -13055,9 +16975,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "brown.standard",
-       "orange.standard"
+       [
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13065,8 +16993,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13074,13 +17008,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -13122,8 +17057,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
@@ -13135,7 +17076,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13155,9 +17100,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13189,8 +17142,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13198,8 +17157,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13207,8 +17172,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13216,7 +17187,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13224,7 +17199,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13232,8 +17211,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -13262,7 +17247,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13270,8 +17259,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.dark",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.dark"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -13323,15 +17318,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13339,7 +17336,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -13383,9 +17384,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "purple.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      },
      {
       "source": "PNW",
@@ -13396,15 +17401,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13447,7 +17464,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13494,7 +17515,11 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13506,7 +17531,11 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13559,15 +17588,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13587,7 +17628,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13595,8 +17640,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -13604,13 +17655,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13618,13 +17677,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13632,13 +17699,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ]
@@ -13669,9 +17744,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13679,8 +17762,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.light",
-       "blue.light"
+       [
+        {
+         "color": "gray.light"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ],
@@ -13831,21 +17920,37 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13853,27 +17958,37 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "blue.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.dark",
-       "gray.dark"
-      ]
-     },
-     {
-      "source": "NIJ",
-      "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "blue.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13881,31 +17996,59 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "blue.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "blue.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13913,7 +18056,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13921,19 +18068,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -13941,9 +18100,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -13963,8 +18130,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -13978,7 +18151,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -14004,19 +18181,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "orange.dark"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14024,8 +18199,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "brown.standard"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14033,8 +18214,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14042,8 +18229,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "brown.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14051,7 +18244,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14059,8 +18256,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "orange.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14080,10 +18283,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "gray.light"
-      ],
-      "shape": "precipitate"
+       [
+        {
+         "color": "gray.light",
+         "shape": "precipitate"
+        }
+       ]
+      ]
      }
     ],
     "Ho": [
@@ -14126,8 +18332,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14135,8 +18347,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14144,9 +18362,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14154,8 +18380,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard",
-       "gray.dark"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14163,29 +18395,53 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "blue.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "blue.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "gray.dark"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14193,8 +18449,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14250,33 +18512,57 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14284,39 +18570,57 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "blue.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.dark",
-       "gray.dark"
-      ]
-     },
-     {
-      "source": "CADS",
-      "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "blue.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "CADS",
+      "colors": [
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14324,24 +18628,46 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "blue.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14349,7 +18675,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14357,19 +18687,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14377,9 +18719,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14399,29 +18749,53 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.light",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14435,7 +18809,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -14443,8 +18821,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -14458,7 +18842,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ]
@@ -14492,7 +18880,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "fizz": true
      }
@@ -14501,7 +18893,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "fizz": true
      }
@@ -14510,15 +18906,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14526,8 +18934,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14535,7 +18949,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14543,8 +18961,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14558,8 +18982,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14579,7 +19009,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14587,8 +19021,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -14626,7 +19066,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -14640,8 +19084,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.light",
-       "purple.standard"
+       [
+        {
+         "color": "red.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14655,15 +19105,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14671,8 +19123,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14680,8 +19138,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -14722,8 +19186,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "gray.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14731,11 +19201,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14787,7 +19269,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -14805,11 +19291,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14817,13 +19315,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14855,9 +19361,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14871,26 +19385,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "purple.standard"
-      ],
-      "shape": "ring"
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.light",
-       "brown.standard"
-      ],
-      "shape": "ring"
+       [
+        {
+         "color": "purple.light",
+         "shape": "ring"
+        },
+        {
+         "color": "purple.standard",
+         "shape": "ring"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
+      ]
      }
     ],
     "Mo": [
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14898,10 +19420,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ]
    }
@@ -14920,15 +19445,27 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -14936,7 +19473,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -14944,7 +19485,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -14975,20 +19520,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "pink.light"
+       [
+        {
+         "color": "pink.light"
+        }
+       ]
       ]
      }
     ],
@@ -14996,7 +19555,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15004,24 +19567,46 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.light",
-       "blue.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark",
-       "blue.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "blue.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15029,19 +19614,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "brown.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -15049,7 +19632,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15090,13 +19677,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15104,13 +19699,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15118,8 +19721,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15127,13 +19736,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15141,13 +19758,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15210,55 +19835,99 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark",
-       "brown.dark"
+       [
+        {
+         "color": "red.dark"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.dark",
-       "red.dark"
+       [
+        {
+         "color": "orange.dark"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.dark",
-       "brown.dark"
+       [
+        {
+         "color": "orange.dark"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15266,26 +19935,44 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15293,29 +19980,53 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15323,8 +20034,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15332,7 +20049,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
@@ -15342,7 +20063,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
@@ -15366,30 +20091,56 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.light",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15403,8 +20154,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -15418,13 +20175,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ]
@@ -15480,22 +20245,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15558,7 +20341,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15566,15 +20353,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15582,7 +20371,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15614,7 +20407,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ]
@@ -15643,8 +20440,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "brown.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15652,8 +20455,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15661,8 +20470,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15670,8 +20485,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "blue.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15679,7 +20500,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -15687,8 +20512,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15702,8 +20533,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ]
@@ -15733,7 +20570,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -15741,7 +20582,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -15749,22 +20594,40 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.light"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -15772,7 +20635,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -15816,8 +20683,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -15855,7 +20728,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15863,8 +20740,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15872,16 +20755,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15889,8 +20773,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15898,7 +20788,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15906,8 +20800,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15921,14 +20821,22 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.standard"
+       [
+        {
+         "color": "gray.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -15937,9 +20845,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.light"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -15953,7 +20869,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -15961,8 +20881,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -16013,13 +20939,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16027,25 +20961,49 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16053,8 +21011,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16062,7 +21026,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      },
      {
@@ -16078,15 +21046,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "purple.light"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "orange.light",
-       "purple.light"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -16100,7 +21080,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light"
+       [
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -16148,7 +21132,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -16156,7 +21144,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -16170,7 +21162,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -16178,7 +21174,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -16226,11 +21226,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16238,13 +21250,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -16276,22 +21289,38 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "gray.standard",
-       "blue.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ],
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
       ],
-      "observation": 1,
-      "shape": "spots"
+      "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.light",
-       "blue.standard"
+       [
+        {
+         "color": "blue.light",
+         "shape": "spots"
+        },
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
       ],
-      "observation": 2,
-      "shape": "spots"
+      "observation": 2
      }
     ],
     "Ho": [
@@ -16304,7 +21333,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16312,10 +21345,13 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ]
    }
@@ -16355,7 +21391,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -16389,15 +21429,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16405,8 +21447,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "brown.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16414,8 +21462,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16423,8 +21477,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "orange.dark"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "orange.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16432,13 +21492,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "red.standard"
+       [
+        {
+         "color": "orange.dark"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ]
@@ -16473,26 +21534,44 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.standard",
-       "purple.light"
+       [
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16500,25 +21579,41 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16526,8 +21621,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      },
      {
@@ -16537,22 +21638,40 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "red.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16560,19 +21679,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "gray.dark"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "blue.dark"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "blue.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16580,19 +21697,31 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.dark"
+       [
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16639,7 +21768,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -16683,8 +21816,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "blue.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ]
@@ -16741,7 +21880,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -16765,7 +21908,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard"
+       [
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16779,8 +21926,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16788,15 +21941,23 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "orange.light",
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard",
+         "shape": "ring"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "orange.light",
-       "gray.light"
+       [
+        {
+         "color": "gray.light",
+         "shape": "ring"
+        }
+       ]
       ]
      }
     ]
@@ -16826,7 +21987,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16834,7 +21999,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16842,8 +22011,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "blue.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -16851,8 +22026,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -16860,7 +22041,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light"
+       [
+        {
+         "color": "pink.light"
+        }
+       ]
       ]
      }
     ],
@@ -16868,8 +22053,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ]
@@ -16886,13 +22077,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17002,26 +22201,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light",
-       "purple.standard"
-      ],
-      "shape": "ring"
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "purple.light",
-       "brown.standard"
-      ],
-      "shape": "ring"
+       [
+        {
+         "color": "purple.light",
+         "shape": "ring"
+        },
+        {
+         "color": "purple.standard",
+         "shape": "ring"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
+      ]
      }
     ],
     "Mo": [
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "blue.light"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ]
@@ -17094,8 +22301,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "gray.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ]
@@ -17112,8 +22325,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17121,13 +22340,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "red.dark"
+       [
+        {
+         "color": "red.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17135,13 +22362,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17149,13 +22384,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ]
@@ -17217,7 +22460,11 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17225,8 +22472,14 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17234,7 +22487,11 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ]
@@ -17336,13 +22593,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light"
+       [
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "purple.light"
+       [
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -17350,14 +22615,24 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "green.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17365,29 +22640,43 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.standard"
-      ]
-     },
-     {
-      "source": "NIJ",
-      "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
+      ]
+     },
+     {
+      "source": "NIJ",
+      "colors": [
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17395,22 +22684,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "brown.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Fr": [
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17430,9 +22731,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17446,8 +22755,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17455,8 +22770,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -17485,7 +22806,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17493,8 +22818,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17502,8 +22833,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17511,8 +22848,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "blue.standard",
-       "purple.standard"
+       [
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -17534,15 +22877,27 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17554,13 +22909,21 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17584,7 +22947,11 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17625,7 +22992,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -17706,8 +23077,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "blue.light"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "blue.light"
+        }
+       ]
       ]
      }
     ],
@@ -17715,8 +23092,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -17769,7 +23152,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -17783,11 +23170,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17795,7 +23194,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -17821,9 +23224,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.standard",
-       "purple.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.standard"
+        },
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      }
     ]
@@ -17856,21 +23267,33 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ],
       "observation": 2
      },
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -17883,14 +23306,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ],
-      "observation": 2
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        }
+       ]
       ],
       "observation": 2
      },
@@ -17913,8 +23336,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "red.standard",
-       "orange.standard"
+       [
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -17927,7 +23356,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ],
       "observation": 2
      },
@@ -17989,11 +23422,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18001,7 +23446,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18068,7 +23517,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.dark"
+       [
+        {
+         "color": "orange.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18076,7 +23529,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ],
@@ -18084,8 +23541,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18093,7 +23556,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -18190,7 +23657,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -18198,18 +23669,36 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18217,9 +23706,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18227,13 +23724,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18247,18 +23752,34 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard",
-       "brown.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard",
-       "gray.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -18279,8 +23800,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -18288,7 +23815,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ]
@@ -18321,7 +23852,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -18329,18 +23864,36 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "red.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18348,9 +23901,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18358,13 +23919,21 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light"
+       [
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18384,8 +23953,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "blue.dark"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "blue.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18399,8 +23974,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ],
@@ -18408,7 +23989,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light"
+       [
+        {
+         "color": "orange.light"
+        }
+       ]
       ]
      }
     ]
@@ -18528,8 +24113,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18537,8 +24128,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18552,7 +24149,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -18560,8 +24161,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -18582,8 +24189,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "orange.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.dark"
+        }
+       ]
       ]
      }
     ]
@@ -18614,7 +24227,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard"
+       [
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -18640,14 +24257,22 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ],
       "observation": 1
      },
      {
       "source": "PNW",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ],
       "observation": 2
      }
@@ -18656,9 +24281,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "red.dark",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.dark"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18666,9 +24299,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18676,8 +24317,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -18691,8 +24338,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.light"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -18792,8 +24445,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18801,10 +24460,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard",
-       "purple.standard",
-       "blue.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18812,7 +24481,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -18835,16 +24508,29 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
-      ],
-      "shape": "spots"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ],
+       [
+        {
+         "color": "red.standard",
+         "shape": "spots"
+        }
+       ]
+      ]
      }
     ],
     "Si": [
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -18876,7 +24562,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18884,8 +24574,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light",
-       "brown.light"
+       [
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -18893,9 +24589,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -18903,13 +24607,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "green.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -18935,7 +24640,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light"
+       [
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -18943,7 +24652,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -18957,7 +24670,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -18965,7 +24682,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light"
+       [
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -18973,8 +24694,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.light"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.light"
+        }
+       ]
       ]
      }
     ],
@@ -18988,15 +24715,27 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        }
+       ]
       ]
      },
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19004,8 +24743,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.light"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.light"
+        }
+       ]
       ]
      }
     ]
@@ -19025,15 +24770,27 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "green.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "yellow.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "yellow.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19176,8 +24933,14 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19234,9 +24997,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.standard",
-       "purple.dark",
-       "gray.dark"
+       [
+        {
+         "color": "purple.standard"
+        },
+        {
+         "color": "purple.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19244,7 +25015,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark"
+       [
+        {
+         "color": "green.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19252,8 +25027,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19261,7 +25042,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19269,8 +25054,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19297,13 +25088,21 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19311,7 +25110,11 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19319,25 +25122,41 @@ window.REAGENTS = {
      {
       "source": "NIJ",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      },
      {
       "source": "NIJ",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19376,13 +25195,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19390,13 +25217,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19404,13 +25239,21 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      },
      {
       "source": "CADS",
       "colors": [
-       "gray.dark"
+       [
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ]
@@ -19442,9 +25285,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.light",
-       "red.light",
-       "purple.light"
+       [
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "red.light"
+        },
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -19452,7 +25303,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "purple.light"
+       [
+        {
+         "color": "purple.light"
+        }
+       ]
       ]
      }
     ],
@@ -19460,9 +25315,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "blue.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]
@@ -19549,15 +25412,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "brown.light"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -19595,8 +25460,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "pink.standard",
-       "green.standard"
+       [
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ]
@@ -19622,7 +25493,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19630,7 +25505,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19638,8 +25517,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19647,8 +25532,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19656,7 +25547,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19664,8 +25559,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.dark"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ]
@@ -19691,8 +25592,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19700,8 +25607,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19709,9 +25622,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19719,8 +25640,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19728,8 +25655,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard",
-       "gray.dark"
+       [
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19737,9 +25670,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "brown.dark",
-       "gray.dark"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "brown.dark"
+        },
+        {
+         "color": "gray.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19747,10 +25688,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "pink.standard",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "pink.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ]
@@ -19880,8 +25831,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.light",
-       "yellow.standard"
+       [
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19889,8 +25846,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.dark",
-       "brown.dark"
+       [
+        {
+         "color": "green.dark"
+        },
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19898,9 +25861,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "green.standard",
-       "brown.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "green.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19908,7 +25879,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.dark"
+       [
+        {
+         "color": "brown.dark"
+        }
+       ]
       ]
      }
     ],
@@ -19916,7 +25891,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.standard"
+       [
+        {
+         "color": "green.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19950,8 +25929,14 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19965,9 +25950,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19975,7 +25968,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "brown.standard"
+       [
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19983,7 +25980,11 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -19997,9 +25998,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "pink.light",
-       "purple.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "pink.light"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20082,29 +26091,20 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.light",
-       "red.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.light",
-       "brown.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "red.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "brown.light"
+       [
+        {
+         "color": "yellow.light"
+        },
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.light"
+        }
+       ]
       ]
      }
     ],
@@ -20112,9 +26112,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "green.light",
-       "brown.light",
-       "gray.standard"
+       [
+        {
+         "color": "green.light"
+        },
+        {
+         "color": "brown.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20122,15 +26130,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "purple.light"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "yellow.standard",
-       "gray.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.light"
+        },
+        {
+         "color": "gray.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20138,15 +26148,17 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "orange.light",
-       "orange.standard"
-      ]
-     },
-     {
-      "source": "PNW",
-      "colors": [
-       "orange.light",
-       "brown.standard"
+       [
+        {
+         "color": "orange.light"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "brown.standard"
+        }
+       ]
       ]
      }
     ]
@@ -20184,11 +26196,23 @@ window.REAGENTS = {
      {
       "source": "PNW",
       "colors": [
-       "yellow.standard",
-       "orange.standard",
-       "red.standard",
-       "brown.standard",
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "orange.standard"
+        },
+        {
+         "color": "red.standard"
+        },
+        {
+         "color": "brown.standard"
+        },
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20245,7 +26269,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20253,7 +26281,11 @@ window.REAGENTS = {
      {
       "source": "CADS",
       "colors": [
-       "yellow.standard"
+       [
+        {
+         "color": "yellow.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20276,13 +26308,21 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "red.standard"
+       [
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "orange.standard"
+       [
+        {
+         "color": "orange.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20290,15 +26330,27 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "red.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "red.standard"
+        }
+       ]
       ]
      },
      {
       "source": "Chang2025",
       "colors": [
-       "yellow.standard",
-       "purple.standard"
+       [
+        {
+         "color": "yellow.standard"
+        },
+        {
+         "color": "purple.standard"
+        }
+       ]
       ]
      }
     ],
@@ -20306,7 +26358,11 @@ window.REAGENTS = {
      {
       "source": "Chang2025",
       "colors": [
-       "blue.standard"
+       [
+        {
+         "color": "blue.standard"
+        }
+       ]
       ]
      }
     ]

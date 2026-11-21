@@ -76,8 +76,9 @@ PURE_SAMPLES = {
 # una formula chimica nel riepilogo; "Variable" e' la carbossimetilcellulosa
 FORMULA = re.compile(r"(?<![A-Za-z0-9])\(?[A-Z][a-z]?\d*(?:[A-Z][a-z]?\d*)+\)?n?(?![A-Za-z0-9])"
                      r"|\bVariable\b")
-# dove sta il colore, che la pagina non registra
-WHERE = re.compile(r"\s+(?:on|around)\s+edges(?:\s+of\s+powder)?$", re.I)
+# il colore sui bordi: e' l'anello, la reazione che comincia dove il solvente
+# evapora prima
+EDGES = re.compile(r"\s+(?:on|around)\s+edges(?:\s+of\s+powder)?$", re.I)
 
 
 def compounds(text: str) -> set[str]:
@@ -114,7 +115,12 @@ def stages(value: str) -> list[list[str]]:
     """Il risultato di una ripetizione come tappe: nessuna se non cambia colore."""
     if value == NO_COLOUR_CHANGE:
         return []
-    return [[WHERE.sub("", value)]]
+    return [[EDGES.sub("", value)]]
+
+
+def shape(value: str) -> str | None:
+    """La forma del risultato: l'anello, se il colore e' sui bordi."""
+    return "ring" if EDGES.search(value) else None
 
 
 def main() -> None:
@@ -159,7 +165,7 @@ def main() -> None:
             for value in values:
                 if value == NOT_PERFORMED:
                     continue
-                observation = readings(SOURCE_ID, REAGENTS[reagent_name], stages(value))
+                observation = readings(SOURCE_ID, REAGENTS[reagent_name], stages(value), shape(value))
                 observations.setdefault((name, REAGENTS[reagent_name]), []).append(observation)
     for (name, reagent), found in observations.items():
         add_observations(records[name]["reactions"], reagent, found)

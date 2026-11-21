@@ -30,6 +30,26 @@
     const spelled = (name) => name.replace(/[αβγδ]/g, (letter) => GREEK_LETTERS[letter]);
     return spelled(first).localeCompare(spelled(second));
   }
+  /* The colours of a reading are parts seen at the same time — the liquid,
+     grey spots on it — each a sequence of phases with an optional shape:
+     a purple ring that then turns the whole liquid brown. Until the
+     observations can say so, the page reads them as one sequence, the
+     parts one after the other, as it did before shapes existed; the parts
+     stay on the reading for its description. */
+  for (const substance of DATA.substances) {
+    for (const readings of Object.values(substance.reactions)) {
+      for (const reading of readings) {
+        if (!reading.colors) continue;
+        reading.parts = reading.colors;
+        reading.colors = [];
+        for (const stage of reading.parts.flat()) {
+          if (reading.colors[reading.colors.length - 1] !== stage.color) {
+            reading.colors.push(stage.color);
+          }
+        }
+      }
+    }
+  }
   /* how many substances each reagent documents: the coverage the headers
      of the table and the reagent cards show */
   for (const reagent of DATA.reagents) {
@@ -51,11 +71,18 @@
     return reading.colors?.length === 0;
   }
 
-  /* What a reading says besides its colours: it fizzes, the colour comes
-     in spots or a ring, a colour fades away. */
+  /* What a reading says besides its colours: a shape (grey spots, a
+     purple ring), it fizzes, a colour fades away. Consecutive phases in
+     the same shape are one shape, named with its last colour. */
   function readingExtras(reading) {
     const out = [];
-    if (reading.shape) out.push(t(`shapes.${reading.shape}`));
+    for (const part of reading.parts || []) {
+      part.forEach((stage, index) => {
+        if (!stage.shape || part[index + 1]?.shape === stage.shape) return;
+        out.push(interpolate(t("readingShape"),
+          { shape: t(`shapes.${stage.shape}`), color: colorName(stage.color, state.lang) }));
+      });
+    }
     if (reading.fizz) out.push(t("readingFizz"));
     if (reading.dissolves === false) out.push(t("readingUndissolved"));
     if (reading.fade) {
@@ -347,8 +374,11 @@
     const colors = reactionColors(reading, seen.reagent);
     if (!target || !colors) return result;
     const stages = seenReaction(seen);
-    const hasTarget = (one) => !one.shape &&
-      (reactionColors(one, seen.reagent) || []).some((color) => target.includes(hueOf(color)));
+    /* the target counts in the whole liquid or in a ring, which is the
+       reaction starting at the edges; not in spots or a precipitate,
+       which are product that did not dissolve */
+    const hasTarget = (one) => (one.parts || []).flat().some((stage) =>
+      (!stage.shape || stage.shape === "ring") && target.includes(hueOf(stage.color)));
     const seenFound = stages.some((stage) => target.includes(stage.hue));
     if (seenFound) return hasTarget(reading) ? result : { outcome: "no", warnings: [] };
     if (hasTarget(reading)) return { outcome: "no", warnings: [] };

@@ -74,6 +74,10 @@ def load_state(data):
     RG = D["reagents"]
     COLORS = D["colors"]
     SUBS = D["substances"]
+    # la voce del wiki di ogni cella, per le sovrascritture (SLASH_OVERRIDES)
+    for _s in SUBS:
+        for _cell in _s["cells"]:
+            _cell["_substance"] = _s["name"]
     COL_BY_ID = {c["id"]: c for c in COLORS}
     COL_BY_HEX = {c["hex"]: c for c in COLORS}
     COL_BY_FAM_TONE = {}
@@ -2203,8 +2207,20 @@ def schema_paths(mo):
     return out
 
 
-SHAPE_BY_FORM = {"macchie": "spots", "precipitato": "precipitate",
-                 "anello": "ring", "particelle": "particles"}
+# la parola di forma del testo -> la forma del dettaglio nello schema
+# Macchie e particelle sono la stessa cosa: la sostanza resta in piccoli grumi
+# che reagiscono senza sciogliersi nel reattivo. Anello e bordi pure: la
+# reazione comincia ai bordi, dove il solvente evapora prima.
+SHAPE_WORDS = {"spot": "spots", "spots": "spots", "dot": "spots", "dots": "spots",
+               "particle": "spots", "particles": "spots",
+               "ring": "ring", "edge": "ring", "edges": "ring",
+               "precipitate": "precipitate", "precipitates": "precipitate",
+               "precip": "precipitate", "precipitation": "precipitate"}
+# un dettaglio: il colore che lo precede nella sua frase, fino a una virgola, a
+# un ">", a un "/", a una parentesi o a un "with" ("pink, violet edges",
+# "brown (with red spots)", "yellowish > green > red spots")
+DETAIL_RE = re.compile(r"([^,>/(]*?)\b(%s)\b" % "|".join(sorted(SHAPE_WORDS, key=len, reverse=True)),
+                       re.I)
 FIZZ_RE = re.compile(r"\b(fizz\w*|foam\w*|bubbl\w*)", re.I)
 
 
@@ -2223,10 +2239,117 @@ NO_INSTANT_RE = re.compile(r"\bno instant reaction\b", re.I)
 NO_TARGET_RE = re.compile(r"\bno (\w+) colou?r change\b", re.I)
 # "not dissolving": il campione non si scioglie
 UNDISSOLVED_RE = re.compile(r"\bnot dissolving\b", re.I)
-# "reddish with grey spots": due colori insieme, il secondo con la sua forma.
-# Finche' lo schema non ha colori contemporanei sono due letture.
+# "reddish with grey spots": il rosso e' il liquido, il grigio un dettaglio.
 WITH_FORM_RE = re.compile(r"^(.+?)\s+with\s+(.*\b(?:spots?|streaks?|precipitates?|particles|dots?))\s*$",
                           re.I)
+
+
+# Le letture che la regola della barra (slash_sequences) decide male, scritte
+# come vanno lette. La chiave e' la cella (la voce del wiki, il reattivo) col
+# suo testo intero: se la fonte cambia il testo, la sovrascrittura non vale
+# piu' e lo script si ferma.
+SLASH_OVERRIDES = {
+    # il viola dei campioni e' il rosa del testo: marrone tenue, poi rosa
+    ("3-HO-PCP", "Mq", "faint brown / pink (68)"): "faint brown > pink (68)",
+    ("ETH-CAT", "Md", "faint orange / brown (26)"): "faint orange > brown (26)",
+    ("Melatonin", "Ho", "yellow / orange > green (18)"): "yellow > orange > green (18)",
+    ("Methylone", "Md", "yellow/green > brown (234)"): "yellow > green > brown (234)",
+}
+
+
+# Le letture che il testo non basta a dare, scritte per esteso. La chiave e'
+# la cella col suo testo intero, come in SLASH_OVERRIDES.
+READING_OVERRIDES = {
+    # "dark" senza tinta: grigio scuro o nero, come gli altri precipitati del
+    # Simon's ("grey precipitates", "greyish black precip", "Black precipitates")
+    ("4-AcO-MET", "Si", "Dark precipitation (163)"): [
+        [[{"color": "gray.standard", "shape": "precipitate"}]],
+        [[{"color": "gray.dark", "shape": "precipitate"}]],
+    ],
+}
+
+
+def overridden_readings(cell):
+    """Le letture scritte a mano per la cella, o None."""
+    for (name, reagent, original), readings in READING_OVERRIDES.items():
+        if cell.get("_substance") == name and cell["reagent"] == reagent:
+            if cell["desc"] != original:
+                raise SystemExit("READING_OVERRIDES: %s/%s ora dice %r, non %r"
+                                 % (name, reagent, cell["desc"], original))
+            return readings
+    return None
+
+
+def final_classes():
+    """(reattivo, numero) -> la famiglia del colore finale. Il numero fra
+    parentesi in fondo al testo e' la classe del risultato, per reattivo: in
+    828 celle su 861 l'ultimo campione e' di quella famiglia."""
+    global FINAL_CLASSES
+    if FINAL_CLASSES is None:
+        counts = {}
+        for s in SUBS:
+            for cell in s["cells"]:
+                match = re.search(r"\((\d+)\)\s*$", cell["desc"] or "")
+                if match and cell["start"]:
+                    key = (cell["reagent"], match.group(1))
+                    family = fam_of(canon_hex(cell["start"][-1]["hex"]))
+                    counts.setdefault(key, Counter())[family] += 1
+        FINAL_CLASSES = {key: counter.most_common(1)[0][0] for key, counter in counts.items()}
+    return FINAL_CLASSES
+
+
+FINAL_CLASSES = None
+
+
+def slash_sequences(cell, cells):
+    """Il testo della cella con le barre che sono sequenze scritte come ">".
+
+    La barra e' un'alternativa ("violet / purple"), tranne quando la fonte
+    registra un passaggio: una sola osservazione della coppia, i campioni dei
+    colori nominati nell'ordine del testo e, se la barra e' l'ultima tappa, la
+    classe finale (il numero fra parentesi) del colore nominato per ultimo.
+    "yellow / orange (89)" col Marquis, coi campioni giallo poi arancione, e'
+    giallo poi arancione. Due osservazioni con lo stesso testo sono due esiti:
+    la barra li riassume. SLASH_OVERRIDES corregge i casi che la regola decide
+    male."""
+    desc = cell["desc"] or ""
+    for (name, reagent, original), rewritten in SLASH_OVERRIDES.items():
+        if cell.get("_substance") == name and cell["reagent"] == reagent:
+            if desc != original:
+                raise SystemExit("SLASH_OVERRIDES: %s/%s ora dice %r, non %r"
+                                 % (name, reagent, desc, original))
+            return rewritten
+    if "/" not in desc:
+        return desc
+    if len(cells) > 1 and len({strip_index(other["desc"]) for other in cells}) == 1:
+        return desc
+    if re.search(r"\bno (?:colou?r )?(?:change|reaction)\b", desc, re.I):
+        return desc
+    match = re.search(r"\((\d+)\)\s*$", desc)
+    final = final_classes().get((cell["reagent"], match.group(1))) if match else None
+    samples = [fam_of(canon_hex(tone["hex"])) for tone in cell["start"]]
+    stages = strip_index(desc).split(">")
+    for index, stage in enumerate(stages):
+        if "/" not in stage:
+            continue
+        parts = [part for part in stage.split("/") if part.strip()]
+        families = [text_families(part) for part in parts]
+        if len(parts) < 2 or any(not named for named in families):
+            continue
+        if any(families[one] & families[other] for one in range(len(parts))
+               for other in range(one + 1, len(parts))):
+            continue
+        positions = []
+        for named in families:
+            found = [position for position, sample in enumerate(samples) if sample in named]
+            positions.append(found[0] if found else None)
+        if None in positions or positions != sorted(positions):
+            continue
+        if index == len(stages) - 1 and final not in families[-1]:
+            continue
+        stages[index] = " > ".join(part.strip() for part in parts)
+    rewritten = " > ".join(stage.strip() for stage in stages)
+    return rewritten + (" (%s)" % match.group(1) if match else "")
 
 
 def reagent_target(short_name):
@@ -2244,9 +2367,8 @@ def negative_paths(cell):
     Simon's e' marrone scuro: non e' il blu atteso, ma e' quello che si vede.
     "no blue color change" e' nessuna reazione.
 
-    Ritorna le coppie (percorso, testo da cui viene), perche' la forma di una
-    lettura e' quella del suo testo: "reddish with grey spots" e' il rosso e il
-    grigio a macchie."""
+    Di "reddish with grey spots" il percorso e' il rosso: il grigio a macchie e'
+    il dettaglio, che aggiunge split_details()."""
     desc = cell["desc"]
     for match in NO_TARGET_RE.finditer(desc):
         named = fam_to_families(match.group(1))
@@ -2256,17 +2378,106 @@ def negative_paths(cell):
                              % (cell["reagent"], desc, target))
     text = strip_index(NO_TARGET_RE.sub("", desc))
     together = WITH_FORM_RE.match(text)
-    parts = [together.group(1), together.group(2)] if together else [text]
+    if together:
+        text = together.group(1)
     base = reagent_base_colors().get(cell["reagent"])
     out = []
-    for part in parts:
-        mo = cell_model(dict(cell, desc=part))
-        for seq in [seq for seq in schema_paths(mo) if seq] or [[]]:
-            if base and seq and seq[0] != base:
-                # il colore proprio del reattivo e' la prima tappa, come nei campioni
-                seq = [base] + seq
-            out.append((seq, part))
+    mo = cell_model(dict(cell, desc=text))
+    for seq in [seq for seq in schema_paths(mo) if seq] or [[]]:
+        if base and seq and seq[0] != base:
+            # il colore proprio del reattivo e' la prima tappa, come nei campioni
+            seq = [base] + seq
+        out.append(seq)
     return out
+
+
+def cell_detail(desc):
+    """La forma che la descrizione nomina: la forma, la famiglia del suo colore,
+    il colore come lo dice il testo e se la frase chiude la descrizione. None se
+    non ne nomina; famiglia e colore sono None se la forma non ha un colore
+    ("Dark precipitation")."""
+    plain = strip_index(desc)
+    found = list(DETAIL_RE.finditer(plain))
+    if not found:
+        return None
+    if len(found) > 1:
+        raise SystemExit("%r: piu' di una forma" % desc)
+    clause = re.sub(r"^.*\bwith\b", "", found[0].group(1), flags=re.I).strip()
+    shape = SHAPE_WORDS[found[0].group(2).lower()]
+    # "purple ring > brown": dopo l'anello il liquido cambia ancora
+    final = not text_families(re.split(r"[,(]", plain[found[0].end():])[0])
+    mentions = [m for ph in parse(clause)["phases"] for g in ph["groups"] for m in g["colors"]
+                if m["fams"]]
+    if not mentions:
+        return {"shape": shape, "fam": None, "color": None, "final": final}
+    fam = mentions[-1]["fams"][-1]
+    mods = [mod for m in mentions for mod in m.get("mods", [])]
+    return {"shape": shape, "fam": fam, "color": text_color(fam, mods, clause), "final": final}
+
+
+def stages_of(colours, shape=None):
+    """Le tappe di una parte: un colore, con la forma se ne ha una."""
+    return [dict({"color": colour}, **({"shape": shape} if shape else {})) for colour in colours]
+
+
+def shaped_parts(seqs, desc, reagent):
+    """Le parti contemporanee di ogni percorso, con la forma sulle sue tappe.
+
+    Un percorso senza forma e' una parte sola. Una forma in fondo alla
+    descrizione ("reddish with grey spots", "pink, violet edges", "blue spots")
+    e' una parte sua: le tappe finali del suo colore, o il colore del testo se
+    il percorso non ci finisce ("brown (with red spots)"); il resto e' il
+    liquido, che non e' una parte se resta del colore del reattivo. Una forma
+    seguita da altre tappe ("purple ring > brown") e' l'inizio della
+    reazione: la forma va sulle prime tappe del suo colore, nella stessa
+    parte.
+
+    Con le alternative ("slow blue / blue spots") la forma e' solo dei percorsi
+    che finiscono col suo colore; se un'alternativa senza forma nomina lo
+    stesso colore il percorso resta anche senza forma."""
+    detail = cell_detail(desc)
+    if not detail:
+        return [[stages_of(seq)] if seq else [] for seq in seqs]
+    hue = schema_hue(detail["fam"]) if detail["fam"] else None
+    base = reagent_base_colors().get(reagent)
+    alternatives = [part for part in strip_index(desc).split("/") if part.strip()]
+    plain_names_hue = any(
+        not DETAIL_RE.search(part) and hue in {schema_hue(fam) for fam in text_families(part)}
+        for part in alternatives)
+    out = []
+    for seq in seqs:
+        floor = 1 if base and seq[:1] == [base] else 0
+        if not detail["final"]:
+            stop = floor
+            while hue and stop < len(seq) and seq[stop].split(".")[0] == hue:
+                stop += 1
+            out.append([seq_part for seq_part in
+                        [stages_of(seq[:floor]) + stages_of(seq[floor:stop], detail["shape"])
+                         + stages_of(seq[stop:])] if seq_part])
+            continue
+        cut = len(seq)
+        while hue and cut > floor and seq[cut - 1].split(".")[0] == hue:
+            cut -= 1
+        if cut == len(seq) and len(alternatives) > 1:
+            out.append([stages_of(seq)] if seq else [])
+            continue
+        if cut < len(seq):
+            shaped = stages_of(seq[cut:], detail["shape"])
+        elif detail["color"]:
+            shaped = stages_of([detail["color"]], detail["shape"])
+        else:
+            raise SystemExit("%r: una forma senza colore, scrivi le letture in READING_OVERRIDES"
+                             % desc)
+        liquid = seq[:cut]
+        parts = [stages_of(liquid)] if liquid and liquid != [base] else []
+        out.append(parts + [shaped])
+        if cut < len(seq) and len(alternatives) > 1 and plain_names_hue:
+            out.append([stages_of(seq)])
+    unique = []
+    for parts in out:
+        if parts not in unique:
+            unique.append(parts)
+    return unique
 
 
 def schema_reactions(cells):
@@ -2282,6 +2493,7 @@ def schema_reactions(cells):
     campioni non da' mai un percorso vuoto: senza colori della reazione e' un
     ramo che non ha niente da dire, non l'assenza di reazione."""
     out = []
+    cells = [dict(cell, desc=slash_sequences(cell, cells)) for cell in cells]
     for oi, cell in enumerate(cells):
         if len(cells) > 1:
             siblings = set()
@@ -2292,8 +2504,6 @@ def schema_reactions(cells):
                 cell = dict(cell, _sib=siblings)
         mo = cell_model(cell)
         incoh = is_incoherent(cell)
-        form = cell_forms(cell["desc"])
-        shape = SHAPE_BY_FORM.get(form)
         fizz = bool(FIZZ_RE.search(cell["desc"]))
         fade = None
         dyn = mo.get("dynamic")
@@ -2302,9 +2512,7 @@ def schema_reactions(cells):
         if not cell["start"]:
             if NO_INSTANT_RE.search(cell["desc"]):
                 continue
-            found = negative_paths(cell)
-            seqs = [seq for seq, _ in found]
-            shapes = [SHAPE_BY_FORM.get(cell_forms(part)) for _, part in found]
+            seqs = negative_paths(cell)
         else:
             initial = [color_id(mo["initial"]["name"])] if mo["initial"] else []
             seqs = [seq for seq in schema_paths(mo) if seq and seq != initial] or [initial]
@@ -2312,19 +2520,17 @@ def schema_reactions(cells):
             seqs = [[colour for index, colour in enumerate(seq) if index == 0 or seq[index - 1] != colour]
                     for seq in seqs]
             seqs = [list(seq) for seq in dict.fromkeys(map(tuple, seqs))]
-            shapes = [shape] * len(seqs)
         # una lettura incoerente e' una sola, qualunque siano i percorsi
         if incoh:
             seqs = seqs[:1]
-        for seq, shape in zip(seqs, shapes):
-            r = {"source": SOURCE_ID,
-                 "colors": None if incoh else seq}
+        alternatives = ([None] if incoh else overridden_readings(cell)
+                        or shaped_parts(seqs, cell["desc"], cell["reagent"]))
+        for parts in alternatives:
+            r = {"source": SOURCE_ID, "colors": parts}
             if len(cells) > 1:
                 r["observation"] = oi + 1
             if fizz:
                 r["fizz"] = True
-            if shape:
-                r["shape"] = shape
             if fade:
                 r["fade"] = fade
             if UNDISSOLVED_RE.search(cell["desc"]):
@@ -2416,10 +2622,13 @@ def write_schema(path):
     lost = 0
     entries = 0
     for s in SUBS:
+        by_reagent = {}
         for c in s["cells"]:
-            mo = cell_model(c)
+            by_reagent.setdefault(c["reagent"], []).append(c)
+        entries += sum(len(schema_reactions(cells)) for cells in by_reagent.values())
+        for c in s["cells"]:
+            mo = cell_model(dict(c, desc=slash_sequences(c, by_reagent[c["reagent"]])))
             seqs = schema_paths(mo)
-            entries += len(schema_reactions([c]))
             seen = set()
             for sq in seqs:
                 seen.update(sq)
@@ -2436,8 +2645,8 @@ def write_schema(path):
     n_fizz = sum(1 for s in data["substances"] for rs in s["reactions"].values()
                  for r in rs if r.get("fizz"))
     n_shape = sum(1 for s in data["substances"] for rs in s["reactions"].values()
-                  for r in rs if r.get("shape"))
-    print("scritto:", path, "| sostanze: %d | reattivi: %d | voci: %d | null: %d | fizz: %d | shape: %d"
+                  for r in rs if any(stage.get("shape") for part in r["colors"] or [] for stage in part))
+    print("scritto:", path, "| sostanze: %d | reattivi: %d | voci: %d | null: %d | fizz: %d | forme: %d"
           % (len(data["substances"]), len(data["reagents"]), entries, n_null, n_fizz, n_shape))
     return data
 
@@ -2539,7 +2748,11 @@ def check(csv_path=None, html_path=None, schema_path=None):
                     # il testo nomina (le tappe e le alternative senza campione)
                     # e il colore proprio del reattivo, la prima tappa
                     named = {schema_hue(fam) for c in cells for fam in text_families(c["desc"])}
-                    for cid in (g["colors"] or []):
+                    if any(overridden_readings(c) for c in cells):
+                        continue
+                    stage_colors = [stage["color"] for part in (g["colors"] or [])
+                                    for stage in part]
+                    for cid in stage_colors:
                         if (hex_by_id.get(cid) not in [x["hex"] for c in cells for x in c["start"]]
                                 and cid.split(".")[0] not in named
                                 and cid != reagent_base_colors().get(rk)):

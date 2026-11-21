@@ -119,11 +119,11 @@ const STRINGS = {
     readingFizz: "fa bolle",
     readingUndissolved: "non si scioglie",
     readingFade: "{color} svanisce",
+    readingShape: "{shape} ({color})",
     shapes: {
-      spots: "a macchie",
-      ring: "ad anello",
-      precipitate: "con precipitato",
-      particles: "con particelle",
+      spots: "macchie",
+      ring: "anello",
+      precipitate: "precipitato",
     },
 
     types: {
@@ -267,11 +267,11 @@ const STRINGS = {
     readingFizz: "fizzes",
     readingUndissolved: "does not dissolve",
     readingFade: "{color} fades",
+    readingShape: "{shape} ({color})",
     shapes: {
-      spots: "in spots",
-      ring: "in a ring",
-      precipitate: "with a precipitate",
-      particles: "with particles",
+      spots: "spots",
+      ring: "ring",
+      precipitate: "precipitate",
     },
 
     types: {

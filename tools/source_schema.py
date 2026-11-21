@@ -59,13 +59,19 @@ def pdf_text(path: Path) -> str:
     return result.stdout
 
 
-def readings(source: str, reagent: str, stages: list[list[str]]) -> list[dict]:
+def readings(source: str, reagent: str, stages: list[list[str]],
+             shape: str | None = None) -> list[dict]:
     """Le letture di una osservazione: una per percorso di colori.
 
     stages e' la sequenza dei nomi delle alternative di ogni tappa; ogni nome
     vale per tutte le famiglie che nomina, quindi una tappa "Pink-orange"
     seguita da "Brown" da' due letture: rosa poi marrone, arancione poi
     marrone. Nessuna tappa e' "nessuna reazione".
+
+    "colors" e' la lista delle parti contemporanee, ognuna una sequenza di
+    tappe {"color", "shape"?}: qui una parte sola. Con una forma ("on edges"
+    e' l'anello) i colori stanno nella forma, e il liquido, che resta del
+    colore del reattivo, non e' una parte.
     """
     paths: list[list[str]] = [[]]
     for stage in stages:
@@ -77,8 +83,12 @@ def readings(source: str, reagent: str, stages: list[list[str]]) -> list[dict]:
     base = BASE_COLOURS.get(reagent)
     out = []
     for path in [list(unique) for unique in dict.fromkeys(map(tuple, paths))]:
-        colours = [base] + path if base and path else path
-        out.append({"source": source, "colors": colours})
+        if shape:
+            parts = [[{"color": colour, "shape": shape} for colour in path]] if path else []
+        else:
+            colours = [base] + path if base and path else path
+            parts = [[{"color": colour} for colour in colours]] if colours else []
+        out.append({"source": source, "colors": parts})
     return out
 
 

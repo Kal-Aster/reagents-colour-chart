@@ -136,12 +136,15 @@ substances[]
   reactions
     [reagente][]           una lettura per esito
       source
-      colors[] | null      la sequenza nel tempo, ogni colore "tinta.intensità";
+      colors[][] | null    le parti che si vedono insieme (il liquido, le macchie
+                           su di esso), ognuna una sequenza di tappe nel tempo;
                            [] nessuna reazione, null risultato incoerente
+        color              "tinta.intensità"
+        shape?             spots (macchie o particelle) | ring (anello o bordi:
+                           la reazione comincia ai bordi) | precipitate
       proportion?          low | standard | high (assente: standard)
       observation?         1, 2… quando la fonte ha più osservazioni della coppia
                            (una lettura ripetuta in più osservazioni compare una volta)
-      shape?               spots | ring | precipitate | particles
       fizz?                la reazione fa bolle
       dissolves?           false: il campione non si scioglie
       fade?                il colore che svanisce

@@ -27,6 +27,8 @@ SOURCE = SOURCES / "PNW.json"
 OUT = ROOT / "data" / "reagents.json"
 # le fonti estratte, nell'ordine in cui la pagina le elenca dopo PsychonautWiki
 EXTRACTED = ["NIJ", "CADS", "Chang2025"]
+# le forme di una tappa: macchie (o particelle), anello (o bordi), precipitato
+SHAPES = {"spots", "ring", "precipitate"}
 # le lettere greche si ordinano scritte per esteso: α-PiHP sta con le a, come
 # alpha-PiHP, non dopo la z (la pagina fa lo stesso, in assets/app.js)
 GREEK_LETTERS = {"α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta"}
@@ -114,7 +116,14 @@ def check(data: dict) -> None:
             for entry in entries:
                 if entry["source"] not in data["sources"]:
                     raise SystemExit(f"{record['name']}: fonte sconosciuta {entry['source']}")
-                unknown = set(entry["colors"] or []) - palette
+                if any("color" not in stage for part in entry["colors"] or [] for stage in part):
+                    raise SystemExit(f"{record['name']}/{reagent}: una tappa senza colore")
+                colours = [stage["color"] for part in entry["colors"] or [] for stage in part]
+                unknown = set(colours) - palette
+                shapes = {stage["shape"] for part in entry["colors"] or [] for stage in part
+                          if "shape" in stage}
+                if shapes - SHAPES:
+                    raise SystemExit(f"{record['name']}/{reagent}: forme sconosciute {shapes - SHAPES}")
                 if unknown:
                     raise SystemExit(f"{record['name']}/{reagent}: colori fuori palette {unknown}")
 
