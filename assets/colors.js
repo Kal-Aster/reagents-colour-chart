@@ -67,11 +67,19 @@ function stripOf(colors) {
   return colors.map(hexOfColor);
 }
 
+/* The gradient goes through oklab: the lightness changes evenly to the eye,
+   and the middle of two distant hues is not the dull grey of sRGB (yellow
+   to blue). Not oklch: going round the hue circle, it would put between
+   yellow and blue a green the reaction does not have. A browser that does
+   not know the syntax gets the sRGB gradient. */
+const GRADIENT_SPACE = typeof CSS !== "undefined" &&
+  CSS.supports("background-image", "linear-gradient(in oklab to right, red, blue)") ? "in oklab " : "";
+
 function cssGradient(hexes) {
   if (!hexes || !hexes.length) return "transparent";
   if (hexes.length === 1) return hexes[0];
   const step = 100 / (hexes.length - 1);
-  return `linear-gradient(to right, ${hexes
+  return `linear-gradient(${GRADIENT_SPACE}to right, ${hexes
     .map((h, i) => `${h} ${(i * step).toFixed(1)}%`)
     .join(", ")})`;
 }
